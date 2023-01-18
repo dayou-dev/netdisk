@@ -1,0 +1,41 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0">
+	
+<title>{$bodyinfo.title}</title>
+
+<link href="/Theme/css/base.css" rel="stylesheet">
+<link href="/Theme/css/user.css" rel="stylesheet">
+<script src="/Theme/js/jquery-1.11.2.min.js"></script>
+</head>
+
+<body>
+<header class="header">
+	<div class="header-return">
+	    <a href="/news"></a>
+	</div>
+	
+	<div class="logo">{$catename}</div>
+    
+<div class="header-btn">
+		<a href="/user" class="header-usericon">
+		</a>
+	</div>    
+</header>
+
+<section class="container">
+	<div class="article">
+		<h3 class="article-title">{$bodyinfo.title}</h3>
+		
+		<p class="article-time">{function name=to_date v=$bodyinfo.create_time f="Y-m-d"}</p>
+		
+		<div class="article-content">
+			{$bodyinfo.content}
+		</div>
+	</div>
+</section>
+</body>
+</html>

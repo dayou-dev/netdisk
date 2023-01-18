@@ -1,0 +1,76 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> <meta http-equiv="Pragma" content="no-cache" /> <meta http-equiv="Expires" content="0" />
+<title>{$site_info.SHOP_NAME}</title>
+<link href="/Theme/css/base.css" rel="stylesheet">
+<link href="/Theme/css/user.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/swiper.min.css">
+<script src="/Theme/js/jquery-1.11.2.min.js"></script>
+<style type="text/css">
+#index_focus img{ width:100%;}
+.user-container{ margin-top:0px;}
+.index-panel{ margin:0px;}
+.comm_cate ul{ overflow:hidden;}
+.comm_cate ul li{ float:left; width:25%; text-align:center; padding:20px 0px 5px 0px;}
+.comm_cate ul li p{ margin-bottom:8px;}
+.comm_cate ul li p img{ width:48px; height:48px;}
+.comm_cate ul li span{ font-size:14px;}
+.comm_cate ul li a{ color:#444;}
+
+.user_card{ padding:.5rem; }
+.user_card .u_txt{ margin-bottom:20px;}
+.user_card .u_txt span{ font-size:18px; font-weight:bold;}
+.user_card .u_txt a{ font-size:14px; float:right;color:#aaa;}
+.user_card .u_list{ padding:.3rem .3rem;font-weight:bold;}
+.user_card .u_list ul li{ height:155px;border-radius: 10px;  background-position:center center; background-repeat:no-repeat; background-size: cover;padding:.8rem; padding-top:.5rem; color:#fff; margin-bottom:20px;}
+.user_card .u_list ul li .u_l_txt{ font-size:18px; margin-bottom:80px;}
+.user_card .u_list ul li .u_l_pr .p1{ font-size:16px;}
+.user_card .u_list ul li .u_l_pr .p2{ font-size:14px;text-decoration:line-through;}
+.user_card .u_list ul li .u_l_pr .p3{ font-size:14px; float:right;}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+	<div class="header-return">
+	    <a href="/"></a>
+	</div>
+	
+	<div class="logo">会员卡列表</div>
+	
+	<div class="header-btn">
+		<a href="/user" class="header-usericon">
+		</a>
+	</div>
+</header>
+
+<div class="user_card">
+	<div class="u_txt">
+    	<span>会员卡列表</span>
+    </div>
+    <div class="u_list">
+    	<ul>
+        {foreach from=$card key=key item=item}
+        	<li style="background-image:url('{$item.icon}');" onClick="location.href='/user_card/detail/{$item.id}.html'">
+            	<div class="u_l_txt">{$item.title}</div>
+                <div class="u_l_pr"><span class="p1">￥{$item.price}</span> <span class="p2">￥{$item.price1}</span><span class="p3">有效期：{$item.validity_int}天</span></div>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+</div>
+
+
+
+<div style="height:80px;"></div>
+{include file="footer.html"}
+
+
+
+
+</body>
+</html>

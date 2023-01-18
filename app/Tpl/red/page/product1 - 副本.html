@@ -1,0 +1,147 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0">
+<title>{$productinfo.title}</title>
+<link href="/Theme/css/base.css" rel="stylesheet">
+<link href="/Theme/css/user.css" rel="stylesheet">
+<link href="/Theme/css/details.css" rel="stylesheet">
+<script src="/Theme/js/jquery-1.11.2.min.js"></script>
+<style type="text/css">
+#index_focus img{ width:100%;}
+.user-container{ margin-top:0px;}
+</style>
+</head>
+
+<body>
+<div class="user-top">
+	<div class="user-header header" style=" position:absolute;">
+		<div class="header-back">
+			<a href="/product"></a>
+		</div>
+		<div class="logo">{$product_cate.title}</div>
+		<div class="header-user">
+			<a href="tel:{$site_info.SHOP_TEL}"></a>
+		</div>
+	</div>
+    
+</div>
+    <div class="details_sections">
+        <div class="details_section1">
+            <div class="details_section1_location_product">
+                <img src="{$productinfo.icon1}" alt=""/>
+                <p class="details_section1_location_product_p1">{$productinfo.title}<span>
+								<b id="COR_GOODS_AMOUNT">￥0</b>
+								<b id="GOODS_AMOUNT" style="font-size: 0.8em; margin-left: 0.8em; font-weight: normal; color: #999; text-decoration: line-through;">￥{function name=round v=$productinfo.price_1 f=2}</b>
+								
+				</span></p>
+                <p class="details_section1_location_product_p2"></p>
+            </div>
+            {foreach from=$product_attr key=key item=item}
+            <div class="details_section1_select">
+                            <p class="details_section1_select_p1">{$item.title}:</p>
+                            <p class="details_section1_select_p2" >
+                            {foreach from=$item.list key=keys item=items}
+                <label class="{if !$keys}select_color{/if}" rel="COR_GOODSATTR" attr_pid="{$item.id}">
+{$items.title}<input style='display:none' type="radio" name="spec_{$item.id}" rel="pro_attr" pr="{$items.price}" value="{$items.id}" id="spec_value_{$items.id}" class='radio' {if !$keys}checked{/if} />
+</label> {/foreach}          
+                </p>
+            </div>
+            {/foreach}
+        </div>
+        <div class="details_section2">
+            <ul class="details_section2_lists_tab">
+                <li><a href="#span1"><span class="span_color">服务详情</span></a></li>
+            </ul>
+            <ul class="details_section2_lists_content">
+                <li class='img' id="span1" name="span1">
+                    <p class="details_section2_title"><span></span>服务详情<span></span></p>
+					<div style="text-align:center;">
+						{$productinfo.content}
+                    </div>					                    
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="fixed_bottom">
+    <div class="chat"><a href="tel:{$site_info.SHOP_TEL}" style="color: #666666;"><i class="icon_answer"></i><p>客服咨询</p></a></div>
+   <!--  <div class="online"><a id="Online_booking">在线预约</a></div> -->
+    <div class="pay"><a id="addToCartQuick" onClick="submitFrom()">立即购买</a></div>
+</div>
+
+<form id="payform" action="" target="_self" method="post" style="display:none">
+<input type="hidden" name="attrid" value="">
+</form>
+
+
+<div class="user-container"></div>
+
+<div style="height:80px;"></div>
+<div class="loading" ><img src="/images/load.gif"/></div>
+<script src="/layer/layer.js"></script>
+<script language="javascript">
+$('[rel="COR_GOODSATTR"]').click(function(){
+	$("[attr_pid='"+$(this).attr("attr_pid")+"']").removeClass("select_color");
+	$(this).addClass("select_color");
+	showPrice();
+})
+function showPrice(){
+	var paymoney={$productinfo.price};
+	for(var i=0;i<$("[rel='pro_attr']").length;i++){
+		if($("[rel='pro_attr']").eq(i).prop("checked")){
+			paymoney+=parseFloat($("[rel='pro_attr']").eq(i).attr("pr"));
+		}
+	}
+	$("#COR_GOODS_AMOUNT").html("￥"+paymoney);
+}
+showPrice();
+var pagelock=0;
+function submitFrom(){
+	var attridLIst="";
+	for(var i=0;i<('[rel="pro_attr"]').length;i++){
+		if($("[rel='pro_attr']").eq(i).prop("checked")){
+			attridLIst+=attridLIst!=""?","+$("[rel='pro_attr']").eq(i).val():$("[rel='pro_attr']").eq(i).val();
+		}
+	}
+	
+   if(pagelock<1) {
+	   pagelock=1;
+	   $(".loading").show();
+	   $.ajax({
+		  url: "/product/pay/{$productinfo.id}.html",
+		  dataType: "json",
+		  data:{attrid:attridLIst},
+		  type: "post",
+		  error: function() {
+			  
+		  },
+		  success: function(data) {  
+		  	pagelock=0;
+			$(".loading").hide();	
+			if(data.status){
+				location.href="/payment/"+data.info;
+			}else{
+				if(data.info.indexOf("登录")>-1){
+					layer.alert(data.info, {icon: 2},function(){
+						location.href="/user/login";
+					});
+				}else{
+					layer.msg(data.info);
+				}
+			}
+			
+		 }
+		})
+	}else{
+		$(".load-more").hide();	
+		$(".load-no-more").show();
+	}             
+	
+}
+</script>
+
+</body>
+</html>

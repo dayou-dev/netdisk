@@ -1,0 +1,6 @@
+		{foreach from=$pagelist.list key=key item=item}
+        <a href="/news/detail/{$item.id}.html" class="article-list">
+			<h3>{$item.title}</h3>
+			<p>{$item.create_time}</p>
+		</a>
+		{/foreach}

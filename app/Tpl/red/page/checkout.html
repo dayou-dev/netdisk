@@ -1,0 +1,446 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0">
+<title>{$productinfo.title}</title>
+<link href="/Theme/css/base.css" rel="stylesheet">
+<link href="/Theme/css/user.css" rel="stylesheet">
+<link href="/Theme/css/details.css" rel="stylesheet">
+<script src="/Theme/js/jquery-1.11.2.min.js"></script>
+<style type="text/css">
+#index_focus img{ width:100%;}
+.user-container{ margin-top:0px;}
+.appointment_content_sections{padding-top: 4em; margin-bottom: 5em; width: 100%; font-size: 1em; color: #333333; }
+.appointment_content_sections_title{height: 3em; line-height: 3em; padding: 0 1em; background: #ffffff;}
+.appointment_content_sections_user{}
+.appointment_content_sections_user_p{height: 3em; line-height: 3em; padding: 0 1em; color: #999999;}
+.appointment_content_sections_user_box{background: #ffffff; padding: 1em;}
+.appointment_content_sections_user_box p{line-height: 2em; position:relative; overflow:hidden;}
+.appointment_content_sections_user_box p span{display: inline-block; width: 6.5em; float:left;line-height: 2.4em;}
+.appointment_content_sections_user_box a{ position:absolute; right:40px; top:5px; color:#46a9fd; font-size:12px;}
+.appointment_content_sections_service{}
+.appointment_content_sections_service_p{height: 3em; line-height: 3em; padding: 0 1em; color: #999999;}
+
+.appointment_list_box{overflow: hidden; padding: 1em; background: #ffffff; border-bottom: 1px solid #e0e0e0;}
+.appointment_list_box_left{float: left; width: 38%; height: 6.5em; overflow: hidden;}
+.appointment_list_box_left img{width: 100%;}
+.appointment_list_box_right{float: left; padding-left: 1em; width: 62%;}
+.appointment_list_box_right p{color: #999999; line-height: 1.7em;}
+.appointment_list_box_right p span{color: #333333;}
+.appointment_list_box_right p span.appointment_money{color: #f05050;}
+
+.appointment_content_sections_service_all{background: #ffffff; overflow: hidden; height: 3em; line-height: 3em; padding: 0 1em;}
+.appointment_content_sections_service_all p{float: left; color: #999999; font-size: 0.9em;}
+.appointment_content_sections_service_all p span:first-child{margin-right: 1em;}
+.appointment_content_sections_service_all b{float: right;}
+.appointment_content_sections_service_all b span{color: #f05050;}
+
+.appointment_content_sections_content{margin-top: 1em; background: #ffffff; padding: 1em;}
+.appointment_content_sections_content p{line-height: 2em; color: #999999;}
+
+.appointment_content_fixed{position: fixed; left: 0; bottom: 0; height: 4em; line-height: 4em; width: 100%;}
+.appointment_content_fixed_span1{float: left; width: 50%; background: #ffffff; color: #29a5ff; text-align: center; font-size: 1.2em;}
+.appointment_content_fixed_span2{float: left; width: 50%; background: #29a5ff; color: #ffffff; text-align: center; font-size: 1.2em;}
+
+
+.appointment_content_sections_user_box input{outline: none; width: 70%; height: 2.4em; margin-bottom: 0.8em; padding: 0 1em; background-color: #f5f5f5; border-radius: 4px; border: solid 1px #bbbbbb; -webkit-appearance : none;}
+.appointment_content_sections_user_box textarea{outline: none; width: 70%; height: 4.4em; margin-bottom: 0.8em; padding:1em; background-color: #f5f5f5; border-radius: 4px; border: solid 1px #bbbbbb; -webkit-appearance : none;}
+.pay_way{}
+.pay_way p{height: 3em; line-height: 3em; padding: 0 1em; color: #999999;}
+.pay_way div{padding: 0 1em; overflow: hidden;}
+
+.pay_way div label{display:inline-block;float: left; width: 48%; height: 4em; overflow: hidden; line-height: 4em; background-color: #ffffff; text-align: center;}
+
+.pay_way div label:first-child{margin-right: 4%;}
+
+.pay_way div label.checked{background-image: url("/images/xz.png"); background-repeat: no-repeat; background-size: 2em 2em; background-position: right bottom;}
+
+.pay_way div label span img{width: 2.8em; height: 2.8em; vertical-align: middle; margin-right: 0.6em;}
+.appointment_content_sections_user_box select{    background-color: #f5f5f5; height: 2.4em;border-radius: 4px;width: 70%; text-indent:5px;}
+
+.pay_info{ background-color:#fff; font-size:14px; margin-top:15px; padding:10px 0px;}
+.pay_info ul{ overflow:hidden; padding:0px 15px;}
+.pay_info li{ float:left; width:50%; color:#444; line-height:28px;}
+.pay_info li.p_pr1{ text-align:right;color:#df3348;}
+.pay_info li.p_pr2{ text-align:right;color:#47ab0f;}
+</style>
+</head>
+
+<body>
+<div class="user-top">
+	<div class="user-header header" style=" position:absolute;">
+		<div class="header-back">
+			<a href="javascript:;" onClick="javascript:history.back(-1);"></a>
+		</div>
+		<div class="logo">订单确认</div>
+		<div class="header-btn">
+			<a href="/user" class="header-usericon">
+			</a>
+		</div>
+	</div>
+    
+</div>
+ <form action="cart.php" method="post" name="theForm" id="theForm" onSubmit="return checkOrderForm()">    
+    <div class="appointment_content_sections" >
+        
+        <div class="appointment_content_sections_user">
+            <p class="appointment_content_sections_user_p">用户信息</p>
+            <div class="appointment_content_sections_user_box">
+                <p><span>服务门店：</span><input type="text" value="{$user_admin.company}" name="company" id="company" placeholder="" readonly style="border: 0;"/><input type="hidden" name="user_admin_id" value="{$user_admin.id}"><a href="javascript:select_shop();" {if $productinfo.is_end}style="display:none"{/if}>更换</a></p>
+                <p {if $productinfo.is_end}style="display:none"{/if}><span>到店时间：</span><input type="text" value="" placeholder="到店时间" name='start_time' id="start_time"  readonly style="border: 0;"/></p>
+                <p {if $productinfo.is_end or !$user_cart.c_brand}style="display:none"{/if}><span>预约车辆：</span><input type="text" value="{$user_cart.c_brand}" placeholder="" name='car_v'  style="border: 0;" readonly/><input type="hidden" name="car_id" value="{$user_cart.id}"><a href="javascript:select_car();">更换</a></p>
+                <p {if $productinfo.is_end}style="display:none"{/if}><span>联系人：</span><input type="text" placeholder="" name='lx_name' value='{$orderInfo.lx_name}' style="border: 0;"/></p>
+                <p {if $productinfo.is_end}style="display:none"{/if}><span>手机号码：</span><input type="text" value="{$orderInfo.mobile}" placeholder="" name='mobile'  style="border: 0;"/></p>
+                <p><span>订单备注：</span>
+                  <textarea name="brief" rows="3" style="border: 0;"></textarea>
+                </p>
+                
+                
+                
+                
+            </div>
+        </div>
+        
+        
+<div class="appointment_content_sections_user">
+            <p class="appointment_content_sections_user_p">业务信息</p>
+            <div class="appointment_content_sections_user_box">
+               <p><span>产品名称：</span><input type="text"  value='{$productinfo.title}' disabled style="border: 0;"/></p>
+               
+                {if $productinfo.is_end}<p><span>支付金额：</span><input type="number" onBlur="show_price()" onKeyUp="show_price()" maxlength="7"value='' name="paymoney" style="border: 0;"/></p>{/if}
+                {foreach from=$attrdata key=key item=item}
+                <p><span>{$item.title}：</span><input type="text"  value='{$item.val}' disabled style="border: 0;"/></p>
+                {/foreach}
+                {if $productinfo.penpi}
+                <p><span>油漆面：</span>
+                  <textarea name="qstr" rows="3" style="border: 0;" disabled>{$p_str}</textarea>
+                </p>
+                <p><span>漆面总计：</span><input type="text" value="{$qty}/面" placeholder="---" name='qty_v' disabled style="border: 0;"/></p>
+                
+                {/if}
+            </div>
+        </div>   
+        
+        
+<div class="appointment_content_sections_user" {if $productinfo.is_end}style="display:none"{/if}>
+            <p class="appointment_content_sections_user_p">优惠券 {if $card_money}<span style="float:right; color:red; font-size:12px">[优惠券不能与会员卡同时使用]</span>{/if}</p>
+            <div class="appointment_content_sections_user_box">
+               <p><span>优惠券：</span><select name="coupon" id="coupon" style="background-color: #f5f5f5;" onChange="show_price();">
+          <option value="0">不使用优惠券</option>
+			        {foreach from=$couponList key=key item=item}
+                        <option value="{$item.id}" zk_money="{$item.zk_money}" e_type="{$item.e_type}" e_money="{function name=round v=$item.money f=2}">{if !$item.e_type}{function name=round v=$item.money f=2}元现金券{else}<?php echo round($this->_var['item']['money']/10,2);?>折扣券{/if}</option>
+                    {/foreach}
+             </select></p>
+            </div>
+        </div>    
+        
+        <div class="pay_info" {if $productinfo.is_end}style="display:none"{/if}>
+            <ul>
+            	<li>商品总价</li>
+                <li class="p_pr1">¥{$romoney}</li>
+            </ul>
+        	{if $card_money}<ul>
+            	<li>会员折扣</li>
+                <li class="p_pr2">-¥{$card_money}</li>
+            </ul>{/if}
+        </div>
+            
+            
+<div class="pay_way" style="display:">
+            <p>支付方式</p>
+            <div>
+        		
+                        <label class="checked"><span class='payment checked' data-id="7"><img src="/images/wx.png" alt=""/>
+        微信支付</span>
+       <input type="radio" name="payment" value='0' style='display:none' checked></label>
+       
+       <label><span class='payment ' data-id="7"><img src="/images/ye.png" alt=""/>
+        余额支付</span>
+       <input type="radio" name="payment" value='1' style='display:none' ></label>
+       
+                    </div>
+        </div>            
+            
+            
+           
+        </div>
+    </div>
+    <input type="hidden" name="card_money" value="{$card_money}">
+    <input type="hidden" name="romoney" value="{$romoney}">
+    <input type="hidden" name="plist" value="{$plist}">
+
+  </form>   
+    <div class="appointment_content_fixed">
+         <span class="appointment_content_fixed_span1 chat" style="width: 66%; color: #999999; font-size: 1em; text-align: left; padding-left: 1em;">应付总额：￥<span style="color: #f05050;" class="count_price">{$romoney}</span> / 次</span>
+            <span class="appointment_content_fixed_span2" style="width: 34%;" onClick="submitFrom()">确认付款</span>
+    }
+    </div>
+
+
+
+
+<div class="user-container"></div>
+{if !$productinfo.is_end}<iframe src="/user/user_cart_sel" application="0" width="100%" height="100" scrolling="auto" id="car_select" style="position:fixed; width:100%; height:100%; top:0; left:0px; z-index:1000;display:none;"></iframe>
+<iframe src="/shops" application="0" width="100%" height="100" scrolling="auto" id="shop_select" style="position:fixed; width:100%; height:100%; top:0; left:0px; z-index:1000;display:none;"></iframe>{/if}
+<div style="height:80px;"></div>
+<div class="loading" ><img src="/images/load.gif"/></div>
+
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+<script type="text/javascript">
+//console.log('接口配置成功');
+wx.config({
+	debug:false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+	appId:'{$appid}', // 必填，公众号的唯一标识
+	timestamp:{$timestamp}, // 必填，生成签名的时间戳
+	nonceStr:'{$nonceStr}', // 必填，生成签名的随机串
+	signature:'{$sha_str}',// 必填，签名
+	jsApiList:['scanQRCode','openLocation','getLocation'] // 必填，需要使用的JS接口列表
+});
+
+wx.ready(function(){
+	console.log('接口配置成功');
+});
+</script>
+
+<script src="/layer/layer.js"></script>
+<script src="/js/jdate.min.js"></script>
+<script language="javascript">
+var position=[]
+position['lat']=22.530883;
+position['lng']=114.059782;
+position['province']="广东省";
+position['city']="深圳市";
+position['district']="福田区";
+position['street']="";
+
+function getLocation_int(){
+	wx.getLocation({
+	  type: 'wgs84', // 默认为wgs84的gps坐标，如果要返回直接给openLocation用的火星坐标，可传入'gcj02'
+	  success: function (res) {
+//				var latitude = res.latitude; // 纬度，浮点数，范围为90 ~ -90
+//				var longitude = res.longitude; // 经度，浮点数，范围为180 ~ -180。
+//				var speed = res.speed; // 速度，以米/每秒计
+//				var accuracy = res.accuracy; // 位置精度
+			position['lat']=res.latitude;
+			position['lng']=res.longitude;
+			//alert('#e')
+			showPosition(position)
+	  }
+	})
+}
+setTimeout("getLocation_int()",1000);
+
+new Jdate({
+	el: '#start_time',
+	format: 'YYYY-MM-DD hh:mm',
+	beginYear: 2000,
+	endYear: 2100
+})
+
+var shopsel=1;
+function select_car(){
+	$("#car_select").show();
+}
+function select_shop(){
+	$("#shop_select").show();
+}
+
+$(".pay_way label").click(function(){
+	$(".pay_way label").removeClass("checked");
+	$('[name="payment"]').prop("checked",false);
+	$(this).find('input').prop("checked",true);
+	$(this).addClass("checked");
+})
+
+function get_car_select(id,n){
+	$("[name='car_v']").val(n);
+	$("[name='car_id']").val(id);
+	$("#car_select").hide();
+}
+
+function get_shop_select(id,n){
+	$("[name='company']").val(n);
+	$("[name='user_admin_id']").val(id);
+	$("#shop_select").hide();
+}
+
+function shop_select_hide(){
+	$("#shop_select").hide();
+}
+
+function car_select_hide(){
+	$("#car_select").hide();
+}
+
+
+function checkPhone(sv) {
+	if (sv == '') {
+		return true;
+	} else {
+		if ((!/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|17[0|6|7|8]|18[0-9])\d{8}$/.test(sv))) {
+			return true;
+		}
+	}
+	return false;
+}	
+var pagelock=0;
+function submitFrom(){
+   {if !$productinfo.is_end}
+   if($("[name='company']").val()==''){
+	   layer.msg("请选择一个服务门店");
+	   return ;
+   }
+   if($("[name='start_time']").val()==''){
+	   layer.msg("请选择到店时间");
+	   return ;
+   }
+   if($("[name='car_v']").val()==''){
+	   //layer.msg("请选择预约车辆");
+	   //return ;
+   }
+   if($("[name='lx_name']").val()==''){
+	   layer.msg("请输入联系人姓名");
+	   return ;
+   }
+   if($("[name='mobile']").val()==''){
+	   layer.msg("请输入手机号码");
+	   return ;
+   }
+   
+	if(checkPhone($("[name='mobile']").val())) {
+			layer.msg("手机号格式不正确，请重新输入");
+			return;	
+	};
+   
+   {else}
+	if($("[name='paymoney']").val()=='') {
+		layer.msg("请输入结算金额");
+		return;	
+	};
+   {/if}
+   if(pagelock<1) {
+	   pagelock=1;
+	   var paymoneyInt=0;
+	   {if $productinfo.is_end} paymoneyInt=$("[name='paymoney']").val();{/if}
+	   $(".loading").show();
+	   $.ajax({
+		  url: "/product/pay/{$productinfo.id}.html",
+		  dataType: "json",
+		  data:{user_admin_id:$("[name='user_admin_id']").val(),car_id:$("[name='car_id']").val(),start_time:$("[name='start_time']").val(),names:$("[name='lx_name']").val(),mobile:$("[name='mobile']").val(),brief:$("[name='brief']").val(),coupon:$('[name="coupon"] option:selected').val(),payType:$('[name="payment"]:checked').val(),attrid:"{$attrid}",plist:"{$plist}",paymoney:paymoneyInt,ajax:1},
+		  type: "post",
+		  error: function() {
+			  
+		  },
+		  success: function(data) {  
+		  	pagelock=0;
+			$(".loading").hide();	
+			if(data.status){
+				if($('[name="payment"]:checked').val()=='1'){
+					location.href="/product/success";
+				}else{
+					if(data.info=='success'){
+						location.href="/product/success";
+					}else{
+						{if !$miniProgram}
+						location.href="/payment/?id="+data.info+"&ispay=1";
+						{else}
+						//alert(data.info)
+						
+						
+						
+					   $.ajax({
+						  url: "/payment/?id="+data.info+"&ispay=1",
+						  data:{ajax:1},
+						  dataType: "json",
+						  type: "post",
+						  error: function() {
+							  
+						  },
+						  success: function(data1) {  
+							if(data1.status){
+								wx.miniProgram.navigateTo({url: '/pages/wxpay/wxpay?id='+data1.info})
+							}
+						 }
+						})
+						
+						
+						
+						
+						{/if}
+					}
+				}
+			}else{
+				if(data.info.indexOf("登录")>-1){
+					layer.alert(data.info, {icon: 2},function(){
+						location.href="/user/login";
+					});
+				}else{
+					layer.msg(data.info);
+				}
+			}
+			
+		 }
+		})
+	}else{
+		$(".load-more").hide();	
+		$(".load-no-more").show();
+	}             
+	
+}
+
+
+function showPosition(position) {
+	//positionNum ++;
+	//document.getElementById("demo").appendChild(document.createElement('pre')).innerHTML = JSON.stringify(position, null, 4);
+	//console.log(position['province']+"#"position['city']+"#"+position['district']+"#"+position['addr']+"#"+position['addr']+"#"+position['lat']+"#"+position['lng'])
+	console.log(position);
+	if(pagelock<1){
+		pagelock=1;
+		
+	   $(".loading").show();
+	   $.ajax({
+		  url: "/index/get_comm_shop",
+		  data:{lng:position['lng'],lat:position['lat']},
+		  dataType: "json",
+		  type: "post",
+		  error: function() {
+			  
+		  },
+		  success: function(data) {  
+		  	pagelock=0;
+			$(".loading").hide();
+			if(data.status){
+				$("[name='company']").val(data.info);
+				$("[name='user_admin_id']").val(data.id);
+			}
+		 }
+		})
+	}
+	
+	
+};
+
+
+function show_price(){
+	var pay_money={$romoney};
+	$(".pay_info").html('<ul><li>商品总价</li><li class="p_pr1">¥{$romoney}</li></ul>');
+	if($('[name="coupon"] option:selected').val()!='0'){
+		$(".pay_info").append('<ul><li>优惠券</li><li class="p_pr2">-¥'+$('[name="coupon"] option:selected').attr('zk_money')+'</li></ul>');
+		pay_money-=parseFloat($('[name="coupon"] option:selected').attr('zk_money'));
+	}else{
+		{if $card_money}$(".pay_info").append('<ul><li>会员折扣</li><li class="p_pr2">-¥{$card_money}</li></ul>');{/if}
+		pay_money-={$card_money};
+	}
+	pay_money=pay_money<0?0:pay_money;
+	$(".count_price").html(pay_money);
+	{if $productinfo.is_end}
+		pay_money=parseFloat($("[name='paymoney']").val());
+		$(".count_price").html(pay_money);
+	{/if}
+}
+show_price();
+</script>
+</body>
+</html>

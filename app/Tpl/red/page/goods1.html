@@ -1,0 +1,807 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui,viewport-fit=cover,viewport-fit=cover">
+<title>车品详情</title>
+<link href="/Theme/css/base.css" rel="stylesheet">
+<link href="/Theme/css/user.css" rel="stylesheet">
+<link href="/Theme/css/details.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/swiper.min.css">
+<script src="/Theme/js/jquery-1.11.2.min.js"></script>
+<style type="text/css">
+.header {
+    width: 100%;
+    height: auto;
+    color: #fff;
+    background: linear-gradient(90deg,#27a6fa,#8e71f5);
+    background: -webkit-linear-gradient(left,#27a6fa,#8e71f5);
+    padding: 0 2rem;
+    position:absolute;
+    z-index: 999;
+    left: 0;
+    top: 0;
+	background: none; border-bottom:solid 0px #ddd;
+}
+.header .header-return{background: url(/images/float_left.23ef8b7.png) no-repeat center;background-size: 35px auto;left: 10px; top: 10px;}
+
+#index_focus img{ width:100%;}
+.user-container{ margin-top:0px;}
+.select-info{
+    width: 100%;
+    display: inline-block;margin-top: 1em;
+}
+.select-info .item{
+    padding: 12px 0;
+    padding-left: 16px;
+    padding-right: 16px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: nowrap row;
+    flex-flow: row nowrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: start;
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+    min-height: 40px;
+    background: #fff;
+}
+.select-info .item .left{
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 30px;
+    flex: 0 0 30px;
+    font-size: 14px;
+    color: #999;
+    white-space: nowrap;
+    font-weight: 700;
+    color: #333;
+    font-size: 15px;
+	}
+.select-info .item .mid{
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    padding: 0 12px;
+    font-size: 14px;
+}
+.select-info .select-info_mid p{
+    margin-bottom: 5px;
+    color: #666;
+    font-size: 12px;
+}
+.select-info .select-info_mid .product-type{
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.select-info .select-info_mid p:last-child {
+    margin-bottom: 0;
+}
+.select-info .item .right{
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 0.5rem;
+    flex: 0 0 32px;
+    position: relative;
+    top: -4px;
+}
+.select-info .icon{
+    position: relative;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+
+/*popup*/
+.tcs_popup {
+    pointer-events: none;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.tcs_popup>* {
+    pointer-events: auto;
+}
+.tcs_popup .tc_popup-bg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+.tcs_popup .tc_mask {
+    background: rgba(0,0,0,.4);position: fixed;
+}
+.tcs_popup .tc_content {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    font-size: 14px;
+}
+.tcs_popup .tc_content-wrap {
+    position: absolute;
+    font-size: 0;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+}
+.tcs_popup.tc_align-bottom .tc_content-wrap {
+    bottom: -1px;
+    width: 100%;
+}
+.select-panel{
+    -webkit-box-orient: vertical;
+    -webkit-flex-flow: nowrap column;
+    flex-flow: column nowrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    max-height: 100%;
+    max-height: 70vh;
+    min-height: 50vh;
+    position: relative;
+    padding-top: .7rem;
+    padding-bottom: 2.7rem;
+    background: #fff;
+}
+
+.select-panel .img-price, .select-panel{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+}
+
+.select-panel .main[data-v-7db7bde2] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: nowrap column;
+    flex-flow: column nowrap;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.select-panel-item[data-v-23fc8d8d] {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    flex: 0 0 auto;
+    padding-left: .8rem;
+    padding-right: .8rem;
+    -webkit-box-orient: vertical;
+    -webkit-flex-flow: nowrap column;
+    flex-flow: column nowrap;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+}
+
+.select-panel-item, .select-panel-item header{
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+    width: 100%;
+}
+.select-panel-item header{
+    padding: .5rem 0;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-flow: nowrap row;
+    flex-flow: row nowrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+
+.select-panel-item header .name{
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.select-panel-item header .right{
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}
+.select-panel .main .no-select{
+    padding-left: .5rem;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    color: #df3448;
+    font-size: 12px;
+    text-align: left;
+}
+.select-panel-item .main{
+    width: 100%;
+}
+
+.select-panel .main .main-item{
+    padding-top: .3rem;
+    padding-bottom: 1rem;
+}
+
+.tag[data-v-72c7c7b5] {
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 0 12px;
+    min-height: 1.3rem;
+    line-height: 1.3rem;
+    border-radius: .7rem;
+    font-size: 14px;
+    background: #f5f5f5;
+    border: 1px solid #f5f5f5;
+    color: #333;
+}
+.tag.selected[data-v-72c7c7b5] {
+    background: #f7f9ff;
+    color: #46a9fd;
+    border: 1px solid #46a9fd;
+}
+.select-panel .main .main-item .tag-margin[data-v-7db7bde2] {
+    margin-right: 12px;
+    margin-bottom: .2rem;
+}
+.select-panel .main .main-item-service[data-v-7db7bde2] {
+    font-size: 12px;
+    color: #666;
+    text-align: right;
+}
+.select-panel .main .product-num[data-v-7db7bde2] {
+    position: relative;
+    width: 100%;
+}
+.select-panel .main .product-num[data-v-7db7bde2] header {
+    padding-top: .3rem;
+    padding-bottom: 1rem;
+}
+.select-panel .main .product-num .product-num-right[data-v-7db7bde2] {
+    float: right;
+}
+.tcs_tanumber {
+    box-sizing: border-box;
+    display: inline-block;
+    -webkit-user-select: none;
+    user-select: none;
+    height: 30px;
+    line-height: 30px;
+    border: 1px solid #d9d9d9;
+}
+.tcs_tanumber .tc_number-btn, .tcs_tanumber .tc_number-input {
+    padding: 0;
+    height: 100%;
+    text-align: center;
+    vertical-align: top;
+    display: inline-block;
+    border-color: inherit;
+    position: relative;
+}
+.tcs_tanumber .tc_number-btn {
+    width: 28px;
+}
+.tcs_tanumber .tc_number-btn, .tcs_tanumber .tc_number-input {
+    padding: 0;
+    height: 100%;
+    text-align: center;
+    vertical-align: top;
+    display: inline-block;
+    border-color: inherit;
+    position: relative;
+}
+.tcs_tanumber .tc_number-input {
+    width: 45px;
+    margin: 0;
+    border: 1px solid;
+    border-color: inherit;
+    border-top: none;
+    border-bottom: none;
+}
+.tcs_tanumber input {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    border: none;
+    text-align: center;
+    -moz-appearance: textfield;
+    vertical-align: top;
+}
+.select-panel .footer-base[data-v-7db7bde2] {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2.7rem;
+    width: 100%;
+}
+.select-panel .buy-cart[data-v-7db7bde2] {
+    padding: 0 .5rem;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+    padding-left: .4rem;
+}
+
+.select-panel .buy-cart .battery[data-v-7db7bde2], .select-panel .buy-cart[data-v-7db7bde2] {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: nowrap row;
+    flex-flow: row nowrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+}
+.select-panel .buy-cart .btn-group[data-v-7db7bde2] {
+    margin: 0 auto;
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: nowrap row;
+    flex-flow: row nowrap;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+}
+.tcs_tabutton {
+    display: inline-block;
+    border-color: #df3348;
+    text-align: center;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100% 100%;
+    outline: none;
+    -webkit-user-select: none;
+    user-select: none;
+    line-height: 2;
+    padding: 5px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.tcs_tabutton.tc_btn-hollow {
+    color: #df3348;
+    position: relative;
+}
+.tcs_tabutton.tc_radius-normal {
+    border-radius: 4px;
+}
+.tcs_tabutton.tc_radius-normal.tc_btn-hollow {
+    border-radius: 8px;
+}
+.select-panel .buy-cart[data-v-7db7bde2] .tcs_tabutton {
+    font-size: .7rem; line-height:1.8rem;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+    flex: 1 0 auto;
+}
+.select-panel .buy-cart .btn-group .left[data-v-7db7bde2], .select-panel .buy-cart .btn-group .right[data-v-7db7bde2] {
+    height: 2rem;
+    width: 40%;
+    padding: 3px 5px 5px;
+}
+.select-panel .buy-cart[data-v-7db7bde2] .tcs_tabutton.left {
+    border-top-left-radius: 2rem 50%;
+    border-bottom-left-radius: 2rem 50%;
+    border-bottom-right-radius: 0;
+    border-color: #d9d9d9;
+    border-right-color: transparent;
+    color: #666;
+    margin-left: .3rem;
+}
+.tcs_tabutton.tc_btn-hollow:before {
+    content: " ";
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    right: -50%;
+    bottom: -50%;
+    margin-right: 1px;
+    border: 1px solid;
+    border-color: inherit;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: scale(.5);
+    transform: scale(.5);
+    border-radius: inherit;
+}
+.tcs_tabutton.tc_btn-fill {
+    background-color: #46a9fd;
+    color: #fff;
+}
+.select-panel .buy-cart[data-v-7db7bde2] .tcs_tabutton.right {
+    border-top-right-radius: 4rem 4rem;
+    border-bottom-right-radius: 4rem 4rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-right: .25rem;
+}
+
+.t_toUp .close-icon{
+    position: absolute;
+    top: .8rem;
+    right: .8rem;
+    font-size: .5rem;
+    color: #666;    z-index: 1;
+}
+
+.select-panel .main .main-item .select-shop[data-v-7db7bde2] {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+}
+.select-panel .main .main-item .select-shop .select-shop-icon[data-v-7db7bde2] {
+    color: #eee;
+    font-size: 16px;
+}
+.select-panel .main .main-item .select-shop .left[data-v-7db7bde2], .select-panel .main .main-item .select-shop[data-v-7db7bde2] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: nowrap row;
+    flex-flow: row nowrap;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+}
+.select-panel .main .main-item .select-shop .left[data-v-7db7bde2] {
+    font-size: 14px;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    color: #333;
+}
+</style>
+</head>
+
+<body>
+<header class="header product-header">
+	<div class="header-return">
+		<a href="javascript:history.go(-1);"></a>
+	</div>
+</header>
+
+    <div class="details_sections">
+        
+        
+<div class="swiper-container focus_img swiper-container-horizontal swiper-container-android" id="index_focus">
+<div class="swiper-wrapper" style="transform: translate3d(-1080px, 0px, 0px); transition-duration: 0ms;">
+
+          <?php
+          if($this->_var['goodsinfo']['piclist']){
+              $albumlist=explode(",",$this->_var['goodsinfo']['piclist']);
+              foreach($albumlist as $rows)
+          		if($rows){
+          ?>
+<div class="swiper-slide {if !$key}swiper-slide-duplicate-active{/if}" data-swiper-slide-index="{$key}" style="width: 375px;"><a href="#">
+<img src="/ckfinder/userfiles/<?php echo $rows;?>" alt=""/></a></div>
+          <?php
+          }}
+          ?>
+
+
+
+</div>
+<div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets">
+<span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+<span class="swiper-pagination-bullet "></span>
+</div>
+</div>    
+        
+        
+        
+        
+        <div class="details_section1">
+            <div class="details_section1_location_product">
+                <p class="details_section1_location_product_p1"><font class="pr">{if !$goodsinfo.pay_type or $goodsinfo.pay_type eq '1'}￥<span>{$goodsinfo.price}</span> <i class="p">￥{$goodsinfo.price}</i>{/if} {if $sales}<i class="hot">限时抢购</i>{/if}</font>{$goodsinfo.title}{if $goodsinfo.info}<font color="#999" style="font-weight:100;">{$goodsinfo.info}</font>{/if}</p>
+                
+                <div class="details_section1_location_product_p2">
+                	{if !$goodsinfo.pay_type or $goodsinfo.pay_type eq '2'}<ul><li class="f_l">积分兑换：</li><li class="f_r"><font color="#f05050"><b>{$goodsinfo.integral}</b></font></li></ul>{/if}
+                    {if $sales}<ul><li class="f_l">结束时间：</li><li class="f_r" id="pay_time">00时00分00秒</li></ul>{/if}
+                    <ul><li class="f_l">商品库存：</li><li class="f_r">{$goodsinfo.in_stock}</li></ul>
+                    <ul><li class="f_l">热销数量：</li><li class="f_r">{$goodsinfo.sumcount}</li></ul>
+                    
+                </div>
+            </div>
+      
+        </div>
+        
+        <div class="select-info">
+        	<div class="item"><div class="left">已选</div> <div class="mid"><div class="select-info_mid">
+            <p class="product-type">{$goodsinfo.title}, 1件</p>
+            <p><span>服务：</span>无需服务</p>
+      </div></div> <div class="right"><div class="icon" onClick="show_popup(1);"><svg t="1612647463068" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3197" width="32" height="32"><path d="M298.666667 586.666667a74.666667 74.666667 0 1 1 0-149.333334 74.666667 74.666667 0 0 1 0 149.333334z m213.333333 0a74.666667 74.666667 0 1 1 0-149.333334 74.666667 74.666667 0 0 1 0 149.333334z m213.333333 0a74.666667 74.666667 0 1 1 0-149.333334 74.666667 74.666667 0 0 1 0 149.333334z" p-id="3198" fill="#c0c0c0"></path></svg></div></div></div>
+        </div>
+        
+        
+        
+        <div class="details_section2">
+            <ul class="details_section2_lists_tab">
+                <li><a href="#span1"><span class="span_color">商品详情</span></a></li>
+            </ul>
+            <ul class="details_section2_lists_content">
+                <li class='img' id="span1" name="span1">
+                    <p class="details_section2_title"><span></span>商品详情<span></span></p>
+					<div style="text-align:center;">
+						{$goodsinfo.content}
+                    </div>					                    
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+    <div class="fixed_bottom">
+    <div class="chat"><a href="tel:{$site_info.SHOP_TEL}" style="color: #666666;"><i class="icon_answer"></i><p>客服咨询</p></a></div>
+   <!--  <div class="online"><a id="Online_booking">在线预约</a></div> -->
+    <div class="pay"><a id="addToCartQuick" href="javascript:;" onClick="submitFrom()">立即购买</a></div>
+</div>
+
+
+
+
+<div data-v-7db7bde2="" data-v-4fc275dc="" class="tcs_popup tc_align-bottom asdasd" style="display:none"><!----> <div class="tc_popup-bg tc_mask"></div> <div class="tc_content-wrap"><div class="tc_content t_toUp">
+
+<div data-v-7db7bde2="" class="tcs_taicon close-icon tc_icon" onClick="show_popup(0)"><svg t="1612653109675" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3622" width="16" height="16"><path d="M571.733333 512l268.8-268.8c17.066667-17.066667 17.066667-42.666667 0-59.733333-17.066667-17.066667-42.666667-17.066667-59.733333 0L512 452.266667 243.2 183.466667c-17.066667-17.066667-42.666667-17.066667-59.733333 0-17.066667 17.066667-17.066667 42.666667 0 59.733333L452.266667 512 183.466667 780.8c-17.066667 17.066667-17.066667 42.666667 0 59.733333 8.533333 8.533333 19.2 12.8 29.866666 12.8s21.333333-4.266667 29.866667-12.8L512 571.733333l268.8 268.8c8.533333 8.533333 19.2 12.8 29.866667 12.8s21.333333-4.266667 29.866666-12.8c17.066667-17.066667 17.066667-42.666667 0-59.733333L571.733333 512z" p-id="3623" fill="#666666"></path></svg></div>
+
+<section data-v-7db7bde2="" class="select-panel">  <div data-v-7db7bde2="" class="main"><!----> 
+{foreach from=$goods_attr key=key item=item}
+<section data-v-23fc8d8d="" data-v-7db7bde2="" class="select-panel-item"><header data-v-23fc8d8d=""><span data-v-23fc8d8d="" class="name" id="attr_{$item.id}">{$item.title}</span> <span data-v-23fc8d8d="" class="right">
+</span></header> <div data-v-23fc8d8d="" class="main"><section data-v-7db7bde2="" data-v-23fc8d8d="" class="main-item">{foreach from=$item.list key=keys item=items}<span data-v-72c7c7b5="" data-v-7db7bde2="" rel="pro_attr" pr="{$items.price}" v="{$items.id}" id="spec_value_{$items.id}" class="tag tag-margin {if !$keys}selected{/if}" pid="attr_{$item.id}" data-v-23fc8d8d="">{$items.title}</span>{/foreach}</section> </div></section>
+{/foreach}
+
+
+{if $goodsinfo.shop_service}
+<!----> <section data-v-23fc8d8d="" data-v-7db7bde2="" class="select-panel-item"><header data-v-23fc8d8d=""><span data-v-23fc8d8d="" class="name">服务</span> <span data-v-23fc8d8d="" class="right"><div data-v-7db7bde2="" data-v-23fc8d8d="" class="main-item-service">下单后凭服务码到门店享受服务</div></span></header> <div data-v-23fc8d8d="" class="main"><section data-v-7db7bde2="" data-v-23fc8d8d="" class="main-item"><span data-v-72c7c7b5="" data-v-7db7bde2="" class="tag tag-margin" data-v-23fc8d8d="" v="1" rel="shop_list">门店服务 | ¥{$goodsinfo.price_s}</span><span data-v-72c7c7b5="" data-v-7db7bde2="" class="tag tag-margin selected" data-v-23fc8d8d="" v="0" rel="shop_list">无需服务</span></section> </div></section> <!---->
+
+<section data-v-23fc8d8d="" data-v-7db7bde2="" class="select-panel-item" style="display:none;" id="shop_select_l"><header data-v-23fc8d8d=""><span data-v-23fc8d8d="" class="name">门店</span> <span data-v-23fc8d8d="" class="right"></span></header> <div data-v-23fc8d8d="" class="main"><section data-v-7db7bde2="" data-v-23fc8d8d="" class="main-item"><div data-v-7db7bde2="" data-v-23fc8d8d="" class="select-shop" onClick="select_shop();"><div data-v-7db7bde2="" data-v-23fc8d8d="" class="left"><span data-v-7db7bde2="" data-v-23fc8d8d="" id="company">请选择门店</span></div> <div data-v-7db7bde2="" data-v-23fc8d8d="" class="right"><div data-v-7db7bde2="" class="tcs_taicon select-shop-icon tc_icon" data-v-23fc8d8d=""><svg t="1612654172897" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4253" width="16" height="16"><path d="M731.733333 480l-384-341.333333c-17.066667-14.933333-44.8-14.933333-59.733333 4.266666-14.933333 17.066667-14.933333 44.8 4.266667 59.733334L640 512 292.266667 821.333333c-17.066667 14.933333-19.2 42.666667-4.266667 59.733334 8.533333 8.533333 19.2 14.933333 32 14.933333 10.666667 0 19.2-4.266667 27.733333-10.666667l384-341.333333c8.533333-8.533333 14.933333-19.2 14.933334-32s-4.266667-23.466667-14.933334-32z" p-id="4254" fill="#bfbfbf"></path></svg></div></div></div></section></div></section>
+{/if}
+
+<section data-v-23fc8d8d="" data-v-7db7bde2="" class="select-panel-item product-num"><header data-v-23fc8d8d=""><span data-v-23fc8d8d="" class="name">数量</span> <span data-v-23fc8d8d="" class="right"><div data-v-7db7bde2="" data-v-23fc8d8d="" class="product-num-right"><div data-v-7db7bde2="" class="tcs_tanumber" data-v-23fc8d8d=""><span class="tc_number-btn tc_minus tc_icon tc_number-disable" onClick="qty_int(0);">-</span><span class="tc_number-input"><input type="text" value="1" id="qty_s" onBlur="showtxt();"></span><span class="tc_number-btn tc_add tc_icon" onClick="qty_int(1);">+</span></div></div></span></header> <div data-v-23fc8d8d="" class="main"></div></section></div> <footer data-v-7db7bde2="" class="buy-cart footer-base"><section data-v-7db7bde2="" class="btn-group"><div data-v-7db7bde2="" data-sensors-click="" class="tcs_tabutton left tc_radius-normal tc_btn-hollow" onClick="show_popup(0)">
+        继续购物
+     
+        
+    </div> <div data-v-7db7bde2="" data-sensors-click="" class="tcs_tabutton right tc_radius-normal tc_btn-fill" onClick="submitFrom();">
+          立即购买
+          <div data-v-7db7bde2="" class="tcs_tccounttime buy-now-time"></div> 
+        
+    </div></section></footer></section></div></div></div>
+<form id="payform" action="" target="_self" method="post" style="display:none">
+<input type="hidden" name="attrid" value="">
+<input type="hidden" id="user_admin_id" name="user_admin_id" value="0">
+<input type="text" value="1" id="qty" name="qty">
+</form>
+    
+<iframe src="/shops" application="0" width="100%" height="100" scrolling="auto" id="shop_select" style="position:fixed; width:100%; height:100%; top:0; left:0px; z-index:10000;display:none;"></iframe>
+<script src="/layer/layer.js"></script>
+<script src="/js/swiper-3.4.1.min.js"></script>
+<script type="text/javascript">
+var mySwiper = new Swiper("#index_focus",{
+	direction:"horizontal",/*横向滑动*/
+	loop:true,/*形成环路（即：可以从最后一张图跳转到第一张图*/
+	pagination:".swiper-pagination",/*分页器*/
+	paginationClickable: true,
+	preventLinksPropagation : false,
+	speed:1000,
+	autoplay:5000,/*每隔3秒自动播放*/
+	autoplayDisableOnInteraction : false/*操作后仍然可以自动播放*/
+});
+var shopsel=1;
+function select_shop(){
+	$("#shop_select").show();
+}
+
+function get_shop_select(id,n){
+	$("#company").html(n);
+	$("[name='user_admin_id']").val(id);
+	$("#shop_select").hide();
+	showtxt();
+}
+
+function shop_select_hide(){
+	$("#shop_select").hide();
+}
+
+function show_popup(s){
+	if(s>0){
+		$(".tcs_popup").show()
+	}else{
+		$(".tcs_popup").hide()
+	}
+}
+
+$('[rel="shop_list"]').click(function(){
+	$("#shop_select_l").hide();
+	$('[rel="shop_list"]').removeClass("selected");
+	$(this).addClass("selected");
+	if($(this).attr("v")=='1') $("#shop_select_l").show();
+	showtxt();
+})
+
+$('[rel="pro_attr"]').click(function(){
+	$('[pid="'+$(this).attr("pid")+'"]').removeClass("selected");
+	$(this).addClass("selected");
+	showtxt();
+})
+
+
+function showtxt(){
+	var rehtml="";
+	var qty_v=parseInt($("#qty").val());
+	qty_v=qty_v<1?1:qty_v;
+	qty_v=qty_v>9999?9999:qty_v;
+	$(".select-info_mid").html('');
+	$(".select-info_mid").append('<p class="product-type">{$goodsinfo.title}, '+qty_v+'件</p>');
+	for(var i=0;i<$('[rel="pro_attr"].selected').length;i++){
+		$(".select-info_mid").append('<p><span>'+$("#"+$('[rel="pro_attr"].selected').eq(i).attr('pid')).html()+'：</span>'+$('[rel="pro_attr"].selected').eq(i).text()+'</p>');
+	}
+	{if $goodsinfo.shop_service}
+	if($('[rel="shop_list"].selected').attr("v")=='1'){
+		$(".select-info_mid").append('<p><span>服务：</span>'+$('#company').text()+'</p>');
+	}else{
+		$(".select-info_mid").append('<p><span>服务：</span>无需服务</p>');
+	}
+	{/if}
+	
+	$("#qty").val(qty_v);
+}
+
+function submitFrom(){
+	{if $goodsinfo.shop_service}
+	if($('[rel="shop_list"].selected').attr("v")=='1'){
+		if($("#user_admin_id").val()=='0'){
+			layer.msg('请选择服务门店');
+			return;
+		}
+	}else{
+		$("#user_admin_id").val('0');
+	}
+	{/if}
+	
+	var attridLIst="";
+	for(var i=0;i<$('[rel="pro_attr"]').length;i++){
+		if($("[rel='pro_attr']").eq(i).hasClass("selected")){
+			attridLIst+=attridLIst!=""?","+$("[rel='pro_attr']").eq(i).attr('v'):$("[rel='pro_attr']").eq(i).attr('v');
+		}
+	}
+	$("[name='attrid']").val(attridLIst);
+	$("#payform").attr("action",'/goods/confirm_order/{$goodsinfo.id}.html');
+	$("#payform").submit();
+}
+
+
+function qty_int(s){
+	var qty_v=parseInt($("#qty_s").val());
+	if(s<1){
+		qty_v--;
+	}else{
+		qty_v++;
+	}
+	qty_v=qty_v<1?1:qty_v;
+	qty_v=qty_v>9999?9999:qty_v;
+	$("#qty_s").val(qty_v);
+	$("#qty").val(qty_v);
+	showtxt();
+}
+</script>
+
+{if $sales}
+<script type="text/javascript">
+        
+		<?php
+		$stime=$this->_var['goodsinfo']['end_time'];
+		$t_day=intval(($stime-time())/86400);
+		$t_hours=$t_day?intval(((($stime-time())/86400)-$t_day)*24):intval(($stime-time())/3600);
+		
+		if($t_day){
+			$t_hval=intval(((($stime-time())/86400)-$t_day)*24);
+			$t_hval=(((($stime-time())/86400)-$t_day)*24)-$t_hval;
+			$t_hval=$t_hval*60;
+			$t_minute=$t_hval;
+		}else{
+			$t_minute=((($stime-time())/3600)-$t_hours)*60;
+		}
+		
+		$t_second=intval(($t_minute-intval($t_minute))*60);
+		
+		 ?>
+		var days =  <?php echo intval($t_day);?> ;
+		var hours =  <?php echo intval($t_hours);?> ;
+        var minute = <?php echo intval($t_minute);?> ;
+        var second= <?php echo intval($t_second);?> ; 
+        var start=0
+		window.onload = function(){
+            settime();
+        };
+
+       function settime() {
+           if(start==0){
+               if (minute == -1) { 
+                   if(hours>0){
+                        hours--;
+                        minute=59;
+                        second--; 
+                        $("#pay_time").html('<span class="right-time">'+days+'</span>天<span class="right-time">'+hours+'</span>时<span class="right-time">'+minute+'</span>分<span class="right-time">'+second+'秒</span>');
+                   }else{
+                       start=1
+                   }
+               }else{
+                   if (second == 0) { 
+                       $("#pay_time").html('<span class="right-time">'+days+'</span>天<span class="right-time">'+hours+'</span>时<span class="right-time">'+minute+'</span>分<span class="right-time">'+second+'秒</span>');
+                        minute--;
+                        second=60; 
+                   }else{
+                        $("#pay_time").html('<span class="right-time">'+days+'</span>天<span class="right-time">'+hours+'</span>时<span class="right-time">'+minute+'</span>分<span class="right-time">'+second+'秒</span>');
+                        second--; 
+                        if(hours<0||minute<0||second<0){
+                            $("#pay_time").text("00:00:00");
+							$("#pay_time").html('<span class="right-time">00</span> : <span class="right-time">00</span> : <span class="right-time">00</span>');
+                            start=1
+                        }
+                   }
+               }
+
+               setTimeout(function() { 
+                             settime() 
+                },1000)  
+           }else{
+           }
+
+       };
+
+    </script> {/if}
+</body>
+</html>

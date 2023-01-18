@@ -1,0 +1,72 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0">
+	
+<title>搜索结果</title>
+<script src="/Theme/js/jquery-1.11.2.min.js"></script>
+<link href="/Theme/css/base.css" rel="stylesheet">
+<link href="/Theme/css/pro.css" rel="stylesheet">
+<style type="text/css">
+.classify-wrap .classify-title{ }
+</style>
+</head>
+
+<body>
+<header class="header">
+	<div class="header-return">
+	    <a href="/product"></a>
+	</div>
+	
+	<div class="search_box">
+		<input id="keyword" placeholder="请输入你办理的业务" value="{$k}">
+		<i class="clear-keyword"></i>
+	</div>
+	
+	<div class="header-btn">
+		<a href="/user" class="header-shopcart">
+			
+		</a>
+	</div>
+</header>
+<script language="javascript">
+$('#keyword').bind('keypress',function(event){
+	if(event.keyCode == "13")    
+	{
+		location.href="/product/search?k="+$("#keyword").val();
+	}
+});
+</script>
+
+<section class="container">
+	<div class="classify-wrap" style="left: 0px;">
+        <div class="classify-item" style="left: 0px;">
+			<div class="classify-title">
+				<h3 style=" border-bottom: solid 2px #00a7ff; padding-bottom:4px;    color: #00a7ff; font-size: .66rem;">搜索结果</h3>
+			</div>
+			
+			<ul>
+				{foreach from=$pagelist.list key=key item=items}
+                <li>
+					<a href="/product/detail/{$items.id}.html">
+						<div class="classify-img">
+							<img src="{$items.icon}">
+						</div>
+						<p>{$items.title}</p>
+					</a>
+				</li>
+                {/foreach}
+			</ul>
+		</div>
+	</div>
+</section>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html class="" style="min-height: 100%" lang="en"><head>
+    <meta name="theme-color" content="#00BC7E">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+    <meta name="description" content="bbb(desc)">
+
+    <title>
+        会员中心
+    </title>
+
+    
+    <link href="/css/app.css?v=2.0.2" rel="stylesheet" type="text/css">
+    <link href="/css/tailwind.css?v=2.0.2" rel="stylesheet" type="text/css">
+
+    
+    <meta property="og:title" content="会员中心">
+    <meta property="og:description" content="bbb(desc)">
+    <meta property="og:image" content="">
+
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="apple-mobile-web-app-title" content="aaa(title)">
+
+    
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="">
+    <link rel="icon" href="/favicon.png?v=2.0.2">
+
+    
+    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="address=no">
+
+    <style>
+
+        
+        
+        .router-link-active .icon-active {
+            color: #00BC7E;
+        }
+        .router-link-active .text-active {
+            color: #00BC7E;
+        }
+
+        
+        .group:hover:not(.hover-disabled) .group-hover-text-theme {color: #00BC7E !important;}
+
+        
+        .svg-color-theme {
+            fill: #00BC7E;
+            stroke: #00BC7E;
+        }
+        .svg-color-theme-darken {
+            fill: #00BC7E;
+            stroke: #00BC7E;
+            filter: brightness(0.80);
+        }
+
+        .svg-stroke-theme {stroke: #00BC7E}
+        .hover-svg-stroke-theme:hover {stroke: #00BC7E}
+
+        .hover-svg-stroke-theme:hover rect {stroke: #00BC7E}
+        .hover-svg-stroke-theme:hover line {stroke: #00BC7E}
+
+        .bg-theme {background: #00BC7E}
+        .bg-theme-50 {background: #00BC7E05}
+        .bg-theme-100 {background: #00BC7E10}
+        .bg-theme-200 {background: #00BC7E20}
+        .bg-theme-800 {background: #00BC7E80}
+        .hover-bg-theme:hover {background: #00BC7E}
+        .hover-bg-theme-100:hover {background: #00BC7E10 !important;}
+
+        .text-theme {color: #00BC7E}
+        .text-theme-darken {
+            color: #00BC7E;
+            filter: brightness(0.75);
+        }
+
+        .hover-text-theme:hover {color: #00BC7E}
+
+        .shadow-theme {box-shadow: 0 10px 15px -3px #00BC7E40}
+
+        .border-theme {border-color: #00BC7E}
+        .border-top-theme {border-top-color: #00BC7E !important;}
+        .border-left-theme {border-left-color: #00BC7E !important;}
+        .hover-border-theme:hover {border-color: #00BC7E !important;}
+
+        .focus-within-border-theme:focus-within {border-color: #00BC7E !important;}
+
+        .focus-border-theme:focus {border-color: #00BC7E !important}
+        .focus-border-theme:focus[type='email'] {border-color: #00BC7E}
+        .focus-border-theme:focus[type='text'] {border-color: #00BC7E}
+        .focus-border-theme:focus[type='password'] {border-color: #00BC7E}
+        .focus-border-theme:focus[type='number'] {border-color: #00BC7E}
+
+        
+        .active.active-bg-theme-100 {background: #00BC7E10 !important;}
+        .active.active-border-theme {border-color: #00BC7E !important;}
+        .active .active-text-theme {color: #00BC7E}
+
+        
+        .active-menu.focus-border-theme {border-color: #00BC7E !important;}
+
+        
+        .router-link-active.home .button-icon {background: #00BC7E10}
+
+        
+        .router-link-active .text-theme {color: #00BC7E !important}
+        .router-link-active .text-theme svg {color: #00BC7E !important}
+        .router-link-active.border-bottom-theme {border-bottom-color: #00BC7E !important;}
+
+        .is-active .text-theme {color: #00BC7E !important}
+        .is-active .text-theme svg {color: #00BC7E !important}
+
+        .menu-list-item.link:hover {color: #00BC7E}
+        .menu-list-item.link:hover .text-theme svg {color: #00BC7E}
+
+        
+        .input-area.is-active {border-color: #00BC7E !important}
+
+        
+        .button-base.theme-solid {background: #00BC7E}
+        .button-base.theme-solid polyline,
+        .button-base.theme-solid path {
+            color: white;
+        }
+
+
+        .button-base.theme {background: #00BC7E10}
+        .button-base.theme {color: #00BC7E}
+        .button-base.theme .content {color: #00BC7E}
+
+        .button-base.theme polyline,
+        .button-base.theme path {
+            color: #00BC7E
+        }
+
+        .switch.active {background: #00BC7E !important;}
+
+
+        
+        .border-theme {border-color: #00BC7E !important;}
+        .folder-item.is-dragenter {border-color: #00BC7E !important;}
+        .favourites.is-dragenter .menu-list {border-color: #00BC7E !important;}
+
+        
+        .StripeElement--focus {border-color: #00BC7E !important;}
+
+        
+        .dark .dark-text-theme {color: #00BC7E !important;}
+
+        .dark .text-theme {
+            color: #00BC7E
+        }
+
+        
+    </style><style>.bar-animation[data-v-404d0458]{-webkit-animation:progressbar-data-v-404d0458 6s linear both;animation:progressbar-data-v-404d0458 6s linear both}@-webkit-keyframes progressbar-data-v-404d0458{0%{width:0}to{width:100%}}@keyframes progressbar-data-v-404d0458{0%{width:0}to{width:100%}}.fade-enter-active[data-v-404d0458],.fade-leave-active[data-v-404d0458]{transition:.3s ease}.fade-enter[data-v-404d0458],.fade-leave-to[data-v-404d0458]{opacity:0;transform:translateX(100%)}</style><style>.preview-list-icon line,.preview-list-icon path{color:inherit}</style><style>.preview-list-icon line,.preview-list-icon rect{color:inherit}</style><style>.popup-leave-active[data-v-c643fc14]{animation:popup-slide-in-data-v-c643fc14 .15s ease reverse}.popup-enter-active[data-v-c643fc14]{-webkit-animation:popup-slide-in-data-v-c643fc14 .25s ease .1s both;animation:popup-slide-in-data-v-c643fc14 .25s ease .1s both}@-webkit-keyframes popup-slide-in-data-v-c643fc14{0%{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}@keyframes popup-slide-in-data-v-c643fc14{0%{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}</style><style>.router-link-active.home .button-icon circle[data-v-c6faedbe],.router-link-active.home .button-icon line[data-v-c6faedbe],.router-link-active.home .button-icon path[data-v-c6faedbe],.router-link-active.home .button-icon polyline[data-v-c6faedbe],.router-link-active.home .button-icon rect[data-v-c6faedbe]{color:inherit}.router-link-active.trash .button-icon[data-v-c6faedbe]{background:rgba(254,96,87,.1)}.router-link-active.trash .button-icon circle[data-v-c6faedbe],.router-link-active.trash .button-icon line[data-v-c6faedbe],.router-link-active.trash .button-icon path[data-v-c6faedbe],.router-link-active.trash .button-icon polyline[data-v-c6faedbe],.router-link-active.trash .button-icon rect[data-v-c6faedbe]{stroke:#fe6057}.router-link-active.settings .button-icon[data-v-c6faedbe]{background:rgba(157,102,254,.1)}.router-link-active.settings .button-icon circle[data-v-c6faedbe],.router-link-active.settings .button-icon line[data-v-c6faedbe],.router-link-active.settings .button-icon path[data-v-c6faedbe],.router-link-active.settings .button-icon polyline[data-v-c6faedbe],.router-link-active.settings .button-icon rect[data-v-c6faedbe]{stroke:#9d66fe}.router-link-active.user .button-icon[data-v-c6faedbe]{background:rgba(254,102,161,.1)}.router-link-active.user .button-icon circle[data-v-c6faedbe],.router-link-active.user .button-icon line[data-v-c6faedbe],.router-link-active.user .button-icon path[data-v-c6faedbe],.router-link-active.user .button-icon polyline[data-v-c6faedbe],.router-link-active.user .button-icon rect[data-v-c6faedbe]{stroke:#fe66a1}</style><style>#loading-bar-spinner.spinner{-webkit-animation:loading-bar-spinner-data-v-5e0c3466 .4s linear infinite;animation:loading-bar-spinner-data-v-5e0c3466 .4s linear infinite;left:50%;margin-left:-20px;margin-top:-20px;position:absolute;top:50%;z-index:19!important}#loading-bar-spinner.spinner .spinner-icon{border:4px solid transparent;border-radius:50%;height:40px;width:40px}@-webkit-keyframes loading-bar-spinner-data-v-5e0c3466{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes loading-bar-spinner-data-v-5e0c3466{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}</style><style>.vignette[data-v-2818d8a1]{bottom:0;left:0;position:fixed;right:0;top:0;z-index:40}.vignette-enter-active[data-v-2818d8a1]{-webkit-animation:vignette-in-data-v-2818d8a1 .15s linear;animation:vignette-in-data-v-2818d8a1 .15s linear}.vignette-leave-active[data-v-2818d8a1]{animation:vignette-in-data-v-2818d8a1 .15s cubic-bezier(.4,0,1,1) reverse}@-webkit-keyframes vignette-in-data-v-2818d8a1{0%{opacity:0}to{opacity:1}}@keyframes vignette-in-data-v-2818d8a1{0%{opacity:0}to{opacity:1}}</style><style>.button-base[data-v-43685114]{align-items:center;border:0;border-radius:8px;cursor:pointer;display:flex;font-size:.9375em;font-weight:700;justify-content:center;padding:10px 28px;transition:all .15s ease;white-space:nowrap}.button-base .icon[data-v-43685114]{line-height:1;margin-right:10px}.button-base[data-v-43685114]:active{transform:scale(.95)}.button-base.theme-solid .content[data-v-43685114]{color:#fff}.button-base.danger[data-v-43685114]{background:rgba(253,57,122,.1)}.button-base.danger .content[data-v-43685114]{color:#fd397a}.button-base.danger path[data-v-43685114],.button-base.danger polyline[data-v-43685114]{stroke:#fd397a}.button-base.danger-solid[data-v-43685114]{background:#fd397a}.button-base.danger-solid .content[data-v-43685114]{color:#fff}.button-base.danger-solid path[data-v-43685114],.button-base.danger-solid polyline[data-v-43685114]{stroke:#fff}.button-base.secondary[data-v-43685114]{background:#f4f5f6}.button-base.secondary .content[data-v-43685114]{color:#1b2539}.button-base.secondary path[data-v-43685114],.button-base.secondary polyline[data-v-43685114]{stroke:#1b2539}.sync-alt[data-v-43685114]{-webkit-animation:spin-data-v-43685114 1s linear infinite;animation:spin-data-v-43685114 1s linear infinite}@-webkit-keyframes spin-data-v-43685114{0%{transform:rotate(0)}to{transform:rotate(1turn)}}@keyframes spin-data-v-43685114{0%{transform:rotate(0)}to{transform:rotate(1turn)}}.dark .button-base.secondary[data-v-43685114]{background:#1e2024}.dark .button-base.secondary .content[data-v-43685114]{color:#bec6cf}.dark .button-base.secondary path[data-v-43685114],.dark .button-base.secondary polyline[data-v-43685114]{color:inherit}.dark .popup-wrapper .button-base.secondary[data-v-43685114]{background:#25272c}</style><style>.popup-enter-active[data-v-7004b08d]{-webkit-animation:popup-in-data-v-7004b08d .35s ease .15s both;animation:popup-in-data-v-7004b08d .35s ease .15s both}.popup-leave-active[data-v-7004b08d]{animation:popup-in-data-v-7004b08d .15s ease reverse}@-webkit-keyframes popup-in-data-v-7004b08d{0%{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}@keyframes popup-in-data-v-7004b08d{0%{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}</style><style>@import url(https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap);</style><style>input:-webkit-autofill{transition-delay:999999999999s}[v-cloak],[v-cloak]>*{display:none}*{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-tap-highlight-color:rgba(0,0,0,0);box-sizing:border-box;font-family:Nunito,sans-serif;font-size:16px;margin:0;outline:0;padding:0;text-decoration:none}.vue-feather circle,.vue-feather ellipse,.vue-feather line,.vue-feather path,.vue-feather polygon,.vue-feather polyline,.vue-feather rect{color:inherit}.dark *{color:#bec6cf}.dark body,.dark html{background:#151515;color:#bec6cf}.dark body img,.dark html img{opacity:.95}</style><style>.sync-alt[data-v-0249f6ea]{-webkit-animation:spin-data-v-0249f6ea 1s linear infinite;animation:spin-data-v-0249f6ea 1s linear infinite}@-webkit-keyframes spin-data-v-0249f6ea{0%{transform:rotate(0)}to{transform:rotate(1turn)}}@keyframes spin-data-v-0249f6ea{0%{transform:rotate(0)}to{transform:rotate(1turn)}}</style><style>.alphabet-icon g,.alphabet-icon line,.alphabet-icon polyline{color:inherit}</style><style>.menu-options[data-v-8c83820c]{list-style:none;margin-top:10px;width:100%}</style><style>.context-menu-enter-active[data-v-87406fb8],.context-menu-leave-active[data-v-87406fb8],.fade-enter-active[data-v-87406fb8],.fade-leave-active[data-v-87406fb8]{transition:all .3s}.fade-enter[data-v-87406fb8],.fade-leave-to[data-v-87406fb8]{opacity:0}.context-menu-enter[data-v-87406fb8],.context-menu-leave-to[data-v-87406fb8]{opacity:0;transform:translateY(100%)}.context-menu-leave-active[data-v-87406fb8]{position:fixed}.vignette-enter-active[data-v-87406fb8]{-webkit-animation:vignette-in-data-v-87406fb8 .15s cubic-bezier(.4,0,1,1);animation:vignette-in-data-v-87406fb8 .15s cubic-bezier(.4,0,1,1)}.vignette-leave-active[data-v-87406fb8]{animation:vignette-in-data-v-87406fb8 .15s linear reverse}@-webkit-keyframes vignette-in-data-v-87406fb8{0%{opacity:0}to{opacity:1}}@keyframes vignette-in-data-v-87406fb8{0%{opacity:0}to{opacity:1}}</style><style>.popup-leave-active[data-v-5a17a1de]{animation:popup-slide-in-data-v-5a17a1de .15s ease reverse}@media only screen and (min-width:960px){.popup-enter-active[data-v-5a17a1de]{-webkit-animation:popup-slide-in-data-v-5a17a1de .25s ease .1s both;animation:popup-slide-in-data-v-5a17a1de .25s ease .1s both}@-webkit-keyframes popup-slide-in-data-v-5a17a1de{0%{opacity:0;transform:translateY(100px)}to{opacity:1;transform:translateY(0)}}@keyframes popup-slide-in-data-v-5a17a1de{0%{opacity:0;transform:translateY(100px)}to{opacity:1;transform:translateY(0)}}}@media only screen and (max-width:960px){.popup-enter-active[data-v-5a17a1de]{-webkit-animation:popup-slide-in-data-v-5a17a1de .35s ease .15s both;animation:popup-slide-in-data-v-5a17a1de .35s ease .15s both}@-webkit-keyframes popup-slide-in-data-v-5a17a1de{0%{transform:translateY(100%)}to{transform:translateY(0)}}@keyframes popup-slide-in-data-v-5a17a1de{0%{transform:translateY(100%)}to{transform:translateY(0)}}}</style><style>.emoji{font-size:inherit;height:1em;width:1em}</style><style>.input-wrapper[data-v-615ed0c1]{display:flex;width:100%}.input-wrapper .input-label[data-v-615ed0c1]{color:#1b2539}.input-wrapper .switch-content[data-v-615ed0c1]{width:100%}.input-wrapper .switch-content[data-v-615ed0c1]:last-child{width:80px}.switch[data-v-615ed0c1]{background:#f1f1f5;height:28px;position:relative;width:50px}.switch[data-v-615ed0c1],.switch .switch-button[data-v-615ed0c1]{border-radius:50px;display:block;transition:all .3s ease}.switch .switch-button[data-v-615ed0c1]{background:#fff;box-shadow:0 2px 4px rgba(37,38,94,.1);cursor:pointer;height:22px;left:3px;position:absolute;top:3px;width:22px}.switch.active .switch-button[data-v-615ed0c1]{left:25px}.dark .switch[data-v-615ed0c1]{background:#1e2024}.dark .popup-wrapper .switch[data-v-615ed0c1]{background:#25272c}</style><style>.spinner-wrapper[data-v-6f192493]{padding-bottom:90px;position:relative}.popup[data-v-6f192493]{bottom:0;height:100%;overflow:auto;top:0;z-index:20}.popup[data-v-6f192493],.popup-wrapper[data-v-6f192493]{left:0;position:absolute;right:0}.popup-wrapper[data-v-6f192493]{background:#fff;border-radius:8px;box-shadow:0 2px 40px rgba(26,38,74,.12);margin:0 auto;max-width:480px;padding:20px;text-align:center;top:50%;transform:translateY(-50%) scale(1);z-index:12}.popup-content .title[data-v-6f192493]{color:#1b2539;font-size:1.375em;font-weight:700}.popup-content .message[data-v-6f192493]{color:#333;font-size:1em;margin-top:5px}@media only screen and (max-width:690px){.popup-wrapper[data-v-6f192493]{left:15px;padding:20px;right:15px}.popup-content .title[data-v-6f192493]{font-size:1.1875em}.popup-content .message[data-v-6f192493]{font-size:.9375em}}.dark .popup-wrapper[data-v-6f192493]{background:#1e2024}.dark .popup-content .title[data-v-6f192493]{color:#bec6cf}.dark .popup-content .message[data-v-6f192493]{color:#7d858c}.popup-enter-active[data-v-6f192493]{-webkit-animation:popup-in-data-v-6f192493 .35s ease .15s both;animation:popup-in-data-v-6f192493 .35s ease .15s both}.popup-leave-active[data-v-6f192493]{animation:popup-in-data-v-6f192493 .15s ease reverse}@-webkit-keyframes popup-in-data-v-6f192493{0%{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}@keyframes popup-in-data-v-6f192493{0%{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}</style><style>.form-wrapper[data-v-a5d9e2da]{padding:0 20px}.input-wrapper[data-v-a5d9e2da]{margin-bottom:20px}.input-wrapper[data-v-a5d9e2da]:last-child{margin-bottom:0}.input-wrapper input[data-v-a5d9e2da]{color:#1b2539;width:100%}.input-wrapper input.is-error[data-v-a5d9e2da]{border-color:#fd397a}.inline-wrapper[data-v-a5d9e2da]{align-items:center;display:flex;justify-content:space-between}.inline-wrapper.icon-append .input-text[data-v-a5d9e2da]{border-bottom-right-radius:0;border-top-right-radius:0}.inline-wrapper.icon-append .icon[data-v-a5d9e2da]{background:#000;border-bottom-right-radius:8px;border-top-right-radius:8px;line-height:0;padding:15px 18px;text-align:center}.inline-wrapper.icon-append .icon path[data-v-a5d9e2da],.inline-wrapper.icon-append .icon polyline[data-v-a5d9e2da]{stroke:#fff}.input-label[data-v-a5d9e2da]{color:#1b2539;display:block;font-size:.875em;font-weight:700;margin-bottom:8px}.dark .inline-wrapper.icon-append .icon[data-v-a5d9e2da]{background:rgba(0,188,126,.1)}.dark .inline-wrapper.icon-append .icon path[data-v-a5d9e2da],.dark .inline-wrapper.icon-append .icon polyline[data-v-a5d9e2da]{stroke:#00bc7e}.dark .input-label[data-v-a5d9e2da]{color:#bec6cf}.form.inline-form[data-v-a5d9e2da]{display:flex;justify-content:center;margin:0 auto;position:relative}.form.inline-form .input-wrapper[data-v-a5d9e2da]{position:relative}.form.inline-form .input-wrapper .error-message[data-v-a5d9e2da]{bottom:-25px;left:0;position:absolute}.form.block-form .switch-wrapper[data-v-a5d9e2da]{border-bottom:1px solid #f4f5f6;margin-bottom:13px;padding-bottom:13px}.form.block-form .switch-wrapper[data-v-a5d9e2da]:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}.form.block-form .wrapper-inline[data-v-a5d9e2da]{display:flex;margin:0 -15px}.form.block-form .wrapper-inline .block-wrapper[data-v-a5d9e2da]{padding:0 15px;width:100%}.form.block-form .block-wrapper[data-v-a5d9e2da]{margin-bottom:32px}.form.block-form .block-wrapper label[data-v-a5d9e2da]{color:rgba(27,37,57,.8);display:block;font-size:.875em;font-weight:700;margin-bottom:7px;text-align:left}.form.block-form .block-wrapper[data-v-a5d9e2da]:last-child{margin-bottom:0}.form.block-form .button[data-v-a5d9e2da]{margin-top:50px}.form .inline-wrapper[data-v-a5d9e2da]{align-items:center;display:flex;justify-content:space-between}.form .inline-wrapper .switch-label .input-help[data-v-a5d9e2da]{padding-top:0}.form .inline-wrapper .switch-label .input-label[data-v-a5d9e2da]{color:#1b2539;font-size:1em;font-weight:700;margin-bottom:5px}.input-help[data-v-a5d9e2da]{color:rgba(27,37,57,.7);display:block;font-size:.75em;line-height:1.35;padding-top:10px}.single-line-form[data-v-a5d9e2da]{display:flex}.single-line-form .submit-button[data-v-a5d9e2da]{margin-left:20px}.error-message[data-v-a5d9e2da]{color:#fd397a;display:block;font-size:.875em;padding-top:5px;text-align:left}textarea[data-v-a5d9e2da]{width:100%}input[type=email].is-error[data-v-a5d9e2da],input[type=number].is-error[data-v-a5d9e2da],input[type=password].is-error[data-v-a5d9e2da],input[type=text].is-error[data-v-a5d9e2da],textarea.is-error[data-v-a5d9e2da]{border-color:#fd397a}input[type=email][data-v-a5d9e2da]::-moz-placeholder,input[type=number][data-v-a5d9e2da]::-moz-placeholder,input[type=password][data-v-a5d9e2da]::-moz-placeholder,input[type=text][data-v-a5d9e2da]::-moz-placeholder,textarea[data-v-a5d9e2da]::-moz-placeholder{color:rgba(27,37,57,.5);font-size:.9375em}input[type=email][data-v-a5d9e2da]:-ms-input-placeholder,input[type=number][data-v-a5d9e2da]:-ms-input-placeholder,input[type=password][data-v-a5d9e2da]:-ms-input-placeholder,input[type=text][data-v-a5d9e2da]:-ms-input-placeholder,textarea[data-v-a5d9e2da]:-ms-input-placeholder{color:rgba(27,37,57,.5);font-size:.9375em}input[type=email][data-v-a5d9e2da]::placeholder,input[type=number][data-v-a5d9e2da]::placeholder,input[type=password][data-v-a5d9e2da]::placeholder,input[type=text][data-v-a5d9e2da]::placeholder,textarea[data-v-a5d9e2da]::placeholder{color:rgba(27,37,57,.5);font-size:.9375em}input[type=email][disabled][data-v-a5d9e2da],input[type=number][disabled][data-v-a5d9e2da],input[type=password][disabled][data-v-a5d9e2da],input[type=text][disabled][data-v-a5d9e2da],textarea[disabled][data-v-a5d9e2da]{-webkit-text-fill-color:rgba(27,37,57,.8);color:rgba(27,37,57,.8);cursor:not-allowed;opacity:1}input[type=color][data-v-a5d9e2da]{background:none;border:none;height:40px;min-width:auto!important;outline:none;width:38px!important}.additional-link[data-v-a5d9e2da]{display:block;font-size:1em;margin-top:50px}.additional-link a[data-v-a5d9e2da],.additional-link b[data-v-a5d9e2da]{cursor:pointer}.additional-link a[data-v-a5d9e2da]:hover,.additional-link b[data-v-a5d9e2da]:hover{text-decoration:underline}@media only screen and (max-width:1024px){.form[data-v-a5d9e2da]{max-width:100%}}@media only screen and (max-width:960px){.form .button[data-v-a5d9e2da]{margin-left:0;margin-right:0;margin-top:20px;width:100%}.form input[data-v-a5d9e2da],.form textarea[data-v-a5d9e2da]{min-width:100%;width:100%}.form.block-form .block-wrapper[data-v-a5d9e2da]{display:block}.form.block-form .block-wrapper label[data-v-a5d9e2da]{display:block;font-size:.875em;margin-bottom:7px;padding-right:0;padding-top:0;text-align:left!important;width:100%}.form.block-form .button[data-v-a5d9e2da]{margin-left:0;margin-right:0;margin-top:25px}.form.inline-form[data-v-a5d9e2da]{display:block}.form.inline-form .input-wrapper .error-message[data-v-a5d9e2da]{bottom:0;position:relative}.form .button[data-v-a5d9e2da]{padding:14px 32px}.single-line-form[data-v-a5d9e2da]{display:block}.single-line-form .submit-button[data-v-a5d9e2da]{margin-left:0;margin-top:20px;width:100%}input[type=email][data-v-a5d9e2da],input[type=number][data-v-a5d9e2da],input[type=password][data-v-a5d9e2da],input[type=text][data-v-a5d9e2da],textarea[data-v-a5d9e2da]{padding:14px 20px}}@media only screen and (max-width:690px){.form.block-form .wrapper-inline[data-v-a5d9e2da]{display:block}}.dark .form .input-help[data-v-a5d9e2da]{color:#7d858c}.dark .form.block-form .block-wrapper label[data-v-a5d9e2da]{color:#bec6cf}.dark .form.block-form .switch-wrapper[data-v-a5d9e2da]{border-color:hsla(0,0%,100%,.02)}.dark .form .inline-wrapper .switch-label .input-label[data-v-a5d9e2da]{color:#bec6cf}.dark input[type=email][data-v-a5d9e2da],.dark input[type=number][data-v-a5d9e2da],.dark input[type=password][data-v-a5d9e2da],.dark input[type=text][data-v-a5d9e2da],.dark textarea[data-v-a5d9e2da]{background:#1e2024;border-color:#1e2024;color:#bec6cf}.dark input[type=email][data-v-a5d9e2da]::-moz-placeholder,.dark input[type=number][data-v-a5d9e2da]::-moz-placeholder,.dark input[type=password][data-v-a5d9e2da]::-moz-placeholder,.dark input[type=text][data-v-a5d9e2da]::-moz-placeholder,.dark textarea[data-v-a5d9e2da]::-moz-placeholder{color:#7d858c}.dark input[type=email][data-v-a5d9e2da]:-ms-input-placeholder,.dark input[type=number][data-v-a5d9e2da]:-ms-input-placeholder,.dark input[type=password][data-v-a5d9e2da]:-ms-input-placeholder,.dark input[type=text][data-v-a5d9e2da]:-ms-input-placeholder,.dark textarea[data-v-a5d9e2da]:-ms-input-placeholder{color:#7d858c}.dark input[type=email][data-v-a5d9e2da]::placeholder,.dark input[type=number][data-v-a5d9e2da]::placeholder,.dark input[type=password][data-v-a5d9e2da]::placeholder,.dark input[type=text][data-v-a5d9e2da]::placeholder,.dark textarea[data-v-a5d9e2da]::placeholder{color:#7d858c}.dark input[type=email][disabled][data-v-a5d9e2da],.dark input[type=number][disabled][data-v-a5d9e2da],.dark input[type=password][disabled][data-v-a5d9e2da],.dark input[type=text][disabled][data-v-a5d9e2da],.dark textarea[disabled][data-v-a5d9e2da]{-webkit-text-fill-color:hsla(208,6%,52%,.8);color:hsla(208,6%,52%,.8)}.dark .popup-wrapper input[type=email][data-v-a5d9e2da],.dark .popup-wrapper input[type=number][data-v-a5d9e2da],.dark .popup-wrapper input[type=password][data-v-a5d9e2da],.dark .popup-wrapper input[type=text][data-v-a5d9e2da],.dark .popup-wrapper textarea[data-v-a5d9e2da]{background:#25272c}.select-box[data-v-a5d9e2da]{display:flex;flex-direction:row;flex-wrap:wrap;justify-content:space-between;margin-bottom:10px}.select-box .box-item[data-v-a5d9e2da]{background:#f4f5f6;border:2px solid #f4f5f6;border-radius:8px;cursor:pointer;flex-basis:55px;flex-direction:column;font-weight:700;margin-bottom:10px;padding:12px 4px;text-align:center}.select-box .box-item .box-value[data-v-a5d9e2da]{font-size:.9375em}@media only screen and (max-width:960px){.select-box .box-item[data-v-a5d9e2da]{flex-basis:calc(34% - 10px)}}.dark .select-box .box-item[data-v-a5d9e2da]{background:#25272c;border-color:hsla(0,0%,100%,.02)}</style><style>.select[data-v-07825bd0]{position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;width:100%}.select-search[data-v-07825bd0]{background:#fff;padding:13px;position:-webkit-sticky;position:sticky;top:0}.select-search .search-input[data-v-07825bd0]{-webkit-appearance:none;-moz-appearance:none;appearance:none;background:#f4f5f6;border:1px solid transparent;font-size:.875em;font-weight:700;outline:0;padding:13px 20px;transition:all .15s ease;width:100%}.input-options[data-v-07825bd0]{background:#fff;box-shadow:0 5px 15px rgba(0,0,0,.12);left:0;max-height:295px;overflow:hidden;overflow-y:auto;position:absolute;right:0;top:65px;z-index:9}.input-options .option-item[data-v-07825bd0]{cursor:pointer;display:block;padding:13px 20px}.input-options .option-item[data-v-07825bd0]:hover{background:#f4f5f6;color:#00bc7e}.input-options .option-item[data-v-07825bd0]:last-child{border-bottom:none}.input-area[data-v-07825bd0]{align-items:center;border:1px solid transparent;cursor:pointer;display:flex;justify-content:space-between;outline:0;padding:13px 20px;width:100%}.input-area[data-v-07825bd0],.input-area .chevron[data-v-07825bd0]{transition:all .15s ease}.input-area.is-active .chevron[data-v-07825bd0]{transform:rotate(180deg)}.input-area.is-error[data-v-07825bd0]{border-color:#fd397a;box-shadow:0 0 7px rgba(253,57,122,.3)}.option-icon[data-v-07825bd0]{display:inline-block;font-size:.625em;width:20px}.option-value[data-v-07825bd0]{font-size:.875em;font-weight:700;vertical-align:middle}.option-value.placehoder[data-v-07825bd0]{color:rgba(27,37,57,.5)}.slide-in-enter-active[data-v-07825bd0]{transition:all .15s ease}.slide-in-enter[data-v-07825bd0]{opacity:0;transform:translateY(-50px)}.dark .select-search[data-v-07825bd0]{background:#1e2024}.dark .select-search .search-input[data-v-07825bd0]{background:#151515}.dark .popup-wrapper .input-area[data-v-07825bd0]{background:#25272c}.dark .input-options[data-v-07825bd0]{background:#1e2024}.dark .input-options .option-item[data-v-07825bd0]{border-bottom:none}.dark .input-options .option-item[data-v-07825bd0]:hover{background:#2a2c32}.dark .input-options .option-item:hover .option-icon circle[data-v-07825bd0],.dark .input-options .option-item:hover .option-icon path[data-v-07825bd0]{color:inherit}.dark .input-options .option-item[data-v-07825bd0]:last-child{border-bottom:none}.dark .option-value.placehoder[data-v-07825bd0]{color:#7d858c}</style><style>.action-button[data-v-c0c57620]{cursor:pointer}.action-button .label[data-v-c0c57620]{font-size:.75em;font-weight:600}.action-button .icon[data-v-c0c57620]{display:inline-block;font-size:.625em;margin-right:2px;vertical-align:middle}.action-button .icon circle[data-v-c0c57620],.action-button .icon line[data-v-c0c57620],.action-button .icon path[data-v-c0c57620]{color:inherit}</style><style>.info-box[data-v-4d9e9780]{background:#f4f5f6;border-radius:10px;margin-bottom:32px;padding:20px;text-align:left}.info-box.error[data-v-4d9e9780]{background:rgba(253,57,122,.1)}.info-box.error a[data-v-4d9e9780],.info-box.error p[data-v-4d9e9780]{color:#fd397a}.info-box.error a[data-v-4d9e9780]{text-decoration:underline}.info-box p[data-v-4d9e9780]{font-weight:600;line-height:1.6;word-break:break-word}.info-box p[data-v-4d9e9780],.info-box p[data-v-4d9e9780] a{font-size:15px}.info-box p[data-v-4d9e9780] b{font-size:15px;font-weight:700}.info-box a[data-v-4d9e9780],.info-box b[data-v-4d9e9780]{font-weight:700}.info-box a[data-v-4d9e9780]{font-size:.9375em;line-height:1.6}.info-box ul[data-v-4d9e9780]{margin-top:15px}.info-box ul[data-v-4d9e9780],.info-box ul li[data-v-4d9e9780],.info-box ul li a[data-v-4d9e9780]{display:block}@media only screen and (max-width:690px){.info-box[data-v-4d9e9780]{padding:15px}}.dark .info-box[data-v-4d9e9780]{background:#1e2024}.dark .info-box.error[data-v-4d9e9780]{background:rgba(253,57,122,.1)}.dark .info-box.error a[data-v-4d9e9780],.dark .info-box.error p[data-v-4d9e9780]{color:#fd397a}.dark .info-box.error a[data-v-4d9e9780]{text-decoration:underline}.dark .info-box p[data-v-4d9e9780],.dark .info-box ul li[data-v-4d9e9780]{color:#bec6cf}</style><style>.team-folder[data-v-117b08f2]{align-items:center;display:flex}.team-folder .member-count[data-v-117b08f2]{color:rgba(27,37,57,.7);font-size:.75em;margin-right:3px;min-width:14px;opacity:.7;text-align:left}.team-folder .members[data-v-117b08f2]{display:flex}.team-folder .members .member-preview[data-v-117b08f2]{margin-left:-10px}.team-folder .members .member-preview[data-v-117b08f2]:first-child{margin-left:0}.team-folder .members .member[data-v-117b08f2]{border:2px solid #fff;border-radius:10px;height:32px;-o-object-fit:cover;object-fit:cover;vertical-align:middle;width:32px}.dark .team-folder .member-count[data-v-117b08f2]{color:#7d858c}.dark .team-folder .members .member[data-v-117b08f2]{border-color:#1e2024}</style><style>.popover-wrapper[data-v-5d0dc97d]{position:relative}</style><style>.progress-bar[data-v-0b81e9e0]{background:#f4f5f6;border-radius:10px;height:5px;margin-top:6px;width:100%}.progress-bar span[data-v-0b81e9e0]{border-radius:10px;display:block;height:100%;max-width:100%}.dark .progress-bar[data-v-0b81e9e0]{background:#1e2024}@media only screen and (min-width:680px){.dark .progress-bar[data-v-0b81e9e0]{background:#1e2024}}</style><style>.sync-alt[data-v-4f244cbc]{-webkit-animation:spin-data-v-4f244cbc 1s linear infinite;animation:spin-data-v-4f244cbc 1s linear infinite;margin-right:5px}.sync-alt path[data-v-4f244cbc],.sync-alt polyline[data-v-4f244cbc]{color:inherit}@-webkit-keyframes spin-data-v-4f244cbc{0%{transform:rotate(0)}to{transform:rotate(1turn)}}@keyframes spin-data-v-4f244cbc{0%{transform:rotate(0)}to{transform:rotate(1turn)}}.info-panel-enter-active[data-v-4f244cbc],.info-panel-leave-active[data-v-4f244cbc]{transition:all .3s ease}.info-panel-enter[data-v-4f244cbc],.info-panel-leave-to[data-v-4f244cbc]{opacity:0;transform:translateY(-100%)}.upload-progress[data-v-4f244cbc]{position:relative;width:100%;z-index:1}.upload-progress .progress-wrapper[data-v-4f244cbc]{display:flex}.upload-progress .progress-wrapper .cancel-icon[data-v-4f244cbc]{cursor:pointer;padding:0 7px 0 13px}.upload-progress .progress-wrapper .cancel-icon:hover line[data-v-4f244cbc]{color:inherit}.upload-progress .progress-title[data-v-4f244cbc]{font-weight:700;text-align:center}.upload-progress .progress-title span[data-v-4f244cbc]{font-size:.875em}.dark .progress-bar[data-v-4f244cbc]{background:#1e2024}</style><style>.preview-list-icon line,.preview-list-icon path,.preview-list-icon polyline{color:inherit}</style><style>.form-wrapper[data-v-dd2b709a]{padding:0 20px}.input-wrapper[data-v-dd2b709a]{margin-bottom:20px}.input-wrapper[data-v-dd2b709a]:last-child{margin-bottom:0}.input-wrapper input[data-v-dd2b709a]{color:#1b2539;width:100%}.input-wrapper input.is-error[data-v-dd2b709a]{border-color:#fd397a}.inline-wrapper[data-v-dd2b709a]{align-items:center;display:flex;justify-content:space-between}.inline-wrapper.icon-append .input-text[data-v-dd2b709a]{border-bottom-right-radius:0;border-top-right-radius:0}.inline-wrapper.icon-append .icon[data-v-dd2b709a]{background:#000;border-bottom-right-radius:8px;border-top-right-radius:8px;line-height:0;padding:15px 18px;text-align:center}.inline-wrapper.icon-append .icon path[data-v-dd2b709a],.inline-wrapper.icon-append .icon polyline[data-v-dd2b709a]{stroke:#fff}.input-label[data-v-dd2b709a]{color:#1b2539;display:block;font-size:.875em;font-weight:700;margin-bottom:8px}.dark .inline-wrapper.icon-append .icon[data-v-dd2b709a]{background:rgba(0,188,126,.1)}.dark .inline-wrapper.icon-append .icon path[data-v-dd2b709a],.dark .inline-wrapper.icon-append .icon polyline[data-v-dd2b709a]{stroke:#00bc7e}.dark .input-label[data-v-dd2b709a]{color:#bec6cf}.form.inline-form[data-v-dd2b709a]{display:flex;justify-content:center;margin:0 auto;position:relative}.form.inline-form .input-wrapper[data-v-dd2b709a]{position:relative}.form.inline-form .input-wrapper .error-message[data-v-dd2b709a]{bottom:-25px;left:0;position:absolute}.form.block-form .switch-wrapper[data-v-dd2b709a]{border-bottom:1px solid #f4f5f6;margin-bottom:13px;padding-bottom:13px}.form.block-form .switch-wrapper[data-v-dd2b709a]:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}.form.block-form .wrapper-inline[data-v-dd2b709a]{display:flex;margin:0 -15px}.form.block-form .wrapper-inline .block-wrapper[data-v-dd2b709a]{padding:0 15px;width:100%}.form.block-form .block-wrapper[data-v-dd2b709a]{margin-bottom:32px}.form.block-form .block-wrapper label[data-v-dd2b709a]{color:rgba(27,37,57,.8);display:block;font-size:.875em;font-weight:700;margin-bottom:7px;text-align:left}.form.block-form .block-wrapper[data-v-dd2b709a]:last-child{margin-bottom:0}.form.block-form .button[data-v-dd2b709a]{margin-top:50px}.form .inline-wrapper[data-v-dd2b709a]{align-items:center;display:flex;justify-content:space-between}.form .inline-wrapper .switch-label .input-help[data-v-dd2b709a]{padding-top:0}.form .inline-wrapper .switch-label .input-label[data-v-dd2b709a]{color:#1b2539;font-size:1em;font-weight:700;margin-bottom:5px}.input-help[data-v-dd2b709a]{color:rgba(27,37,57,.7);display:block;font-size:.75em;line-height:1.35;padding-top:10px}.single-line-form[data-v-dd2b709a]{display:flex}.single-line-form .submit-button[data-v-dd2b709a]{margin-left:20px}.error-message[data-v-dd2b709a]{color:#fd397a;display:block;font-size:.875em;padding-top:5px;text-align:left}textarea[data-v-dd2b709a]{width:100%}input[type=email].is-error[data-v-dd2b709a],input[type=number].is-error[data-v-dd2b709a],input[type=password].is-error[data-v-dd2b709a],input[type=text].is-error[data-v-dd2b709a],textarea.is-error[data-v-dd2b709a]{border-color:#fd397a}input[type=email][data-v-dd2b709a]::-moz-placeholder,input[type=number][data-v-dd2b709a]::-moz-placeholder,input[type=password][data-v-dd2b709a]::-moz-placeholder,input[type=text][data-v-dd2b709a]::-moz-placeholder,textarea[data-v-dd2b709a]::-moz-placeholder{color:rgba(27,37,57,.5);font-size:.9375em}input[type=email][data-v-dd2b709a]:-ms-input-placeholder,input[type=number][data-v-dd2b709a]:-ms-input-placeholder,input[type=password][data-v-dd2b709a]:-ms-input-placeholder,input[type=text][data-v-dd2b709a]:-ms-input-placeholder,textarea[data-v-dd2b709a]:-ms-input-placeholder{color:rgba(27,37,57,.5);font-size:.9375em}input[type=email][data-v-dd2b709a]::placeholder,input[type=number][data-v-dd2b709a]::placeholder,input[type=password][data-v-dd2b709a]::placeholder,input[type=text][data-v-dd2b709a]::placeholder,textarea[data-v-dd2b709a]::placeholder{color:rgba(27,37,57,.5);font-size:.9375em}input[type=email][disabled][data-v-dd2b709a],input[type=number][disabled][data-v-dd2b709a],input[type=password][disabled][data-v-dd2b709a],input[type=text][disabled][data-v-dd2b709a],textarea[disabled][data-v-dd2b709a]{-webkit-text-fill-color:rgba(27,37,57,.8);color:rgba(27,37,57,.8);cursor:not-allowed;opacity:1}input[type=color][data-v-dd2b709a]{background:none;border:none;height:40px;min-width:auto!important;outline:none;width:38px!important}.additional-link[data-v-dd2b709a]{display:block;font-size:1em;margin-top:50px}.additional-link a[data-v-dd2b709a],.additional-link b[data-v-dd2b709a]{cursor:pointer}.additional-link a[data-v-dd2b709a]:hover,.additional-link b[data-v-dd2b709a]:hover{text-decoration:underline}@media only screen and (max-width:1024px){.form[data-v-dd2b709a]{max-width:100%}}@media only screen and (max-width:960px){.form .button[data-v-dd2b709a]{margin-left:0;margin-right:0;margin-top:20px;width:100%}.form input[data-v-dd2b709a],.form textarea[data-v-dd2b709a]{min-width:100%;width:100%}.form.block-form .block-wrapper[data-v-dd2b709a]{display:block}.form.block-form .block-wrapper label[data-v-dd2b709a]{display:block;font-size:.875em;margin-bottom:7px;padding-right:0;padding-top:0;text-align:left!important;width:100%}.form.block-form .button[data-v-dd2b709a]{margin-left:0;margin-right:0;margin-top:25px}.form.inline-form[data-v-dd2b709a]{display:block}.form.inline-form .input-wrapper .error-message[data-v-dd2b709a]{bottom:0;position:relative}.form .button[data-v-dd2b709a]{padding:14px 32px}.single-line-form[data-v-dd2b709a]{display:block}.single-line-form .submit-button[data-v-dd2b709a]{margin-left:0;margin-top:20px;width:100%}input[type=email][data-v-dd2b709a],input[type=number][data-v-dd2b709a],input[type=password][data-v-dd2b709a],input[type=text][data-v-dd2b709a],textarea[data-v-dd2b709a]{padding:14px 20px}}@media only screen and (max-width:690px){.form.block-form .wrapper-inline[data-v-dd2b709a]{display:block}}.dark .form .input-help[data-v-dd2b709a]{color:#7d858c}.dark .form.block-form .block-wrapper label[data-v-dd2b709a]{color:#bec6cf}.dark .form.block-form .switch-wrapper[data-v-dd2b709a]{border-color:hsla(0,0%,100%,.02)}.dark .form .inline-wrapper .switch-label .input-label[data-v-dd2b709a]{color:#bec6cf}.dark input[type=email][data-v-dd2b709a],.dark input[type=number][data-v-dd2b709a],.dark input[type=password][data-v-dd2b709a],.dark input[type=text][data-v-dd2b709a],.dark textarea[data-v-dd2b709a]{background:#1e2024;border-color:#1e2024;color:#bec6cf}.dark input[type=email][data-v-dd2b709a]::-moz-placeholder,.dark input[type=number][data-v-dd2b709a]::-moz-placeholder,.dark input[type=password][data-v-dd2b709a]::-moz-placeholder,.dark input[type=text][data-v-dd2b709a]::-moz-placeholder,.dark textarea[data-v-dd2b709a]::-moz-placeholder{color:#7d858c}.dark input[type=email][data-v-dd2b709a]:-ms-input-placeholder,.dark input[type=number][data-v-dd2b709a]:-ms-input-placeholder,.dark input[type=password][data-v-dd2b709a]:-ms-input-placeholder,.dark input[type=text][data-v-dd2b709a]:-ms-input-placeholder,.dark textarea[data-v-dd2b709a]:-ms-input-placeholder{color:#7d858c}.dark input[type=email][data-v-dd2b709a]::placeholder,.dark input[type=number][data-v-dd2b709a]::placeholder,.dark input[type=password][data-v-dd2b709a]::placeholder,.dark input[type=text][data-v-dd2b709a]::placeholder,.dark textarea[data-v-dd2b709a]::placeholder{color:#7d858c}.dark input[type=email][disabled][data-v-dd2b709a],.dark input[type=number][disabled][data-v-dd2b709a],.dark input[type=password][disabled][data-v-dd2b709a],.dark input[type=text][disabled][data-v-dd2b709a],.dark textarea[disabled][data-v-dd2b709a]{-webkit-text-fill-color:hsla(208,6%,52%,.8);color:hsla(208,6%,52%,.8)}.dark .popup-wrapper input[type=email][data-v-dd2b709a],.dark .popup-wrapper input[type=number][data-v-dd2b709a],.dark .popup-wrapper input[type=password][data-v-dd2b709a],.dark .popup-wrapper input[type=text][data-v-dd2b709a],.dark .popup-wrapper textarea[data-v-dd2b709a]{background:#25272c}.permission-toggle[data-v-dd2b709a]{align-items:center;cursor:pointer;display:flex;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.permission-toggle .privilege[data-v-dd2b709a]{color:rgba(27,37,57,.7);font-size:.8125em;margin-right:10px;white-space:nowrap}.permission-toggle path[data-v-dd2b709a],.permission-toggle polyline[data-v-dd2b709a]{color:#a4adb6}.dark .permission-toggle .privilege[data-v-dd2b709a]{color:#7d858c}</style><style>.text-label[data-v-c05e7680]{color:#afafaf;display:block;font-size:.75em;font-weight:700;margin-bottom:5px;padding-left:25px}@media only screen and (max-width:1024px){.text-label[data-v-c05e7680]{padding-left:20px}}.dark .text-label[data-v-c05e7680]{opacity:.35}</style><style>.form-wrapper[data-v-5c58b740]{padding:0 20px}.input-wrapper[data-v-5c58b740]{margin-bottom:20px}.input-wrapper[data-v-5c58b740]:last-child{margin-bottom:0}.input-wrapper input[data-v-5c58b740]{color:#1b2539;width:100%}.input-wrapper input.is-error[data-v-5c58b740]{border-color:#fd397a}.inline-wrapper[data-v-5c58b740]{align-items:center;display:flex;justify-content:space-between}.inline-wrapper.icon-append .input-text[data-v-5c58b740]{border-bottom-right-radius:0;border-top-right-radius:0}.inline-wrapper.icon-append .icon[data-v-5c58b740]{background:#000;border-bottom-right-radius:8px;border-top-right-radius:8px;line-height:0;padding:15px 18px;text-align:center}.inline-wrapper.icon-append .icon path[data-v-5c58b740],.inline-wrapper.icon-append .icon polyline[data-v-5c58b740]{stroke:#fff}.input-label[data-v-5c58b740]{color:#1b2539;display:block;font-size:.875em;font-weight:700;margin-bottom:8px}.dark .inline-wrapper.icon-append .icon[data-v-5c58b740]{background:rgba(0,188,126,.1)}.dark .inline-wrapper.icon-append .icon path[data-v-5c58b740],.dark .inline-wrapper.icon-append .icon polyline[data-v-5c58b740]{stroke:#00bc7e}.dark .input-label[data-v-5c58b740]{color:#bec6cf}.form.inline-form[data-v-5c58b740]{display:flex;justify-content:center;margin:0 auto;position:relative}.form.inline-form .input-wrapper[data-v-5c58b740]{position:relative}.form.inline-form .input-wrapper .error-message[data-v-5c58b740]{bottom:-25px;left:0;position:absolute}.form.block-form .switch-wrapper[data-v-5c58b740]{border-bottom:1px solid #f4f5f6;margin-bottom:13px;padding-bottom:13px}.form.block-form .switch-wrapper[data-v-5c58b740]:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}.form.block-form .wrapper-inline[data-v-5c58b740]{display:flex;margin:0 -15px}.form.block-form .wrapper-inline .block-wrapper[data-v-5c58b740]{padding:0 15px;width:100%}.form.block-form .block-wrapper[data-v-5c58b740]{margin-bottom:32px}.form.block-form .block-wrapper label[data-v-5c58b740]{color:rgba(27,37,57,.8);display:block;font-size:.875em;font-weight:700;margin-bottom:7px;text-align:left}.form.block-form .block-wrapper[data-v-5c58b740]:last-child{margin-bottom:0}.form.block-form .button[data-v-5c58b740]{margin-top:50px}.form .inline-wrapper[data-v-5c58b740]{align-items:center;display:flex;justify-content:space-between}.form .inline-wrapper .switch-label .input-help[data-v-5c58b740]{padding-top:0}.form .inline-wrapper .switch-label .input-label[data-v-5c58b740]{color:#1b2539;font-size:1em;font-weight:700;margin-bottom:5px}.input-help[data-v-5c58b740]{color:rgba(27,37,57,.7);display:block;font-size:.75em;line-height:1.35;padding-top:10px}.single-line-form[data-v-5c58b740]{display:flex}.single-line-form .submit-button[data-v-5c58b740]{margin-left:20px}.error-message[data-v-5c58b740]{color:#fd397a;display:block;font-size:.875em;padding-top:5px;text-align:left}textarea[data-v-5c58b740]{width:100%}input[type=email].is-error[data-v-5c58b740],input[type=number].is-error[data-v-5c58b740],input[type=password].is-error[data-v-5c58b740],input[type=text].is-error[data-v-5c58b740],textarea.is-error[data-v-5c58b740]{border-color:#fd397a}input[type=email][data-v-5c58b740]::-moz-placeholder,input[type=number][data-v-5c58b740]::-moz-placeholder,input[type=password][data-v-5c58b740]::-moz-placeholder,input[type=text][data-v-5c58b740]::-moz-placeholder,textarea[data-v-5c58b740]::-moz-placeholder{color:rgba(27,37,57,.5);font-size:.9375em}input[type=email][data-v-5c58b740]:-ms-input-placeholder,input[type=number][data-v-5c58b740]:-ms-input-placeholder,input[type=password][data-v-5c58b740]:-ms-input-placeholder,input[type=text][data-v-5c58b740]:-ms-input-placeholder,textarea[data-v-5c58b740]:-ms-input-placeholder{color:rgba(27,37,57,.5);font-size:.9375em}input[type=email][data-v-5c58b740]::placeholder,input[type=number][data-v-5c58b740]::placeholder,input[type=password][data-v-5c58b740]::placeholder,input[type=text][data-v-5c58b740]::placeholder,textarea[data-v-5c58b740]::placeholder{color:rgba(27,37,57,.5);font-size:.9375em}input[type=email][disabled][data-v-5c58b740],input[type=number][disabled][data-v-5c58b740],input[type=password][disabled][data-v-5c58b740],input[type=text][disabled][data-v-5c58b740],textarea[disabled][data-v-5c58b740]{-webkit-text-fill-color:rgba(27,37,57,.8);color:rgba(27,37,57,.8);cursor:not-allowed;opacity:1}input[type=color][data-v-5c58b740]{background:none;border:none;height:40px;min-width:auto!important;outline:none;width:38px!important}.additional-link[data-v-5c58b740]{display:block;font-size:1em;margin-top:50px}.additional-link a[data-v-5c58b740],.additional-link b[data-v-5c58b740]{cursor:pointer}.additional-link a[data-v-5c58b740]:hover,.additional-link b[data-v-5c58b740]:hover{text-decoration:underline}@media only screen and (max-width:1024px){.form[data-v-5c58b740]{max-width:100%}}@media only screen and (max-width:960px){.form .button[data-v-5c58b740]{margin-left:0;margin-right:0;margin-top:20px;width:100%}.form input[data-v-5c58b740],.form textarea[data-v-5c58b740]{min-width:100%;width:100%}.form.block-form .block-wrapper[data-v-5c58b740]{display:block}.form.block-form .block-wrapper label[data-v-5c58b740]{display:block;font-size:.875em;margin-bottom:7px;padding-right:0;padding-top:0;text-align:left!important;width:100%}.form.block-form .button[data-v-5c58b740]{margin-left:0;margin-right:0;margin-top:25px}.form.inline-form[data-v-5c58b740]{display:block}.form.inline-form .input-wrapper .error-message[data-v-5c58b740]{bottom:0;position:relative}.form .button[data-v-5c58b740]{padding:14px 32px}.single-line-form[data-v-5c58b740]{display:block}.single-line-form .submit-button[data-v-5c58b740]{margin-left:0;margin-top:20px;width:100%}input[type=email][data-v-5c58b740],input[type=number][data-v-5c58b740],input[type=password][data-v-5c58b740],input[type=text][data-v-5c58b740],textarea[data-v-5c58b740]{padding:14px 20px}}@media only screen and (max-width:690px){.form.block-form .wrapper-inline[data-v-5c58b740]{display:block}}.dark .form .input-help[data-v-5c58b740]{color:#7d858c}.dark .form.block-form .block-wrapper label[data-v-5c58b740]{color:#bec6cf}.dark .form.block-form .switch-wrapper[data-v-5c58b740]{border-color:hsla(0,0%,100%,.02)}.dark .form .inline-wrapper .switch-label .input-label[data-v-5c58b740]{color:#bec6cf}.dark input[type=email][data-v-5c58b740],.dark input[type=number][data-v-5c58b740],.dark input[type=password][data-v-5c58b740],.dark input[type=text][data-v-5c58b740],.dark textarea[data-v-5c58b740]{background:#1e2024;border-color:#1e2024;color:#bec6cf}.dark input[type=email][data-v-5c58b740]::-moz-placeholder,.dark input[type=number][data-v-5c58b740]::-moz-placeholder,.dark input[type=password][data-v-5c58b740]::-moz-placeholder,.dark input[type=text][data-v-5c58b740]::-moz-placeholder,.dark textarea[data-v-5c58b740]::-moz-placeholder{color:#7d858c}.dark input[type=email][data-v-5c58b740]:-ms-input-placeholder,.dark input[type=number][data-v-5c58b740]:-ms-input-placeholder,.dark input[type=password][data-v-5c58b740]:-ms-input-placeholder,.dark input[type=text][data-v-5c58b740]:-ms-input-placeholder,.dark textarea[data-v-5c58b740]:-ms-input-placeholder{color:#7d858c}.dark input[type=email][data-v-5c58b740]::placeholder,.dark input[type=number][data-v-5c58b740]::placeholder,.dark input[type=password][data-v-5c58b740]::placeholder,.dark input[type=text][data-v-5c58b740]::placeholder,.dark textarea[data-v-5c58b740]::placeholder{color:#7d858c}.dark input[type=email][disabled][data-v-5c58b740],.dark input[type=number][disabled][data-v-5c58b740],.dark input[type=password][disabled][data-v-5c58b740],.dark input[type=text][disabled][data-v-5c58b740],.dark textarea[disabled][data-v-5c58b740]{-webkit-text-fill-color:hsla(208,6%,52%,.8);color:hsla(208,6%,52%,.8)}.dark .popup-wrapper input[type=email][data-v-5c58b740],.dark .popup-wrapper input[type=number][data-v-5c58b740],.dark .popup-wrapper input[type=password][data-v-5c58b740],.dark .popup-wrapper input[type=text][data-v-5c58b740],.dark .popup-wrapper textarea[data-v-5c58b740]{background:#25272c}.item-thumbnail[data-v-5c58b740]{margin-bottom:20px}</style><style>.title[data-v-4dc14d25]{color:#1b2539;font-size:1.25em;font-weight:700;margin:0}.description[data-v-4dc14d25]{color:rgba(27,37,57,.7);display:block;font-size:.8125em;margin-bottom:20px}.dark .title[data-v-4dc14d25]{color:#bec6cf}.dark .description[data-v-4dc14d25]{color:#7d858c}</style><style>.button-enter-active[data-v-0f546a02],.button-leave-active[data-v-0f546a02]{transition:all .25s}.button-enter[data-v-0f546a02]{opacity:0;transform:translateY(-50%)}.button-leave-to[data-v-0f546a02]{opacity:0;transform:translateY(50%)}.button-leave-active[data-v-0f546a02]{position:absolute}</style><style>.mobile-action-button[data-v-7f6a0870]{background:#f4f5f6;border:none;border-radius:8px;cursor:pointer;margin-right:8px;padding:7px 14px}.mobile-action-button .flex[data-v-7f6a0870]{align-items:center;display:flex}.mobile-action-button .icon[data-v-7f6a0870]{font-size:.875em;margin-right:10px;vertical-align:middle}.mobile-action-button .label[data-v-7f6a0870]{color:#1b2539;font-size:.875em;font-weight:700;vertical-align:middle}.dark .mobile-action-button[data-v-7f6a0870]{background:#1e2024}.dark .mobile-action-button circle[data-v-7f6a0870],.dark .mobile-action-button line[data-v-7f6a0870],.dark .mobile-action-button path[data-v-7f6a0870],.dark .mobile-action-button polyline[data-v-7f6a0870],.dark .mobile-action-button rect[data-v-7f6a0870]{color:inherit}.dark .mobile-action-button .label[data-v-7f6a0870]{color:#bec6cf}</style><style>.multiselect-actions[data-v-73b4b078]{background:#fff;bottom:0;display:flex;left:0;overflow:hidden;padding:10px 15px;position:fixed;right:0;z-index:9}.multiselect-actions .action-btn[data-v-73b4b078]{margin-right:25px}.multiselect-actions .action-btn[data-v-73b4b078]:last-child{margin-right:0}.multiselect-actions .close-icon[data-v-73b4b078]{margin-left:auto!important}.is-inactive[data-v-73b4b078]{opacity:.25!important;pointer-events:none!important}.is-inactive .menu-option[data-v-73b4b078]{align-items:center;display:flex}.is-inactive .options.is-active[data-v-73b4b078]{opacity:1!important;pointer-events:auto!important}.dark .multiselect-actions[data-v-73b4b078]{background:#1e2024}.context-menu-enter-active[data-v-73b4b078],.context-menu-leave-active[data-v-73b4b078],.fade-enter-active[data-v-73b4b078],.fade-leave-active[data-v-73b4b078]{transition:all .2s}.fade-enter[data-v-73b4b078],.fade-leave-to[data-v-73b4b078]{opacity:0}.context-menu-enter[data-v-73b4b078],.context-menu-leave-to[data-v-73b4b078]{opacity:0;transform:translateY(100%)}.context-menu-leave-active[data-v-73b4b078]{position:absolute}</style><style>.button-base[data-v-367d774e]{border:0;border-radius:8px;cursor:pointer;display:inline-block;font-size:.9375em;font-weight:700;padding:10px 28px;transition:all .15s ease}.button-base[data-v-367d774e]:active{transform:scale(.95)}.button-base.secondary[data-v-367d774e]{background:#f4f5f6;color:#1b2539}</style><style>.slide-from-left-move[data-v-55079be7]{transition:transform 300s ease}.slide-from-left-enter-active[data-v-55079be7],.slide-from-left-leave-active[data-v-55079be7],.slide-from-right-enter-active[data-v-55079be7],.slide-from-right-leave-active[data-v-55079be7]{transition:all .3s}.slide-from-left-enter[data-v-55079be7],.slide-from-left-leave-to[data-v-55079be7]{opacity:0;transform:translateX(-100%)}.slide-from-right-enter[data-v-55079be7],.slide-from-right-leave-to[data-v-55079be7]{opacity:0;transform:translateX(100%)}.check-box[data-v-55079be7]{margin-left:6px;margin-right:15px}.file-wrapper[data-v-55079be7]{position:relative;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.file-wrapper[data-v-55079be7]:hover{border-color:transparent}.file-wrapper .actions[data-v-55079be7]{text-align:right;width:50px}.file-wrapper .actions .show-actions[data-v-55079be7]{cursor:pointer;padding:12px 0 12px 6px}.file-wrapper .actions .show-actions .icon-action[data-v-55079be7]{font-size:.875em;margin-top:9px}.file-wrapper .actions .show-actions .icon-action circle[data-v-55079be7]{color:inherit}.file-wrapper .item-name[data-v-55079be7]{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;width:100%}.file-wrapper .item-name .item-info[data-v-55079be7]{display:block;line-height:1}.file-wrapper .item-name .item-shared[data-v-55079be7]{display:inline-block}.file-wrapper .item-name .item-shared .label[data-v-55079be7]{color:#00bc7e;font-size:.75em;font-weight:400}.file-wrapper .item-name .item-shared .shared-icon[data-v-55079be7]{vertical-align:middle}.file-wrapper .item-name .item-shared .shared-icon circle[data-v-55079be7],.file-wrapper .item-name .item-shared .shared-icon line[data-v-55079be7],.file-wrapper .item-name .item-shared .shared-icon path[data-v-55079be7]{color:inherit}.file-wrapper .item-name .item-length[data-v-55079be7],.file-wrapper .item-name .item-size[data-v-55079be7]{color:rgba(27,37,57,.7);font-size:.6875em;font-weight:400}.file-wrapper .item-name .name[data-v-55079be7]{white-space:nowrap}.file-wrapper .item-name .name[contenteditable][data-v-55079be7]{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}.file-wrapper .item-name .name[contenteditable=true][data-v-55079be7]:hover{text-decoration:underline}.file-wrapper .item-name .name[data-v-55079be7]{color:#1b2539;font-size:.875em;font-weight:700;max-height:40px;overflow:hidden;text-overflow:ellipsis}.file-wrapper .item-name .name.actived[data-v-55079be7]{max-height:none}.file-wrapper.selected .file-item[data-v-55079be7]{background:#f4f5f6}.file-wrapper .icon-item[data-v-55079be7]{flex:0 0 50px;line-height:0;margin-right:20px;position:relative;text-align:center}.file-wrapper .icon-item .folder[data-v-55079be7]{height:52px;width:52px}.file-wrapper .icon-item .folder[data-v-55079be7] .folder-icon{font-size:3.25em}.file-wrapper .icon-item .file-icon[data-v-55079be7]{font-size:2.8125em}.file-wrapper .icon-item .file-icon path[data-v-55079be7]{fill:#fafafc;stroke:#dfe0e8;stroke-width:1}.file-wrapper .icon-item .file-icon-text[data-v-55079be7]{font-size:.6875em;font-weight:600;left:0;line-height:1;margin:0 auto;max-height:20px;max-width:50px;overflow:hidden;position:absolute;right:0;text-align:center;text-overflow:ellipsis;top:40%;white-space:nowrap}.file-wrapper .icon-item .file-icon-text[data-v-55079be7],.file-wrapper .icon-item .image[data-v-55079be7]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.file-wrapper .icon-item .image[data-v-55079be7]{border-radius:5px;height:50px;max-width:100%;-o-object-fit:cover;object-fit:cover;pointer-events:none;width:50px}.file-wrapper .file-item[data-v-55079be7]{align-items:center;border:2px dashed transparent;display:flex;padding:7px;width:100%}.file-wrapper .file-item.is-dragenter[data-v-55079be7]{border-radius:8px}.file-wrapper .file-item.no-clicked[data-v-55079be7]{background:#fff!important}.file-wrapper .file-item.no-clicked .item-name .name[data-v-55079be7]{color:#1b2539!important}.file-wrapper .file-item.is-clicked[data-v-55079be7],.file-wrapper .file-item[data-v-55079be7]:hover{background:#f4f5f6;border-radius:8px}.dark .file-wrapper .icon-item .file-icon path[data-v-55079be7]{fill:#1e2024;stroke:#2f3c54}.dark .file-wrapper .file-item.no-clicked[data-v-55079be7]{background:#151515!important}.dark .file-wrapper .file-item.no-clicked .file-icon path[data-v-55079be7]{fill:#1e2024!important;stroke:#2f3c54}.dark .file-wrapper .file-item.no-clicked .item-name .name[data-v-55079be7]{color:#bec6cf!important}.dark .file-wrapper .file-item.is-clicked[data-v-55079be7],.dark .file-wrapper .file-item[data-v-55079be7]:hover{background:#1e2024}.dark .file-wrapper .file-item.is-clicked .file-icon path[data-v-55079be7],.dark .file-wrapper .file-item:hover .file-icon path[data-v-55079be7]{fill:#151515}.dark .file-wrapper .item-name .name[data-v-55079be7]{color:#bec6cf}.dark .file-wrapper .item-name .item-length[data-v-55079be7],.dark .file-wrapper .item-name .item-size[data-v-55079be7]{color:#7d858c}
+    </style>
+    </head>
+<body style="min-height: 100%" class="windows">
+
+    <div tabindex="-1" class="overflowClip_1"><!----> <!----> <!----> <!----> <!----> <div class="lg:flex lg:h-screen lg:overflow-hidden w-full"><nav data-v-c6faedbe="" class="menu-bar z-10 hidden w-16 flex-none select-none bg-light-background pt-7 dark:bg-dark-foreground lg:grid xl:w-20"><div data-v-c6faedbe="" class="mb-auto text-center"><div data-v-c6faedbe="" class="shrink-0 grow-0 mx-auto"><div class="flex items-center justify-center mx-auto rounded-xl" style="width: 44px; height: 44px; background: rgb(154, 173, 210);"><img src="/images/logo1.png"/></div></div> <!----> <div data-v-c6faedbe="" class="mt-2 relative"><div data-v-c6faedbe="" class="relative button-icon inline-block cursor-pointer rounded-xl p-3 hover:bg-light-300 dark:hover:bg-4x-dark-foreground"><svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather dark:text-gray-100 transition feather feather-bell"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg> <!----> <!----></div></div> <!----> <div data-v-c6faedbe="" class="mt-6"><a data-v-c6faedbe="" href="/platform/files" aria-current="page" class="mb-1.5 block router-link-exact-active router-link-active router-link-active home" title="Files"><div data-v-c6faedbe="" class="button-icon text-theme inline-block cursor-pointer rounded-xl p-3 hover:bg-light-300 dark:hover:bg-4x-dark-foreground"><svg data-v-c6faedbe="" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-hard-drive"><line data-v-c6faedbe="" x1="22" y1="12" x2="2" y2="12"></line><path data-v-c6faedbe="" d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path><line data-v-c6faedbe="" x1="6" y1="16" x2="6.01" y2="16"></line><line data-v-c6faedbe="" x1="10" y1="16" x2="10.01" y2="16"></line></svg> <!----> <!----></div></a><a data-v-c6faedbe="" href="/user/profile" class="mb-1.5 block user" title="Profile"><div data-v-c6faedbe="" class="button-icon text-theme inline-block cursor-pointer rounded-xl p-3 hover:bg-light-300 dark:hover:bg-4x-dark-foreground"><!----> <!----> <svg data-v-c6faedbe="" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user"><path data-v-c6faedbe="" d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle data-v-c6faedbe="" cx="12" cy="7" r="4"></circle></svg></div></a><a data-v-c6faedbe="" href="/admin/dashboard" class="mb-1.5 block settings" title="Settings"><div data-v-c6faedbe="" class="button-icon text-theme inline-block cursor-pointer rounded-xl p-3 hover:bg-light-300 dark:hover:bg-4x-dark-foreground"><!----> <svg data-v-c6faedbe="" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings"><circle data-v-c6faedbe="" cx="12" cy="12" r="3"></circle><path data-v-c6faedbe="" d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg> <!----></div></a></div> <div data-v-c6faedbe="" title="Toggle Dark Mode" class="mt-6 block"><div data-v-c6faedbe="" class="button-icon inline-block cursor-pointer rounded-xl p-3 hover:bg-light-300 dark:hover:bg-4x-dark-foreground"><!----> <svg data-v-c6faedbe="" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path data-v-c6faedbe="" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></div></div></div> <div data-v-c6faedbe="" class="mt-auto text-center"><div data-v-c6faedbe="" title="Log Out"  onClick="location.href='/user/loginout'" class="button-icon inline-block cursor-pointer rounded-xl p-3 hover:bg-light-300 dark:hover:bg-4x-dark-foreground"><svg data-v-c6faedbe="" xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-power"><path data-v-c6faedbe="" d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line data-v-c6faedbe="" x1="12" y1="2" x2="12" y2="12"></line></svg></div></div></nav> <div class="lg:flex lg:h-screen lg:overflow-hidden w-full"><!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <div data-v-87406fb8=""><!----> <!----></div> <div data-v-87406fb8=""><!----> <!----></div> <div data-v-87406fb8=""><!----> <!----></div> <div id="drag-ui" class="pointer-events-none fixed z-20 w-64 rounded-xl bg-white p-5 shadow-lg dark:bg-dark-foreground" style="display: none;"><div class="flex items-start"><div class="mr-2"><svg xmlns="http://www.w3.org/2000/svg" width="19px" height="19px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-theme vue-feather feather feather-check-square"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg> <!----> <!----> <!----> <!----></div> <div><b class="block w-52 overflow-hidden text-ellipsis whitespace-nowrap text-sm font-bold 2xl:w-72">
+            
+        </b> <small class="block text-xs font-bold text-gray-400">
+            
+        </small></div></div></div> <section id="content-sidebar" class="content-sidebar z-[9] hidden w-52 flex-none select-none overflow-y-auto bg-light-background pt-6 dark:bg-dark-background lg:block xl:w-56 relative"><div onClick="location.href='/user_index.html'" class="absolute top-[11px] right-1 inline-block cursor-pointer p-3 opacity-20 transition-all duration-200 hover:opacity-70"><svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-left"><polyline points="11 17 6 12 11 7"></polyline><polyline points="18 17 13 12 18 7"></polyline></svg></div> <div class="ml-6 mb-6"><div class="mb-2 flex items-center justify-between"><small class="text-xs font-bold text-gray-400 dark:text-gray-600">
+            常用
+        </small> <!----></div> <a href="javascript:myfile();" aria-current="page" class="flex items-center py-2.5 router-link-exact-active router-link-active"><svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather icon-active mr-2.5 feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> <!----> <!----> <!----> <!----> <!----> <b class="text-active text-xs font-bold">
+                我的文件
+            </b></a><a href="/platform/recent-uploads" class="flex items-center py-2.5"><!----> <svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather icon-active mr-2.5 feather feather-upload-cloud"><polyline points="16 16 12 12 8 16"></polyline><line x1="12" y1="12" x2="12" y2="21"></line><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path><polyline points="16 16 12 12 8 16"></polyline></svg> <!----> <!----> <!----> <!----> <b class="text-active text-xs font-bold">
+                最近上传
+            </b></a><a href="/platform/my-shared-items" class="flex items-center py-2.5"><!----> <!----> <svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather icon-active mr-2.5 feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg> <!----> <!----> <!----> <b class="text-active text-xs font-bold">
+                我的分享
+            </b></a><a href="/platform/trash" class="flex items-center py-2.5"><!----> <!----> <!----> <svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather icon-active mr-2.5 feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> <!----> <!----> <b class="text-active text-xs font-bold">
+                回收站
+            </b></a></div><div class="ml-6 mb-6 collapsable" style="display:none;"><div class="mb-2 flex items-center justify-between"><small class="text-xs font-bold text-gray-400 dark:text-gray-600">
+            Collaboration
+        </small> <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather mr-5 transform cursor-pointer text-gray-300 feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg></div> <a href="/platform/team-folders" class="flex items-center py-2.5"><!----> <!----> <!----> <!----> <svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather icon-active mr-2.5 feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> <!----> <b class="text-active text-xs font-bold">
+                Team Folders
+            </b></a><a href="/platform/shared-with-me" class="flex items-center py-2.5"><!----> <!----> <!----> <!----> <!----> <svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather icon-active mr-2.5 feather feather-user-check"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><polyline points="17 11 19 13 23 9"></polyline></svg> <b class="text-active text-xs font-bold">
+                Shared with Me
+            </b></a></div> <div class="ml-6 mb-6 is-collapsed collapsable"><div class="mb-2 flex items-center justify-between"><small class="text-xs font-bold text-gray-400 dark:text-gray-600">
+            文件目录
+        </small> <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather mr-5 transform cursor-pointer text-gray-300 feather feather-chevron-up rotate-180"><polyline points="18 15 12 9 6 15"></polyline></svg></div> <!----></div> <div class="ml-6 mb-6 collapsable"><div class="mb-2 flex items-center justify-between"><small class="text-xs font-bold text-gray-400 dark:text-gray-600">
+            文件保险箱
+        </small> <svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather mr-5 transform cursor-pointer text-gray-300 feather feather-chevron-up"><polyline points="18 15 12 9 6 15"></polyline></svg></div> <div class="-ml-5 rounded-lg border-2 border-dashed border-transparent pl-5"><!----> <div class="group flex cursor-pointer items-center justify-between py-2.5"><div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather mr-2.5 feather feather-folder"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg> <span class="max-w-1 overflow-hidden text-ellipsis whitespace-nowrap text-xs font-bold">
+                        New Folder
+                    </span></div> <div class="-m-2 p-2"><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-5 opacity-0 group-hover:opacity-100 feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></div></div><div class="group flex cursor-pointer items-center justify-between py-2.5"><div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather mr-2.5 feather feather-folder"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg> <span class="max-w-1 overflow-hidden text-ellipsis whitespace-nowrap text-xs font-bold">
+                        New Folder
+                    </span></div> <div class="-m-2 p-2"><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-5 opacity-0 group-hover:opacity-100 feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></div></div></div></div></section> <div class="transition-transform duration-200 lg:grid lg:flex-grow lg:content-start lg:px-3.5"><div class="hidden lg:block"><div class="flex items-center justify-between py-3"><div class="relative flex select-none items-center text-left"><!----> <svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 -ml-1 cursor-pointer align-middle transition-all duration-200 lg:-mt-0.5 feather feather-chevron-left -translate-x-3 opacity-0" id="nav_back"><polyline points="15 18 9 12 15 6"></polyline></svg> <b class="inline-block lg:max-w-[210px] max-w-[190px] transform overflow-hidden text-ellipsis whitespace-nowrap align-middle text-sm font-bold transition-all duration-200 dark:text-gray-100 -translate-x-4" id="nav_title">
+        我的文件
+    </b> <div id="folder-actions" class="relative ml-3 transform cursor-pointer rounded-md bg-light-background py-0.5 px-1.5 transition-all duration-200 dark:bg-dark-foreground -translate-x-4 opacity-0"><svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg></div></div> <div class="flex items-center"><div data-v-5d0dc97d="" class="popover-wrapper"><button title="Create Something" class="group inline-flex h-[42px] w-[42px] cursor-pointer items-center justify-center rounded-lg hover:bg-light-background dark:hover:bg-2x-dark-foreground" data-v-5d0dc97d=""><!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <svg fill="none" stroke="currentColor" stroke-width="1.5" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" width="15px" height="15px" viewBox="0 0 17 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="preview-list-icon vue-feather group-hover-text-theme scale-125"><path d="M14.2729998,10.7729998 C15.6774712,10.0073227 16.384111,8.38688297 15.9895447,6.83668332 C15.5949785,5.28648367 14.1996249,4.20105605 12.5999998,4.19999993 L11.7179998,4.19999993 C11.1377566,1.9556703 9.23470173,0.300843012 6.93154234,0.0378706728 C4.62838295,-0.225101666 2.40127934,0.958148431 1.33005562,3.01391529 C0.258831904,5.06968215 0.564955244,7.57295196 2.09999996,9.30999984" id="Path"></path> <line x1="8.5" y1="7" x2="8.5" y2="12" id="Path"></line> <line x1="6" y1="9.5" x2="11" y2="9.5" id="Path"></line></svg></button> <!----></div> <div class="relative cursor-pointer rounded-lg bg-light-background dark:bg-dark-foreground ml-5 hidden lg:block xl:ml-8"><div class="flex w-56 items-center justify-between px-4 py-2.5 text-left xl:w-64"><div class="flex items-center"><svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather text-gray-400 dark:text-gray-600 feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> <span class="pl-2.5 text-xs font-bold text-gray-400 dark:text-gray-600">
+                搜索...
+            </span></div> <span class="rounded border px-1 py-0.5 text-xs font-bold tracking-normal text-gray-400 dark:border-slate-200 dark:border-opacity-5 dark:text-gray-600">
+            Ctrl+K
+        </span></div></div> <div class="ml-5 flex items-center xl:ml-8"><!----> <div class="flex items-center"><button title="Convert into Team Folder" class="group inline-flex h-[42px] w-[42px] cursor-pointer items-center justify-center rounded-lg hover:bg-light-background dark:hover:bg-2x-dark-foreground is-inactive"><!----> <!----> <!----> <svg xmlns="http://www.w3.org/2000/svg" width="19px" height="19px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather group-hover-text-theme feather feather-user-plus"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="8.5" cy="7" r="4"></circle><line x1="20" y1="8" x2="20" y2="14"></line><line x1="23" y1="11" x2="17" y2="11"></line></svg> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----></button> <button title="Share item" onClick="file_share()" id="but_share" class="group inline-flex h-[42px] w-[42px] cursor-pointer items-center justify-center rounded-lg hover:bg-light-background dark:hover:bg-2x-dark-foreground is-inactive"><!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <svg xmlns="http://www.w3.org/2000/svg" width="19px" height="19px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather group-hover-text-theme feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg> <!----> <!----> <!----> <!----> <!----></button> <button title="Move" id="but_move" onClick="file_move()" class="group inline-flex h-[42px] w-[42px] cursor-pointer items-center justify-center rounded-lg hover:bg-light-background dark:hover:bg-2x-dark-foreground is-inactive"><svg xmlns="http://www.w3.org/2000/svg" width="19px" height="19px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather group-hover-text-theme feather feather-corner-down-right"><polyline points="15 10 20 15 15 20"></polyline><path d="M4 4v7a4 4 0 0 0 4 4h12"></path></svg> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----></button> <button onClick="del_file();" title="Delete" id="but_del" class="group inline-flex h-[42px] w-[42px] cursor-pointer items-center justify-center rounded-lg hover:bg-light-background dark:hover:bg-2x-dark-foreground is-inactive"><!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <svg xmlns="http://www.w3.org/2000/svg" width="19px" height="19px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather group-hover-text-theme feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----></button></div></div> <div class="ml-5 flex items-center xl:ml-8"><div data-v-5d0dc97d="" class="popover-wrapper"><button title="Sorting and View" class="group inline-flex h-[42px] w-[42px] cursor-pointer items-center justify-center rounded-lg hover:bg-light-background dark:hover:bg-2x-dark-foreground" data-v-5d0dc97d=""><!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <svg fill="none" stroke="currentColor" stroke-width="1.5" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" width="15px" height="15px" viewBox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="preview-list-icon vue-feather group-hover-text-theme scale-125"><rect x="9.77777778" y="0" width="6.22222222" height="6.22222222"></rect> <rect x="9.77777778" y="9.77777778" width="6.22222222" height="6.22222222"></rect> <line x1="0" y1="2" x2="6" y2="2"></line> <line x1="0" y1="8" x2="6" y2="8"></line> <line x1="0" y1="14" x2="6" y2="14"></line></svg> <!----></button> <!----></div> <button title="Info panel" id="info_panel" class="group inline-flex h-[42px] w-[42px] cursor-pointer items-center justify-center rounded-lg hover:bg-light-background dark:hover:bg-2x-dark-foreground"><!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <svg xmlns="http://www.w3.org/2000/svg" width="19px" height="19px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather group-hover-text-theme feather feather-info"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg> <!----> <!----> <!----> <!----> <!----> <!----> <!----></button></div></div></div> <!----></div> <div class="sticky top-0 z-[19] block flex w-full items-center justify-between bg-white py-5 px-4 text-center dark:bg-dark-background lg:hidden"><div class="relative flex select-none items-center text-left"><!----> <svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mr-2 -ml-1 cursor-pointer align-middle transition-all duration-200 lg:-mt-0.5 feather feather-chevron-left -translate-x-3 opacity-0"><polyline points="15 18 9 12 15 6"></polyline></svg> <b class="inline-block lg:max-w-[210px] max-w-[190px] transform overflow-hidden text-ellipsis whitespace-nowrap align-middle text-sm font-bold transition-all duration-200 dark:text-gray-100 -translate-x-4">
+        我的文件
+    </b> <div id="folder-actions" class="relative ml-3 transform cursor-pointer rounded-md bg-light-background py-0.5 px-1.5 transition-all duration-200 dark:bg-dark-foreground -translate-x-4 opacity-0"><svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg></div></div> <div class="relative flex items-center"><!----> <div class="flex items-center relative mr-[4px]"><div class="cursor-pointer p-1.5 -m-1.5"><svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather dark:text-gray-100 feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></div></div></div></div> <!---->
+    
+    <div class="flex space-x-3 lg:overflow-hidden" id="file-main">
+    
+    
+    <div id="file-view" class="relative w-full" style="min-height:500px;"><div data-v-87406fb8=""><!----> <!----></div> <div data-v-87406fb8=""><!----> <!----></div> <!----> 
+    
+<div data-v-417bd873="" class="flex items-center justify-center fixed top-20 bottom-0 left-0 right-0 md:px-0 px-4" id="loading-bar-page" style="display:none"><div data-v-417bd873="" class="fixed top-0 bottom-0 sm:relative"><div data-v-47f81dee="" data-v-417bd873="" id="loading-bar-spinner" class="spinner"><div data-v-47f81dee="" class="spinner-icon border-top-theme border-left-theme"></div></div></div></div>    
+    
+    
+    <div class="fixed z-20 w-60 select-none overflow-hidden rounded-xl bg-white shadow-lg dark:bg-2x-dark-foreground" id="menu_1" style="top: 33px; left: 347px; display: none;"><div class="w-full"><div><!----> <ul class="option-group py-1"><label class="flex items-center lg:py-3.5 py-4 px-5 group cursor-pointer hover:bg-light-background dark:hover:bg-4x-dark-foreground"><div class="mr-4"><svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather group-hover-text-theme feather feather-upload-cloud"><polyline points="16 16 12 12 8 16"></polyline><line x1="12" y1="12" x2="12" y2="21"></line><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"></path><polyline points="16 16 12 12 8 16"></polyline></svg> <!----></div> <div class="group-hover-text-theme text-left text-sm font-bold">
+            上传文件
+
+            <input id="file" type="file" name="files[]" multiple="multiple" style="display:none;"> <input id="icon" value="" type="hidden"><input id="img_spec" value="" type="hidden"> <!----></div></label> <label style="display:none" class="flex items-center lg:py-3.5 py-4 px-5 group cursor-pointer hover:bg-light-background dark:hover:bg-4x-dark-foreground"><div class="mr-4"><!----> <svg fill="none" stroke="currentColor" stroke-width="1.5" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" width="17px" height="17px" viewBox="0 -2 14 17" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="preview-list-icon vue-feather group-hover-text-theme"><path d="M0,10.6420028 C0,8.60583431 0,5.5515816 0,1.47924466 C0,0.662280392 0.633305625,0 1.4145277,0 L4.95084696,0 L6.36537467,2.21886699 L12.7307493,2.21886699 C13.5119714,2.21886699 14.145277,2.88114738 14.145277,3.69811164 C14.145277,7.76603445 14.145277,7.76603445 14.145277,11.8339573 C14.145277,12.6509215 13.5119714,13.3132019 12.7307493,13.3132019 C11.9928651,13.3132019 12.1671651,13.3132019 11.798223,13.3132019" id="Path"></path> <polyline id="Path-Copy-8" points="9.49893123 9.53496452 6.74946561 6.60112928 4 9.53496452"></polyline> <line x1="6.74946561" y1="6.60112928" x2="6.74946561" y2="13.2022586" id="Path-Copy-7"></line></svg></div> <div class="group-hover-text-theme text-left text-sm font-bold">
+            上传目录
+
+            <!----> <input id="folder" type="file" name="folders[]" webkitdirectory="" mozdirectory="" style="display: none;"></div></label></ul></div> <div><!----> <ul class="option-group py-1" onClick="create_popup();"><li class="flex items-center justify-between lg:py-3.5 py-4 px-5 group cursor-pointer hover:bg-light-background dark:hover:bg-4x-dark-foreground"><div class="flex items-center"><div class="mr-4"><!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather group-hover-text-theme feather feather-folder-plus"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----></div> <b class="group-hover-text-theme text-sm font-bold">
+            新建文件夹
+        </b></div> <!----></li></ul></div>  <!----></div></div>
+        
+        
+        
+        
+        
+        <div data-v-0f546a02="" class="sticky top-14 z-[19] whitespace-nowrap bg-white dark:bg-dark-background lg:hidden"><div data-v-0f546a02="" class="flex items-center overflow-x-auto pb-3 pl-4"><button class="mr-2 inline-block rounded-xl bg-light-background py-2 px-3.5 dark:bg-2x-dark-foreground" data-v-0f546a02=""><div class="flex items-center"><!----> <!----> <!----> <!----> <!----> <!----> <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather dark-text-theme feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <span class="ml-2 text-sm font-bold">
+                Spotlight
+            </span></div></button> <button class="mr-2 inline-block rounded-xl bg-light-background py-2 px-3.5 dark:bg-2x-dark-foreground" data-v-0f546a02=""><div class="flex items-center"><!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather dark-text-theme feather feather-filter"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <span class="ml-2 text-sm font-bold">
+                我的文件
+            </span></div></button> <button class="mr-2 inline-block rounded-xl bg-light-background py-2 px-3.5 dark:bg-2x-dark-foreground" data-v-0f546a02=""><div class="flex items-center"><!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <svg fill="none" stroke="currentColor" stroke-width="1.5" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" width="15px" height="15px" viewBox="0 0 17 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="preview-list-icon vue-feather dark-text-theme preview-sorting"><path d="M14.2729998,10.7729998 C15.6774712,10.0073227 16.384111,8.38688297 15.9895447,6.83668332 C15.5949785,5.28648367 14.1996249,4.20105605 12.5999998,4.19999993 L11.7179998,4.19999993 C11.1377566,1.9556703 9.23470173,0.300843012 6.93154234,0.0378706728 C4.62838295,-0.225101666 2.40127934,0.958148431 1.33005562,3.01391529 C0.258831904,5.06968215 0.564955244,7.57295196 2.09999996,9.30999984" id="Path"></path> <line x1="8.5" y1="7" x2="8.5" y2="12" id="Path"></line> <line x1="6" y1="9.5" x2="11" y2="9.5" id="Path"></line></svg> <span class="ml-2 text-sm font-bold">
+                Upload / Create
+            </span></div></button> <button class="mr-2 inline-block rounded-xl bg-light-background py-2 px-3.5 dark:bg-2x-dark-foreground" data-v-0f546a02=""><div class="flex items-center"><!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather dark-text-theme feather feather-check-square"><polyline points="9 11 12 14 22 4"></polyline><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg> <!----> <!----> <!----> <!----> <!----> <span class="ml-2 text-sm font-bold">
+                Select
+            </span></div></button> <button class="mr-2 inline-block rounded-xl bg-light-background py-2 px-3.5 dark:bg-2x-dark-foreground" data-v-0f546a02=""><div class="flex items-center"><!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <!----> <svg fill="none" stroke="currentColor" stroke-width="1.5" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round" width="15px" height="15px" viewBox="0 0 20 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="preview-list-icon vue-feather dark-text-theme preview-sorting"><rect x="9.77777778" y="0" width="6.22222222" height="6.22222222"></rect> <rect x="9.77777778" y="9.77777778" width="6.22222222" height="6.22222222"></rect> <line x1="0" y1="2" x2="6" y2="2"></line> <line x1="0" y1="8" x2="6" y2="8"></line> <line x1="0" y1="14" x2="6" y2="14"></line></svg> <!----> <span class="ml-2 text-sm font-bold">
+                View
+            </span></div></button> <!----></div> <!----></div> <!---->
+            
+            
+            
+            
+            <div data-v-4f244cbc="" class="upload-progress info-panel-leave-active info-panel-leave-to" style="opacity: 1;transform: translateY(0%); display:none;"><div data-v-4f244cbc="" class="progress-title"><span data-v-4f244cbc="" class="flex items-center justify-center"><svg data-v-4f244cbc="" xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sync-alt text-theme feather feather-refresh-cw"><polyline data-v-4f244cbc="" points="23 4 23 10 17 10"></polyline><polyline data-v-4f244cbc="" points="1 20 1 14 7 14"></polyline><path data-v-4f244cbc="" d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path></svg>
+                文件上传中...<span id="toggle-btn"></span>
+            </span> <!----></div> <div data-v-4f244cbc="" class="progress-wrapper"><div data-v-0b81e9e0="" data-v-4f244cbc="" class="progress-bar"><span data-v-0b81e9e0="" class="bg-theme bar" style="width: 0%;"></span></div> <span data-v-4f244cbc="" title="Cancel Uploading" class="cancel-icon"><svg data-v-4f244cbc="" xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hover-text-theme feather feather-x"><line data-v-4f244cbc="" x1="18" y1="6" x2="6" y2="18"></line><line data-v-4f244cbc="" x1="6" y1="6" x2="18" y2="18"></line></svg></span></div></div>
+            
+            
+            
+            <div tabindex="-1" class="px-4 lg:h-full lg:w-full lg:overflow-y-auto lg:px-0" id="filelist"></div>
+            
+            
+               
+               
+       <div data-v-4dc14d25="" class="flex items-center justify-center fixed top-20 bottom-0 left-0 right-0 md:px-0 px-4" id="no_data" style="display:none;"><div data-v-4dc14d25="" class="text-content text-center"><h1 data-v-4dc14d25="" class="title">
+                当前目录暂无相关文件
+            </h1> <p data-v-4dc14d25="" class="description">
+                请通过以下上传按钮上传您的文件.
+            </p> <label data-v-367d774e="" label="file" class="button file-input button-base theme" data-v-4dc14d25="" onClick="$('#file').click()">
+                上传文件
+             </label></div></div>
+               
+                
+                </div> 
+                
+                
+<div class="hidden w-[300px] shrink-0 overflow-y-auto overflow-x-hidden px-2.5 pt-2 lg:block xl:w-[320px] 2xl:w-[360px]" id="attr_info" style="display:none">
+
+        <div class="flex h-full items-center justify-center" id="attr_node_attr" style="display:"><div class="text-center"><svg xmlns="http://www.w3.org/2000/svg" width="22px" height="22px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather mb-3 inline-block text-gray-500 feather feather-eye-off"><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg> <small class="block text-xs text-gray-500">未选择文件属性</small></div></div>
+    
+        <div id="attr_file_info" style="display:none">
+        
+            <div class="flex items-start mb-6" id="file_attr_dir">
+                <div class="mr-2"><svg rel="file_dir_icon" xmlns="http://www.w3.org/2000/svg" width="19px" height="19px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-theme vue-feather feather feather-folder"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg> <svg  style="display:none" rel="file_dir_icon" xmlns="http://www.w3.org/2000/svg" width="19px" height="19px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-theme vue-feather feather feather-file"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline></svg></div> <div><b class="block overflow-hidden text-ellipsis text-sm font-bold" id="dir_name">@dir_name</b> <small class="block text-xs font-bold text-gray-400">
+                    </small></div>
+            </div>
+        
+        <div class="mb-4 block w-full" rel="attr_file_icon"><img id="printable-file" src="" class="file w-full overflow-hidden rounded-lg object-cover shadow-lg file-shadow"> <!----> <!----></div>
+        
+        <div class="flex items-start mb-6" rel="attr_file_icon"><div class="mr-2"><!----> <svg xmlns="http://www.w3.org/2000/svg" width="19px" height="19px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-theme vue-feather feather feather-image"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg> <!----> <!----> <!----></div> <div><b class="block w-52 overflow-hidden text-ellipsis whitespace-nowrap text-sm font-bold 2xl:w-72" id="attr_icon_name">@file_name</b> <small class="block text-xs font-bold text-gray-400" id="attr_icon_type">
+                    @file_type
+                </small></div></div>
+                
+            <div class="mb-4" id="attr_file_size">
+            	<small class="text-theme block text-xs font-bold">文件大小</small> <b class="inline-block text-sm font-bold">@file_size</b>
+            </div>
+            <div class="mb-4" id="attr_file_addtime">
+            	<small class="text-theme block text-xs font-bold">创建时间</small> <b class="inline-block text-sm font-bold">@file_addtime</b>
+            </div>
+            
+            <div class="mb-4" id="attr_file_dir">
+                <small class="text-theme block text-xs font-bold">文件目录</small>
+                <div class="flex cursor-pointer items-center">
+                <b class="inline-block text-sm font-bold">@file_dir</b> <svg onclick="file_move()" xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 feather feather-edit-2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
+                </div>
+            </div>
+                        
+                        
+            <div class="mb-4" id="attr_file_spec">
+                <small class="text-theme block text-xs font-bold">图片尺寸</small> <b class="inline-block text-sm font-bold">@file_spec</b>
+            </div>                
+                        
+        </div>
+    
+    </div>     
+                
+                <!----></div></div>
+                
+                </div>
+                
+                
+                
+<div data-v-5a17a1de="" style="display:none;" id="popup_create" class="popup fixed top-0 left-0 right-0 bottom-0 z-50 grid h-full overflow-y-auto p-10 lg:absolute"><div data-v-5a17a1de="" class="fixed top-0 bottom-0 left-0 right-0 z-10 m-auto w-full bg-white shadow-xl dark:bg-dark-foreground md:relative md:w-[490px] md:rounded-xl"><div class="flex items-center justify-between px-6 pt-6 pb-6"><div class="flex items-center"><div class="mr-3"><!----> <!----> <!----> <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather text-theme feather feather-edit-2"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg> <!----> <!----> <!----> <!----> <!----></div> <b class="text-base font-bold">
+            新建文件夹
+        </b></div> <div class="-m-3 cursor-pointer p-3" onClick="popup_close();"><svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hover-text-theme vue-feather feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></div></div> <div class="absolute top-16 bottom-24 left-0 right-0 h-auto overflow-auto px-6 md:relative md:top-0 md:bottom-0"><div spellcheck="false" class="flex select-none items-center rounded-xl mb-5"><div class="relative w-16"><!----> <!----> <div><svg width="53px" height="52px" viewBox="0 0 53 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M48.03125,6.5 L29.790833,6.5 C28.7431613,6.5 27.7373076,6.08896217 26.9894703,5.35523504 L22.6980297,1.14476496 C21.9501924,0.41103783 20.9443387,-6.36543387e-16 19.896667,0 L4.96875,0 L4.96875,0 C2.22455078,0 0,2.18257812 0,4.875 L0,34.125 C0,36.8174219 2.22455078,39 4.96875,39 L48.03125,39 C50.7754492,39 53,36.8174219 53,34.125 L53,11.375 C53,8.68257813 50.7754492,6.5 48.03125,6.5 Z" stroke="none" stroke-width="0" class="svg-color-theme"></path> <path d="M48.03125,6.5 L29.790833,6.5 C28.7431613,6.5 27.7373076,6.08896217 26.9894703,5.35523504 L22.6980297,1.14476496 C21.9501924,0.41103783 20.9443387,-6.36543387e-16 19.896667,0 L4.96875,0 L4.96875,0 C2.22455078,0 0,2.18257812 0,4.875 L0,34.125 C0,36.8174219 2.22455078,39 4.96875,39 L48.03125,39 C50.7754492,39 53,36.8174219 53,34.125 L53,11.375 C53,8.68257813 50.7754492,6.5 48.03125,6.5 Z" fill="black" fill-opacity="0.2" stroke="none" stroke-width="0"></path> <path d="M48.03125,12.75 C49.0609313,12.75 49.9941504,13.1577174 50.6692739,13.8201027 C51.3356976,14.4739525 51.75,15.3766531 51.75,16.375 L51.75,16.375 L51.75,34.125 C51.75,35.1233469 51.3356976,36.0260475 50.6692739,36.6798973 C49.9941504,37.3422826 49.0609313,37.75 48.03125,37.75 L48.03125,37.75 L4.96875,37.75 C3.93906868,37.75 3.00584961,37.3422826 2.33072613,36.6798973 C1.66430239,36.0260475 1.25,35.1233469 1.25,34.125 L1.25,34.125 L1.25,16.375 C1.25,15.3766531 1.66430239,14.4739525 2.33072613,13.8201027 C3.00584961,13.1577174 3.93906868,12.75 4.96875,12.75 L4.96875,12.75 Z" stroke-width="2" fill="green" class="svg-color-theme"></path></svg> <!----></div> <!----> <!----></div> <div class="pl-2"><b class="mb-0.5 block overflow-hidden text-ellipsis whitespace-nowrap text-sm hover:underline" style="max-width: 240px;">
+            新建文件夹
+        </b> <div class="flex items-center"><!----> <!----> </div></div></div> <form><div><div class="mb-6 sm:mb-7"><label class="mb-1.5 block text-sm font-bold text-gray-700 dark:text-gray-200">
+        文件名称:
+    </label> <div class="relative flex items-center"><input type="text" id="file_name" placeholder="文件名称" class="!pr-10 focus-border-theme input-dark"> <div class="absolute right-0 p-4 cursor-pointer"><svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hover-text-theme feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></div></div> <!----> <!----></div></div>  <!----></form></div> <div class="absolute bottom-0 left-0 right-0 flex items-center space-x-4 px-6 py-4 pb-6 md:relative"><button  onClick="popup_close()" data-v-43685114="" type="button" class="button-base w-full secondary"><!----> <div data-v-43685114="" class="content">
+            取消
+        </div></button> <button data-v-43685114="" onClick="create_file_submit()" type="button" class="button-base w-full theme"><!----> <div data-v-43685114="" class="content">
+            确认
+        </div></button></div></div></div>
+        
+<div data-v-5a17a1de="" class="popup fixed top-0 left-0 right-0 bottom-0 z-50 grid h-full overflow-y-auto p-10 lg:absolute" id="file_move_main" style="display:none"><div data-v-5a17a1de="" class="fixed top-0 bottom-0 left-0 right-0 z-10 m-auto w-full bg-white shadow-xl dark:bg-dark-foreground md:relative md:w-[490px] md:rounded-xl"><div class="flex items-center justify-between px-6 pt-6 pb-6"><div class="flex items-center"><div class="mr-3"><!----> <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather text-theme feather feather-corner-down-right"><polyline points="15 10 20 15 15 20"></polyline><path d="M4 4v7a4 4 0 0 0 4 4h12"></path></svg> <!----> <!----> <!----> <!----> <!----> <!----> <!----></div> <b class="text-base font-bold">
+            变更文件目录
+        </b></div> <div class="-m-3 cursor-pointer p-3" onClick="file_move_hide()"><svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hover-text-theme vue-feather feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></div></div> <div class="absolute top-16 bottom-24 left-0 right-0 h-auto overflow-auto px-6 md:relative md:top-0 md:bottom-0 h-full pb-6 lg:max-h-96 sm:overflow-y-auto md:pb-0"><!----> <div><div spellcheck="false" class="flex select-none items-center rounded-xl mb-5"><div class="relative w-16"><!----> <!----><div rel="file_move_icon"><svg width="53px" height="52px" viewBox="0 0 53 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M48.03125,6.5 L29.790833,6.5 C28.7431613,6.5 27.7373076,6.08896217 26.9894703,5.35523504 L22.6980297,1.14476496 C21.9501924,0.41103783 20.9443387,-6.36543387e-16 19.896667,0 L4.96875,0 L4.96875,0 C2.22455078,0 0,2.18257812 0,4.875 L0,34.125 C0,36.8174219 2.22455078,39 4.96875,39 L48.03125,39 C50.7754492,39 53,36.8174219 53,34.125 L53,11.375 C53,8.68257813 50.7754492,6.5 48.03125,6.5 Z" stroke="none" stroke-width="0" class="svg-color-theme"></path> <path d="M48.03125,6.5 L29.790833,6.5 C28.7431613,6.5 27.7373076,6.08896217 26.9894703,5.35523504 L22.6980297,1.14476496 C21.9501924,0.41103783 20.9443387,-6.36543387e-16 19.896667,0 L4.96875,0 L4.96875,0 C2.22455078,0 0,2.18257812 0,4.875 L0,34.125 C0,36.8174219 2.22455078,39 4.96875,39 L48.03125,39 C50.7754492,39 53,36.8174219 53,34.125 L53,11.375 C53,8.68257813 50.7754492,6.5 48.03125,6.5 Z" fill="black" fill-opacity="0.2" stroke="none" stroke-width="0"></path> <path d="M48.03125,12.75 C49.0609313,12.75 49.9941504,13.1577174 50.6692739,13.8201027 C51.3356976,14.4739525 51.75,15.3766531 51.75,16.375 L51.75,16.375 L51.75,34.125 C51.75,35.1233469 51.3356976,36.0260475 50.6692739,36.6798973 C49.9941504,37.3422826 49.0609313,37.75 48.03125,37.75 L48.03125,37.75 L4.96875,37.75 C3.93906868,37.75 3.00584961,37.3422826 2.33072613,36.6798973 C1.66430239,36.0260475 1.25,35.1233469 1.25,34.125 L1.25,34.125 L1.25,16.375 C1.25,15.3766531 1.66430239,14.4739525 2.33072613,13.8201027 C3.00584961,13.1577174 3.93906868,12.75 4.96875,12.75 L4.96875,12.75 Z" stroke-width="2" fill="green" class="svg-color-theme"></path></svg></div><!----> <div style="display:none" rel="file_move_icon" class="flex items-center justify-center pr-2"><span class="text-theme absolute z-[5] mx-auto mt-1 inline-block w-7 overflow-hidden text-ellipsis text-center text-[9px] font-semibold" id="move_file_type">pdf</span> <svg width="38px" height="51px" fill="currentColor" viewBox="0 0 38 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="vue-feather dark:text-gray-800 text-gray-100 "><path d="M22.1666667,13.546875 L22.1666667,0 L2.375,0 C1.05885417,0 0,1.06582031 0,2.390625 L0,48.609375 C0,49.9341797 1.05885417,51 2.375,51 L35.625,51 C36.9411458,51 38,49.9341797 38,48.609375 L38,15.9375 L24.5416667,15.9375 C23.2354167,15.9375 22.1666667,14.8617187 22.1666667,13.546875 Z M38,12.1423828 L38,12.75 L25.3333333,12.75 L25.3333333,0 L25.9369792,0 C26.5703125,0 27.1739583,0.249023438 27.6192708,0.697265625 L37.3072917,10.4589844 C37.7526042,10.9072266 38,11.5148437 38,12.1423828 Z"></path></svg></div> <!----></div>
+        <div class="pl-2">
+            <b class="mb-0.5 block overflow-hidden text-ellipsis whitespace-nowrap text-sm hover:underline" style="max-width: 240px;" id="move_file_name"></b>
+            <div class="flex items-center">
+            	<small class="block text-xs text-gray-500" id="move_file_info">90.94kB, 12. Jan. 2023, 07:54</small>
+            </div>
+        </div>
+        </div>
+        
+        <div class="-mx-4 mb-2.5">
+            
+        <div class="relative relative flex cursor-pointer select-none items-center whitespace-nowrap lg:py-2 py-3.5 px-1.5 transition-all duration-150" style="padding-left: 20px;" id="file_dir_root"><span class="-m-2 p-2" onclick="file_dir_show(this,0)" fid="0"><svg showint="0" xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather mr-2 opacity-0 transition-all duration-300 feather feather-chevron-right rotate-90 transform opacity-100"><polyline points="9 18 15 12 9 6"></polyline></svg></span> <svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon vue-feather shrink-0 feather feather-hard-drive"><line x1="22" y1="12" x2="2" y2="12"></line><path d="M5.45 5.11L2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path><line x1="6" y1="16" x2="6.01" y2="16"></line><line x1="10" y1="16" x2="10.01" y2="16"></line></svg><b class="ml-3 inline-block overflow-x-hidden text-ellipsis whitespace-nowrap text-xs font-bold transition-all duration-150" vid="0" onclick="file_dir_sel(this)">我的文件</b></div>
+        
+        <div  id="file_dir_move_list">
+            
+        </div>
+        
+        </div></div></div>
+        
+        <div class="absolute bottom-0 left-0 right-0 flex items-center space-x-4 px-6 py-4 pb-6 md:relative">
+        <button data-v-43685114="" onClick="file_move_hide()" type="button" class="button-base w-full secondary"><div data-v-43685114="" class="content">取消</div></button> <button data-v-43685114="" onClick="move_file_dir()" type="button" class="button-base w-full theme"><!----> <div data-v-43685114="" class="content">确认
+        </div></button></div>
+        
+        </div></div>
+        
+
+<div data-v-5a17a1de="" id="file_share_main" class="popup fixed top-0 left-0 right-0 bottom-0 z-50 grid h-full overflow-y-auto p-10 lg:absolute" style="display:none"><div data-v-5a17a1de="" class="fixed top-0 bottom-0 left-0 right-0 z-10 m-auto w-full bg-white shadow-xl dark:bg-dark-foreground md:relative md:w-[490px] md:rounded-xl"><div class="flex items-center justify-between px-6 pt-6 pb-6"><div class="flex items-center"><div class="mr-3"><!----> <!----> <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather text-theme feather feather-share"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg> <!----> <!----> <!----> <!----> <!----> <!----></div> <b class="text-base font-bold">
+            文件分享
+        </b></div> <div class="-m-3 cursor-pointer p-3" onClick="file_share_close()"><svg xmlns="http://www.w3.org/2000/svg" width="14px" height="14px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="hover-text-theme vue-feather feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></div></div> <div class="absolute top-16 bottom-24 left-0 right-0 h-auto overflow-auto px-6 md:relative md:top-0 md:bottom-0 !overflow-initial"><div spellcheck="false" class="flex select-none items-center rounded-xl mb-5"><div class="relative w-16"><!----> <!----><div rel="file_share_icon"><svg width="53px" height="52px" viewBox="0 0 53 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M48.03125,6.5 L29.790833,6.5 C28.7431613,6.5 27.7373076,6.08896217 26.9894703,5.35523504 L22.6980297,1.14476496 C21.9501924,0.41103783 20.9443387,-6.36543387e-16 19.896667,0 L4.96875,0 L4.96875,0 C2.22455078,0 0,2.18257812 0,4.875 L0,34.125 C0,36.8174219 2.22455078,39 4.96875,39 L48.03125,39 C50.7754492,39 53,36.8174219 53,34.125 L53,11.375 C53,8.68257813 50.7754492,6.5 48.03125,6.5 Z" stroke="none" stroke-width="0" class="svg-color-theme"></path> <path d="M48.03125,6.5 L29.790833,6.5 C28.7431613,6.5 27.7373076,6.08896217 26.9894703,5.35523504 L22.6980297,1.14476496 C21.9501924,0.41103783 20.9443387,-6.36543387e-16 19.896667,0 L4.96875,0 L4.96875,0 C2.22455078,0 0,2.18257812 0,4.875 L0,34.125 C0,36.8174219 2.22455078,39 4.96875,39 L48.03125,39 C50.7754492,39 53,36.8174219 53,34.125 L53,11.375 C53,8.68257813 50.7754492,6.5 48.03125,6.5 Z" fill="black" fill-opacity="0.2" stroke="none" stroke-width="0"></path> <path d="M48.03125,12.75 C49.0609313,12.75 49.9941504,13.1577174 50.6692739,13.8201027 C51.3356976,14.4739525 51.75,15.3766531 51.75,16.375 L51.75,16.375 L51.75,34.125 C51.75,35.1233469 51.3356976,36.0260475 50.6692739,36.6798973 C49.9941504,37.3422826 49.0609313,37.75 48.03125,37.75 L48.03125,37.75 L4.96875,37.75 C3.93906868,37.75 3.00584961,37.3422826 2.33072613,36.6798973 C1.66430239,36.0260475 1.25,35.1233469 1.25,34.125 L1.25,34.125 L1.25,16.375 C1.25,15.3766531 1.66430239,14.4739525 2.33072613,13.8201027 C3.00584961,13.1577174 3.93906868,12.75 4.96875,12.75 L4.96875,12.75 Z" stroke-width="2" fill="green" class="svg-color-theme"></path></svg> <!----></div> <div style="display:none" rel="file_share_icon" class="flex items-center justify-center pr-2"><span class="text-theme absolute z-[5] mx-auto mt-1 inline-block w-7 overflow-hidden text-ellipsis text-center text-[9px] font-semibold" id="share_file_type">pdf</span> <svg width="38px" height="51px" fill="currentColor" viewBox="0 0 38 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="vue-feather dark:text-gray-800 text-gray-100 "><path d="M22.1666667,13.546875 L22.1666667,0 L2.375,0 C1.05885417,0 0,1.06582031 0,2.390625 L0,48.609375 C0,49.9341797 1.05885417,51 2.375,51 L35.625,51 C36.9411458,51 38,49.9341797 38,48.609375 L38,15.9375 L24.5416667,15.9375 C23.2354167,15.9375 22.1666667,14.8617187 22.1666667,13.546875 Z M38,12.1423828 L38,12.75 L25.3333333,12.75 L25.3333333,0 L25.9369792,0 C26.5703125,0 27.1739583,0.249023438 27.6192708,0.697265625 L37.3072917,10.4589844 C37.7526042,10.9072266 38,11.5148437 38,12.1423828 Z"></path></svg></div>  <!----> <!----></div> <div class="pl-2"><b class="mb-0.5 block overflow-hidden text-ellipsis whitespace-nowrap text-sm hover:underline" style="max-width: 240px;" id="share_file_name">
+            FIL
+        </b> <div class="flex items-center"><!----> <!----> <small class="block text-xs text-gray-500" id="share_file_info">
+                3 Items,
+                09. Jan. 2023, 06:16
+            </small></div></div></div> <form> <div><div class="flex w-full items-center justify-between space-x-2 sm:space-x-8 mb-6 sm:mb-7"><div class="leading-5"><label class="mb-1.5 block text-sm font-bold text-gray-700 dark:text-gray-200"> 设置密码: </label> <span class="block text-xs leading-4 dark:text-gray-500 text-gray-500">设置后分享文件需输入密码下载.</span> <!----></div> <div><div data-v-615ed0c1="" class="switch" value="true"><div data-v-615ed0c1="" class="switch-content"><!----> <!----></div> <div data-v-615ed0c1="" class="switch-content text-right"><div data-v-615ed0c1="" class="switch" id="file_share_type"><div data-v-615ed0c1="" class="switch-button"></div></div></div></div></div></div> <div style="display:none" id="file_share_pass_input"><div class="-mt-2 mb-6 sm:mb-7"><!----> <input type="text" placeholder="请输入密码" id="file_share_pass" class="focus-border-theme input-dark"> <!----> <!----></div></div></div> <div>
+            <div class="flex w-full items-center justify-between space-x-2 sm:space-x-8 mb-6 sm:mb-7"><div class="leading-5"><label class="mb-1.5 block text-sm font-bold text-gray-700 dark:text-gray-200"> 有效期: </label> <span class="block text-xs leading-4 dark:text-gray-500 text-gray-500">设置分享文件的有效期限.</span> <!----></div> <div><div data-v-615ed0c1="" class="switch"><div data-v-615ed0c1="" class="switch-content"><!----> <!----></div> <div data-v-615ed0c1="" class="switch-content text-right"><div data-v-615ed0c1="" class="switch"  id="file_share_time"><div data-v-615ed0c1="" class="switch-button"></div></div></div></div></div></div>
+            
+            <div class="-mt-2 mb-6 sm:mb-7" id="file_share_time_input" style="display:none"><!----> <div data-v-a5d9e2da="" class="select-box box"><div data-v-a5d9e2da="" class="box-item active-bg-theme-100 active-border-theme active"><span data-v-a5d9e2da="" class="box-value active-text-theme">1h</span></div><div data-v-a5d9e2da="" class="box-item active-bg-theme-100 active-border-theme"><span data-v-a5d9e2da="" class="box-value active-text-theme">2h</span></div><div data-v-a5d9e2da="" class="box-item active-bg-theme-100 active-border-theme"><span data-v-a5d9e2da="" class="box-value active-text-theme">6h</span></div><div data-v-a5d9e2da="" class="box-item active-bg-theme-100 active-border-theme"><span data-v-a5d9e2da="" class="box-value active-text-theme">12h</span></div><div data-v-a5d9e2da="" class="box-item active-bg-theme-100 active-border-theme"><span data-v-a5d9e2da="" class="box-value active-text-theme">1天</span></div><div data-v-a5d9e2da="" class="box-item active-bg-theme-100 active-border-theme"><span data-v-a5d9e2da="" class="box-value active-text-theme">2天</span></div><div data-v-a5d9e2da="" class="box-item active-bg-theme-100 active-border-theme"><span data-v-a5d9e2da="" class="box-value active-text-theme">7天</span></div></div> <!----> <!----></div>
+            
+            <!----></div> <input id="share_is_effect" type="hidden" value="0"/></form> <!----></div> <div class="absolute bottom-0 left-0 right-0 flex items-center space-x-4 px-6 py-4 pb-6 md:relative"><button data-v-43685114="" type="button" class="button-base w-full secondary" onClick="file_share_close()"><!----> <div data-v-43685114="" class="content">
+                取消
+            </div></button> <button data-v-43685114="" type="button" class="button-base w-full theme" onClick="file_share_ex();"><!----> <div data-v-43685114="" class="content">
+                确认
+            </div></button></div></div></div>
+
+
+
+<div id="popup_bg" style="display:none;" data-v-2818d8a1="" class="vignette dark:bg-2x-dark-background bg-dark-background bg-opacity-[0.35] dark:bg-opacity-[0.70]"></div>
+        
+        
+
+            
+                            
+                </div> 
+                </div>
+                
+                
+<div id="fileTmp1" style="display:none;"><div rel="file" file_name="@file_name" file_count="@file_count" add_time="@add_time" id="file_@id" vid="@id" file_dir="@file_dir" style="margin-bottom:10px;"><div data-v-55079be7="" draggable="true" spellcheck="false" class="flex select-none items-center rounded-xl border-2 border-dashed border-transparent px-2.5 py-2 hover:bg-light-background dark:hover:bg-dark-foreground"><!----> <div class="relative w-16 shrink-0"><!----> <!----> <div><svg width="53px" height="52px" viewBox="0 0 53 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M48.03125,6.5 L29.790833,6.5 C28.7431613,6.5 27.7373076,6.08896217 26.9894703,5.35523504 L22.6980297,1.14476496 C21.9501924,0.41103783 20.9443387,-6.36543387e-16 19.896667,0 L4.96875,0 L4.96875,0 C2.22455078,0 0,2.18257812 0,4.875 L0,34.125 C0,36.8174219 2.22455078,39 4.96875,39 L48.03125,39 C50.7754492,39 53,36.8174219 53,34.125 L53,11.375 C53,8.68257813 50.7754492,6.5 48.03125,6.5 Z" stroke="none" stroke-width="0" class="svg-color-theme"></path> <path d="M48.03125,6.5 L29.790833,6.5 C28.7431613,6.5 27.7373076,6.08896217 26.9894703,5.35523504 L22.6980297,1.14476496 C21.9501924,0.41103783 20.9443387,-6.36543387e-16 19.896667,0 L4.96875,0 L4.96875,0 C2.22455078,0 0,2.18257812 0,4.875 L0,34.125 C0,36.8174219 2.22455078,39 4.96875,39 L48.03125,39 C50.7754492,39 53,36.8174219 53,34.125 L53,11.375 C53,8.68257813 50.7754492,6.5 48.03125,6.5 Z" fill="black" fill-opacity="0.2" stroke="none" stroke-width="0"></path> <path d="M48.03125,12.75 C49.0609313,12.75 49.9941504,13.1577174 50.6692739,13.8201027 C51.3356976,14.4739525 51.75,15.3766531 51.75,16.375 L51.75,16.375 L51.75,34.125 C51.75,35.1233469 51.3356976,36.0260475 50.6692739,36.6798973 C49.9941504,37.3422826 49.0609313,37.75 48.03125,37.75 L48.03125,37.75 L4.96875,37.75 C3.93906868,37.75 3.00584961,37.3422826 2.33072613,36.6798973 C1.66430239,36.0260475 1.25,35.1233469 1.25,34.125 L1.25,34.125 L1.25,16.375 C1.25,15.3766531 1.66430239,14.4739525 2.33072613,13.8201027 C3.00584961,13.1577174 3.93906868,12.75 4.96875,12.75 L4.96875,12.75 Z" stroke-width="2" fill="green" class="svg-color-theme"></path></svg> <!----></div> <!----> <!----></div> <div class="pl-2"><span class="mb-0.5 block overflow-hidden text-ellipsis whitespace-nowrap text-sm font-bold hover:underline" style="max-width: 240px;">
+                @file_name
+            </span> <div class="flex items-center"><!----> <!----> <small class="block text-xs text-gray-500 dark:text-gray-500">
+                    @file_count文件 ,@add_time
+                </small></div></div> <!----></div> <!---->
+</div></div>
+                
+                
+<div id="fileTmp2" style="display:none; margin-bottom:10px;">
+	<div rel="file1" id="file_@id" cid="@cid" vid="@id" icon="@file_icon" file_dir="@file_dir" file_name="@file_name" file_type="@file_type" file_size="@file_size" file_spec="@file_spec" file_addtime="@add_time" style="margin-bottom:10px;">
+    <div data-v-55079be7="" draggable="true" spellcheck="false" class="flex select-none items-center rounded-xl border-2 border-dashed border-transparent px-2.5 py-2 dark:bg-dark-foreground hover:bg-light-background dark:hover:bg-dark-foreground"><!---->
+	<div class="relative w-16 shrink-0">@file_txt</div>
+    <div class="pl-2"><span contenteditable="true" class="mb-0.5 block overflow-hidden text-ellipsis whitespace-nowrap text-sm font-bold hover:underline" style="max-width: 240px;">@file_name</span> <div class="flex items-center"><div><svg xmlns="http://www.w3.org/2000/svg" width="12px" height="12px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-theme dark-text-theme vue-feather mr-1.5 feather feather-link"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></div>
+    <small class="block text-xs text-gray-500 dark:text-gray-500">@file_size, @add_time</small></div></div></div>
+	</div>
+</div>
+
+
+             
+                
+
+  
+    <script language="javascript" src="/js/jquery-1.11.3.min.js"></script>
+    <script language="javascript" src="/js/common.js"></script>
+    <script language="javascript" src="/js/jquery-cookie.js"></script>
+    <script src="/js/dist/tus.js"></script>
+    <script language="javascript" src="/js/file.js"></script>
+    <script language="javascript" src="/layer/layer.js"></script>
+    <script language="javascript" src="counter.umd.cjs"></script>
+<script language="javascript">
+$.fn.addSvgClass = function(className) {
+    return this.each(function() {
+        var attr = $(this).attr('class') || "";
+        if (!$(this).hasClass(className)) {
+            $(this).attr('class', $.trim(attr + ' ' + className))
+        }
+    })
+};
+
+$.fn.removeSvgClass = function(className) {
+    return this.each(function() {
+       	var attr = $(this).attr('class') || "";
+		//alert(attr.indexOf(className))
+       	if (attr.indexOf(className)>-1) {
+           	$(this).attr('class', attr.split(" ").filter(item => { return item != className; }).join(" "))
+       	}
+   	})
+};
+</script>    
+    
+<script language="javascript">
+	var formint=0;
+	var path_id="";
+	var back_id="";
+	var file_attr_int=0;
+	var attr_click=0;
+	var file_id=0;
+	var dir_list=[];
+	function fileload(){
+		if (formint>0) {
+			return;
+		}
+		formint=1;
+		$('#loading-bar-page').show();
+		$.ajax({
+				url: "/user/filedir/?ajax=1&path_id="+path_id,
+				dataType: "json",
+				type: "get",
+				error: function(xhr, ajaxOptions, thrownError) {
+					//console.log(xhr.responseText);
+					var redata=JSON.parse(xhr.responseText);
+					layer.msg(redata['error']['message'])
+					//xhr.responseText			
+// 					alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+				},
+				beforeSend: function() {
+						//$('.loadinfo_div').show();
+				},
+				complete: function() {
+						$('#loading-bar-page').hide();
+						formint=0;
+				},
+				success: function(data) {
+					if (data.status) {
+						back_id=data.path_id;
+						dir_list=data.file_dir;
+						$("#filelist").html("");
+						var dfile="";
+						var xfile="";
+						if(data.files.length<1){
+							 $("#no_data").show();	
+						}else{
+							 $("#no_data").hide();	
+						}
+						
+						for(var i=0;i<data.files.length;i++){
+							//alert(data.files[i].id)
+							if(data.files[i].mtype=="0"){
+								var rehtml=$("#fileTmp1").html();
+								rehtml=rehtml.replace(/@id/g,data.files[i].id);
+								rehtml=rehtml.replace("@file_type",data.files[i].file_type);
+								rehtml=rehtml.replace(/@file_dir/g,data.files[i].file_dir);
+								rehtml=rehtml.replace(/@file_name/g,data.files[i].title);
+								rehtml=rehtml.replace(/@add_time/g,data.files[i].create_time);
+								rehtml=rehtml.replace(/@file_count/g,data.files[i].file_count);
+								dfile+=rehtml;
+								//$("#filelist").append(rehtml)
+							}else{
+								//alert(data.files[i].file_dir)
+								var rehtml=$("#fileTmp2").html();
+								rehtml=rehtml.replace(/@id/g,data.files[i].id);
+								rehtml=rehtml.replace(/@file_type/g,data.files[i].file_type);
+								rehtml=rehtml.replace(/@file_dir/g,data.files[i].file_dir);
+								rehtml=rehtml.replace(/@file_name/g,data.files[i].title);
+								rehtml=rehtml.replace(/@add_time/g,data.files[i].create_time);
+								rehtml=rehtml.replace(/@file_size/g,data.files[i].file_size);
+								rehtml=rehtml.replace(/@file_icon/g,data.files[i].icon);
+								rehtml=rehtml.replace("@cid",data.files[i].cid);
+								rehtml=rehtml.replace(/@file_spec/,data.files[i].file_spec);
+								var f_type_v=data.files[i].file_type;
+								if(f_type_v=="jpg"||f_type_v=="png"||f_type_v=="gif"||f_type_v=="bmp"){
+									rehtml=rehtml.replace("@file_txt",'<img src="'+data.files[i].icon+'" alt="" loading="lazy" class="ml-0.5 h-12 w-12 rounded object-cover pointer-events-none">');
+								}else{
+									rehtml=rehtml.replace("@file_txt",'<div class="flex items-center justify-center pr-2"><span class="text-theme absolute z-[5] mx-auto mt-1 inline-block w-7 overflow-hidden text-ellipsis text-center text-[9px] font-semibold">'+data.files[i].file_type+'</span><svg width="38px" height="51px" fill="currentColor" viewBox="0 0 38 51" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="vue-feather dark:text-gray-800 text-gray-100 "><path d="M22.1666667,13.546875 L22.1666667,0 L2.375,0 C1.05885417,0 0,1.06582031 0,2.390625 L0,48.609375 C0,49.9341797 1.05885417,51 2.375,51 L35.625,51 C36.9411458,51 38,49.9341797 38,48.609375 L38,15.9375 L24.5416667,15.9375 C23.2354167,15.9375 22.1666667,14.8617187 22.1666667,13.546875 Z M38,12.1423828 L38,12.75 L25.3333333,12.75 L25.3333333,0 L25.9369792,0 C26.5703125,0 27.1739583,0.249023438 27.6192708,0.697265625 L37.3072917,10.4589844 C37.7526042,10.9072266 38,11.5148437 38,12.1423828 Z"></path></svg></div>');
+								}
+								xfile+=rehtml;
+								//$("#filelist").append(rehtml)
+							}
+						}
+						
+						$("#filelist").append(dfile+xfile);
+						
+						if(path_id==""||path_id=="0"){
+							
+								$("#nav_title").attr("class","inline-block lg:max-w-[210px] max-w-[190px] transform overflow-hidden text-ellipsis whitespace-nowrap align-middle text-sm font-bold transition-all duration-200 dark:text-gray-100 -translate-x-4");	
+								$("#nav_back").attr("class","mr-2 -ml-1 cursor-pointer align-middle transition-all duration-200 lg:-mt-0.5 feather feather-chevron-left -translate-x-3 opacity-0");
+								
+								$("#nav_title").html("我的文件");
+								
+						}
+						
+						if(file_id==0){
+							$("#but_del").addClass("is-inactive");
+							$("#but_share").addClass("is-inactive");
+							$("#but_move").addClass("is-inactive");
+						}else{
+							$("#but_del").removeClass("is-inactive");
+							$("#but_share").removeClass("is-inactive");
+							$("#but_move").removeClass("is-inactive");
+						}
+						
+						//alert(back_id)
+						$('[rel="file"]').dblclick(function(){
+							file_id=0;
+							attr_click=0;
+							$("#attr_node_attr").show();
+							$("#attr_file_info").hide();
+							
+							$("#but_del").addClass("is-inactive");
+							$("#but_share").addClass("is-inactive");
+							$("#but_move").addClass("is-inactive");
+							
+							$("#nav_back").attr("onclick","n_back(back_id)");
+							path_id=$(this).attr("vid");
+							$("#nav_title").html($(this).find(".text-ellipsis").text());
+							if(path_id==""||path_id=="0"){
+								$("#nav_title").attr("class","inline-block lg:max-w-[210px] max-w-[190px] transform overflow-hidden text-ellipsis whitespace-nowrap align-middle text-sm font-bold transition-all duration-200 dark:text-gray-100 -translate-x-4");	
+								$("#nav_back").attr("class","mr-2 -ml-1 cursor-pointer align-middle transition-all duration-200 lg:-mt-0.5 feather feather-chevron-left -translate-x-3 opacity-0");
+							}else{
+								$("#nav_title").attr("class","inline-block lg:max-w-[210px] max-w-[190px] transform overflow-hidden text-ellipsis whitespace-nowrap align-middle text-sm font-bold transition-all duration-200 dark:text-gray-100 -translate-x-0");	
+
+								$("#nav_back").attr("class","mr-2 -ml-1 cursor-pointer align-middle transition-all duration-200 lg:-mt-0.5 feather feather-chevron-left -translate-x-0 opacity-100");
+							}
+							fileload();
+						}).click(function(){
+							attr_click=1;
+							$('[rel="file"]').removeClass("bg-light-background");
+							$('[rel="file1"]').removeClass("bg-light-background");
+							$(this).addClass("bg-light-background");
+							
+							$("#file_attr_dir").show();
+							$("#dir_name").html($(this).attr('file_name'));
+							$("#attr_file_addtime").show();
+							$("#attr_file_addtime b").html($(this).attr('add_time'));
+							$("#attr_file_dir b").html($(this).attr('file_dir'));
+							$('[rel="attr_file_icon"]').hide();
+							$("#attr_file_spec").hide();
+							$("#attr_file_size").hide();
+							
+							//文件迁移
+							$("[rel='file_move_icon']").eq(0).show();
+							$("[rel='file_move_icon']").eq(1).hide();
+							$("#move_file_name").html($(this).attr('file_name'));
+							$("#move_file_info").html($(this).attr('file_count')+"文件，"+$(this).attr('add_time'));
+							
+							//文件分享
+							$("[rel='file_share_icon']").eq(0).show();
+							$("[rel='file_share_icon']").eq(1).hide();
+							$("#share_file_name").html($(this).attr('file_name'));
+							$("#share_file_info").html($(this).attr('file_count')+"文件，"+$(this).attr('add_time'));
+							
+							file_id = $(this).attr('vid');
+							
+							$("#but_del").removeClass("is-inactive");
+							$("#but_share").removeClass("is-inactive");
+							$("#but_move").removeClass("is-inactive");
+							
+							if(file_attr_int){
+								$("#attr_info").show();
+								if(attr_click){
+									$("#attr_node_attr").hide();
+									$("#attr_file_info").show();
+								}else{
+									$("#attr_node_attr").show();
+									$("#attr_file_info").hide();
+								}
+							}
+						})
+						
+						$('[rel="file1"]').dblclick(function(){
+							//path_id=$(this).attr("vid");
+							//fileload();
+							//attr_click=0;
+							//file_id=0;
+							//$("#attr_node_attr").show();
+							//$("#attr_file_info").hide();
+							window.open('http://183.240.209.145:5001/ipfs/'+$(this).attr("cid"));
+						}).click(function(){
+							attr_click=1;
+							file_id=$(this).attr('vid');
+							
+							//文件迁移
+							$("[rel='file_move_icon']").eq(0).hide();
+							$("[rel='file_move_icon']").eq(1).show();
+							$("#move_file_type").html($(this).attr('file_type'));
+							$("#move_file_name").html($(this).attr('file_name'));
+							$("#move_file_info").html($(this).attr('file_size')+"，"+$(this).attr('file_addtime'));
+							
+							//文件分享
+							$("[rel='file_share_icon']").eq(0).hide();
+							$("[rel='file_share_icon']").eq(1).show();
+							$("#share_file_type").html($(this).attr('file_type'));
+							$("#share_file_name").html($(this).attr('file_name'));
+							$("#share_file_info").html($(this).attr('file_size')+"，"+$(this).attr('file_addtime'));
+							
+							$('[rel="file"]').removeClass("bg-light-background");
+							$('[rel="file1"]').removeClass("bg-light-background");
+							$(this).addClass("bg-light-background");
+							
+							$("#but_del").removeClass("is-inactive");
+							$("#but_share").removeClass("is-inactive");
+							$("#but_move").removeClass("is-inactive");
+							
+							$("#file_attr_dir").hide();
+							$('[rel="attr_file_icon"]').show();
+							$("#printable-file").attr("src",$(this).attr('icon'));
+							$("#attr_icon_name").html($(this).attr('file_name'));
+							$("#attr_icon_type").html($(this).attr('file_type'));
+							$("#attr_file_dir b").html($(this).attr('file_dir'));
+							$("#attr_file_size b").html($(this).attr('file_size'));
+							$("#attr_file_size").show();
+							$("#attr_file_spec b").html($(this).attr('file_spec'));
+							$("#attr_file_spec").show();
+							$("#attr_file_addtime").html($("#attr_file_addtime").html().replace('@file_addtime',$(this).attr('file_addtime')));
+							$("#attr_file_addtime").show();
+								
+							if(file_attr_int){
+								$("#attr_info").show();
+								if(attr_click){
+									$("#attr_node_attr").hide();
+									$("#attr_file_info").show();
+								}else{
+									$("#attr_node_attr").show();
+									$("#attr_file_info").hide();
+								}
+								
+							}
+						})
+						
+						//location.href="/user_index.html"
+					}else{
+						layer.msg(data.error.message);
+					}
+				}
+        });
+}
+fileload();
+								
+
+
+
+function myfile(){
+	path_id="";
+	fileload();
+}
+
+function myfile(){
+	path_id="";
+	fileload();
+}
+function n_back(id){
+	path_id=id;
+	file_id=0;
+	fileload();
+	
+}
+
+	
+function popup_close(){
+	$(".popup").hide();
+	$("#popup_bg").hide();
+}
+function create_popup(){
+	$("#popup_create").show();
+	$("#popup_bg").show();
+}
+
+
+function create_file_submit(){
+		if (formint>0) {
+			return;
+		}
+		
+	    if($("#file_name").val()==""){
+		   layer.msg("请输入文件夹名称");
+		   return;
+		}
+		
+		formint=1;
+		$.ajax({
+				url: "/user/mkdir",
+				data: {
+					name: $("#file_name").val(),
+					path_id: path_id,
+					ajax:1
+				},
+				dataType: "json",
+				type: "post",
+				error: function(xhr, ajaxOptions, thrownError) {
+					//console.log(xhr.responseText);
+					var redata=JSON.parse(xhr.responseText);
+					layer.msg(redata['error']['message'])
+					//xhr.responseText			
+// 					alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+				},
+				beforeSend: function() {
+						//$('.loadinfo_div').show();
+				},
+				complete: function() {
+						//$('.loadinfo_div').hide();
+						formint=0;
+				},
+				success: function(data) {
+					if (data.status) {
+						
+
+						popup_close();
+						formint=0;
+						fileload();
+						//location.href="/user_index.html"
+					}else{
+						layer.msg(data.info);
+					}
+				}
+        });
+}
+
+function upfile_data(redata){
+		formint=1;
+		$.ajax({
+				url: linkUrl+"/api/v0/fs/upload",
+				data: JSON.stringify({
+					name: redata.Name,
+					cid: redata.Hash,
+					size: parseInt(redata.Size),
+					path_id: path_id==""?"-1":path_id
+				}),
+				headers: {
+					"Authorization": "Bearer "+$.cookie('user_token'),
+				    "Content-Type": "application/json; charset=UTF-8",
+				},
+				dataType: "json",
+				type: "post",
+				error: function(xhr, ajaxOptions, thrownError) {
+					//console.log(xhr.responseText);
+					var redata=JSON.parse(xhr.responseText);
+					layer.msg(redata['error']['message'])
+					//xhr.responseText			
+// 					alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+				},
+				beforeSend: function() {
+						//$('.loadinfo_div').show();
+				},
+				complete: function() {
+						//$('.loadinfo_div').hide();
+						formint=0;
+						$(".upload-progress").hide();
+				},
+				success: function(data) {
+					data.status=(data.error==undefined?1:0)
+					if (data.status) {
+						
+						layer.msg("文件上传成功！");
+						setTimeout("fileload()",1000);
+						//popup_close();
+						//formint=0;
+						//fileload();
+						//location.href="/user_index.html"
+					}else{
+						layer.msg(data.error.message);
+					}
+				}
+        });
+
+}
+
+
+
+
+function upload_cover(obj) {
+	var form = new FormData();
+	form.append("file", obj.files[0]);
+	var settings = {
+	  // "url": "https://crustipfs.xyz/api/v0/add?pin=true",
+	  "url": "http://183.240.209.145:5001/api/v0/add?pin=true",
+	  "method": "POST",
+	  "timeout": 0,
+	  /*"headers": {
+		"authorization": "Basic Y1RNeHh4ZFdDN3VjUHFlQk45NHpoMlBuVTY0Q1Q5TXd0enM1UGVEazhxdzhQekxlNToweDcyMjhkZmUwYWQ4NjE4ZWZiNGFiY2JmMzMwNjUzOWNhOTQ5NWQ2ZGRlYTExMmIzYmI0ZmRkZjgwZmZjYTEyMzJjMmZlYzBkNDZlOGViZGFhNGEyZWViMDFhMzA5ZGU4ZDExNjBlZjM4OWRiNDU0OTBlMDZkODlmMWE5ZDc2MDgx"
+	  },*/
+	  "processData": false,
+	  "mimeType": "multipart/form-data",
+	  "contentType": false,
+	  "dataType": "json",
+	  "data": form
+	};
+	$(".upload-progress").show();
+	$.ajax(settings).done(function (response) {
+	  console.log(response);
+	  //alert(response)
+	  file_ping(response.Hash)
+	  //upfile_data(response)
+	});
+}
+
+
+function file_ping(cid){
+	var settings = {
+	  "url": "https://pin.crustcode.com/psa/pins",
+	  "method": "POST",
+	  "timeout": 0,
+	  "headers": {
+		"authorization": "Bearer c3Vic3RyYXRlLWNUS1JjZXFoWk1XU3NFTHFzb05nV2JWejVSS3p6Z1FIWVI5UUJLcFJxQldUa3JjZEI6MHg1Y2E3OGJkNTVjNzhjYWY3MGMxYzdkNjhlOTgzZDkxYmFkMTVmOWE2NWQyZmIyN2M5YTdjMTEwZDkzZDU5MjFiNDhjNjMyYTE1OTJlOTRhMTVhMTIxNWQzODg2MzQzNTZmMzY0NDRjZWZlZTZjYWQzOGNhYTViZjE2OGMyOGI4NA=="
+	  },
+	  "contentType": "application/json",
+	  "dataType": "json",
+	  "data": '{"cid":"'+cid+'"}'
+	};
+	$(".upload-progress").show();
+	$.ajax(settings).done(function (response) {
+	  console.log(response);
+	  //alert(response)
+	  //upfile_data(response)
+	});
+}
+//file_ping('QmRLbCDruL4cUTrVmXT4LFtjwDpqsKmFt7v1y6SquLChny');
+
+	
+document.oncontextmenu = function(e){
+	//return false
+	e.preventDefault()
+}
+	
+$(document).ready(function(){
+	$('body').delegate('.overflowClip_1','mousedown', function(e){
+		//alert("鼠标事件");
+        //  1 = 鼠标左键 left; 2 = 鼠标中键; 3 = 鼠标右键
+		if (3 == e.which) {
+			// 鼠标右键
+			if($("#popup_bg").css("display")=="none"){
+				$("#menu_1").show();
+				$("#menu_1").css("top",e.offsetY);
+				$("#menu_1").css("left",e.offsetX+300);
+				//alert("鼠标右键")
+				//alert('X：'+e.offsetX+'\n Y:'+e.offsetY);
+			}
+		}else{
+			//$("#menu_1").hide();
+		}
+		
+	})
+	
+	$("#menu_1 .option-group").click(function(){
+		$("#menu_1").hide();
+	})
+	
+})
+
+
+$("#info_panel").click(function(){
+	if($(this).find("svg").attr("class").indexOf(" text-theme")>-1){
+		$(this).find("svg").attr("class","vue-feather group-hover-text-theme feather feather-info");
+		file_attr_int=0;
+		$("#attr_info").hide();
+	}else{
+		$(this).find("svg").attr("class","vue-feather group-hover-text-theme feather feather-info text-theme");
+		$("#attr_info").show();
+		file_attr_int=1;
+	}
+
+	if(attr_click){
+		$("#attr_node_attr").hide();
+		$("#attr_file_info").show();
+	}else{
+		$("#attr_node_attr").show();
+		$("#attr_file_info").hide();
+	}
+	
+})
+
+function file_move(){
+	if(file_id>0){
+		$('#file_dir_move_list').html('');
+		for(var i=0;i<dir_list.length;i++){
+			if(dir_list[i]['pid']==0){
+				$("#file_dir_move_list").append('<div class="" rel="dir"><div class="relative relative flex cursor-pointer select-none items-center whitespace-nowrap lg:py-2 py-3.5 px-1.5 transition-all duration-150" style="padding-left:40px;"><span onclick="file_dir_show(this,'+dir_list[i]['id']+')" showint="0" class="-m-2 p-2 icon_arr" fid="'+dir_list[i]['id']+'"><svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather mr-2 opacity-0 transition-all duration-300 feather feather-chevron-right opacity-100"><polyline points="9 18 15 12 9 6"></polyline></svg></span><svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon vue-feather shrink-0 feather feather-folder"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path</svg> <b vid="'+dir_list[i]['id']+'" onclick="file_dir_sel(this)" class="ml-3 inline-block overflow-x-hidden text-ellipsis whitespace-nowrap text-xs font-bold transition-all duration-150">'+dir_list[i]['title']+'</b></div></div>');
+			}
+		}
+		
+		if(dir_list.length>0){
+			$("#file_dir_root span").show();
+		}else{
+			$("#file_dir_root span").hide();
+		}
+		
+		$("#file_move_main").show();
+		$("#popup_bg").show();
+	}else{
+		$("#file_move_main").hide();
+		$("#popup_bg").hide();
+	}
+}
+
+
+function get_dir(){
+  $('#loading-bar-page').show();
+  $.ajax({
+		  url: "/user/get_dir",
+		  dataType: "json",
+		  type: "get",
+		  error: function(xhr, ajaxOptions, thrownError) {
+			  //console.log(xhr.responseText);
+			  var redata=JSON.parse(xhr.responseText);
+			  layer.msg(redata['error']['message'])
+		  },
+		  beforeSend: function() {
+			  //$('.loadinfo_div').show();
+		  },
+		  complete: function() {
+			  $('#loading-bar-page').hide();
+		  },
+		  success: function(data) {
+		  	dir_list=data;
+		  }
+   })
+}
+
+function file_dir_show(t,s){
+	if($(t).attr("showint")=="0"){
+		for(var i=0;i<dir_list.length;i++){
+			if(dir_list[i]['pid']==s){
+				var dir_obj=s=="0"?$("#file_dir_move_list"):$(t).parent().parent();
+				var dir_padint=s=="0"?40:parseInt(dir_obj.find('.select-none').css('padding-left'))+20;
+				var level_int=0;
+				var level_list_str="";
+				for(var j=0;j<dir_list.length;j++){
+					if(dir_list[i]['id']==dir_list[j]['pid']) level_int++;
+				}
+				
+				if(level_int>0){
+					level_list_str='<span onclick="file_dir_show(this,'+dir_list[i]['id']+')" showint="0" class="-m-2 p-2 icon_arr" fid="'+dir_list[i]['id']+'"><svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="vue-feather mr-2 opacity-0 transition-all duration-300 feather feather-chevron-right opacity-100"><polyline points="9 18 15 12 9 6"></polyline></svg></span>';
+				}else{
+					dir_padint+=25;	
+				}
+				
+				dir_obj.append('<div class="" rel="dir"><div class="relative relative flex cursor-pointer select-none items-center whitespace-nowrap lg:py-2 py-3.5 px-1.5 transition-all duration-150" style="padding-left:'+dir_padint+'px;">'+level_list_str+'<svg xmlns="http://www.w3.org/2000/svg" width="17px" height="17px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon vue-feather shrink-0 feather feather-folder"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path</svg> <b vid="'+dir_list[i]['id']+'" onclick="file_dir_sel(this)" class="ml-3 inline-block overflow-x-hidden text-ellipsis whitespace-nowrap text-xs font-bold transition-all duration-150">'+dir_list[i]['title']+'</b></div></div>');
+			}
+		}
+		$(t).attr("showint","1");
+		$(t).find('svg').attr("class","vue-feather mr-2 opacity-0 transition-all duration-300 feather feather-chevron-right rotate-90 transform opacity-100");
+	}else{
+		$(t).find('svg').attr("class","vue-feather mr-2 opacity-0 transition-all duration-300 feather feather-chevron-right opacity-100");
+		$(t).parent().parent().find('[rel="dir"]').remove();
+		$(t).attr("showint","0");
+	}
+}
+var move_dir_id=-1;
+function file_dir_sel(t){
+	$('#file_dir_root').find('svg').removeSvgClass("text-theme");
+	$('#file_dir_root').find('b').removeSvgClass("text-theme");
+	$('[rel="dir"]').find('svg').removeSvgClass("text-theme");
+	$('[rel="dir"]').find('b').removeClass("text-theme");
+	$(t).parent().find('svg').addSvgClass("text-theme");
+	$(t).parent().find('b').addClass("text-theme");
+	move_dir_id=$(t).attr("vid");
+}
+
+function move_file_dir(){
+	if(move_dir_id<0){
+		layer.msg("请选择要移动的文件目录！");
+		return;	
+	}
+	
+	if(file_id>0){
+	  $('#loading-bar-page').show();
+	  $.ajax({
+		  url: "/user/move_dir",
+		  data: {
+			  path_id: move_dir_id,
+			  fid: file_id,
+			  ajax:1
+		  },
+		  dataType: "json",
+		  type: "post",
+		  error: function(xhr, ajaxOptions, thrownError) {
+			  //console.log(xhr.responseText);
+			  var redata=JSON.parse(xhr.responseText);
+			  layer.msg(redata['error']['message'])
+		  },
+		  beforeSend: function() {
+			  //$('.loadinfo_div').show();
+		  },
+		  complete: function() {
+			  $('#loading-bar-page').hide();
+		  },
+		  success: function(data) {
+			if(data.status){
+				file_id=0;
+				file_move_hide();
+				fileload();
+			}else{
+				layer.msg(data.info)
+			}
+		  }
+	   })
+	}
+}
+
+function file_move_hide(){
+	$("#file_move_main").hide();
+	$("#popup_bg").hide();
+	move_dir_id=-1;
+}
+
+function del_file(){
+	if(file_id>0){
+		layer.confirm('确认删除'+$("#file_"+file_id).attr("file_name")+'吗？', {
+		  title:'系统消息',
+		  icon:0,
+		  btn: ['确认', '取消']
+		},function(index, layero){
+		  
+		  layer.closeAll();
+		  $('#loading-bar-page').show();
+		  $.ajax({
+			  url: "/user/file_del",
+			  data: {
+				  fid: file_id,
+				  ajax:1
+			  },
+			  dataType: "json",
+			  type: "post",
+			  error: function(xhr, ajaxOptions, thrownError) {
+				  //console.log(xhr.responseText);
+				  var redata=JSON.parse(xhr.responseText);
+				  layer.msg(redata['error']['message'])
+			  },
+			  beforeSend: function() {
+				  //$('.loadinfo_div').show();
+			  },
+			  complete: function() {
+				  $('#loading-bar-page').hide();
+			  },
+			  success: function(data) {
+				if(data.status){
+					fileload();
+				}else{
+					layer.msg(data.info)
+				}
+			  }
+		   })
+			
+		}, function(index){
+		 
+		});
+	}else{
+		layer.msg("请选择一个目标文件")
+	}
+}
+
+
+function file_share(){
+	$("#file_share_main").show();
+	$("#popup_bg").show();
+}
+
+function file_share_close(){
+	$("#file_share_main").hide();
+	$("#popup_bg").hide();
+}
+
+$("#file_share_type").click(function(){
+	if($(this).hasClass("active")){
+    	$(this).removeClass("active");
+        $("#file_share_pass_input").hide();
+    }else{
+    	$(this).addClass("active");
+        $("#file_share_pass_input").show();
+    }
+})
+
+$("#file_share_time").click(function(){
+	if($(this).hasClass("active")){
+    	$(this).removeClass("active");
+        $("#file_share_time_input").hide();
+    }else{
+    	$(this).addClass("active");
+        $("#file_share_time_input").show();
+    }
+})
+
+$("#file_share_time_input .box-item").click(function(){
+	$("#file_share_time_input .box-item").removeClass("active");
+	$(this).addClass("active");
+	$("#share_is_effect").val($(this).index())
+})
+
+function file_share_ex(){
+	if(file_id>0){
+	  
+	if($("#file_share_type").hasClass("active")){
+		if($("#file_share_pass").val()==''){
+			layer.msg("请输入分享密码.");
+			return;	
+		}
+	}
+	  
+	  $('#loading-bar-page').show();
+	  $.ajax({
+		  url: "/user/move_dir",
+		  data: {
+			  mtype: $("#file_share_type").hasClass("active")?1:0,
+			  pass:$("#file_share_pass").val(),
+			  is_effect: $("#file_share_time").hasClass("active")?1:0,
+			  effect_time_int:$("#share_is_effect").val(),
+			  fid: file_id,
+			  ajax:1
+		  },
+		  dataType: "json",
+		  type: "post",
+		  error: function(xhr, ajaxOptions, thrownError) {
+			  //console.log(xhr.responseText);
+			  var redata=JSON.parse(xhr.responseText);
+			  layer.msg(redata['error']['message'])
+		  },
+		  beforeSend: function() {
+			  //$('.loadinfo_div').show();
+		  },
+		  complete:function() {
+			  $('#loading-bar-page').hide();
+		  },
+		  success: function(data) {
+			if(data.status){
+				file_id=0;
+				file_move_hide();
+				fileload();
+			}else{
+				layer.msg(data.info)
+			}
+		  }
+	   })
+	}else{
+		layer.msg("请选择一个文件或文件目录！");
+	}
+}
+</script>    
+
+</body></html>

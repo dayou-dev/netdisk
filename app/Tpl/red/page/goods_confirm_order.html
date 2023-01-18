@@ -1,0 +1,404 @@
+
+
+<!doctype html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport" content="width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0">
+
+	
+
+<title>订单确认</title>
+
+	
+
+<link href="/Theme/css/base.css" rel="stylesheet">
+
+<link href="/Theme/css/shop.css" rel="stylesheet">
+
+<script src="/Theme/js/jquery-1.11.2.min.js"></script>
+<style type="text/css">
+.shopcart-summary {
+    line-height: 1.8rem;
+    overflow: hidden;
+    float: left;
+    padding: 0 0 0 .4rem;
+}
+.shopcart-sumbit { width:100%;}
+.shopcart-summary {
+    line-height: 1.8rem;
+    overflow: hidden;
+    float: left;
+    padding: 0 0 0 .4rem;
+}
+.shopcart-submit-btn { float:right;}
+.obj_select:after {
+    width: 0.5rem;
+    height: 1.4rem;
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0.1rem;
+    background: url(/Theme/images/icon_arrow.svg) center center / 0.8rem no-repeat;
+}
+.obj_select span{ padding-right:20px;}
+
+.pay_way{}
+.pay_way p{height: 3em; line-height: 3em; padding: 0 1em; color: #999999;}
+.pay_way div{padding: 0 1em; overflow: hidden;}
+
+.pay_way div label{display:inline-block;float: left; width: 48%; height: 4em; overflow: hidden; line-height: 4em; background-color: #ffffff; text-align: center;}
+
+.pay_way div label:first-child{margin-right: 4%;}
+
+.pay_way div label.checked{background-image: url("/images/xz.png"); background-repeat: no-repeat; background-size: 2em 2em; background-position: right bottom;}
+
+.pay_way div label span img{width: 2.8em; height: 2.8em; vertical-align: middle; margin-right: 0.6em;}
+</style>
+</head>
+
+
+
+<body>	
+
+<header class="header">
+
+	<div class="header-return">
+
+		<a href="javascript:history.go(-1);"></a>
+
+	</div>
+
+
+
+	<div class="logo">订单确认</div>
+
+</header>
+
+
+
+<section class="container shopcart-container">
+
+	<a href="{if $user_address}/user/choose_address{else}/user/add_address/{$goodsinfo.id}.html{/if}" class="order-address">
+
+        <div class="order-address-text">
+
+           {if $user_address}
+
+            <p><label>收货地址：</label><span>{$user_address.province_s}{$user_address.city_s}{$user_address.region_s}{$user_address.address}</span></p>
+
+            <p><label>收&nbsp;&nbsp;货&nbsp;人：</label><span>{$user_address.receiver}</span></p>
+
+            <p><label>手&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;机：</label><span>{$user_address.mobilephone}</span></p>
+
+            
+
+            {else}
+
+            <p style=" padding:10px;">请添加一个收货地址</p>
+
+            {/if}
+
+        </div>
+
+        <span class="order-address-edit" ></span>
+
+    </a>
+
+	<div class="clr-small"></div>
+
+	
+
+	
+
+	
+
+	<div class="order">
+
+		<div class="order-title">
+
+			<a href="ShopStore.html" class="order-shop fl">商品明细</a>	            
+
+		</div>	 
+
+
+
+		<div class="order-product">
+
+			<img src="{$goodsinfo.icon}">
+
+
+
+			<a href="/goods/detail/{$goodsinfo.id}.html">{$goodsinfo.title}{if $goodsinfo.info}<br/><font color="#999">{foreach from=$attrdata key=key item=item}[{$item.title}：{$item.val}]{/foreach}</font>{/if}</a>
+
+
+
+			<div class="order-price">
+
+				<p>×{$qty}</p>
+
+			</div>
+
+		</div>
+
+
+
+			
+
+	</div>
+
+	<div class="clr"></div>
+
+
+
+	<div class="order-confirm-details">    
+
+
+{if $goodsinfo.shop_service and $company}
+		<ul>
+			<li class="order-confirm-item">服务门店</li>
+			<li class="order-confirm-text"><span id="company">{$company}</span> <a href="javascript:select_shop();">更换</a></li>
+		</ul>
+		{if $goodsinfo.price_s gt 0}<ul>
+			<li class="order-confirm-item">服务费</li>
+			<li class="order-confirm-text">￥{$goodsinfo.price_s} ×{$qty} </li>
+		</ul>{/if}
+        
+{/if}
+		<ul>
+			<li class="order-confirm-item">配送费</li>
+			<li class="order-confirm-text">{if $goodsinfo.price_f gt 0}￥{$goodsinfo.price_f}{else}包邮{/if}</li>
+		</ul>
+
+		<ul>
+			<li class="order-confirm-item">积分抵扣</li>
+			<li class="order-confirm-text obj_select" onClick="show_payType(1);"><span id="integral_txt">否</span></li>
+		</ul>
+
+		<ul style="display:none" rel="integral">
+			<li class="order-confirm-item">积分合计</li>
+			<li class="order-confirm-text" ><font color="#f05050"><b>{$goodsinfo.integral}</b></font></li>
+		</ul>
+		<ul style="display:none" rel="integral">
+			<li class="order-confirm-item">积分余额</li>
+			<li class="order-confirm-text" ><font color="#f05050"><b>{$user_integral}</b></font></li>
+		</ul>
+		<ul style="display:none" rel="integral">
+			<li class="order-confirm-item">积分扣减</li>
+			<li class="order-confirm-text" ><font color="#f05050"><b>-￥{$integral}</b></font></li>
+		</ul>
+
+		<ul>
+
+			<li class="order-confirm-item">备注信息</li>
+
+			<li class="order-confirm-text">
+
+				<input id="msginfo" value="" maxlength="200" placeholder="选填：对本次交易的说明">
+
+			</li>
+
+		</ul>
+
+	</div>
+    
+    <div class="clr"></div>
+    <div class="pay_way" style="display:">
+            <p>支付方式</p>
+            <div>
+        		
+                        <label class="checked"><span class="payment checked" data-id="7"><img src="/images/wx.png" alt="">
+        微信支付</span>
+       <input type="radio" name="payment" value="0" style="display:none" checked=""></label>
+       
+       <label class=""><span class="payment " data-id="7"><img src="/images/ye.png" alt="">
+        余额支付</span>
+       <input type="radio" name="payment" value="1" style="display:none"></label>
+       
+                    </div>
+        </div>
+
+	<div class="clr"></div>
+
+</section>
+
+<input type="hidden" id="user_admin_id" name="user_admin_id" value="{$user_admin_id}">
+
+<div class="shopcart-toolbar">
+
+	
+
+<!--<div class="shopcart-integral">
+
+			<b>积分余额：</b><span>8888</span>
+
+		</div> !-->   
+
+    
+
+    <div class="shopcart-sumbit">
+
+		<div class="shopcart-summary">
+
+			<b>应付金额：</b><span id="paymoney">￥{$romoney}</span>
+
+		</div>
+
+
+
+		<a href="javascript:submitFrom();" class="shopcart-submit-btn">立即支付</a>
+
+	</div>
+
+</div>		
+
+<iframe src="/shops" application="0" width="100%" height="100" scrolling="auto" id="shop_select" style="position:fixed; width:100%; height:100%; top:0; left:0px; z-index:10000;display:none;"></iframe>
+
+<div class="loading"><img src="/images/load.gif"/></div>
+
+
+<div id="payType" class="popup">
+    <div class="popup-box">
+        <div class="popup-box-title">积分抵扣</div>
+        
+        <div class="popup-box-content">
+            <div class="choose-list">
+				<ul id="city_id">
+					<li>
+						<input type="radio" name="integral_int" value="0" checked >
+						<label>否</label>
+					</li>
+					<li>
+						<input type="radio" name="integral_int" value="1">
+						<label>是</label>
+					</li>
+					                 
+					                </ul>
+			</div>
+        </div>
+        
+        <div class="popup-submit">
+            <button class="cancle-btn" onClick="i_cancel();">取消</button>
+			<button type="submit" class="confirm-btn" onClick="integral_use()">确认</button>
+        </div>
+    </div>
+</div>
+
+<script src="/Theme/js/jquery-1.11.2.min.js"></script>
+<script src="/Theme/js/main.js"></script>
+<script src="/layer/layer.js"></script>
+<script language="javascript">
+function show_payType(s){
+	if(s>0){
+		$("#payType").show();
+	}else{
+		$("#payType").hide();
+	}
+}
+
+function i_cancel(){
+	$('[name="integral_int"]').prop("checked",false);
+	if($("#integral_txt").html()=="是"){
+		$('[name="integral_int"]').eq(1).prop("checked",true);
+	}else{
+		$('[name="integral_int"]').eq(0).prop("checked",true);
+	}
+	showprice();
+}
+
+function integral_use(){
+	$("#payType").hide();
+	if($('[name="integral_int"]:checked').val()=='1'){
+		$("#integral_txt").html("是");
+		$('[rel="integral"]').show();
+	}else{
+		$("#integral_txt").html("否");
+		$('[rel="integral"]').hide();
+	}
+	showprice();
+}
+
+function showprice(){
+	if($('[name="integral_int"]:checked').val()=='1'){
+		$("#paymoney").html('￥{$romoney1}')
+	}else{
+		$("#paymoney").html('￥{$romoney}')
+	}
+}
+
+function submitFrom() {
+    $.ajax({
+        url: "/goods/payorder",
+        data: {
+            address_id: "{$user_address.id}",
+			msginfo:$("#msginfo").val(),
+			user_admin_id:"{$user_admin_id}",
+			qyt:"{$qty}",
+			attrid:"{$attr_id}",
+			integral:$('[name="integral_int"]:checked').val()=='1'?1:0,
+			payType:$('[name="payment"]:checked').val(),
+			id: "{$goodsinfo.id}"
+        },
+        dataType: "json",
+        type: "post",
+        error: function() {
+
+        },
+        success: function(data) {
+			if (data.status) {
+				if(data.info=='支付成功'){
+					location.href="/goods/success";
+				}else{
+					location.href="/payment/?id="+data.info+"&mtype=4&ispay=1";
+				}
+			}else{
+				if(data.info.indexOf("登录")>-1){
+					layer.alert(data.info, {icon: 2},function(){
+						location.href="/user/login";
+					});
+				}else{
+					layer.msg(data.info);
+				}	
+			}
+        }
+    });
+};
+
+
+var shopsel=1;
+function select_shop(){
+	$("#shop_select").show();
+}
+
+function get_shop_select(id,n){
+	$("#company").html(n);
+	$("[name='user_admin_id']").val(id);
+	$("#shop_select").hide();
+	showtxt();
+}
+
+function shop_select_hide(){
+	$("#shop_select").hide();
+}
+
+$(".pay_way label").click(function(){
+	$(".pay_way label").removeClass("checked");
+	$('[name="payment"]').prop("checked",false);
+	$(this).find('input').prop("checked",true);
+	$(this).addClass("checked");
+})
+
+</script> 
+
+
+
+
+
+</body>
+
+</html>
+

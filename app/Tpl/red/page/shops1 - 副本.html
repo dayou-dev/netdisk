@@ -1,0 +1,1132 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0">
+<title>{$goodsinfo.title}</title>
+<link href="/Theme/css/base.css" rel="stylesheet">
+<link href="/Theme/css/user.css" rel="stylesheet">
+<link href="/Theme/css/details.css" rel="stylesheet">
+<link href="/Theme/css/swiper.min.css" rel="stylesheet">
+<link href="/css/fullscreenstyle.css" rel="stylesheet">
+<script src="/Theme/js/jquery-1.11.2.min.js"></script>
+<script src="/js/jquery.fullscreenslides.js"></script>
+<script src="/js/template.js"></script>
+<script id="sample">
+function fullscreenimg_int(){
+  // All events are bound to this container element
+  $('#fullscreenSlideshowContainer').remove()
+  $('#comment_img').fullscreenslides();
+  //$('#comment_19 img').fullscreenslides();
+  var $container = $('#fullscreenSlideshowContainer');
+  $container
+    //This is triggered once:
+    .bind("init", function() { 
+      // The slideshow does not provide its own UI, so add your own
+      // check the fullscreenstyle.css for corresponding styles
+      $container
+        .append('<div class="ui" id="fs-close">&times;</div>')
+        .append('<div class="ui" id="fs-loader">Loading...</div>')
+        .append('<div class="ui" id="fs-prev">&lt;</div>')
+        .append('<div class="ui" id="fs-next">&gt;</div>')
+        .append('<div class="ui" id="fs-caption"><span></span></div>');
+      
+      // Bind to the ui elements and trigger slideshow events
+      $('#fs-prev').click(function(){
+        // You can trigger the transition to the previous slide
+        $container.trigger("prevSlide");
+      });
+
+      $('#fs-next').click(function(){
+        // You can trigger the transition to the next slide
+        $container.trigger("nextSlide");
+      });
+
+      $('#fs-close').click(function(){
+        // You can close the slide show like this:
+        $container.trigger("close");
+      });
+    })
+
+    // When a slide starts to load this is called
+    .bind("startLoading", function() { 
+      // show spinner
+      $('#fs-loader').show();
+    })
+
+    // When a slide stops to load this is called:
+    .bind("stopLoading", function() { 
+      // hide spinner
+      $('#fs-loader').hide();
+    })
+
+    // When a slide is shown this is called.
+    // The "loading" events are triggered only once per slide.
+    // The "start" and "end" events are called every time.
+    // Notice the "slide" argument:
+    .bind("startOfSlide", function(event, slide) { 
+      // set and show caption
+      $('#fs-caption span').text(slide.title);
+      $('#fs-caption').show();
+    })
+
+    // before a slide is hidden this is called:
+    .bind("endOfSlide", function(event, slide) { 
+      $('#fs-caption').hide();
+    });
+}
+    </script>
+
+<style type="text/css">
+#index_focus img{ width:100%;}
+.user-container{ margin-top:0px;}
+.header {
+    width: 100%;
+    height: auto;
+    color: #fff;
+    background: linear-gradient(90deg,#27a6fa,#8e71f5);
+    background: -webkit-linear-gradient(left,#27a6fa,#8e71f5);
+    padding: 0 2rem;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+	background: none; border-bottom:solid 0px #ddd;
+}
+.header .header-return{background: url(/images/float_left.23ef8b7.png) no-repeat center;background-size: 35px auto;left: 10px; top: 10px;}
+.swiper-slide img{ height:200px; width:100%;}
+.swiper-pagination{text-align: right;}
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet{ margin:0px; margin-right:7px;}
+
+.swiper-container .open_time{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.3);
+    padding: 0 14px 0 10px;
+    z-index: 3;
+    font-size: 12px;
+    color: #fff;
+    line-height: 20px;
+    border-radius: 0 14px 0 0;
+}
+
+
+
+.shop_info_container[data-v-5aeb7502] {
+    background-color: #fff;
+    padding: .4rem 16px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+}
+.shop_info_container .shop_info_left[data-v-5aeb7502] {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    color: #666;
+    font-size: 12px;
+}
+.shop_info_container .shop_info_left .shop_info_title[data-v-5aeb7502] {
+    color: #333;
+    font-size: 18px;
+    font-weight: 600;
+}
+.shop_info_container .shop_info_left .shop_info_order[data-v-5aeb7502] {
+    margin-top: 6px;
+}
+.shop_info_container .shop_info_left .shop_info_order .shop_info_order_tag[data-v-5aeb7502] {
+    padding: 0 4px;
+    font-size: 10px;
+    border-radius: .1rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+.shop_info_container .shop_info_left .shop_info_order .shop_info_order_tag.gcd[data-v-5aeb7502] {
+    background: -webkit-linear-gradient(#f84a4b,#e91d38);
+    background: linear-gradient(#f84a4b,#e91d38);
+    color: #fff;
+    font-weight: 600;
+}
+.shop_info_container .shop_info_left .shop_info_order>span[data-v-5aeb7502] {
+    display: inline-block;
+    vertical-align: middle;
+}
+.shop_info_container .shop_info_left .shop_info_order .shop_info_number[data-v-5aeb7502] {
+    color: #df3348;
+}
+.shop_info_container .shop_info_left .shop_info_level[data-v-5aeb7502] {
+    margin-top: 6px;
+    font-size: 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.shop_info_container .shop_info_left .shop_info_level span[data-v-5aeb7502] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    border-radius: .1rem;
+    margin-right: 4px;
+    border-width: .5px;
+    border-style: solid;
+    padding: 0 .1rem;
+}
+.shop_info_container .shop_info_left .shop_info_level span.low[data-v-5aeb7502] {
+    color: #999;
+    border-color: #d9d9d9;
+}
+.shop_info_container .shop_info_right[data-v-5aeb7502] {
+    padding-top: 12px;
+    color: #333;
+    font-size: 12px;
+}
+.shop_info_container .shop_info_right .shop_info_right_inner[data-v-5aeb7502] {
+    border-left: .5px solid #eee;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    padding-left: 16px;
+}
+.tcs_taicon {
+    display: inline-block;
+    position: relative;
+}
+.shop_info_container .shop_info_right .shop_info_right_inner .shop_info_distance_icon[data-v-5aeb7502] {
+    color: #df3448;
+    font-size: 14px;
+}
+
+
+
+/*推荐*/
+.anchor_nav[data-v-5aeb7502] {
+    width: 100%;
+    height: 44px;
+    background-color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+}
+.anchor_nav a[data-v-5aeb7502] {
+    display: inline-block;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+    height: 44px;
+    line-height: 44px;
+}
+.anchor_nav a span[data-v-5aeb7502] {
+    display: inline-block;
+    height: 100%;
+}
+.anchor_nav a span.active[data-v-5aeb7502] {
+    color: #df3348;
+    border-bottom: 2px solid #df3348;
+    font-weight: 600;
+}
+
+.anchor_nav.float_nav[data-v-5aeb7502] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 8;
+}
+
+.user_car_info[data-v-5aeb7502] {
+    width: 100%;
+    padding: 16px 16px 4px;
+    background-color: #fff;
+}
+.user_car_info .inner_car_info[data-v-5aeb7502] {
+    width: 100%;
+    height: 48px;
+    background-color: #fff;
+    box-shadow: 0 0 5px 2px #eee;
+    border-radius: 6px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    font-size: 14px;
+    border: .5px solid #e9edf6;
+}
+.user_car_info .inner_car_info img[data-v-5aeb7502] {
+    width: 28px;
+    height: 28px;
+    margin-right: 6px;
+}
+
+.main_items[data-v-5aeb7502] {
+    background-color: #fff;
+}
+.main_items .main_items_container[data-v-5aeb7502] {
+    padding: 10px 0 0 16px;
+}
+.main_items .main_items_container .main_item[data-v-5aeb7502] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    padding-top: 10px;
+    position: relative;
+    min-height: 60px;
+}
+.main_items .main_items_container .main_item .main_item_left[data-v-5aeb7502] {
+    font-size: 14px;
+    padding-right: 6px;
+    color: #d9d9d9;
+}
+.main_items .main_items_container .main_item .main_item_left .main_item_icon[data-v-5aeb7502] {
+    font-size: 16px;
+}
+
+.main_items .main_items_container .main_item .main_item_right[data-v-5aeb7502] {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    padding-bottom: 10px;
+    padding-right: 16px;
+    border-bottom: .5px solid #eee;
+}
+.main_items .main_items_container .main_item .main_item_right .main_item_line[data-v-5aeb7502] {
+    font-size: .6rem;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.main_items .main_items_container .main_item .main_item_right .item_right_content_line1[data-v-5aeb7502] {
+    color: #333;
+    font-size: 14px;
+    font-weight: 700;
+}
+.main_items .main_items_container .main_item .main_item_right .item_right_content_line1 .product_price[data-v-5aeb7502] {
+    color: #df3448;
+    font-size: 16px;
+    font-weight: 100;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.tcs_tcprice .tc_decNum, .tcs_tcprice .tc_intNum, .tcs_tcprice .tc_mark, .tcs_tcprice .tc_point, .tcs_tcprice .tc_price-num {
+    white-space: nowrap;
+    display: inline-block;
+    text-decoration: inherit;
+}
+.product_info {
+    font-size: 12px; line-height:24px;color: #3d4145;
+}
+.product_info .red_text{
+    color: #df3348;
+}
+.main_items .check_more_item[data-v-5aeb7502] {
+    width: 100%;
+    height: 2rem;
+    line-height: 40px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.main_items .main_items_container .main_item:last-child .main_item_right{
+    border-bottom: none;
+}
+.tcs_tcprice, .tcs_tcprice .tc_price {
+    display: inline-block;
+    white-space: nowrap;
+}
+.main_items .main_items_container .main_item .main_item_right .item_right_content_line1 .product_price .product_price_icon[data-v-5aeb7502] {
+    font-size: 10px;
+    color: #999;
+    margin-left: 6px;
+}
+
+/*服务*/
+
+.all_servers[data-v-5aeb7502] {
+    margin-top: .4rem;
+    background-color: #fff;
+    padding-left: 16px;
+}
+.all_servers .server_item[data-v-5aeb7502] {
+    width: 100%;
+    height: 50px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.all_servers .server_item .server_item_icon[data-v-5aeb7502] {
+    font-size: .9rem;
+    margin-right: 6px;
+    color: #e2ae59;
+    margin-top: 4px;
+}
+.all_servers .server_item .server_item_inner[data-v-5aeb7502] {
+    height: 50px;
+    padding-right: 16px;
+    border-bottom: .5px solid #eee;
+}
+.all_servers .server_item .server_item_inner .server_item_left[data-v-5aeb7502], .all_servers .server_item .server_item_inner[data-v-5aeb7502] {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.all_servers .server_item .server_item_inner .server_item_left .server_item_title[data-v-5aeb7502] {
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 4px;
+}
+.all_servers .server_item .server_item_inner .server_item_left .server_item_list[data-v-5aeb7502] {
+    font-size: 10px;
+    color: #999;
+    border: .5px solid #ccc;
+    padding: 0 4px;
+    border-radius: 10px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.all_servers .server_item .server_item_inner .server_item_left .server_item_list .server_item_list_icon[data-v-5aeb7502] {
+    font-size: 6px;
+    color: #999;
+    margin-left: .1rem;
+    margin-top: .1rem;
+}
+
+.all_servers .server_item .server_item_inner .server_item_right span[data-v-5aeb7502] {
+    display: block;
+    font-size: 12px;
+    border: 1px solid #e9c479;
+    color: #e2ae59;
+    padding: 2px 6px;
+    border-radius: 12px;
+}
+
+/*评价*/
+
+.main_conments[data-v-5aeb7502] {
+    margin-top: .4rem;
+    min-height: 5rem;
+    background-color: #fff;
+}
+.comment[data-v-10db62c9] {
+    -webkit-box-orient: vertical;
+    -webkit-flex-flow: nowrap column;
+    flex-flow: column nowrap;
+    padding-top: 10px;
+    background: #fff;
+}
+.comment[data-v-10db62c9], .comment header[data-v-10db62c9] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-direction: normal;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-align-content: flex-start;
+    align-content: flex-start;
+}
+.comment header[data-v-10db62c9] {
+    padding-left: 16px;
+    padding-right: 16px;
+    position: relative;
+    width: 100%;
+    height: 2rem;
+    color: #333;
+    -webkit-box-orient: horizontal;
+    -webkit-flex-flow: nowrap row;
+    flex-flow: row nowrap;
+}
+.comment header .title[data-v-10db62c9] {
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: .1rem;
+}
+.comment header .comment-count[data-v-10db62c9] {
+    font-size: 14px;
+}
+[class^=tcs] {
+    box-sizing: border-box;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+.comment header[data-v-10db62c9] .arrow-icon .tcs_taicon {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #bfbfbf;
+}
+.comment header[data-v-10db62c9]:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    -webkit-transform: scaleY(50%);
+    transform: scaleY(50%);
+    display: inline-block;
+    height: 1px;
+    width: 18.75rem;
+    width: 100vw;
+    background: #eee;
+}
+/*评价*/
+.tcs_tbmlink img, .tcs_tcscroll, .tcs_tcscroll .tc_scroll-cont {
+    height: 100%;
+    width: 100%;
+}
+.tcs_tbmlink img, .tcs_tcscroll, .tcs_tcscroll .tc_scroll-cont {
+    height: 100%;
+    width: 100%;
+}
+.comment[data-v-10db62c9] .tc_col-list {
+    padding: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.tcs_tclayoutcol .tc_list-item {
+    display: inline-block;
+}
+.tcs_tbcomment .tc_list-item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+}
+.tcs_comhead {
+    width: 100%;
+    font-size: 0;
+}
+.tcs_comhead .tc_left-wrap {
+    display: inline-block;
+    position: relative;
+    vertical-align: top;
+    width: 30px;
+    height: 30px;
+    margin-right: 8px;
+}
+.tcs_taimgc {
+    font-size: 0;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+}
+.tcs_imgCom.tc_aspect-base {
+    height: 0;
+    position: relative;
+}
+.tcs_imgCom.tc_aspect {
+    padding-top: 100%;
+}
+.tcs_imgCom .tc_img-wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+}
+.tcs_imgCom .tc_imgCom-cont {
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.tcs_taimgc .tc_imgc-img {
+    display: inline-block;
+    margin: 0 auto;
+    line-height: 1;
+    max-width: 100%;
+    font-size: 0;
+}
+.tcs_comhead .tc_head-imgUrl .tc_imgc-img {
+    border-radius: 50%;
+}
+.tcs_imgCom .tc_imgc-img {
+    max-height: 100%;
+}
+.tcs_comhead .tc_head-grade {
+    position: absolute;
+    vertical-align: middle;
+    bottom: 0;
+    right: 0;
+    width: 12px;
+    margin-left: 10px;
+}
+
+.tcs_comhead .tc_title-wrap {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    margin-top: 5px;
+    width: calc(100% - 38px);
+    height: 27px;
+}
+
+.tcs_comhead .tc_title-basic {
+    line-height: 1;
+}
+.tc_com-detail{ padding-top:10px;}
+.tcs_comhead .tc_name {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    text-align: left;
+    white-space: nowrap;
+    font-size: 15px;
+    color: #333;
+    margin-right: 10px;
+    width: calc(100% - 85px);
+}
+.tcs_comhead .tc_head-rightText {
+    display: inline-block;
+    text-align: right;
+    font-size: 12px;
+    color: #999;
+    width: 75px;
+}
+.tcs_tcstart {
+    display: inline-block;
+    color: #d9d9d9;
+    font-size: 26px;
+    line-height: 1;
+}
+
+.tcs_comhead .tc_head-rate {
+    text-align: left;
+    font-size: 9px;
+    width: 100%;
+}
+.tcs_tcstart .tc_star-item {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    margin-left: -4px;
+}
+.tcs_tcstart .tc_star-item:first-child {
+    margin-left: 0;
+}
+.tcs_tcstart .tc_star-icon {
+    vertical-align: top;
+}
+.tcs_tcstart .tc_star-active {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    color: #df3348;
+}
+.tcs_tcstart .tc_star-ratingText {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 6px;
+    color: #df3348;
+}
+.tcs_comcont {
+    text-align: left;
+}
+.tcs_comcont .tc_comment-cont {
+    line-height: 20px;overflow: hidden;
+}
+.tcs_comcont .tc_cont {
+    position: relative;
+    font-size: 14px;
+    color: #666;
+	-webkit-line-clamp: 3
+}
+
+.tcs_comcont .tc_toggle {
+    display: inline-block;
+    cursor: pointer;
+    margin-top: 4px;
+    font-size: 12px;
+    color: #0894ec;
+}
+.tcs_comimg {
+    text-align: left;
+    margin-top: 11px;
+}
+.tcs_tclayoutcol .tc_layout-wrap {
+    overflow: hidden;
+}
+
+.tcs_tclayoutcol .tc_col-list {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.tcs_tclayoutcol .tc_gap5 .tc_col-list {
+    margin-top: -5px;
+    margin-left: -5px; padding:0px !important;
+}
+
+.comment[data-v-10db62c9] .tc_col-list {
+    padding: 0;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.tcs_col2 .tc_list-item {
+    width: 50%;
+}
+.tcs_tbcomment .tc_list-item {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.tcs_tclayoutcol .tc_gap5 .tc_list-item {
+    padding: 5px 0 0 5px; width:33%
+}
+.tcs_tclayoutcol .tc_gap5 .tc_list-item img{ width:100%;}
+.tcs_taimgc {
+    font-size: 0;
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.tcs_comimg .tc_com-img {
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.tcs_imgCom {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.tcs_taimgc .tc_taimgc-wrap {
+    width: 100%;
+    height: 100%;
+}
+
+.tcs_imgCom.tc_aspect-base {
+    height: 0;
+    position: relative;
+}
+
+.tcs_imgCom.tc_aspect {
+    padding-top: 100%;
+}
+
+.tcs_tbcomment .tc_list-item:after {
+    content: " ";
+    border-bottom: 1px solid #d9d9d9;
+    position: absolute;
+    height: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+}
+
+.comment .see-more[data-v-10db62c9] {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    border: none;
+    background: #fff;
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    font-weight: 100;
+}
+
+.comment .see-more[data-v-10db62c9]:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    -webkit-transform: scaleY(50%);
+    transform: scaleY(50%);
+    display: inline-block;
+    height: 1px;
+    width: 18.75rem;
+    width: 100vw;
+    background: #eee;
+}
+.kefu_button .kefu_phone[data-v-caeae366],.kefu_button .kefu_title[data-v-caeae366] {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    width: 50%;
+    height: 40px;
+}
+.kefu_button{ font-size:14px;width: 90% !important; margin:0 auto;float: none !important;}
+.kefu_button .kefu_title[data-v-caeae366] {
+    border: 1px solid #d9d9d9;
+    border-radius: 20px 0 0 20px;
+}
+.kefu_button .kefu_phone[data-v-caeae366] {
+    border: 1px solid #d9d9d9;
+    border-radius: 0 20px 20px 0;
+    border-left: none;
+}
+
+.fixed_bottom div{ width:auto;}
+</style>
+</head>
+
+<body>
+<header class="header product-header">
+	<div class="header-return">
+		<a href="javascript:history.go(-1);"></a>
+	</div>
+</header>
+    <div class="details_sections">
+        
+	<div class="swiper-container">
+		<div class="swiper-wrapper">
+			<div class="swiper-slide">
+				<a href="">
+					<img src="{$shopsinfo.icon}">
+				</a>
+			</div>
+           <?php
+           $pic_list=$this->_var['shopsinfo']['piclist'];
+           if($pic_list){
+              $pic_list=explode(",",$pic_list);
+              foreach($pic_list as $rows){
+              	echo '<div class="swiper-slide"><a href=""><img src="/ckfinder/userfiles/'.$rows.'"></a></div>';
+              }
+           }
+           ?>
+		</div>
+		
+		<div class="swiper-pagination"></div>
+        
+        
+        <div data-v-5aeb7502="" class="open_time"><span data-v-5aeb7502="">营业时间:</span> <span data-v-5aeb7502="">{$shopsinfo.open_time}</span></div>
+	</div>
+    
+    
+<div data-v-5aeb7502="" class="shop_info_container"><div data-v-5aeb7502="" class="shop_info_left"><div data-v-5aeb7502="" class="shop_info_title"><span data-v-5aeb7502="">{$shopsinfo.company}</span></div> <div data-v-5aeb7502="" class="shop_info_order">{if $shopsinfo.is_stop_order}<span data-v-5aeb7502="" class="shop_info_order_tag gcd"><span data-v-5aeb7502="">暂停接单</span></span>{/if} <!----> <!----> <!----> <span data-v-5aeb7502="">总评分</span> <span data-v-5aeb7502="" class="shop_info_number">{$shopsinfo.appint}</span> <span data-v-5aeb7502="" class="shop_info_split_line"></span> <span data-v-5aeb7502="">总订单</span> <span data-v-5aeb7502="" class="shop_info_number">{$shopsinfo.order_count}</span></div> <div data-v-5aeb7502="" class="shop_info_level"><span data-v-5aeb7502="" class="low"><i data-v-5aeb7502="">{$shopsinfo.city}</i></span> <span data-v-5aeb7502="" class="low"><i data-v-5aeb7502="">{$shopsinfo.mtype}</i></span></div></div> <div data-v-5aeb7502="" class="shop_info_right"><div data-v-5aeb7502="" class="shop_info_right_inner" onClick="location.href='https://mapapi.qq.com/web/mapComponents/locationMarker/v/index.html?type=0&marker=coord%3A{$shopsinfo.lat},{$shopsinfo.lng};title%3A{$shopsinfo.company};addr%3A{$shopsinfo.address}&referer=myapp&key={$site_info.mapkey}'"><div data-v-5aeb7502="" class="tcs_taicon wx_icons shop_info_distance_icon tc_icon"><svg t="1610516932153" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="832" width="20" height="20"><path d="M113.5 411.3l786.2-306.2c12.1-4.7 24 7.2 19.3 19.3L612.7 910.5c-4.8 12.4-22.3 12.7-27.6 0.5L445.9 586c-1.5-3.5-4.3-6.3-7.8-7.8L113 438.8c-12.2-5.2-11.9-22.7 0.5-27.5z" fill="#2ea4ff" p-id="833"></path></svg></div> <span id="addrint">--km</span></div></div></div>    
+    
+
+<div data-v-5aeb7502="" id="anchor_nav" class="anchor_nav"><a data-v-5aeb7502=""><span data-v-5aeb7502="" class="active">推荐</span></a> <a data-v-5aeb7502=""><span data-v-5aeb7502="" class="">服务</span></a> <a data-v-5aeb7502=""><span data-v-5aeb7502="" class="">评价</span></a></div>        
+
+
+{if $user_cart}
+<div data-v-5aeb7502="" class="user_car_info"><div data-v-5aeb7502="" class="inner_car_info">{if $user_cart.icon}<img data-v-5aeb7502="" src="{$user_cart.icon}"> {/if}<span data-v-5aeb7502="">{$user_cart.c_brand}</span></div></div>
+{/if}
+
+
+<div data-v-5aeb7502="" class="main_items"><div data-v-5aeb7502="" class="main_items_container">
+
+
+
+{foreach from=$comm_pro_list key=key item=item}
+<div data-v-5aeb7502="" class="main_item" rel="prolist" {if $key gt 3}style="display:none"{/if}><div data-v-5aeb7502="" class="main_item_left"><div data-v-5aeb7502="" class="tcs_taicon tc_icon wx_icons main_item_icon"><svg t="1610522592839" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="3390" width="20" height="20"><path d="M666.272 472.288l-175.616 192a31.904 31.904 0 0 1-23.616 10.4h-0.192a32 32 0 0 1-23.68-10.688l-85.728-96a32 32 0 1 1 47.744-42.624l62.144 69.6 151.712-165.888a32 32 0 1 1 47.232 43.2m-154.24-344.32C300.224 128 128 300.32 128 512c0 211.776 172.224 384 384 384 211.68 0 384-172.224 384-384 0-211.68-172.32-384-384-384" p-id="3391" fill="#bfbfbf"></path></svg></div></div> <div data-v-5aeb7502="" class="main_item_right" onClick="location.href='/product/detail/?id={$item.proid}&cid={$shopsinfo.id}'">
+
+<div data-v-5aeb7502="" class="main_item_line item_right_content_line1"><span data-v-5aeb7502="" class="product_name">{$item.title}</span> <div data-v-5aeb7502="" class="product_price"><div data-v-5aeb7502="" class="tcs_tcprice"><div class="tcs_tatextc tc_price"><div class="tc_textCont"><div class="tc_mark">¥</div><div class="tc_price-num"><div class="tc_intNum">{$item.price}</div></div></div></div><!----></div> <div data-v-5aeb7502="" class="tcs_taicon wx_icons product_price_icon tc_icon"><svg t="1610525878813" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2067" width="12" height="12"><path d="M312.888889 995.555556c-17.066667 0-28.444444-5.688889-39.822222-17.066667-22.755556-22.755556-17.066667-56.888889 5.688889-79.644445l364.088888-329.955555c11.377778-11.377778 17.066667-22.755556 17.066667-34.133333 0-11.377778-5.688889-22.755556-17.066667-34.133334L273.066667 187.733333c-22.755556-22.755556-28.444444-56.888889-5.688889-79.644444 22.755556-22.755556 56.888889-28.444444 79.644444-5.688889l364.088889 312.888889c34.133333 28.444444 56.888889 73.955556 56.888889 119.466667s-17.066667 85.333333-51.2 119.466666l-364.088889 329.955556c-11.377778 5.688889-28.444444 11.377778-39.822222 11.377778z" p-id="2068" fill="#999999"></path></svg></div></div></div>
+     
+     
+     <div data-v-5aeb7502="" class="main_item_line item_right_content_line2"><div data-v-5aeb7502="" class="product_info"><span data-v-5aeb7502="">评价</span> <span data-v-5aeb7502="" class="red_text">{if $item.appint gt 0}{$item.appint}{else}--{/if}</span> <span data-v-5aeb7502="" class="rate_split_line"></span> <span data-v-5aeb7502="">已售</span> <span data-v-5aeb7502="">{$item.order_sum}</span></div> <!----></div> </div> <!----></div>
+{/foreach}    
+     
+     
+     
+</div>
+{if $comm_pro_sum gt 3}<div data-v-5aeb7502="" class="check_more_item" onClick="showpro();"><span data-v-5aeb7502="">查看更多 ({$comm_pro_sum}个)</span></div></div>{/if}
+     
+     
+     
+     
+<div data-v-5aeb7502="" id="all_servers" class="all_servers">
+
+{foreach from=$product_cate key=key item=item}
+<div data-v-5aeb7502="" class="server_item server_tire"><div data-v-5aeb7502="" class="tcs_taicon wx_icons server_item_icon tc_icon"><svg t="1610525798239" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4187" width="22" height="22"><path d="M809.856 424.704l-306.88 372.288L196.16 424.96c-3.68-4.48-5.44-16.64-3.2-22.08l56.544-136.832c1.856-4.512 10.144-10.048 15.04-10.048h476.992c4.8 0 13.216 5.632 15.04 10.048l56.544 136.64c2.336 5.632 0.64 17.344-3.2 22.016m62.336-46.496L815.68 241.536C803.936 213.312 772.064 192 741.504 192H264.48c-30.592 0-62.496 21.344-74.176 49.632L133.76 378.464c-11.2 27.136-5.632 64.608 12.992 87.2l311.104 377.216c11.52 13.92 27.968 21.92 45.12 21.92h0.032c17.184 0 33.632-8.032 45.12-21.952l311.104-377.44c18.944-22.944 24.384-59.616 12.992-87.2" p-id="4188" fill="#e2ae59"></path><path d="M615.008 384h-224a32 32 0 0 0 0 64h224a32 32 0 0 0 0-64" p-id="4189" fill="#e2ae59"></path></svg></div> <div data-v-5aeb7502="" class="server_item_inner"><div data-v-5aeb7502="" class="server_item_left"><span data-v-5aeb7502="" class="server_item_title">{$item.title}</span> <div data-v-5aeb7502="" class="server_item_list"><span data-v-5aeb7502="">{$item.pcount}个项目</span> <div data-v-5aeb7502="" class="tcs_taicon wx_icons server_item_list_icon tc_icon"><svg t="1610525878813" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2067" width="12" height="12"><path d="M312.888889 995.555556c-17.066667 0-28.444444-5.688889-39.822222-17.066667-22.755556-22.755556-17.066667-56.888889 5.688889-79.644445l364.088888-329.955555c11.377778-11.377778 17.066667-22.755556 17.066667-34.133333 0-11.377778-5.688889-22.755556-17.066667-34.133334L273.066667 187.733333c-22.755556-22.755556-28.444444-56.888889-5.688889-79.644444 22.755556-22.755556 56.888889-28.444444 79.644444-5.688889l364.088889 312.888889c34.133333 28.444444 56.888889 73.955556 56.888889 119.466667s-17.066667 85.333333-51.2 119.466666l-364.088889 329.955556c-11.377778 5.688889-28.444444 11.377778-39.822222 11.377778z" p-id="2068" fill="#999999"></path></svg></div></div></div> <div data-v-5aeb7502="" class="server_item_right"><span data-v-5aeb7502="" onClick="location.href='/product/{$item.id}'">添加服务</span></div></div></div>
+{/foreach}
+
+ <!----> <!----> <!----></div>
+     
+     
+     
+<div data-v-5aeb7502="" class="main_conments" id="main_conments"><section data-v-10db62c9="" data-v-5aeb7502="" class="comment"><header data-v-10db62c9=""><span data-v-10db62c9="" class="title">门店评价</span> <span data-v-10db62c9="" class="comment-count">(56)</span> <div data-v-10db62c9="" class="tcs_tcicon arrow-icon"><div class="tcs_taicon tc_tcicon tc_icon"><svg t="1610525878813" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2067" width="12" height="12"><path d="M312.888889 995.555556c-17.066667 0-28.444444-5.688889-39.822222-17.066667-22.755556-22.755556-17.066667-56.888889 5.688889-79.644445l364.088888-329.955555c11.377778-11.377778 17.066667-22.755556 17.066667-34.133333 0-11.377778-5.688889-22.755556-17.066667-34.133334L273.066667 187.733333c-22.755556-22.755556-28.444444-56.888889-5.688889-79.644444 22.755556-22.755556 56.888889-28.444444 79.644444-5.688889l364.088889 312.888889c34.133333 28.444444 56.888889 73.955556 56.888889 119.466667s-17.066667 85.333333-51.2 119.466666l-364.088889 329.955556c-11.377778 5.688889-28.444444 11.377778-39.822222 11.377778z" p-id="2068" fill="#999999"></path></svg></div> <!----></div></header> <div data-v-10db62c9="" class="tcs_tbcomment"><div class="tcs_tcscroll" style=""><div class="tc_scroll-cont"><div class="tc_scroll-wrap"> <div class="tc_scroll-groups"><div class="tc_scroll-group"><div class="tcs_tclayoutcol tc_comment-group"><div class="tcs_colmulti tc_layout-wrap"><ul class="tc_col-list">
+     
+     
+     
+     
+    
+    
+    
+    
+    
+    
+    
+    </ul></div></div></div></div></div></div></div></div> <button data-v-10db62c9="" class="see-more" onClick="addimg(18)">查看全部评价 ({$comments_count})</button></section></div>
+    
+            
+        
+        
+    </div>
+    <div style="height:48px;"></div>
+    <div class="fixed_bottom">
+    <div data-v-caeae366="" class="kefu_button"><div data-v-caeae366="" class="kefu_title"><a href="tel:{$site_info.SHOP_TEL}" style="color: #666666;">咨询客服</a></div> <div data-v-caeae366="" class="kefu_phone"><a href="tel:{$shopsinfo.phone}" style="color: #666666;">联系电话</a></div></div>
+</div>
+
+
+<div class="c_tem" style="display:none;">
+<li class="tc_list-item" style="width: 100%;"><div class="tcs_comitem tc_com-item" level="V0"><div class="tcs_comhead tc_com-head"><div class="tc_left-wrap"><div class="tcs_taimgc tc_head-imgUrl"><div class="tcs_imgCom tc_taimgc-wrap tc_aspect-base tc_aspect tc_aspect-wrap"><div class="tc_img-wrap"><div class="tc_imgCom-cont"><img data-sensors-click="" alt="" class="tc_imgc-img" src="{@nickname}"> </div></div></div></div> </div> <div class="tc_title-wrap"><div class="tc_title-basic"><div class="tc_name"><div class="tcs_tatextt tc_head-nameText" style="-webkit-line-clamp: 1;">
+       {@nickname}
+    </div> <!----></div> <div class="tc_head-rightText">{@time}</div></div> <div class="tcs_tcstart tc_head-rate">
+    
+    {@stars}
+    
+    <div class="tc_star-item">
+    <div class="tcs_taicon tc_star-icon tc_icon"><img src="/images/stars_2.png" width="14" height="14"/></div>
+    <div class="tcs_taicon tc_star-icon tc_star-active tc_icon" style="width: 100%;"><img src="/images/stars_1.png" width="14" height="14"/></div>
+    </div>
+    
+    <div class="tc_star-item">
+    <div class="tcs_taicon tc_star-icon tc_icon"><img src="/images/stars_2.png" width="14" height="14"/></div>
+    <div class="tcs_taicon tc_star-icon tc_star-active tc_icon" style="width: 100%;"><img src="/images/stars_1.png" width="14" height="14"/></div>
+    </div>
+    
+    <div class="tc_star-item">
+    <div class="tcs_taicon tc_star-icon tc_icon"><img src="/images/stars_2.png" width="14" height="14"/></div>
+    <div class="tcs_taicon tc_star-icon tc_star-active tc_icon" style="width: 100%;"><img src="/images/stars_1.png" width="14" height="14"/></div>
+    </div>
+    
+    <div class="tc_star-item">
+    <div class="tcs_taicon tc_star-icon tc_icon"><img src="/images/stars_2.png" width="14" height="14"/></div>
+    <div class="tcs_taicon tc_star-icon tc_star-active tc_icon" style="width: 100%;"><img src="/images/stars_1.png" width="14" height="14"/></div>
+    </div>
+    
+    <div class="tc_star-item">
+    <div class="tcs_taicon tc_star-icon tc_icon"><img src="/images/stars_2.png" width="14" height="14"/></div>
+    <div class="tcs_taicon tc_star-icon tc_star-active tc_icon" style="width: 100%;"></div>
+    </div>
+    
+    <span class="tc_star-ratingText">{@appsint}</span></div></div></div> <div class="tc_com-detail"><div class="tcs_comcont tc_com-cont"><div class="tc_comment-cont"><div class="tcs_tatextt tc_cont" style="-webkit-line-clamp: 3;" id="msg_{@id}">{@content}</div></div> <div class="tc_toggle" id="msg_bnt_{@id}" style="display:none">全文</div></div> 
+    
+    
+    <div class="tcs_comimg tc_com-img"><div class="tcs_tclayoutcol tc_img-layoutcol"><div class="tc_layout-wrap tc_gap5" col="2" id="comment_img"><ul class="tc_col-list">{@imglist}<li class="tc_list-item"><a href="https://img1.tuhu.org/Comment/Gff8iNUZFZgJ5AV5PisBHQ_w1118_h838.jpeg@240h_99q.webp" rel="gallery" title=""><img data-sensors-click="" alt="" class="tc_imgc-img" src="https://img1.tuhu.org/Comment/Gff8iNUZFZgJ5AV5PisBHQ_w1118_h838.jpeg@240h_99q.webp"></a></li><li class="tc_list-item"><a href="https://img1.tuhu.org/Comment/Gff8iNUZFZgJ5AV5PisBHQ_w1118_h838.jpeg@240h_99q.webp" rel="gallery" title=""><img data-sensors-click="" alt="" class="tc_imgc-img" src="https://img1.tuhu.org/Comment/Gff8iNUZFZgJ5AV5PisBHQ_w1118_h838.jpeg@240h_99q.webp"></a></li><li class="tc_list-item"><a href="https://img1.tuhu.org/Comment/Gff8iNUZFZgJ5AV5PisBHQ_w1118_h838.jpeg@240h_99q.webp" rel="gallery" title=""><img data-sensors-click="" alt="" class="tc_imgc-img" src="https://img1.tuhu.org/Comment/Gff8iNUZFZgJ5AV5PisBHQ_w1118_h838.jpeg@240h_99q.webp"></a></li></ul>
+    
+    
+    
+    </div></div></div>
+    <div class="tcs_comfoot tc_com-foot"></div></div></div></li>
+</div>
+
+
+
+<script type="text/javascript" src="https://mapapi.qq.com/web/mapComponents/geoLocation/v/geolocation.min.js"></script>
+<script src="/Theme/js/swiper.min.js"></script>
+<script src="/Theme/js/jquery.fly.min.js"></script>
+<script src="/layer/layer.js"></script>
+
+<script language="javascript">
+var geolocation = new qq.maps.Geolocation("{$site_info.mapkey}", "myapp");
+var options = {timeout: 8000};
+var positionNum = 0;
+
+//商品详情轮播图
+var swiper = new Swiper('.swiper-container', {
+	pagination: '.swiper-pagination',
+	paginationClickable: true,
+	spaceBetween: 30,
+	centeredSlides: true,
+	autoplay:6000,
+	autoplayDisableOnInteraction: false
+});
+var pagelock=0
+geolocation.getLocation(showPosition, showErr, options);
+function showPosition(position) {
+	//positionNum ++;
+	//document.getElementById("demo").appendChild(document.createElement('pre')).innerHTML = JSON.stringify(position, null, 4);
+	//console.log(position['province']+"#"position['city']+"#"+position['district']+"#"+position['addr']+"#"+position['addr']+"#"+position['lat']+"#"+position['lng'])
+	console.log(position);
+	if(pagelock<1){
+		pagelock=1;
+		
+	   $(".loading").show();
+	   $.ajax({
+		  url: "/index/get_location",
+		  data:{lng:position['lng'],lat:position['lat'],lng1:{$shopsinfo.lng},lat1:{$shopsinfo.lat}},
+		  dataType: "json",
+		  type: "post",
+		  error: function() {
+			  
+		  },
+		  success: function(data) {  
+		  	pagelock=0;
+			$(".loading").hide();
+			if(data.status){
+				$("#addrint").html(data.info+"km")
+			}
+		 }
+		})
+	}
+	
+	
+};
+
+function showErr() {
+	console.log( "定位失败！");
+};
+
+function showpro(){
+	$('[rel="prolist"]').show();	
+	$(".check_more_item").hide();
+}
+
+
+var pagecount=1;
+var pagelock=0;
+var thispage=1;
+function pagenext(s){
+   if(pagelock<1) {
+	   pagelock=1;
+	   if(s>0){
+		   thispage++;   
+		   if(thispage>pagecount){
+				$(".load-more").hide();	
+				$(".load-no-more").show();
+				pagelock=0;
+				return;   
+		   }
+	   }
+	   $(".loading").show();
+	   $.ajax({
+		  url: "/comments_ajax/?id={$shopsinfo.id}&ajax=1&page="+thispage,
+		  dataType: "json",
+		  type: "post",
+		  error: function() {
+			  
+		  },
+		  success: function(data) {  
+		  	pagelock=0;
+			$(".loading").hide();
+			if(data.rowscount>0){
+				var rehtml=""
+				
+				for(var i=0;i<data.list.length;i++){
+					
+					
+					rehtml
+					
+					
+					
+					rehtml+='<div class="tc_scroll-item"><div class="shopItem" onclick="location.href=\'/shops/detail/'+data.list[i]['id']+'.html\'"><div  class="leftImg"><img src="/images/ky.f0b48ef.png" class="zanting" style="display: none;"> <img src="/images/zanting.f7d5b59.png" class="zanting" style="display: '+(data.list[i]['is_stop_order']==1?"":'none')+';"> <img width="100%" src="'+data.list[i]['icon']+'" class=""></div> <div class="rightContainer"><div class="tcs_tatextt shopTitle" style="-webkit-line-clamp: 2;">'+data.list[i]['company']+'</div> <div class="second-line"><div class="main-info"><div class="shop-rank"><span >总评分 </span> <span class="shop-num">'+(data.list[i]['appint']>0?data.list[i]['appint']:'--')+'</span> <span class="split-line">|</span> <span >总订单 </span> <span class="shop-num">'+data.list[i]['order_count']+'</span></div></div><div class="shop-tag kxd"><span>'+data.list[i]['mtype']+'</span></div></div> <div class="third-line"><div class="tcs_tatextt shop-area" style="-webkit-line-clamp: 1;">'+data.list[i]['address']+'</div> <div class="shop-distance">'+data.list[i]['distance']+'km</div></div></div></div></div>';
+					//alert(data.list[i]['company'])
+				}
+				if(s>0){
+					$("#pageinfo").append(rehtml);
+					if(data.pagecount==thispage){
+						$(".load-more").hide();	
+						$(".load-no-more").show();
+					}
+				}else{
+					$("#pageinfo").html(rehtml);
+					if(data.pagecount>1){
+						$(".load-more").show();	
+						$(".load-no-more").hide();
+					}
+					pagecount=data.pagecount;
+					thispage=1;
+				}
+			}else{
+				$("#pageinfo").html('<div class="no-content"><i></i><p>暂无数据</p></div>');
+			}
+			//$("#pageinfo").html(data);
+		 }
+		})
+	}           
+}
+
+function test(){
+	$('#comment_18 img').fullscreenslides();	
+}
+</script>
+</body>
+</html>

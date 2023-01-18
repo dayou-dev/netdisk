@@ -1,0 +1,45 @@
+        {foreach from=$pagelist.list key=key item=item}
+        <div class="tc_scroll-item"><div class="shopItem"><div  class="leftImg"><img src="/images/ky.f0b48ef.png" class="zanting" style="display: none;"> <img src="/images/zanting.f7d5b59.png" class="zanting" style="display: none;"> <img width="100%" src="{$item.icon}" class=""></div> <div class="rightContainer"><div class="tcs_tatextt shopTitle" style="-webkit-line-clamp: 2;">
+        {$item.company}
+    </div> <div class="second-line"><div class="main-info"><!----> <div class="shop-rank"><span >总评分 </span> <span class="shop-num">{if $item.appint}{$item.appint}{else}--{/if}</span> <span class="split-line">|</span> <span >总订单 </span> <span class="shop-num">{$item.o_count}</span></div></div> <!----> <!----> <div class="shop-tag kxd"><span >{$item.mtype}</span></div> <!----></div> <div class="third-line"><div class="tcs_tatextt shop-area" style="-webkit-line-clamp: 1;">
+        {$item.address}
+    </div> <div class="shop-distance">{$item.distance}km</div></div>  <!----> <!----></div></div></div>
+        {/foreach}
+        
+        {if !$pagelist.list}<div class="no-content"><i></i><p>暂无数据</p></div>{/if}
+
+
+<script language="javascript">
+var pagecount={$pagelist.pagecount};
+var pageurl="/shops/?id={$id}&city_id={$city_id}&mtype={$mtype}&k={$k}&o={$o}&ajax=1&page=";
+var thispage=1;
+var pagelock=0;
+function pagenext(){
+   if(thispage<pagecount&&pagelock<1) {
+	   thispage++;
+	   pagelock=1;
+	   $(".loading").show();
+	   $.ajax({
+		  url: pageurl+thispage,
+		  dataType: "html",
+		  type: "post",
+		  error: function() {
+			  
+		  },
+		  success: function(data) {  
+		  	pagelock=0;
+			$(".loading").hide();	
+			$("#pageinfo").append(data);
+			if(thispage==pagecount){
+				$(".load-more").hide();	
+				$(".load-no-more").show();
+			}
+		 }
+		})
+	}else{
+		$(".load-more").hide();	
+		$(".load-no-more").show();
+	}             
+}
+if(thispage<pagecount) $(".load-more").show();	
+</script>

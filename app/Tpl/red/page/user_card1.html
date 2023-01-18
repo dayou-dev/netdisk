@@ -1,0 +1,89 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0"><meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> <meta http-equiv="Pragma" content="no-cache" /> <meta http-equiv="Expires" content="0" />
+<title>{$site_info.SHOP_NAME}</title>
+<link href="/Theme/css/base.css" rel="stylesheet">
+<link href="/Theme/css/user.css" rel="stylesheet">
+<link href="/Theme/css/details.css" rel="stylesheet">
+<script src="/Theme/js/jquery-1.11.2.min.js"></script>
+<style type="text/css">
+#index_focus img{ width:100%;}
+.user-container{ margin-top:0px;}
+.index-panel{ margin:0px;}
+.comm_cate ul{ overflow:hidden;}
+.comm_cate ul li{ float:left; width:25%; text-align:center; padding:20px 0px 5px 0px;}
+.comm_cate ul li p{ margin-bottom:8px;}
+.comm_cate ul li p img{ width:48px; height:48px;}
+.comm_cate ul li span{ font-size:14px;}
+.comm_cate ul li a{ color:#444;}
+
+.user_card{ padding:.5rem; }
+.user_card .u_txt{ margin-bottom:20px;}
+.user_card .u_txt span{ font-size:18px; font-weight:bold;}
+.user_card .u_txt a{ font-size:14px; float:right;color:#aaa;}
+.user_card .u_list{ padding:.3rem .3rem;font-weight:bold; padding-bottom:0px;}
+.user_card .u_list ul li{ height:155px;border-radius: 10px;  background-position:center center; background-repeat:no-repeat; background-size: cover;padding:.8rem; padding-top:.5rem; color:#fff; margin-bottom:20px;}
+.user_card .u_list ul li .u_l_txt{ font-size:18px; margin-bottom:80px;}
+.user_card .u_list ul li .u_l_pr .p1{ font-size:16px;}
+.user_card .u_list ul li .u_l_pr .p2{ font-size:14px;text-decoration:line-through;}
+.user_card .u_list ul li .u_l_pr .p3{ font-size:14px; float:right;}
+.details_section2_lists_tab li span{ padding:0px 5px;}
+.fixed_bottom{background: #f3f3f3;}
+</style>
+</head>
+
+<body style=" background-color:#fff;">
+
+<header class="header">
+	<div class="header-return">
+	    <a href="/user_card"></a>
+	</div>
+	
+	<div class="logo">会员卡详情</div>
+	
+	<div class="header-btn">
+		<a href="/user" class="header-usericon">
+		</a>
+	</div>
+</header>
+<div style="height: 1.8rem;"></div>
+<div class="user_card">
+    <div class="u_list">
+    	<ul>
+        	<li style="background-image:url('{$bodyinfo.icon}');">
+            	<div class="u_l_txt">{$bodyinfo.title}</div>
+                <div class="u_l_pr"><span class="p1">￥{$bodyinfo.price}</span> <span class="p2">￥{$bodyinfo.price1}</span><span class="p3">有效期：{$bodyinfo.validity_int}天</span></div>
+            </li>
+        </ul>
+    </div>
+    
+<div class="details_section2">
+            <ul class="details_section2_lists_tab">
+                <li><a href="#span1"><span class="span_color">使用条款</span></a></li>
+            </ul>
+            <ul class="details_section2_lists_content">
+                <li class="img" id="span1" name="span1">
+					<div >
+						{$bodyinfo.content}                    </div>					                    
+                </li>
+            </ul>
+            
+        </div>    
+    
+    
+</div>
+<div class="fixed_bottom">
+    <div class="chat"><a href="tel:{$site_info.SHOP_TEL}" style="color: #666666;"><i class="icon_answer"></i><p>客服咨询</p></a></div>
+   <!--  <div class="online"><a id="Online_booking">在线预约</a></div> -->
+    <div class="pay"><a id="addToCartQuick" href="/user_card/pay/{$bodyinfo.id}.html">立即购买</a></div>
+</div>
+
+
+
+
+
+</body>
+</html>

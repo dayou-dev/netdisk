@@ -1,0 +1,1179 @@
+<?php
+class apiModule extends SiteBaseModule
+{
+	public function index() {
+		
+	}
+	
+	public function getPageModules() {
+		if($_REQUEST['page']=='HomeIndex'){
+			$bannerImg=$GLOBALS['db']->getOne("select icon from ".DB_PREFIX."adv where is_delete=0 and cate_id=1");
+			if($bannerImg) $bannerImg=str_replace("/","\/",'https://w.szxxweb.com'.$bannerImg);
+			echo '{"success":true,"msg":"ok","cachekey":"8ae61622ffa9baa022d5cd0144694d92","modules":[{"Type":1,"Width":1,"Color":"#eeeeee","PaddingLR":0,"PaddingTB":0,"ModuleType":"ModuleLine","Layout":101,"LayoutColor":"","ModuleID":276336,"Publish":1,"CanDesign":false,"CanEditFront":false},{"moduleData":{"titleColor":"#333","descColor":"#999","editor_desc":"","items":[{"title":"\u6807\u9898\u5185\u5bb9","desc":"\u6587\u5b57\u5185\u5bb9","img":"'.$bannerImg.'","linkkey":"15354418010","link":{"linktype":"NewUrl","linkid":"servicelist_tabbar","desc":"\u94fe\u63a5\u5230\u9875\u9762 \u9009\u62e9\u60a8\u7684\u7c7b\u578b","url":"\/pages\/company\/custompage?id=$id","name":"\u9009\u62e9\u60a8\u7684\u7c7b\u578b"}},{"title":"\u6807\u9898\u5185\u5bb9","desc":"\u6587\u5b57\u5185\u5bb9","img":"","linkkey":"15354418011","link":{"linktype":"","linkid":"","desc":"\u8bf7\u9009\u62e9\u94fe\u63a5\u5730\u5740"}},{"title":"\u6807\u9898\u5185\u5bb9","desc":"\u6587\u5b57\u5185\u5bb9","img":"","linkkey":"15354418012","link":{"linktype":"","linkid":"","desc":"\u8bf7\u9009\u62e9\u94fe\u63a5\u5730\u5740"}},{"title":"\u6807\u9898\u5185\u5bb9","desc":"\u6587\u5b57\u5185\u5bb9","img":"","linkkey":"15354418013","link":{"linktype":"","linkid":"","desc":"\u8bf7\u9009\u62e9\u94fe\u63a5\u5730\u5740"}}]},"PaddingLR":false,"ModuleType":"ModuleImageText","Layout":103,"LayoutColor":null,"ModuleID":276363,"Publish":1,"CanDesign":false,"CanEditFront":false}],"appinfo":{"ID":"5461","SiteID":"52556","Icon":"\/comdata\/52556\/wxApp\/2018082706114455.jpg","AppID":"wxb64090846d728098","AppSecret":"ded8798ba8e6260b611a76324eebf8b9","AccessToken":null,"AccTokenExpire":null,"Industry":"meirong","Template":"Meirong-1","Name":"\u670b\u57ce\u5b9d\u6613\u4fee","HeadSetting":"{\"BgColor\":\"#2a292f\",\"FontColor\":\"white\"}","FootSetting":"{\"BgColor\":\"#ffffff\",\"FontColor\":\"#666666\",\"Links\":[{\"LinkID\":\"0\",\"LinkType\":\"HomeIndex\",\"LinkDesc\":\"\\u94fe\\u63a5\\u5230\\u9996\\u9875\",\"Text\":\"\\u9996\\u9875\",\"Image\":\"\\\/images\\\/Icons\\\/grey\\\/grey-home.png\",\"ImageActive\":\"\\\/images\\\/Icons\\\/orange\\\/orange-home.png\",\"imgData\":{\"name\":\"\\u9996\\u9875\",\"list\":{\"default\":\"\\\/images\\\/Icons\\\/grey\\\/grey-home.png\",\"active\":\"\\\/images\\\/Icons\\\/orange\\\/orange-home.png\"},\"colorObj\":\"#ff8f21\"}},{\"LinkID\":\"0\",\"LinkType\":\"ServiceList\",\"LinkDesc\":\"\\u94fe\\u63a5\\u5230\\u670d\\u52a1\\u5217\\u8868\",\"Text\":\"\\u670b\\u57ce\\u5b9d\",\"Image\":\"\\\/images\\\/Icons\\\/grey\\\/grey-clock.png\",\"ImageActive\":\"\\\/images\\\/Icons\\\/orange\\\/orange-clock.png\",\"imgData\":{\"name\":\"\\u9884\\u7ea6\",\"list\":{\"default\":\"\\\/images\\\/Icons\\\/grey\\\/grey-clock.png\",\"active\":\"\\\/images\\\/Icons\\\/orange\\\/orange-clock.png\"},\"colorObj\":\"#ff8f21\"}},{\"LinkID\":\"0\",\"LinkType\":\"UserCenter\",\"LinkDesc\":\"\\u94fe\\u63a5\\u5230\\u7528\\u6237\\u4e2d\\u5fc3\",\"Text\":\"\\u4e2a\\u4eba\\u4e2d\\u5fc3\",\"Image\":\"\\\/images\\\/Icons\\\/grey\\\/grey-my.png\",\"ImageActive\":\"\\\/images\\\/Icons\\\/orange\\\/orange-my.png\",\"imgData\":{\"name\":\"\\u4e2a\\u4eba\\u4e2d\\u5fc3\",\"list\":{\"default\":\"\\\/images\\\/Icons\\\/grey\\\/grey-my.png\",\"active\":\"\\\/images\\\/Icons\\\/orange\\\/orange-my.png\"},\"colorObj\":\"#ff8f21\"}},{\"LinkID\":\"7341\",\"LinkType\":\"CustomPage\",\"LinkDesc\":\"\\u94fe\\u63a5\\u5230\\u9875\\u9762 \\u4ed8\\u6b3e\\u9875\\u9762\",\"Text\":\"\\u70b9\\u51fb\\u4ed8\\u6b3e\",\"imgData\":{\"name\":\"\\u597d\\u7269\",\"list\":{\"default\":\"\\\/images\\\/Icons\\\/grey\\\/grey-goods.png\",\"active\":\"\\\/images\\\/Icons\\\/orange\\\/orange-goods.png\"},\"colorObj\":\"#ff8f21\"},\"Image\":\"\\\/images\\\/Icons\\\/grey\\\/grey-goods.png\",\"ImageActive\":\"\\\/images\\\/Icons\\\/orange\\\/orange-goods.png\"}],\"activeColor\":\"#ff8f21\"}","FloatLayerSetting":"{\"EnableCustomService\":0,\"ShowPages\":\"\",\"EnableTel\":1}","CopyrightSetting":"{\"Enable\":1,\"DisplayType\":1,\"Intro\":\"\\u670b\\u57ce\\u5b9d\\u7248\\u6743\\u6240\\u6709\",\"ShowIcon\":1,\"IconPath\":\"https:\\\/\\\/wxapp.yz168.cc\\\/comdata\\\/52556\\\/201808\\\/20180827190249371d78.jpg\"}","Banners":[],"Images":[],"Intro":"<p>\u6613\u4fee \u6210\u7acb\u4e8e2015\u5e747\u6708\uff0c\u96b6\u5c5e\u4e8e\u6df1\u5733\u5e02\u670b\u57ce\u5b9d\u79d1\u6280\u88c5\u9970\u6709\u9650\u8d23\u4efb\u516c\u53f8\uff0c\u5728\u4e3a\u7f8e\u597d\u751f\u6d3b\u800c\u6765\u7684\u5927\u5e02\u573a\u7684\u673a\u9047\u4e0e\u6311\u6218\u4e0b\uff0c\u4e3a\u89e3\u51b3\u7269\u4e1a\u884c\u4e1a\u75db\u70b9\uff0c\u6ee1\u8db3\u5546\u5bb6\u4e0e\u7528\u6237\u552e\u540e\u670d\u52a1\u9700\u6c42\uff0c\u503e\u529b\u6253\u9020\u7684\u201c\u4e92\u8054\u7f51\uff0b\u914d\u9001\u3001\u5b89\u88c5\u3001\u7ef4\u4fee\u201d\u7684\u5171\u4eab\u7ecf\u6d4e\u670d\u52a1\u5e73\u53f0\uff0c\u4e3a\u5168\u56fd\u7528\u6237\u63d0\u4f9b\u5bb6\u5177\u3001\u536b\u6d74\u3001\u706f\u5177\u3001\u667a\u80fd\u5bb6\u5c45\u7b49\u5168\u54c1\u7c7b\u5bb6\u5c45\u5efa\u6750\u4ea7\u54c1\u552e\u540e\u7684\u540c\u57ce\u914d\u9001\u3001\u5b89\u88c5\u3001\u7ef4\u4fee\u7b49\u6700\u540e\u4e00\u516c\u91cc\u670d\u52a1\uff01\u4ece\u6839\u672c\u4e0a\u89e3\u51b3\u5bb6\u5c45\u5efa\u6750\u552e\u540e\u7ebf\u6761\u957f\u3001\u54c1\u63a7\u96be\u3001\u65e0\u4fdd\u969c\u3001\u4ef7\u683c\u4e71\u7684\u7d27\u8feb\u96be\u9898\u3002<\/p><p><br\/><\/p>","WxNum":"","WxWeb":"","Lng":"114.0301971436","Lat":"22.6704502106","NewsClasses":null,"ProductClasses":null,"MsgForm":"10376","ReserveForm":"19850","TitlleNames":"[\n\t\t\t\t\t{\"Module\":\"CompanyInfo\",\"TitleName\":\"\u4f01\u4e1a\u8d44\u8baf\",\"Show\":\"1\"},\n\t\t\t\t\t{\"Module\":\"ProductDetail\",\"TitleName\":\"\u4ea7\u54c1\u5c55\u793a\",\"Show\":\"1\"},\n\t\t\t\t\t{\"Module\":\"Aboutus\",\"TitleName\":\"\u5173\u4e8e\u6211\u4eec\",\"Show\":\"1\"},\n\t\t\t\t\t{\"Module\":\"OnlineTalk\",\"TitleName\":\"\u5728\u7ebf\u7559\u8a00\",\"Show\":\"1\"},\n\t\t\t\t\t{\"Module\":\"ShowCase\",\"TitleName\":\"\u6848\u4f8b\u5c55\u793a\",\"Show\":\"1\"}\n\t\t\t\t]","Video":null,"CrTime":"2018-08-16 18:18:52","PublishTime":"2018-10-15 17:15:18","SkinID":"38","QRCode":"\/comdata\/52556\/wx_app\/006f52e9102a8d3be2fe5614f42ba989.png","LastCheckCopyright":null,"RequestWxAppApiFailedTimes":"0","EnableReserve":"0","StoreSetting":"0","Company":"\u6df1\u5733\u5e02\u670b\u57ce\u5b9d\u79d1\u6280\u88c5\u9970\u6709\u9650\u8d23\u4efb\u516c\u53f8","Contact":"\u718a\u5148\u751f","Tel":"'.app_conf('SHOP_TEL').'","Province":"2132","City":"2159","Pid":"2132","Cid":"2159","Address":"\u5e7f\u4e1c\u7701\u6df1\u5733\u5e02\u9f99\u534e","Email":"","EnableWxPay":1,"IsZhiYing":"0","WxAppVersion":"WXINDUSTRYAPP","ExtDir":"","EnableWxShare":null,"SiteLogo":"https:\/\/w.szxxweb.com\/images\/appimg.jpg","SOCKET_USERNAME":"wsuser","SOCKET_PASSWD":"mker123","SOCKET_URL":"wss:\/\/gw-msg.yz168.cc"},"pageTitle":""}';}
+		
+		if($_REQUEST['page']=='custompage_7341'){
+			$bannerImg=$GLOBALS['db']->getOne("select icon from ".DB_PREFIX."adv where is_delete=0 and cate_id=3");
+			if($bannerImg) $bannerImg=str_replace("/","\/",$bannerImg);
+			
+			
+			$catelist=$GLOBALS['db']->getAll("select * from ".DB_PREFIX."article_cate where is_delete=0 and is_effect=1 order by sort asc,id desc");
+			$cateData=array();
+			foreach($catelist as $key=>$rows){
+				$cateData[$key]['LinkType']="newslist";
+				$cateData[$key]['LinkID']=$rows['id'];
+				$cateData[$key]['Text']=$rows['title'];
+				$cateData[$key]['Image']=$rows['icon'];
+				$cateData[$key]['LinkDesc']=$rows['brief'];
+			}
+			$caseSort=json_encode($cateData);
+			//推荐展示
+			$clist=$GLOBALS['db']->getAll("select * from ".DB_PREFIX."article where is_delete=0 and is_effect=1 and is_comm=1 order by sort asc,id desc");
+			$cData=array();
+			foreach($clist as $key=>$rows){
+				$cData[$key]['ID']=$rows['id'];
+				$cData[$key]['Title']=$rows['title'];
+				$cData[$key]['Image']=$rows['icon'];
+				$cData[$key]['Desc']='';
+				$cData[$key]['Date']=date("Y-m-d",$rows['create_time']);
+			}
+			$caseComm=json_encode($cData);
+			
+			echo '{"success":true,"msg":"ok","cachekey":"5441013693e9384519b75e96744a0ed0","modules":[{"Links":[{"LinkType":"","LinkID":"","Text":"\u8bf7\u9009\u62e9\u94fe\u63a5\u9875\u9762","Image":"'.$bannerImg.'","LinkDesc":"\u8bf7\u9009\u62e9\u94fe\u63a5\u9875\u9762","LinkKey":"15354416630"}],"PaddingLR":0,"HeightPercent":53,"ShowType":0,"ModuleType":"ModuleSlide","Layout":101,"LayoutColor":null,"ModuleID":276349,"Publish":1,"CanDesign":false,"CanEditFront":false},{"Links":'.$caseSort.',"LineNum":2,"ModuleType":"ModuleLink","Layout":103,"LayoutColor":null,"ModuleID":276552,"Publish":1,"CanDesign":false,"CanEditFront":false},{"DataFrom":1,"OrderColumn":"time","ShowNum":10,"ShowDescription":0,"ShowTime":0,"NewsList":'.$caseComm.',"ModuleType":"ModuleNewsList","Layout":104,"LayoutColor":null,"ModuleID":276557,"Publish":1,"CanDesign":false,"CanEditFront":false}],"appinfo":{"ID":"5461","SiteID":"52556","Icon":"\/comdata\/52556\/wxApp\/2018082706114455.jpg","AppID":"wx48b2c4b5c5ca4e6a","AppSecret":"8b7e6b6857fa11588a7310ad100f9f1d","AccessToken":null,"AccTokenExpire":null,"Industry":"meirong","Template":"Meirong-1","Name":"\u670b\u57ce\u5b9d\u6613\u4fee","HeadSetting":"{\"BgColor\":\"#2a292f\",\"FontColor\":\"white\"}","FootSetting":"{\"BgColor\":\"#ffffff\",\"FontColor\":\"#666666\",\"Links\":[{\"LinkID\":\"0\",\"LinkType\":\"HomeIndex\",\"LinkDesc\":\"\\u94fe\\u63a5\\u5230\\u9996\\u9875\",\"Text\":\"\\u9996\\u9875\",\"Image\":\"\\\/images\\\/Icons\\\/grey\\\/grey-home.png\",\"ImageActive\":\"\\\/images\\\/Icons\\\/orange\\\/orange-home.png\",\"imgData\":{\"name\":\"\\u9996\\u9875\",\"list\":{\"default\":\"\\\/images\\\/Icons\\\/grey\\\/grey-home.png\",\"active\":\"\\\/images\\\/Icons\\\/orange\\\/orange-home.png\"},\"colorObj\":\"#ff8f21\"}},{\"LinkID\":\"0\",\"LinkType\":\"ServiceList\",\"LinkDesc\":\"\\u94fe\\u63a5\\u5230\\u670d\\u52a1\\u5217\\u8868\",\"Text\":\"\\u670b\\u57ce\\u5b9d\",\"Image\":\"\\\/images\\\/Icons\\\/grey\\\/grey-clock.png\",\"ImageActive\":\"\\\/images\\\/Icons\\\/orange\\\/orange-clock.png\",\"imgData\":{\"name\":\"\\u9884\\u7ea6\",\"list\":{\"default\":\"\\\/images\\\/Icons\\\/grey\\\/grey-clock.png\",\"active\":\"\\\/images\\\/Icons\\\/orange\\\/orange-clock.png\"},\"colorObj\":\"#ff8f21\"}},{\"LinkID\":\"0\",\"LinkType\":\"UserCenter\",\"LinkDesc\":\"\\u94fe\\u63a5\\u5230\\u7528\\u6237\\u4e2d\\u5fc3\",\"Text\":\"\\u4e2a\\u4eba\\u4e2d\\u5fc3\",\"Image\":\"\\\/images\\\/Icons\\\/grey\\\/grey-my.png\",\"ImageActive\":\"\\\/images\\\/Icons\\\/orange\\\/orange-my.png\",\"imgData\":{\"name\":\"\\u4e2a\\u4eba\\u4e2d\\u5fc3\",\"list\":{\"default\":\"\\\/images\\\/Icons\\\/grey\\\/grey-my.png\",\"active\":\"\\\/images\\\/Icons\\\/orange\\\/orange-my.png\"},\"colorObj\":\"#ff8f21\"}},{\"LinkID\":\"5966\",\"LinkType\":\"CustomPage\",\"LinkDesc\":\"\\u94fe\\u63a5\\u5230\\u9875\\u9762 \\u6848\\u4f8b\\u5c55\\u793a\",\"Text\":\"\\u5de5\\u7a0b\\u6848\\u4f8b\",\"imgData\":{\"name\":\"\\u6848\\u4f8b\",\"list\":{\"default\":\"\\\/images\\\/Icons\\\/grey\\\/grey-case1.png\",\"active\":\"\\\/images\\\/Icons\\\/orange\\\/orange-case1.png\"},\"colorObj\":\"#ff8f21\"},\"Image\":\"\\\/images\\\/Icons\\\/grey\\\/grey-case1.png\",\"ImageActive\":\"\\\/images\\\/Icons\\\/orange\\\/orange-case1.png\"}],\"activeColor\":\"#ff8f21\"}","FloatLayerSetting":"{\"EnableCustomService\":0,\"ShowPages\":\"\",\"EnableTel\":1}","CopyrightSetting":"{\"Enable\":1,\"DisplayType\":1,\"Intro\":\"\\u670b\\u57ce\\u5b9d\\u7248\\u6743\\u6240\\u6709\",\"ShowIcon\":1,\"IconPath\":\"https:\\\/\\\/wxapp.yz168.cc\\\/comdata\\\/52556\\\/201808\\\/20180827190249371d78.jpg\"}","Banners":[],"Images":[],"Intro":"<p>\u6613\u4fee \u6210\u7acb\u4e8e2015\u5e747\u6708\uff0c\u96b6\u5c5e\u4e8e\u6df1\u5733\u5e02\u670b\u57ce\u5b9d\u79d1\u6280\u88c5\u9970\u6709\u9650\u8d23\u4efb\u516c\u53f8\uff0c\u5728\u4e3a\u7f8e\u597d\u751f\u6d3b\u800c\u6765\u7684\u5927\u5e02\u573a\u7684\u673a\u9047\u4e0e\u6311\u6218\u4e0b\uff0c\u4e3a\u89e3\u51b3\u7269\u4e1a\u884c\u4e1a\u75db\u70b9\uff0c\u6ee1\u8db3\u5546\u5bb6\u4e0e\u7528\u6237\u552e\u540e\u670d\u52a1\u9700\u6c42\uff0c\u503e\u529b\u6253\u9020\u7684\u201c\u4e92\u8054\u7f51\uff0b\u914d\u9001\u3001\u5b89\u88c5\u3001\u7ef4\u4fee\u201d\u7684\u5171\u4eab\u7ecf\u6d4e\u670d\u52a1\u5e73\u53f0\uff0c\u4e3a\u5168\u56fd\u7528\u6237\u63d0\u4f9b\u5bb6\u5177\u3001\u536b\u6d74\u3001\u706f\u5177\u3001\u667a\u80fd\u5bb6\u5c45\u7b49\u5168\u54c1\u7c7b\u5bb6\u5c45\u5efa\u6750\u4ea7\u54c1\u552e\u540e\u7684\u540c\u57ce\u914d\u9001\u3001\u5b89\u88c5\u3001\u7ef4\u4fee\u7b49\u6700\u540e\u4e00\u516c\u91cc\u670d\u52a1\uff01\u4ece\u6839\u672c\u4e0a\u89e3\u51b3\u5bb6\u5c45\u5efa\u6750\u552e\u540e\u7ebf\u6761\u957f\u3001\u54c1\u63a7\u96be\u3001\u65e0\u4fdd\u969c\u3001\u4ef7\u683c\u4e71\u7684\u7d27\u8feb\u96be\u9898\u3002<\/p><p><br\/><\/p>","WxNum":"","WxWeb":"","Lng":"114.0301971436","Lat":"22.6704502106","NewsClasses":null,"ProductClasses":null,"MsgForm":"10376","ReserveForm":"19850","TitlleNames":"[\n\t\t\t\t\t{\"Module\":\"CompanyInfo\",\"TitleName\":\"\u4f01\u4e1a\u8d44\u8baf\",\"Show\":\"1\"},\n\t\t\t\t\t{\"Module\":\"ProductDetail\",\"TitleName\":\"\u4ea7\u54c1\u5c55\u793a\",\"Show\":\"1\"},\n\t\t\t\t\t{\"Module\":\"Aboutus\",\"TitleName\":\"\u5173\u4e8e\u6211\u4eec\",\"Show\":\"1\"},\n\t\t\t\t\t{\"Module\":\"OnlineTalk\",\"TitleName\":\"\u5728\u7ebf\u7559\u8a00\",\"Show\":\"1\"},\n\t\t\t\t\t{\"Module\":\"ShowCase\",\"TitleName\":\"\u6848\u4f8b\u5c55\u793a\",\"Show\":\"1\"}\n\t\t\t\t]","Video":null,"CrTime":"2018-08-16 18:18:52","PublishTime":"2018-11-02 17:41:48","SkinID":"38","QRCode":"\/comdata\/52556\/wx_app\/006f52e9102a8d3be2fe5614f42ba989.png","LastCheckCopyright":null,"RequestWxAppApiFailedTimes":"0","EnableReserve":"0","StoreSetting":"0","BDAppID":null,"BDAppSecret":null,"ALIAppID":null,"ALIPrivateKey":null,"ALIPublicKey":null,"Company":"\u6df1\u5733\u5e02\u670b\u57ce\u5b9d\u79d1\u6280\u88c5\u9970\u6709\u9650\u8d23\u4efb\u516c\u53f8","Contact":"\u718a\u5148\u751f","Tel":"'.app_conf('SHOP_TEL').'","Province":"2132","City":"2159","Pid":"2132","Cid":"2159","Address":"\u5e7f\u4e1c\u7701\u6df1\u5733\u5e02\u9f99\u534e","Email":"","EnableWxPay":1,"IsZhiYing":"0","WxAppVersion":"WXINDUSTRYAPP","ExtDir":"","EnableWxShare":null,"SiteLogo":"https:\/\/w.szxxweb.com\/images\/appimg.jpg","SOCKET_USERNAME":"wsuser","SOCKET_PASSWD":"mker123","SOCKET_URL":"wss:\/\/gw-msg.yz168.cc"},"pageTitle":"\u6848\u4f8b\u5c55\u793a"}';	
+		}
+	}
+
+	public function getBaseInfo() {
+		echo '{"success":true,"msg":"ok","info":{"ID":"5461","SiteID":"52556","Icon":"\/comdata\/52556\/wxApp\/2018082706114455.jpg","AppID":"wxb64090846d728098","AppSecret":"ded8798ba8e6260b611a76324eebf8b9","AccessToken":null,"AccTokenExpire":null,"Industry":"meirong","Template":"Meirong-1","Name":"\u670b\u57ce\u5b9d\u6613\u4fee","HeadSetting":"{\"BgColor\":\"#2a292f\",\"FontColor\":\"white\"}","FootSetting":"{\"BgColor\":\"#ffffff\",\"FontColor\":\"#666666\",\"Links\":[{\"LinkID\":\"0\",\"LinkType\":\"HomeIndex\",\"LinkDesc\":\"\\u94fe\\u63a5\\u5230\\u9996\\u9875\",\"Text\":\"\\u9996\\u9875\",\"Image\":\"\\\/images\\\/Icons\\\/grey\\\/grey-home.png\",\"ImageActive\":\"\\\/images\\\/Icons\\\/orange\\\/orange-home.png\",\"imgData\":{\"name\":\"\\u9996\\u9875\",\"list\":{\"default\":\"\\\/images\\\/Icons\\\/grey\\\/grey-home.png\",\"active\":\"\\\/images\\\/Icons\\\/orange\\\/orange-home.png\"},\"colorObj\":\"#ff8f21\"}},{\"LinkID\":\"0\",\"LinkType\":\"ServiceList\",\"LinkDesc\":\"\\u94fe\\u63a5\\u5230\\u670d\\u52a1\\u5217\\u8868\",\"Text\":\"\\u670b\\u57ce\\u5b9d\",\"Image\":\"\\\/images\\\/Icons\\\/grey\\\/grey-clock.png\",\"ImageActive\":\"\\\/images\\\/Icons\\\/orange\\\/orange-clock.png\",\"imgData\":{\"name\":\"\\u9884\\u7ea6\",\"list\":{\"default\":\"\\\/images\\\/Icons\\\/grey\\\/grey-clock.png\",\"active\":\"\\\/images\\\/Icons\\\/orange\\\/orange-clock.png\"},\"colorObj\":\"#ff8f21\"}},{\"LinkID\":\"0\",\"LinkType\":\"UserCenter\",\"LinkDesc\":\"\\u94fe\\u63a5\\u5230\\u7528\\u6237\\u4e2d\\u5fc3\",\"Text\":\"\\u4e2a\\u4eba\\u4e2d\\u5fc3\",\"Image\":\"\\\/images\\\/Icons\\\/grey\\\/grey-my.png\",\"ImageActive\":\"\\\/images\\\/Icons\\\/orange\\\/orange-my.png\",\"imgData\":{\"name\":\"\\u4e2a\\u4eba\\u4e2d\\u5fc3\",\"list\":{\"default\":\"\\\/images\\\/Icons\\\/grey\\\/grey-my.png\",\"active\":\"\\\/images\\\/Icons\\\/orange\\\/orange-my.png\"},\"colorObj\":\"#ff8f21\"}},{\"LinkID\":\"7341\",\"LinkType\":\"CustomPage\",\"LinkDesc\":\"\\u94fe\\u63a5\\u5230\\u9875\\u9762 \\u4ed8\\u6b3e\\u9875\\u9762\",\"Text\":\"\\u70b9\\u51fb\\u4ed8\\u6b3e\",\"imgData\":{\"name\":\"\\u597d\\u7269\",\"list\":{\"default\":\"\\\/images\\\/Icons\\\/grey\\\/grey-goods.png\",\"active\":\"\\\/images\\\/Icons\\\/orange\\\/orange-goods.png\"},\"colorObj\":\"#ff8f21\"},\"Image\":\"\\\/images\\\/Icons\\\/grey\\\/grey-goods.png\",\"ImageActive\":\"\\\/images\\\/Icons\\\/orange\\\/orange-goods.png\"}],\"activeColor\":\"#ff8f21\"}","FloatLayerSetting":"{\"EnableCustomService\":0,\"ShowPages\":\"\",\"EnableTel\":1}","CopyrightSetting":"{\"Enable\":1,\"DisplayType\":1,\"Intro\":\"\\u670b\\u57ce\\u5b9d\\u7248\\u6743\\u6240\\u6709\",\"ShowIcon\":1,\"IconPath\":\"https:\\\/\\\/wxapp.yz168.cc\\\/comdata\\\/52556\\\/201808\\\/20180827190249371d78.jpg\"}","Banners":[],"Images":[],"Intro":"<p>\u6613\u4fee \u6210\u7acb\u4e8e2015\u5e747\u6708\uff0c\u96b6\u5c5e\u4e8e\u6df1\u5733\u5e02\u670b\u57ce\u5b9d\u79d1\u6280\u88c5\u9970\u6709\u9650\u8d23\u4efb\u516c\u53f8\uff0c\u5728\u4e3a\u7f8e\u597d\u751f\u6d3b\u800c\u6765\u7684\u5927\u5e02\u573a\u7684\u673a\u9047\u4e0e\u6311\u6218\u4e0b\uff0c\u4e3a\u89e3\u51b3\u7269\u4e1a\u884c\u4e1a\u75db\u70b9\uff0c\u6ee1\u8db3\u5546\u5bb6\u4e0e\u7528\u6237\u552e\u540e\u670d\u52a1\u9700\u6c42\uff0c\u503e\u529b\u6253\u9020\u7684\u201c\u4e92\u8054\u7f51\uff0b\u914d\u9001\u3001\u5b89\u88c5\u3001\u7ef4\u4fee\u201d\u7684\u5171\u4eab\u7ecf\u6d4e\u670d\u52a1\u5e73\u53f0\uff0c\u4e3a\u5168\u56fd\u7528\u6237\u63d0\u4f9b\u5bb6\u5177\u3001\u536b\u6d74\u3001\u706f\u5177\u3001\u667a\u80fd\u5bb6\u5c45\u7b49\u5168\u54c1\u7c7b\u5bb6\u5c45\u5efa\u6750\u4ea7\u54c1\u552e\u540e\u7684\u540c\u57ce\u914d\u9001\u3001\u5b89\u88c5\u3001\u7ef4\u4fee\u7b49\u6700\u540e\u4e00\u516c\u91cc\u670d\u52a1\uff01\u4ece\u6839\u672c\u4e0a\u89e3\u51b3\u5bb6\u5c45\u5efa\u6750\u552e\u540e\u7ebf\u6761\u957f\u3001\u54c1\u63a7\u96be\u3001\u65e0\u4fdd\u969c\u3001\u4ef7\u683c\u4e71\u7684\u7d27\u8feb\u96be\u9898\u3002<\/p><p><br\/><\/p>","WxNum":"","WxWeb":"","Lng":"114.0301971436","Lat":"22.6704502106","NewsClasses":null,"ProductClasses":null,"MsgForm":"10376","ReserveForm":"19850","TitlleNames":"[\n\t\t\t\t\t{\"Module\":\"CompanyInfo\",\"TitleName\":\"\u4f01\u4e1a\u8d44\u8baf\",\"Show\":\"1\"},\n\t\t\t\t\t{\"Module\":\"ProductDetail\",\"TitleName\":\"\u4ea7\u54c1\u5c55\u793a\",\"Show\":\"1\"},\n\t\t\t\t\t{\"Module\":\"Aboutus\",\"TitleName\":\"\u5173\u4e8e\u6211\u4eec\",\"Show\":\"1\"},\n\t\t\t\t\t{\"Module\":\"OnlineTalk\",\"TitleName\":\"\u5728\u7ebf\u7559\u8a00\",\"Show\":\"1\"},\n\t\t\t\t\t{\"Module\":\"ShowCase\",\"TitleName\":\"\u6848\u4f8b\u5c55\u793a\",\"Show\":\"1\"}\n\t\t\t\t]","Video":null,"CrTime":"2018-08-16 18:18:52","PublishTime":"2018-10-15 17:15:18","SkinID":"38","QRCode":"\/comdata\/52556\/wx_app\/006f52e9102a8d3be2fe5614f42ba989.png","EnableReserve":"0","StoreSetting":"0","Company":"\u6df1\u5733\u5e02\u670b\u57ce\u5b9d\u79d1\u6280\u88c5\u9970\u6709\u9650\u8d23\u4efb\u516c\u53f8","Contact":"\u718a\u5148\u751f","Tel":"'.app_conf('SHOP_TEL').'","Province":"2132","City":"2159","Pid":"2132","Cid":"2159","Address":"\u5e7f\u4e1c\u7701\u6df1\u5733\u5e02\u9f99\u534e","Email":"","EnableWxPay":1,"IsZhiYing":"0","WxAppVersion":"WXINDUSTRYAPP","ExtDir":"","EnableWxShare":null,"SiteLogo":"https:\/\/wxapp.yz168.cc\/comdata\/52556\/wxApp\/2018082706114455.jpg","SOCKET_USERNAME":"wsuser","SOCKET_PASSWD":"mker123","SOCKET_URL":"wss:\/\/gw-msg.yz168.cc"},"notice":null,"language":{"TIPS_Sha":"\u8f6c\u53d1","TIPS_ShaFriend":"\u4fdd\u5b58\u56fe\u7247","TIPS_ShaShop":"\u8f6c\u53d1\u5e97\u94fa","TIPS_ShaPoster":"\u8f6c\u53d1\u6d77\u62a5","TIPS_FxCenter":"\u5206\u9500\u4e2d\u5fc3","TIPS_MoneyNotReview":"\u5f85\u5ba1\u4f63\u91d1","TIPS_HowToFx":"\u5982\u4f55\u6210\u4e3a\u5206\u9500\u5458","TIPS_HowToFx2":"\u6ee1\u8db3\u4ee5\u4e0b\u4e00\u4e2a\u6761\u4ef6\u5c31\u53ef\u4ee5\u6210\u4e3a\u5206\u9500\u5458","TIPS_MyFxMember":"\u6211\u7684\u5206\u9500\u5458","TIPS_MyTeam":"\u6211\u7684\u56e2\u961f","TIPS_MyFxLv1":"\u4e00\u7ea7\u4f1a\u5458","TIPS_MyFxLv2":"\u4e8c\u7ea7\u4f1a\u5458","TIPS_MyFxLv3":"\u4e09\u7ea7\u4f1a\u5458","TIPS_Commission":"\u4f63\u91d1","TIPS_Forward":"\u8f6c\u53d1","TIPS_Withdraw":"\u63d0\u73b0","TIPS_SendToFriend":"\u53d1\u9001\u670b\u53cb","TIPS_Invite":"\u9080\u8bf7\u597d\u53cb"},"reserveformdata":{"FormName":"\u5c0f\u7a0b\u5e8f\u9884\u7ea6\u8868\u5355","FormID":"19850","fields":[{"ID":"74161","Name":"\u59d3\u540d","IsRequire":"1","IsShow":"1","FieldType":"1","ValidateType":"1","FieldValues":null,"ExtendName":"Contact","NoDel":"1"},{"ID":"74162","Name":"\u7535\u8bdd","IsRequire":"1","IsShow":"1","FieldType":"1","ValidateType":"5","FieldValues":null,"ExtendName":"Tel","NoDel":"1"},{"ID":"74163","Name":"\u9884\u7ea6\u65f6\u95f4","IsRequire":"1","IsShow":"1","FieldType":"8","ValidateType":"0","FieldValues":null,"ExtendName":"ReserveTime","NoDel":"1"},{"ID":"74609","Name":"\u5730\u5740","IsRequire":"1","IsShow":"1","FieldType":"7","ValidateType":"0","FieldValues":"","ExtendName":null,"NoDel":"0"},{"ID":"74619","Name":"\u8be6\u60c5\u5730\u5740","IsRequire":"1","IsShow":"1","FieldType":"2","ValidateType":"0","FieldValues":"","ExtendName":null,"NoDel":"0"},{"ID":"74618","Name":"\u8bf7\u9009\u62e9\u60a8\u7684\u670d\u52a1","IsRequire":"0","IsShow":"1","FieldType":"3","ValidateType":"0","FieldValues":"\u7ef4\u4fee\u68c0\u4fee|\u5b89\u88c5\u7ec4\u88c5|\u5176\u4ed6","ExtendName":null,"NoDel":"0","Values":["\u7ef4\u4fee\u68c0\u4fee","\u5b89\u88c5\u7ec4\u88c5","\u5176\u4ed6"]}]},"msgformdata":{"FormName":"\u5c0f\u7a0b\u5e8f\u9884\u7ea6\u8868\u5355","FormID":"19850","fields":[{"ID":"74161","Name":"\u59d3\u540d","IsRequire":"1","IsShow":"1","FieldType":"1","ValidateType":"1","FieldValues":null,"ExtendName":"Contact","NoDel":"1"},{"ID":"74162","Name":"\u7535\u8bdd","IsRequire":"1","IsShow":"1","FieldType":"1","ValidateType":"5","FieldValues":null,"ExtendName":"Tel","NoDel":"1"},{"ID":"74163","Name":"\u9884\u7ea6\u65f6\u95f4","IsRequire":"1","IsShow":"1","FieldType":"8","ValidateType":"0","FieldValues":null,"ExtendName":"ReserveTime","NoDel":"1"},{"ID":"74609","Name":"\u5730\u5740","IsRequire":"1","IsShow":"1","FieldType":"7","ValidateType":"0","FieldValues":"","ExtendName":null,"NoDel":"0"},{"ID":"74619","Name":"\u8be6\u60c5\u5730\u5740","IsRequire":"1","IsShow":"1","FieldType":"2","ValidateType":"0","FieldValues":"","ExtendName":null,"NoDel":"0"},{"ID":"74618","Name":"\u8bf7\u9009\u62e9\u60a8\u7684\u670d\u52a1","IsRequire":"0","IsShow":"1","FieldType":"3","ValidateType":"0","FieldValues":"\u7ef4\u4fee\u68c0\u4fee|\u5b89\u88c5\u7ec4\u88c5|\u5176\u4ed6","ExtendName":null,"NoDel":"0","Values":["\u7ef4\u4fee\u68c0\u4fee","\u5b89\u88c5\u7ec4\u88c5","\u5176\u4ed6"]}]},"business_card_choice":1}';
+	}
+	
+	public function loginUser() {
+		$userInfo=$_POST['userInfo'];
+		$app_id=addslashes($_POST['app_id']);
+		$code=$_POST['code'];
+		$InitSiteID=htmlstrchk($_POST['InitSiteID']);
+		$dataId=htmlstrchk($_POST['dataId']);
+		
+		if($code){
+
+			$url='https://api.weixin.qq.com/sns/jscode2session?appid='.app_conf('APPID').'&secret='.app_conf('AppSecret').'&js_code='.$code.'&grant_type=authorization_code';
+			
+			//echo $url;
+			//$url="http://www.baidu.com/";
+			$UserAgent = 'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.0; SLCC1; .NET CLR 2.0.50727; .NET CLR 3.0.04506; .NET CLR 3.5.21022; .NET CLR 1.0.3705; .NET CLR 1.1.4322)';
+			$curl = curl_init();	//创建一个新的CURL资源
+			curl_setopt($curl, CURLOPT_URL, $url);	//设置URL和相应的选项
+			curl_setopt($curl, CURLOPT_HEADER, 0);  //0表示不输出Header，1表示输出
+			curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);	//设定是否显示头信息,1显示，0不显示。
+			//如果成功只将结果返回，不自动输出任何内容。如果失败返回FALSE
+			 
+			curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+			curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+			curl_setopt($curl, CURLOPT_ENCODING, '');	//设置编码格式，为空表示支持所有格式的编码
+			//header中"Accept-Encoding: "部分的内容，支持的编码格式为："identity"，"deflate"，"gzip"。
+			 
+			curl_setopt($curl, CURLOPT_USERAGENT, $UserAgent);
+			curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+			//设置这个选项为一个非零值(象 "Location: ")的头，服务器会把它当做HTTP头的一部分发送(注意这是递归的，PHP将发送形如 "Location: "的头)。
+			 
+			$jsonStr = curl_exec($curl); 
+			curl_close($curl);	//关闭cURL资源，并释放系统
+			
+			$arr = json_decode($jsonStr, true);
+			$arr['url']=$url;
+			
+			$redata=array();
+			
+			
+			if($arr['session_key']){
+				
+				$userInfo = $GLOBALS['db']->getRow("select id from ".DB_PREFIX."user where openid='".$arr['openid']."'");
+				if(!$userInfo){
+					$userdata=array();
+					$userdata['user_name'] = $arr['openid'];
+					$userdata['password'] = md5($openid);
+					$userdata['openid'] = $arr['openid'];
+					$userdata['session_key'] = $arr['session_key'];
+					$userdata['is_effect'] = 1;
+					$userdata['names'] = htmlstrchk($userInfo['nickName']);
+					$userdata['app_id'] = $app_id;
+					$userdata['avatarUrl'] = addslashes($userInfo['avatarUrl']);
+					$userdata['InitSiteID'] = intval($InitSiteID);
+					$userdata['dataId'] = intval($dataId);
+					$userdata['login_ip'] = get_client_ip();
+					$userdata['login_time'] = time();
+					$userdata['create_time'] = time();
+			
+					$GLOBALS['db']->autoExecute(DB_PREFIX."user",$userdata); //插入
+					$reid = $GLOBALS['db']->insert_id();
+					
+				}else{
+					$GLOBALS['db']->query("update ".DB_PREFIX."user set session_key='".$arr['session_key']."' where openid='".$arr['openid']."'");
+				}
+				//es_session::set("session_key",$arr['session_key']);
+				$redata['success']=true;
+				$redata['session_key']=$arr['session_key'];
+				if($arr['openid']) $redata['openid']=$arr['openid'];
+				$redata['WebUserID']=$reid?$reid:$userInfo['id'];
+				$redata['WebUserID']=intval($redata['WebUserID']);
+				$redata['success']=true;
+			}else{
+				es_session::set("session_key","");
+				$redata['success']=false;
+				$redata['msg']=$arr['errmsg'];	
+			}
+		}else{
+			es_session::set("session_key","");
+			$redata['success']=false;
+		}
+		
+		ajax_return($redata);
+		
+	}
+	
+	public function saveReserve(){
+		$app_id=addslashes($_POST['app_id']);
+		$colServiceID=intval($_POST['colServiceID']);
+		$WebUserID=intval($_POST['WebUserID']);
+		$dataId=intval($_POST['dataId']);
+		$session_key=addslashes($_REQUEST['session_key']);
+		$session_key=$this->resession_key($session_key);
+		
+		$fullname=htmlstrchk($_POST['col74161']);
+		$telephone=htmlstrchk($_POST['col74162']);
+		$server_time=htmlstrchk($_POST['col74163']);
+		$address_1=htmlstrchk($_POST['col74609']);
+		$address_2=htmlstrchk($_POST['col74619']);
+		$ordey_type=htmlstrchk($_POST['col74618']);
+		if($ordey_type=='安装组装'){
+			$ordey_type=1;
+		}else if($ordey_type=='其它'){
+			$ordey_type=2;
+		}else{
+			$ordey_type=0;
+		}
+		
+		if(!$this->chk_login($WebUserID,$session_key)){
+			$redata['success']=false;
+			$redata['msg']="请先登录";	
+			ajax_return($redata);
+		}
+		
+		if($fullname&&$telephone&&$server_time&&$address_1&&$address_2){
+			
+			$prodata=$GLOBALS['db']->getRow("select * from ".DB_PREFIX."product where Id=".intval($colServiceID));
+			
+			$userdata=array();
+			$userdata['ordernu'] = date("His").$dataId;
+			$userdata['user_id'] = $WebUserID;
+			$userdata['fullname'] = $fullname;
+			$userdata['telephone'] = $telephone;
+			$userdata['server_time'] = $server_time;
+			$userdata['total'] =  $prodata['price'];
+			$userdata['paymoney'] =  $prodata['price'];
+			$userdata['address_1'] = $address_1;
+			$userdata['address_2'] = $address_2;
+			$userdata['ordey_type'] = $ordey_type;
+			$userdata['update_time'] = time();
+			$userdata['create_time'] = time();
+			$GLOBALS['db']->autoExecute(DB_PREFIX."order",$userdata); //插入
+			$reid = $GLOBALS['db']->insert_id();
+			
+			$userdata=array();
+			$userdata['order_id'] = $reid;
+			$userdata['product_id'] = $colServiceID;
+			$userdata['title'] = $prodata['title'];
+			$userdata['quantity'] = 1;
+			$userdata['price'] = $prodata['price'];
+			$userdata['total'] = $prodata['price'];
+			$GLOBALS['db']->autoExecute(DB_PREFIX."order_product",$userdata); //插入
+			
+			$redata['success']=true;
+			$redata['msg']="ok";	
+		}else{
+			$redata['success']=false;
+			$redata['msg']="请认真填写表单内容";	
+		}
+		
+		ajax_return($redata);
+	}
+	
+	public function saveComment(){
+		$app_id=addslashes($_POST['app_id']);
+		$colServiceID=intval($_POST['colServiceID']);
+		$WebUserID=intval($_POST['WebUserID']);
+		$dataId=intval($_POST['dataId']);
+		$session_key=addslashes($_REQUEST['session_key']);
+		$session_key=$this->resession_key($session_key);
+		
+		
+		$formchk=0;
+		$comment_lv=intval($_POST['col11']);
+		$comment_msg=htmlstrchk($_POST['col222']);
+		$redata=array();
+		$redata['success']=false;
+		
+		if(!$this->chk_login($WebUserID,$session_key)){
+			$redata['success']=false;
+			$redata['msg']="请先登录";	
+			ajax_return($redata);
+		}
+
+		$order = $GLOBALS['db']->getRow("select id,order_status,comment from ".DB_PREFIX."order where id=$colServiceID and user_id=$WebUserID and is_delete=0");
+		if(!$order){
+			$redata['success']=false;
+			$redata['msg']="订单不存在";	
+			$formchk++;
+		}else{
+			if($order['order_status']!='3'){
+				$redata['success']=false;
+				$redata['msg']="只有完成的订单才能进行评价";	
+				$formchk++;
+			}
+			if($order['comment']){
+				$redata['success']=false;
+				$redata['msg']="该订单已做出评价，感谢您对本平台的支持";	
+				$formchk++;
+			}
+		}
+		if(!$formchk){
+			$GLOBALS['db']->query("update ".DB_PREFIX."order set comment=1,comment_lv=$comment_lv,comment_msg='$comment_msg' where id=$colServiceID and user_id=$WebUserID and is_delete=0");
+			$redata['success']=true;
+			$redata['msg']="ok";	
+		}
+		
+		ajax_return($redata);
+	}
+	
+	public function gettBusinessCardEntrance() {
+		echo '{"success":true,"msg":"OK","info":{"checkComplete":"","user":false,"checkVersions":false}}';
+	}
+	
+	public function getNewsInfo() {
+		$id=intval($_REQUEST['id']);
+		$redata=array();
+		$redata['success']=false;
+		if($id){
+			$newsInfo = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."article where is_effect=1 and is_delete=0 and id=$id");
+			if($newsInfo){
+				$redata['info']['ArtDesc']="";
+				$redata['info']['ArtKeyword']="";
+				$redata['info']['ArticleID']=$newsInfo['id'];
+				$redata['info']['ClassID']=$newsInfo['cate_id'];
+				$redata['info']['CommentList']=array();
+				$redata['info']['Content']=$newsInfo['content'];
+				$redata['info']['SiteID']="9999";
+				$redata['info']['Dynamic']="0";
+				$redata['info']['LikeCount']="0";
+				$redata['info']['Status']="1";
+				$redata['info']['Hits']=$newsInfo['click_count'];
+				$redata['info']['ImgBig']=$newsInfo['icon'];
+				$redata['info']['PublishTime']=date("Y-m-d",$newsInfo['create_time']);
+				$redata['info']['Title']=$newsInfo['title'];
+				$redata['info']['TopSet']="0";
+				
+				$redata['info']['prevnext']=array();
+				$GLOBALS['db']->query("update ".DB_PREFIX."article  set click_count=click_count+1 where id=$id");
+				$redata['success']=true;
+				$redata['msg']='ok';
+				
+			}
+		}
+		ajax_return($redata);
+	}
+	
+	public function getServiceClassList() {
+		
+		$redata=array();
+		$product_cate = $GLOBALS['db']->getAll("select * from ".DB_PREFIX."product_cate where is_effect=1 and is_delete=0 order by sort asc,id desc");
+		$catedata=array();
+		foreach($product_cate as $key=>$rows){
+			$catedata[$key]['RecID']=$rows['id'];
+			$catedata[$key]['ClassID']=$rows['id'];
+			$catedata[$key]['SiteID']='9999';
+			$catedata[$key]['ParentID']=$rows['pid'];
+			$catedata[$key]['ShowOrder']=$rows['sort'];
+			$catedata[$key]['Name']=$rows['title'];
+			$catedata[$key]['Image']='';
+			$catedata[$key]['CrTime']=date("Y-m-d h:i:s",time());
+		}
+		
+		$redata['success']=true;
+		$redata['msg']='ok';
+		$redata['list']=$catedata;
+		
+		ajax_return($redata);
+		
+	}
+	
+	public function getServiceInfo() {
+		$id=intval($_REQUEST['id']);
+		$dataId=intval($_REQUEST['dataId']);
+		$redata=array();
+		$product = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."product where is_effect=1 and is_delete=0 and id=$id");
+		if($product){
+			$proarr=array();
+			$proarr['BigImages']=$product['icon'];
+			$proarr['SmallImages']=$product['icon'];
+			$proarr['ClassID']=$product['cate_id'];
+			$proarr['Content']=$product['content'];
+			$proarr['CrTime']=date("Y-m-d h:i:s",$product['create_time']);
+			$proarr['UpTime']=date("Y-m-d h:i:s",$product['create_time']);
+			$proarr['Hits']=2;
+			$proarr['IsDelete']=0;
+			$proarr['Name']=$product['title'];
+			$proarr['Price']=$product['price'];
+			$proarr['SalesCount']=$GLOBALS['db']->getOne("select count(id) from ".DB_PREFIX."order_product where product_id=$id");
+			$proarr['ServiceDesc']=$product['brief'];
+			$proarr['ServiceID']=$product['id'];
+			$proarr['ShowOrder']=$product['sort'];
+			$proarr['SiteID']="9999";
+			$proarr['Status']=$product['is_effect'];
+			$proarr['Video']="";
+			
+			
+			$redata['success']=true;
+			$redata['msg']='ok';
+			$redata['info']=$proarr;
+		}else{
+			$redata['success']=false;
+		}
+		
+		$redata['session_key']=es_session::get('session_key');
+		
+		ajax_return($redata);
+		
+	}
+	
+	public function getCommentInfo() {
+		$id=intval($_REQUEST['id']);
+		$dataId=intval($_REQUEST['dataId']);
+		$session_key=addslashes($_REQUEST['session_key']);
+		$session_key=$this->resession_key($session_key);
+		$WebUserID=intval($_REQUEST['WebUserID']);
+		$app_id=addslashes($_REQUEST['app_id']);
+		$redata=array();
+		
+		if($this->chk_login($WebUserID,$session_key)){
+			$proid = $GLOBALS['db']->getOne("select product_id from ".DB_PREFIX."order_product where order_id=$id");
+			$product = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."product where is_effect=1 and is_delete=0 and id=".intval($proid));
+			if($product){
+				$proarr=array();
+				$proarr['BigImages']=$product['icon'];
+				$proarr['SmallImages']=$product['icon'];
+				$proarr['ClassID']=$product['cate_id'];
+				$proarr['Content']=$product['content'];
+				$proarr['CrTime']=date("Y-m-d h:i:s",$product['create_time']);
+				$proarr['UpTime']=date("Y-m-d h:i:s",$product['create_time']);
+				$proarr['Hits']=2;
+				$proarr['IsDelete']=0;
+				$proarr['Name']=$product['title'];
+				$proarr['Price']=$product['price'];
+				$proarr['SalesCount']=$GLOBALS['db']->getOne("select count(id) from ".DB_PREFIX."order_product where product_id=$id");
+				$proarr['ServiceDesc']=$product['brief'];
+				$proarr['ServiceID']=$product['id'];
+				$proarr['ShowOrder']=$product['sort'];
+				$proarr['SiteID']="9999";
+				$proarr['Status']=$product['is_effect'];
+				$proarr['Video']="";
+				
+				
+				$redata['success']=true;
+				$redata['msg']='ok';
+				$redata['info']=$proarr;
+			}else{
+				$redata['success']=false;
+			}
+		}else{
+			$redata['success']=false;
+		}
+		ajax_return($redata);
+		
+	}
+	
+	//案例
+	public function getnewslist() {
+		$classid=intval($_REQUEST['linkid']);
+		if($classid) $wr=' and cate_id='.$classid;
+		$sql = "select * from ".DB_PREFIX."article where is_effect=1 and is_delete=0 $wr order by  sort asc , id desc";
+		$pagelist=thispage($sql,1,10,10);
+		$redata=array();
+		$prolist=array();
+		foreach($pagelist['list'] as $key=>$rows){
+			$prolist[$key]['ArticleID']=$rows['id'];
+			$prolist[$key]['SiteID']='9999';
+			$prolist[$key]['ClassID']=$rows['cate_id'];
+			$prolist[$key]['ImgSmall']=$rows['icon'];
+			$prolist[$key]['ImgBig']=$rows['icon'];
+			$prolist[$key]['Hits']=intval($rows['click_count']);
+			$prolist[$key]['Status']="1";
+			$prolist[$key]['CrTime']=date("Y-m-d",$rows['create_time']);
+			$prolist[$key]['UpTime']=date("Y-m-d",$rows['create_time']);
+			$prolist[$key]['push']="0";
+			$prolist[$key]['Source']="";
+			$prolist[$key]['Recommend']="0";
+			$prolist[$key]['TopSet']="0";
+			$prolist[$key]['Dynamic']="0";
+			$prolist[$key]['Transpond']="0";
+			$prolist[$key]['PublishTime']=date("Y-m-d H:i:s",$rows['create_time']);
+			$prolist[$key]['Author']="";
+			$prolist[$key]['Title']=$rows['title'];
+			$prolist[$key]['ArtDesc']="";
+		}
+		$redata['newslist']=$prolist;
+		$redata['recordcount']=$pagelist['rowscount'];
+		$redata['pagecount']=$pagelist['pagecount'];
+		$redata['msg']='ok';
+		$redata['success']=true;
+		ajax_return($redata);
+	}
+	
+	public function getServiceList() {
+		$classid=intval($_REQUEST['classid']);
+		if($classid) $wr=' and cate_id='.$classid;
+		$sql = "select * from ".DB_PREFIX."product where is_effect=1 and is_delete=0 $wr order by  sort asc , id desc";
+		$pagelist=thispage($sql,1,10,10);
+		$redata=array();
+		$prolist=array();
+		foreach($pagelist['list'] as $key=>$rows){
+			$prolist[$key]['ImgSmall']=$rows['icon'];
+			$prolist[$key]['Name']=$rows['title'];
+			$prolist[$key]['Price']=$rows['price'];
+			$prolist[$key]['ServiceDesc']="";
+			$prolist[$key]['ServiceID']=$rows['id'];
+			$prolist[$key]['recordcount']=0;
+		}
+		$redata['servicelist']=$prolist;
+		$redata['recordcount']=$pagelist['rowscount'];
+		$redata['pagecount']=$pagelist['pagecount'];
+		$redata['msg']='ok';
+		$redata['success']=true;
+		ajax_return($redata);
+	}
+	public function resession_key($str){
+		if($str){
+			$session_key=str_replace('%2B','+',$str);
+			$session_key=str_replace('%3D','=',$session_key);
+			$session_key=str_replace('%2F','/',$session_key);
+			return $session_key;
+		}
+	}
+	public function orderupdate() {
+		$id=intval($_REQUEST['id']);
+		$WebUserID=intval($_REQUEST['WebUserID']);
+		$session_key=addslashes($_REQUEST['session_key']);
+		$session_key=$this->resession_key($session_key);
+		//$session_key=$session_key?urldecode($session_key):'';
+		if($this->chk_login($WebUserID,$session_key)){
+			$sql = "update ".DB_PREFIX."order set order_status=3 where user_id=$WebUserID and order_status=2 and id=$id";
+			$GLOBALS['db']->query($sql);
+			$redata['msg']='成功';
+			$redata['success']=true;
+		}else{
+			$redata['msg']='失败';
+			$redata['success']=false;
+		}
+		ajax_return($redata);
+	}
+	
+	public function weixinpay(){
+		$id=intval($_REQUEST['id']);
+		$dataId=intval($_REQUEST['dataId']);
+		$app_id=addslashes($_REQUEST['app_id']);
+		$openid=addslashes($_REQUEST['openid']);
+		$session_key=addslashes($_REQUEST['session_key']);
+		$session_key=$this->resession_key($session_key);
+		$WebUserID=intval($_REQUEST['WebUserID']);
+		$redata['msg']='';
+		$redata['success']=false;
+		
+		if($this->chk_login($WebUserID,$session_key)){
+			$sql = "select * from ".DB_PREFIX."order where user_id=$WebUserID and order_status=2 and id=$id";
+			$orderInfo=$GLOBALS['db']->getRow($sql);
+			if($orderInfo){
+				$proInfo=$GLOBALS['db']->getRow("select * from ".DB_PREFIX."order_product where order_id=".intval($orderInfo['id']));
+				$out_trade_no=date("Ymd01") . time();
+				$params = array(
+				  'appid' => app_conf('APPID'),
+				  'mch_id' => app_conf('MCHID'),
+				  // 随机串，32字符以内
+				  'nonce_str' => (string) mt_rand(10000, 99999), 
+				  // 商品名
+				  'body' => $proInfo['title'], 
+				  // 订单号，自定义，32字符以内。多次支付时如果重复的话，微信会返回"重复下单"
+				  'out_trade_no' => $out_trade_no,
+				  // 订单费用，单位：分
+				  'total_fee' => $orderInfo['paymoney']*100,
+				  'spbill_create_ip' => $_SERVER['REMOTE_ADDR'],
+				  // 支付成功后的回调地址，服务端不一定真得有这个地址
+				  'notify_url' => 'https://w.szxxweb.com/notify.php',
+				  'trade_type' => 'JSAPI',
+				  // 小程序传来的OpenID
+				  'openid' => $openid,
+				);
+				$GLOBALS['db']->query("update ".DB_PREFIX."order set pay_nu='$out_trade_no',openid='$openid' where id=".intval($orderInfo['id']));
+				// 按照要求计算sign
+				
+				ksort($params);
+				$sequence = '';
+				foreach ($params as $key => $value) {
+				  $sequence .= "$key=$value&";
+				}
+				
+				$sequence = $sequence . "key=".app_conf('MCHKey');
+				$params['sign'] = strtoupper(md5($sequence));
+				
+				// 给微信发出的请求，整个参数是个XML
+				
+				$xml = '<xml>' . PHP_EOL;
+				foreach ($params as $key => $value) {
+				  $xml .= "<$key>$value</$key>" . PHP_EOL;
+				}
+				$xml .= '</xml>';
+				
+				$ch = curl_init();
+				curl_setopt($ch, CURLOPT_URL, 'https://api.mch.weixin.qq.com/pay/unifiedorder');
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+				curl_setopt($ch, CURLOPT_POST, 1);
+				curl_setopt($ch, CURLOPT_POSTFIELDS, $xml);
+				curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+				$output = curl_exec($ch);
+				
+				if (false === $output) {
+				  $redata['msg']='CURL Error:' . curl_error($ch);
+				  ajax_return($redata);
+				}
+				
+				// 下单成功的话，微信返回个XML，里面包含prepayID，提取出来
+				
+				if (0 === preg_match('/<prepay_id><\!\[CDATA\[(\w+)\]\]><\/prepay_id>/', $output, $match)) {
+				  $xmldata=$this->xml_to_array($output);
+				  $redata['msg']=$xmldata['xml']['return_msg'];
+				  ajax_return($redata);
+				}
+				
+				// 这里不是给小程序返回个prepayID，而是返回一个包含其他字段的JSON
+				// 这个JSON小程序自己也可以生成，放在服务端生成是出于两个考虑：
+				// 
+				// 1. 小程序的appid不用写在小程序的代码里，appid、secret信息全部由服务器管理，比较安全
+				// 2. 计算paySign需要用到md5，小程序端使用的是JavaScript，没有内置的md5函数，放在服务端计算md5比较方便
+				//app_conf('APPID').'&secret='.app_conf('AppSecret')
+				$prepayId = $match[1];
+				$response= array(
+				  'appId' => app_conf('APPID'),
+				  // 随机串，32个字符以内
+				  'nonceStr' => (string) mt_rand(10000, 99999),
+				  // 微信规定
+				  'package' => 'prepay_id=' . $prepayId,
+				  'signType' => 'MD5',
+				  // 时间戳，注意得是字符串形式的
+				  'timeStamp' => (string) time(),
+				);
+				$sequence = '';
+				foreach ($response as $key => $value) {
+				  $sequence .= "$key=$value&";
+				}
+				$response['paySign'] = strtoupper(md5("{$sequence}key=".app_conf('MCHKey')));
+				$response['success']=true;
+				//$payinfo=json_encode($response);
+				$redata['msg']='ok';
+				$redata['paymoney']=$orderInfo['paymoney'];
+				$redata['payinfo']=$response;
+				$redata['success']=true;
+				//echo json_encode($response);
+			}
+		}else{
+			$redata['msg']='请登录后操作';
+		}
+		ajax_return($redata);
+
+	}
+	
+	public function xml_to_array($xml){
+		$reg = "/<(\w+)[^>]*>([\\x00-\\xFF]*)<\\/\\1>/";
+		if(preg_match_all($reg, $xml, $matches)){
+			$count = count($matches[0]);
+			for($i = 0; $i < $count; $i++){
+			$subxml= $matches[2][$i];
+			$key = $matches[1][$i];
+				if(preg_match( $reg, $subxml )){
+					$arr[$key] = $this->xml_to_array( $subxml );
+				}else{
+					$arr[$key] = $subxml;
+				}
+			}
+		}
+		
+		return $arr;
+	}
+	
+	public function getMyReserveList() {
+		$dataId=intval($_REQUEST['dataId']);
+		$app_id=addslashes($_REQUEST['app_id']);
+		$WebUserID=intval($_REQUEST['WebUserID']);
+		$session_key=addslashes($_REQUEST['session_key']);
+		$session_key=$this->resession_key($session_key);
+		if($this->chk_login($WebUserID,$session_key)){
+		
+			$sql = "select * from ".DB_PREFIX."order where user_id=$WebUserID order by   id desc";
+			$pagelist=thispage($sql,1,10,10);
+			$redata=array();
+			$prolist=array();
+			foreach($pagelist['list'] as $key=>$rows){
+				$order_status="预约中";
+				if($rows['order_status']=="1") $order_status="已预约";
+				if($rows['order_status']=="2") $order_status="等待付款";
+				if($rows['order_status']=="3") $order_status="订单完成";
+				if($rows['order_status']=="4") $order_status="订单取消";
+				$ordey_type="维修检修";
+				if($rows['ordey_type']=='1') $ordey_type="安装组装";
+				if($rows['ordey_type']=='1') $ordey_type="其它";
+				$orderInfo=$GLOBALS['db']->getRow("select * from ".DB_PREFIX."order_product where order_id=".intval($rows['id']));
+				if($rows['user_admin_id']){
+					$serverInfo=$GLOBALS['db']->getRow("select * from ".DB_PREFIX."user_admin where id=".intval($rows['user_admin_id']));	
+				}
+				$prolist[$key]['CrTime']=date("Y-m-d H:i:s",$rows['create_time']);
+				$prolist[$key]['ID']=$rows['id'];
+				$prolist[$key]['WebUserID']=$rows['user_id'];
+				$prolist[$key]['Status']=$rows['order_status'];
+				$prolist[$key]['Status_Text']=$order_status;
+				$prolist[$key]['SiteID']="9999";
+				$prolist[$key]['server_id']=$rows['user_admin_id'];
+				$prolist[$key]['server_names']=$serverInfo['names']?$serverInfo['names']:"";
+				$prolist[$key]['server_phone']=$serverInfo['mobile']?$serverInfo['mobile']:"";
+				$prolist[$key]['RowID']=$orderInfo['id'];
+				$prolist[$key]['ProductName']=$orderInfo['title'];
+				$prolist[$key]['ProductID']=$orderInfo['product_id'];
+				$prolist[$key]['PersonName']='';
+				$prolist[$key]['PersonID']=0;
+				$prolist[$key]['comment']=intval($rows['comment']);
+				
+				$prolist[$key]['Data']=array("col74161"=>$rows['fullname'],"col74162"=>$rows['telephone'],"col74163"=>$prolist[$key]['CrTime'],"col74609"=>$rows['address_1'],"col74618"=>$ordey_type,"col74619"=>$rows['address_2']);
+			}
+			$redata['list']=$prolist;
+			$redata['recordcount']=$pagelist['rowscount'];
+			$redata['pagecount']=$pagelist['pagecount'];
+			$redata['msg']='ok';
+			$redata['success']=true;
+		}else{
+			$redata['msg']='';
+			$redata['success']=false;
+		}
+		ajax_return($redata);
+	}	
+	
+	public function getMyCenterData() {
+		$dataId=intval($_REQUEST['dataId']);
+		$app_id=addslashes($_REQUEST['app_id']);
+		$WebUserID=intval($_REQUEST['WebUserID']);
+		$session_key=addslashes($_REQUEST['session_key']);
+		$session_key=$this->resession_key($session_key);
+		$redata['businessCrdInfo']='';
+		$redata['business_card_choice']='';
+		$redata['business_card_isUser']=false;
+		
+		if($this->chk_login($WebUserID,$session_key)){
+			$reservenum=$GLOBALS['db']->getOne("select count(id) from ".DB_PREFIX."order where is_delete=0 and user_id=".intval($WebUserID));
+			$redata['msg']='';
+			$redata['info']=array("reservenum"=>$reservenum,"couponnum"=>0);
+			$redata['success']=true;
+		}else{
+			$redata['msg']='未登录';
+			$redata['success']=false;
+		}
+		ajax_return($redata);
+	}
+	
+	public function cancelReserve() {
+		$dataId=intval($_REQUEST['dataId']);
+		$app_id=addslashes($_REQUEST['app_id']);
+		$WebUserID=intval($_REQUEST['WebUserID']);
+		$session_key=addslashes($_REQUEST['session_key']);
+		$session_key=$this->resession_key($session_key);
+		$id=intval($_REQUEST['id']);
+		if($this->chk_login($WebUserID,$session_key)){
+			$orderInfo=$GLOBALS['db']->getRow("select id from ".DB_PREFIX."order where order_status=0 and is_delete=0 and id=$id and user_id=".intval($WebUserID));
+			if($orderInfo){
+				$GLOBALS['db']->query("update ".DB_PREFIX."order set order_status=4 where order_status=0 and is_delete=0 and id=$id and user_id=".intval($WebUserID));
+				$redata['msg']='';
+				$redata['success']=true;
+			}else{
+				$redata['msg']='请与平台客服联系';
+				$redata['success']=false;
+			}
+		}else{
+			$redata['msg']='未登录';
+			$redata['success']=false;
+		}
+		ajax_return($redata);
+	}
+	
+	public function get_city() {
+		$pid=intval($_REQUEST['province_id']);
+		$citylist = $GLOBALS['db']->getAll("select * from ".DB_PREFIX."region where region_level = 1 and pid=$pid order by id asc");
+		foreach($citylist as $key=>$rows){
+			$result[$key]['Id'] = $rows['id'];
+			$result[$key]['AreaName'] = $rows['name'];
+			$result[$key]['Level'] = 2;
+		}
+		ajax_return($result);
+
+	}
+	
+	public function get_region() {
+		$pid=intval($_REQUEST['city_id']);
+		$citylist = $GLOBALS['db']->getAll("select * from ".DB_PREFIX."region where region_level = 2 and pid=$pid order by id asc");
+		$result=array();
+		foreach($citylist as $key=>$rows){
+			$result[$key]['Id'] = $rows['id'];
+			$result[$key]['ParentId'] = $rows['pid'];
+			$result[$key]['AreaName'] = $rows['name'];
+			$result[$key]['Level'] = 3;
+		}
+		ajax_return($result);
+
+	}
+	
+	
+	public function order_creat() {
+		$user_info = es_session::get("user_info");
+		$product_id=intval($_POST['product_id']);
+		$otype=intval($_POST['otype']);
+		$address_id=intval($_POST['address_id']);
+		$amount=intval($_POST['amount']);
+		$name=htmlstrchk($_POST['name']);
+		$mobile_phone=htmlstrchk($_POST['mobile_phone']);
+		$cryptocurrency=htmlstrchk($_POST['cryptocurrency']);
+		$mining_pool=htmlstrchk($_POST['mining_pool']);
+		$wallet_address=htmlstrchk($_POST['wallet_address']);
+		$remarks=htmlstrchk($_POST['remarks']);
+		$prefix=htmlstrchk($_POST['prefix']);
+		$coupon_id=intval($_POST['coupon_id']);
+		$coupon_code=htmlstrchk($_POST['coupon_code']);
+		if(!$amount) $amount=1;
+		if($amount>9999) $amount=9999;
+		
+		$fq_int=intval($_POST['fq_int']);
+		$fq_time=intval($_POST['fq_time']);
+		$fq_max=intval($_POST['fq_max']);
+		$fq_idno1=htmlstrchk($_POST['fq_idno1']);
+		$fq_idno2=htmlstrchk($_POST['fq_idno2']);
+		$fq_idno3=htmlstrchk($_POST['fq_idno3']);
+		$fq_idno4=htmlstrchk($_POST['fq_idno4']);
+		$fq_bank_name=htmlstrchk($_POST['fq_bank_name']);
+		$fq_bank_id=htmlstrchk($_POST['fq_bank_id']);
+		
+		$productinfo = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."product where is_effect = 1 and is_delete=0 and id = $product_id  and language_id=".lanint);
+		if(!$productinfo){
+			$return['Code'] = "30012";
+			ajax_return($return);
+		}
+		
+		$in_stock=intval($productinfo['in_stock']);
+		
+		if($amount>$in_stock){
+			$return['Code'] = "30014";
+			ajax_return($return);
+		}
+		
+		if(!$user_info){
+			$return['Code'] = "10005";
+			ajax_return($return);
+		}
+		
+		if($fq_int && $productinfo['is_lend']){
+			$fq_errint=0;
+			if($fq_time<6) $fq_time=6;
+			if($fq_time>36) $fq_time=36;
+			$is_lend_ratio=$productinfo['is_lend_ratio'];
+			if($is_lend_ratio){
+				$is_lend_arr=explode("/",$is_lend_ratio);
+				$lendChk_int=0;
+				foreach($is_lend_arr as $rows1){
+					if($fq_max==intval($rows1))$lendChk_int++;
+				}
+				if(!$lendChk_int) $fq_max=intval($is_lend_arr[0]);
+			}
+			if(!$fq_idno1) $fq_errint++;
+			if(!$fq_idno2) $fq_errint++;
+			if(!$fq_idno3) $fq_errint++;
+			if(!$fq_idno4) $fq_errint++;
+			if(!$fq_bank_name) $fq_errint++;
+			if(!$fq_bank_id) $fq_errint++;
+			if($fq_errint){
+				$return['Code'] = "10099";
+				ajax_return($return);
+			}
+		}
+		
+		$total=round($productinfo['price']*$amount,2);
+		$userdata=array();
+		$userdata['ordernu'] = time().$user_info['id'];
+		$userdata['user_id'] = $user_info['id'];
+		if($otype){
+			if(!$name||!$mobile_phone||!$wallet_address||!$cryptocurrency||!$mining_pool){
+				$return['Code'] = "30000";
+				ajax_return($return);
+			}
+			$userdata['fullname'] = $name;
+			$userdata['cryptocurrency'] = $cryptocurrency;
+			$userdata['wallet_address'] = $wallet_address;
+			$userdata['mining_pool'] = $mining_pool;
+			$userdata['phone_prefix'] = $prefix;
+			$userdata['telephone'] = $mobile_phone;
+		}else{
+			
+			$user_address = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."user_address where id=$address_id and user_id=".intval($user_info['id']));
+			if(!$user_address){
+				$return['Code'] = "30016";
+				ajax_return($return);
+			}
+			
+			$userdata['fullname'] = $user_address['receiver'];
+			$userdata['address_1'] = $user_address['address'];
+			$userdata['address_2'] = $user_address['address_2'];
+			$userdata['country'] = $user_address['country'];
+			$userdata['province'] = $user_address['province'];
+			$userdata['city'] = $user_address['city'];
+			$userdata['zone'] = $user_address['region'];
+			$userdata['zip'] = $user_address['zip'];
+			$userdata['phone_prefix'] = $user_address['phone_prefix'];
+			$userdata['telephone'] = lanint?$user_address['phone_number']:$user_address['mobilephone'];
+			
+		}
+		
+		if($fq_int){
+			$userdata['fq_int'] = $fq_int;
+			$userdata['fq_time'] = $fq_time;
+			$userdata['fq_max'] = $fq_max;
+			$userdata['fq_idno1'] = $fq_idno1;
+			$userdata['fq_idno2'] = $fq_idno2;
+			$userdata['fq_idno3'] = $fq_idno3;
+			$userdata['fq_idno4'] = $fq_idno4;
+			$userdata['fq_bank_name'] = $fq_bank_name;
+			$userdata['fq_bank_id'] = $fq_bank_id;
+		}
+		
+		$coupon_ids=0;
+		if($coupon_id||$coupon_code){
+			$Discount=0;
+			$user_id = intval($user_info['id']);
+			$total_price=round($total_price,2);
+			$s_time=strtotime(date("Y-m-d 00:00:00",time()));
+			$e_time=strtotime(date("Y-m-d 23:59:59",time()));
+			$sql="select * from ".DB_PREFIX."user_coupon  where user_id = $user_id and status=0 and start_time<=$s_time and end_time>=$e_time and id=$coupon_id";
+			if($coupon_code) $sql="select * from ".DB_PREFIX."user_coupon  where status=0 and start_time<=$s_time and end_time>=$e_time and `code`='$coupon_code' and f_type=0";
+			$user_coupon = $GLOBALS['db']->getRow($sql);
+			$kk=0;
+			
+			if($user_coupon){
+				$coupon_ids=$user_coupon['id'];
+				$s_chk=0;
+				if(!$user_coupon['use_where']){
+					$s_chk=1;
+				}
+				if($user_coupon['use_where']=='1'&&$total<=round($user_coupon['money_int'],2)){
+					$s_chk=1;
+				}
+				if($user_coupon['use_where']=='2'&&$total>=round($user_coupon['money_int'],2)){
+					$s_chk=1;
+				}
+				$use_num=intval($user_coupon['use_num']); //可使用次数
+				$user_num=intval($user_coupon['user_num']); //同会员兑换次数
+				$user_num=$user_num<1?1:$user_num;
+				$useCount = $GLOBALS['db']->getOne("select count(id) from ".DB_PREFIX."coupon_use where `coupon_id`=".$user_coupon['id']);
+				if($useCount>=$use_num) $s_chk=0;	
+				if($coupon_code){
+					$useCount_u = $GLOBALS['db']->getOne("select count(id) from ".DB_PREFIX."coupon_use where user_id = $user_id and `coupon_id`=".$user_coupon['id']);
+					if($useCount_u>=$user_num) $s_chk=0;	
+				}
+				//echo $s_chk;
+				if($s_chk){
+					
+					if(!$user_coupon['e_type']){
+						//现金
+						$Discount=$user_coupon['money'];
+					}else{
+						$Discount=round($total*($user_coupon['money']/100),2);
+					}
+					$total=$total-$Discount;
+					
+					$redata=array();
+					$redata['coupon_id'] = $user_coupon['id'];
+					$redata['user_name'] = $user_info['user_name'];
+					$redata['user_id'] = $user_id;
+					$redata['create_time'] = time();
+					$GLOBALS['db']->autoExecute(DB_PREFIX."coupon_use",$redata); //插入
+										
+					$useCount=$useCount+1;
+					if($useCount>=$use_num){	
+						$GLOBALS['db']->query(" update ".DB_PREFIX."user_coupon set status=1 where id=".$user_coupon['id']);
+					}
+					//echo $useCount.">=".$use_num.'###';
+				}
+			}
+		}
+		//exit();
+		//冻结库存
+		//$GLOBALS['db']->query("update ".DB_PREFIX."product set in_stock=in_stock-$amount where id=$product_id");
+		
+		$userdata['ordey_type'] = $otype;
+		$userdata['total'] = $total;
+		$userdata['discount'] = $Discount;
+		$userdata['coupon_id'] = $coupon_ids;
+		$userdata['language_id'] =lanint;
+		$userdata['ordey_type'] = $otype;
+		$userdata['ip'] = get_client_ip();
+		$userdata['content'] = $remarks;
+		$userdata['update_time'] = time();
+		$userdata['create_time'] = time();
+
+		$GLOBALS['db']->autoExecute(DB_PREFIX."order",$userdata); //插入
+		$reid = $GLOBALS['db']->insert_id();
+		$GLOBALS['db']->query("update ".DB_PREFIX."order set ordernu='".($reid+100000)."' where id=$reid");
+		$userdata=array();
+		$userdata['order_id'] = $reid;
+		$userdata['total'] = $total;
+		$userdata['product_id'] =$product_id;
+		$userdata['title'] = $productinfo['title'];
+		$userdata['ip'] = get_client_ip();
+		$userdata['quantity'] = $amount;
+		$userdata['price'] = $productinfo['price'];
+
+		$GLOBALS['db']->autoExecute(DB_PREFIX."order_product",$userdata); //插入
+		
+		$return['Msg'] = $reid;
+		$return['Code'] = "0";
+		ajax_return($return);
+
+	}
+	
+	public function cancel_order() {
+		$user_info = es_session::get("user_info");
+		$user_id=intval($user_info['id']);
+		
+		if(!$user_info){
+			$return['Code'] = "10005";
+			ajax_return($return);
+		}
+		
+		
+		$id=intval($_REQUEST['order_id']);
+		$order = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."order where user_id=$user_id and id=".$id);
+		$order_status=intval($order['order_status']);
+		if($order&&$order_status<2){
+			$GLOBALS['db']->query("update ".DB_PREFIX."order set order_status=4 where user_id=$user_id and id=".$id);
+			$return['Code'] = "0";
+		}else{
+			$return['Code'] = "9999";
+		}
+		ajax_return($return);
+
+
+	}
+	
+	
+	public function confirm_order() {
+		$user_info = es_session::get("user_info");
+		$user_id=intval($user_info['id']);
+		
+		if(!$user_info){
+			$return['Code'] = "10005";
+			ajax_return($return);
+		}
+		
+		
+		$id=intval($_REQUEST['order_id']);
+		$order = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."order where user_id=$user_id and id=".$id);
+		$order_status=intval($order['order_status']);
+		if($order&&$order_status<1){
+			$GLOBALS['db']->query("update ".DB_PREFIX."order set order_status=5 where user_id=$user_id and id=".$id);
+			$return['Code'] = "0";
+		}else{
+			$return['Code'] = "9999";
+		}
+		ajax_return($return);
+
+
+	}	
+	public function order_confirm() {
+		$user_info = es_session::get("user_info");
+		$user_id=intval($user_info['id']);
+		
+		if(!$user_info){
+			$return['Code'] = "10005";
+			ajax_return($return);
+		}
+		
+		
+		$id=intval($_REQUEST['order_id']);
+		$order = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."order where user_id=$user_id and order_status=2 and id=".$id);
+		$order_status=intval($order['order_status']);
+		if($order){
+			$GLOBALS['db']->query("update ".DB_PREFIX."order set order_status=3 where user_id=$user_id and id=".$id);
+			$return['Code'] = "0";
+		}else{
+			$return['Code'] = "9999";
+		}
+		ajax_return($return);
+
+
+	}
+	
+	public function edit_address() {
+		$user_info = es_session::get("user_info");
+		$user_id=intval($user_info['id']);
+		$id=intval($_REQUEST['id']);
+		$user_address = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."user_address where user_id=$user_id and id=".$id);
+		if($user_address){
+			$province_id=$GLOBALS['db']->getOne("select id from ".DB_PREFIX."region where name='".$user_address['province']."'");
+			$city_id=$GLOBALS['db']->getOne("select id from ".DB_PREFIX."region where name='".$user_address['city']."'");
+			$region_id=$GLOBALS['db']->getOne("select id from ".DB_PREFIX."region where name='".$user_address['region']."'");
+			$user_address['province_id']=$province_id;
+			$user_address['city_id']=$city_id;
+			$user_address['region_id']=$region_id;
+		}else{
+			$user_address['province_id']=1;
+			$user_address['city_id']=0;
+			$user_address['region_id']=0;
+		}
+		ajax_return($user_address);
+	}
+	
+	
+	public function add_new_address() {
+		$user_info = es_session::get("user_info");
+		$receiver=htmlstrchk($_POST['receiver']);
+		$mobilephone=htmlstrchk($_POST['mobilephone']);
+		$phone_prefix=htmlstrchk($_POST['phone_prefix']);
+		$phone_number=htmlstrchk($_POST['phone_number']);
+		$province=htmlstrchk($_POST['province']);
+		$region=htmlstrchk($_POST['region']);
+		$country=htmlstrchk($_POST['country']);
+		$address_2=htmlstrchk($_POST['address_2']);
+		$city=htmlstrchk($_POST['city']);
+		$address=htmlstrchk($_POST['address']);
+		$zip=htmlstrchk($_POST['zip']);
+		
+		if(!$receiver||!$zip||!$address){
+			$return['Code'] = "10004";
+			ajax_return($return);
+		}
+		
+		if(!$user_info){
+			$return['Code'] = "10005";
+			ajax_return($return);
+		}
+		
+		
+		$userdata=array();
+		$userdata['receiver'] = $receiver;
+		$userdata['mobilephone'] = $mobilephone;
+		$userdata['phone_prefix'] = $phone_prefix;
+		$userdata['phone_number'] = $phone_number;
+		$userdata['country'] = $country;
+		$userdata['province'] = $province;
+		$userdata['city'] = $city;
+		$userdata['region'] = $region;
+		$userdata['address'] = $address;
+		$userdata['address_2'] = $address_2;
+		$userdata['zip'] = $zip;
+		$userdata['user_id'] = $user_info['id'];
+		$userdata['create_time'] = time();
+		$GLOBALS['db']->autoExecute(DB_PREFIX."user_address",$userdata); //插入
+		$reid = $GLOBALS['db']->insert_id();
+		$return['Msg'] = $reid;
+		$return['Code'] = "0";
+		ajax_return($return);
+
+	}
+	
+	public function add_message() {
+		$names=htmlstrchk($_POST['names']);
+		$tel=htmlstrchk($_POST['tel']);
+		$email=htmlstrchk($_POST['email']);
+		$content=htmlstrchk($_POST['content']);
+
+		if(!$names||!$tel||!$email||!$content){
+			$return['Code'] = "10004";
+			ajax_return($return);
+		}
+		
+		$userdata=array();
+		$userdata['names'] = $names;
+		$userdata['tel'] = $tel;
+		$userdata['email'] = $email;
+		$userdata['content'] = $content;
+		$userdata['language_id'] = lanint;
+		$userdata['create_time'] = time();
+		$GLOBALS['db']->autoExecute(DB_PREFIX."message",$userdata); //插入
+		$reid = $GLOBALS['db']->insert_id();		
+		
+		$return['Code'] = "0";
+		ajax_return($return);
+	}
+		
+	public function update_address() {
+		$user_info = es_session::get("user_info");
+		$receiver=htmlstrchk($_POST['receiver']);
+		$mobilephone=htmlstrchk($_POST['mobilephone']);
+		$phone_prefix=htmlstrchk($_POST['phone_prefix']);
+		$phone_number=htmlstrchk($_POST['phone_number']);
+		$province=htmlstrchk($_POST['province']);
+		$region=htmlstrchk($_POST['region']);
+		$city=htmlstrchk($_POST['city']);
+		$address=htmlstrchk($_POST['address']);
+		$address_2=htmlstrchk($_POST['address_2']);
+		$country=htmlstrchk($_POST['country']);
+		$zip=htmlstrchk($_POST['zip']);
+		$is_default=intval($_POST['is_default']);
+		$id=intval($_POST['id']);
+		$user_id=intval($user_info['id']);
+		if(!$receiver||!$zip||!$address){
+			$return['Code'] = "10004";
+			ajax_return($return);
+		}
+		
+		if(!$user_info){
+			$return['Code'] = "10005";
+			ajax_return($return);
+		}
+		
+		if($is_default){
+			$GLOBALS['db']->getRow("update ".DB_PREFIX."user_address set is_default=0 where user_id=$user_id");
+			$GLOBALS['db']->getRow("update ".DB_PREFIX."user_address set is_default=1 where user_id=$user_id and id=".$id);
+		}
+		
+		if(lanint){
+			$GLOBALS['db']->getRow("update ".DB_PREFIX."user_address set receiver='$receiver',phone_prefix='$phone_prefix',phone_number='$phone_number',province='$province',city='$city',country='$country',zip='$zip',address='$address',address_2='$address_2' where user_id=$user_id and id=".$id);
+		}else{
+			$GLOBALS['db']->getRow("update ".DB_PREFIX."user_address set receiver='$receiver',mobilephone='$mobilephone',phone_prefix='$phone_prefix',phone_number='$phone_number',province='$province',city='$city',region='$region',zip='$zip',region='$region' where user_id=$user_id and id=".$id);
+		}
+
+		
+		$return['Code'] = "0";
+		ajax_return($return);
+	}
+	
+	public function delete_address(){
+		$user_info = es_session::get("user_info");
+		$user_id=intval($user_info['id']);
+		$id=intval($_POST['delete_address_id']);
+		/*if(!$user_info){
+			$return['Code'] = 10005;
+			ajax_return($return);
+		}*/
+		
+		if($user_id&&$id){
+			$GLOBALS['db']->getRow("delete from ".DB_PREFIX."user_address where user_id=$user_id and id=".$id);
+			$return['Code'] = "0";
+			ajax_return($return);
+		}
+	}
+	
+	public function chk_login($id,$sessionkey){
+		$chklogin=$GLOBALS['db']->getOne("select id from ".DB_PREFIX."user where id='$id' and session_key='$sessionkey'");
+		return $chklogin?true:false;
+	}
+
+}	
+?>

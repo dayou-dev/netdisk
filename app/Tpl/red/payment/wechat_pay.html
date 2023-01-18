@@ -1,0 +1,136 @@
+
+
+<html>
+
+<head>
+
+    <meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"/> 
+
+    <title>订单支付</title>
+
+    <script src="/Theme/js/jquery-1.11.2.min.js"></script>
+    <script src="/layer/layer.js"></script>
+    {if $is_weixin}
+    <script type="text/javascript">
+	//调用微信JS api 支付
+	function jsApiCall()
+	{
+		WeixinJSBridge.invoke(
+			'getBrandWCPayRequest',
+			<?php echo $this->_var['jsApiParameters']; ?>,
+			function(res){
+				WeixinJSBridge.log(res.err_msg);
+				//alert(res.err_code+'##'+res.err_desc+'##'+res.err_msg);
+				if(res.err_msg.indexOf(':ok')>-1){
+
+					layer.alert("支付成功", {icon: 1},function(){
+						{if $payInfo.mtype eq '1'}
+							location.href="/user/order";
+						{/if}
+						{if $payInfo.mtype eq '2'}
+							location.href="/user/recharge";
+						{/if}
+						{if $payInfo.mtype eq '3'}
+							location.href="/user/user_card";
+						{/if}
+						{if $payInfo.mtype eq '4'}
+							location.href="/user/goods";
+						{/if}
+						{if !$payInfo.mtype}
+							location.href="/user/order";
+						{/if}
+						
+
+					});
+
+				}else{
+
+				}
+				//location.href="/user/order"
+			}
+		);
+	}
+
+
+
+	function callpay()
+	{
+		if (typeof WeixinJSBridge == "undefined"){
+		    if( document.addEventListener ){
+		        document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+		    }else if (document.attachEvent){
+		        document.attachEvent('WeixinJSBridgeReady', jsApiCall); 
+		        document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+		    }
+		}else{
+		    jsApiCall();
+		}
+	}
+
+
+	callpay();
+
+
+
+
+	</script>
+    
+    {else}
+<script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+<script type="text/javascript">
+		wx.config({
+            debug:false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            appId:'{$appid}', // 必填，公众号的唯一标识
+            timestamp:{$timestamp}, // 必填，生成签名的时间戳
+            nonceStr:'{$nonceStr}', // 必填，生成签名的随机串
+            signature:'{$sha_str}',// 必填，签名
+            jsApiList:['chooseWXPay','openLocation','getLocation'] // 必填，需要使用的JS接口列表
+        });
+
+        wx.ready(function(){
+            console.log('接口配置成功');
+        });
+		
+	function payCall(){
+			var arr=<?php echo $this->_var['jsApiParameters']; ?>;
+			wx.miniProgram.navigateTo({url: '/pages/wxpay/wxpay?timestamp='+arr['timeStamp']+'&nonceStr='+arr['nonceStr']+'&package='+arr['package'].replace("=","@")+'&signType='+arr['signType']+'&paySign='+arr['paySign']})
+			/*var arr=<?php echo $this->_var['jsApiParameters']; ?>;
+			wx.chooseWXPay({
+			  timestamp: arr['timeStamp'], // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
+			  nonceStr: arr['nonceStr'], // 支付签名随机串，不长于 32 位
+			  package: arr['package'], // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=\*\*\*）
+			  signType: arr['signType'], // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
+			  paySign: arr['paySign'], // 支付签名
+			  success: function (res) {
+				// 支付成功后的回调函数
+				layer.alert("支付成功", {icon: 1},function(){
+					{if $payInfo.mtype eq '1'}
+						location.href="/user/order";
+					{/if}
+					{if $payInfo.mtype eq '2'}
+						location.href="/user/recharge";
+					{/if}
+					{if $payInfo.mtype eq '3'}
+						location.href="/user/user_card";
+					{/if}
+					{if $payInfo.mtype eq '4'}
+						location.href="/user/goods";
+					{/if}
+					{if !$payInfo.mtype}
+						location.href="/user/order";
+					{/if}
+					
+	
+				});
+			  }
+			});*/
+	}
+	setTimeout("payCall()",1500);
+</script>
+{/if}
+</head>
+<body>
+</body>
+</html>

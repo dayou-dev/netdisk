@@ -1,0 +1,150 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width = device-width, initial-scale = 1.0, maximum-scale = 1.0, user-scalable = 0">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> <meta http-equiv="Pragma" content="no-cache" /> <meta http-equiv="Expires" content="0" />
+<title>积分商城</title>
+<script src="/Theme/js/jquery-1.11.2.min.js"></script>
+<link href="/Theme/css/base.css" rel="stylesheet"><link href="/Theme/css/user.css" rel="stylesheet">
+<link href="/Theme/css/shop.css" rel="stylesheet">
+</head>
+
+<body>
+<header class="header">
+	<div class="header-return">
+	    <a href="javascript:;" onClick="javascript:history.back(-1);"></a>
+	</div>
+	
+	<div class="search_box">
+		<input id="keyword" placeholder="请输入你要找的商品" value="{$k}">
+		<i class="clear-keyword"></i>
+	</div>
+	
+	<div class="header-btn">
+		<a href="/user" class="header-shopcart">
+			
+		</a>
+	</div>
+</header>
+<script language="javascript">
+$('#keyword').bind('keypress',function(event){
+	if(event.keyCode == "13")    
+	{
+		location.href="/goods/?k="+$("#keyword").val();
+	}
+});
+</script>
+
+
+
+<!--筛选-->
+<div class="sort">
+	<div class="sort-bar">
+		<ul>
+			<li id="openSort" class="{if $o lt 3}active{/if}">
+				<span>综合</span>
+				<i></i>
+				
+				<div class="sort-box">
+					<div class="sort-option">
+						<ul>
+							<li class="{if $o lt 1}active{/if}" onClick="location.href='/goods/?id={$id}'">综合</li>
+							<li class="{if $o eq 1}active{/if}" onClick="location.href='/goods/?id={$id}&o=1'">积分从低到高</li>
+							<li class="{if $o eq 2}active{/if}" onClick="location.href='/goods/?id={$id}&o=2'">积分从高到低</li>
+						</ul>
+					</div>
+				</div>
+			</li>
+            <li class="{if $o eq 3}active{/if}" onClick="location.href='/goods/?id={$id}&o=3'">
+				<span>销量</span>
+			</li>
+           <li class="{if $o eq 4}active{/if}" onClick="location.href='/goods/?id={$id}&o=4'">
+				<span>最新</span>
+			</li>
+
+		</ul>
+	</div>
+	
+	<div class="sort-catalog">
+		<a href="/goods/catelist">
+			<i></i>
+			<span>{if $cateinfo}{$cateinfo}{else}分类{/if}</span>
+		</a>
+	</div>
+</div>
+
+<section class="container shop-container">
+	<div class="goods">
+    <div id="pageinfo">
+        {foreach from=$pagelist.list key=key item=item}
+        <div class="goods-box">
+            <a href="/goods/detail/{$item.id}.html">
+                <div class="goods-img">
+                    <img src="{$item.icon}">
+                </div>
+                
+                <h3>{$item.title}</h3>
+                
+                <div class="goods-info">
+                    <div class="goods-price fl">
+                        <b><i>￥</i>{$item.price}</b><i> </i>
+                    </div>
+                    
+                    <div class="goods-sale fr" style="display:none">
+                        库存<span>{$item.in_stock}</span>件
+                    </div>
+                </div>
+            </a>
+        </div>
+        {/foreach}
+        </div>
+		<div class="load-more" style="display:none">
+			<a href="javascript:pagenext();">点击加载更多</a>
+		</div>
+		
+		<div class="load-no-more" style="display:none">
+			<span>没有更多了</span>
+		</div>
+    </div>
+</section>
+<div class="loading" ><img src="/images/load.gif"/></div><div style="height:80px;"></div>{include file="footer.html"}
+<script language="javascript">
+var pagecount={$pagelist.pagecount};
+var pageurl="/goods/?id={$id}&o={$o}&ajax=1&page=";
+var thispage=1;
+var pagelock=0;
+function pagenext(){
+   if(thispage<pagecount&&pagelock<1) {
+	   thispage++;
+	   pagelock=1;
+	   $(".loading").show();
+	   $.ajax({
+		  url: pageurl+thispage,
+		  dataType: "html",
+		  type: "post",
+		  error: function() {
+			  
+		  },
+		  success: function(data) {  
+		  	pagelock=0;
+			$(".loading").hide();	
+			$("#pageinfo").append(data);
+			if(thispage==pagecount){
+				$(".load-more").hide();	
+				$(".load-no-more").show();
+			}
+		 }
+		})
+	}else{
+		$(".load-more").hide();	
+		$(".load-no-more").show();
+	}             
+}
+if(thispage<pagecount) $(".load-more").show();	
+
+</script>
+
+</body>
+</html>

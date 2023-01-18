@@ -1,0 +1,21 @@
+   {foreach from=$pagelist.list key=key item=item}
+        <div class="goods-box">
+            <a href="/goods/detail/{$item.id}.html">
+                <div class="goods-img">
+                    <img src="{$item.icon}">
+                </div>
+                
+                <h3>{$item.title}</h3>
+                
+                <div class="goods-info">
+                    <div class="goods-price fl">
+                        <b>{$item.integral}</b><i> 兑换积分</i>
+                    </div>
+                    
+                    <div class="goods-sale fr" style="display:none">
+                        库存<span>{$item.in_stock}</span>件
+                    </div>
+                </div>
+            </a>
+        </div>
+        {/foreach}
