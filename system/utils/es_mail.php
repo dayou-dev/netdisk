@@ -267,7 +267,7 @@ class mail_sender
 				$mail->SMTPSecure = 'ssl';                    // 允许 TLS 或者ssl协议
 			}
 			$mail->Port = intval($smtp_item['smtp_port']);                            // 服务器端口 25 或者465 具体要看邮箱服务器支持 
-			$mail->setFrom($smtp_item['smtp_name'], 'Frogbt');  //发件人 
+			$mail->setFrom($smtp_item['smtp_name'], 'dayou');  //发件人 
 			//$mail->addAddress($this->to[0][0], $this->to[0][1]);  // 收件人 
 			foreach($this->to as $key=>$rows){
 				$mail->addAddress($this->to[$key][0], $this->to[$key][1]);  // 收件人 
@@ -275,7 +275,7 @@ class mail_sender
 			}
 			//exit();
 			//$mail->addAddress('ellen@example.com');  // 可添加多个收件人 
-			$mail->addReplyTo($smtp_item['smtp_name'], 'Frogbt'); //回复的时候回复给哪个邮箱 建议和发件人一致 
+			$mail->addReplyTo($smtp_item['smtp_name'], 'dayou'); //回复的时候回复给哪个邮箱 建议和发件人一致 
 			//$mail->addCC('cc@example.com');                    //抄送 
 			//$mail->addBCC('bcc@example.com');                    //密送 
 		

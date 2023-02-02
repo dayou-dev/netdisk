@@ -2004,6 +2004,10 @@ function shouldRetry(err, retryAttempt, options) {
 
 
 function resolveUrl(origin, link) {
+  var ishttps = 'https:' == document.location.protocol ? true : false;
+  if (ishttps) {
+      link = link.replace("http://", "https://");
+  }
   return new _urlParse["default"](link, origin).toString();
 }
 /**

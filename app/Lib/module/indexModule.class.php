@@ -1,4 +1,10 @@
 <?php
+require APP_ROOT_PATH.'aliyun/aliyun-php-sdk-core/Config.php';
+require APP_ROOT_PATH.'vendor/Utils.php';
+use afs\Request\V20180112 as Afs;
+use app\common\library\helper;
+use saf\Request\V20190521 as saf;
+
 class indexModule extends SiteBaseModule
 {
 	public function index()
@@ -540,6 +546,12 @@ class indexModule extends SiteBaseModule
 					$msg_item['is_success'] = intval($result);
 					$msg_item['send_time'] = get_gmtime();
 				}
+				
+				
+				$return['info']='ok';
+				$return['status']=1;
+				ajax_return($return);
+				
 				
 			}else{
 				showErr("邮箱验证失败",1,"/find_password.html");
