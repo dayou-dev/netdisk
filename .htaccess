@@ -14,3 +14,4 @@ RewriteRule ^([a-zA-Z_\-]+)$      index\.php\?ctl=$1 [L,PT]
 RewriteRule ^([a-zA-Z_\-]+)\/$      index\.php\?ctl=$1 [QSA,L]
 RewriteRule ^404\.html$      index\.php\?act=weberror [QSA,L]
 
+
