@@ -1,12 +1,9 @@
 <?php
-// +----------------------------------------------------------------------
-// | 中海融通金融服务有限公司
-// +----------------------------------------------------------------------
-// | Copyright (c) 2011 http://www.yfw.hk All rights reserved.
-// +----------------------------------------------------------------------
-// | Author: @@@@@@@
-// +----------------------------------------------------------------------
-
+require APP_ROOT_PATH.'aliyun/aliyun-php-sdk-core/Config.php';
+require APP_ROOT_PATH.'vendor/Utils.php';
+use afs\Request\V20180112 as Afs;
+use app\common\library\helper;
+use saf\Request\V20190521 as saf;
 class userModule extends SiteBaseModule
 {
 
@@ -17,6 +14,13 @@ class userModule extends SiteBaseModule
 		$user_info=$GLOBALS['db']->getRow("select * from ".DB_PREFIX."user where id=".intval($user_info['id']));
 		$GLOBALS['tmpl']->display("user/user_index.html");
 	}
+	
+	public function recent_uploads()
+	{
+		require APP_ROOT_PATH.'app/Lib/uc.php';
+		$GLOBALS['tmpl']->display("user/recent_uploads.html");
+	}
+	
 	
 	public function filedir()
 	{
@@ -142,7 +146,7 @@ class userModule extends SiteBaseModule
 		$icon=htmlstrchk($_REQUEST['icon']);
 		$file_spec=htmlstrchk($_REQUEST['img_spec']);
 		sleep(2);
-		$output=get_url('http://183.240.209.145:9090/api/cids?uuid='.$uuid);
+		$output=get_url('https://upload.dayoudrive.com/api/cids?uuid='.$uuid);
 		$redate=json_decode($output);
 		$cid=$redate->Cid;
 		$file_size=$redate->Size;
@@ -364,6 +368,55 @@ class userModule extends SiteBaseModule
 		$redata['status']=1;
 		ajax_return($redata);
 	}
+	
+	
+	//文件分享
+	public function file_share()
+	{
+		$user_info = es_session::get("user_info");
+		$user_id = intval($user_info['id']);
+		$fid=intval($_REQUEST['fid']);
+		$mtype=intval($_REQUEST['mtype']);
+		$pass=htmlstrchk($_REQUEST['pass']);
+		$is_effect=intval($_REQUEST['is_effect']);
+		$effect_time_int=intval($_REQUEST['effect_time_int']);
+		if($effect_time_int<0) $effect_time_int=0;
+		if($effect_time_int>6) $effect_time_int=6;
+		if($mtype){
+			if(!$pass){
+				$redata['info']="请设置分享密码";
+				$redata['status']=0;
+				ajax_return($redata);
+			}
+		}
+		
+		$file_info=$GLOBALS['db']->getRow("select * from ".DB_PREFIX."user_file where is_delete=0 and id=$fid and user_id=$user_id");
+		if(!$file_info){
+			$redata['info']="当前文件目录不存在或已删除";
+			$redata['status']=0;
+			ajax_return($redata);
+		}
+		
+		
+		$msg_data = array();
+		$msg_data['user_name'] = $user_info['user_name'];
+		$msg_data['user_id'] = $user_info['id'];
+		$msg_data['title'] = $dir_name;
+		$msg_data['mtype'] = 0;
+		$msg_data['nu'] = md5(time().$user_info['id']);
+		$msg_data['fid'] = $fid;
+		$msg_data['s_pass'] =md5($pass);
+		$msg_data['is_effect'] = $is_effect?1:0;
+		$msg_data['effect_time_int'] = $effect_time_int;
+		$msg_data['create_time'] = time();
+		$GLOBALS['db']->autoExecute(DB_PREFIX."user_file_share",$msg_data); //插入
+		$reid = $GLOBALS['db']->insert_id();
+		
+		$redata['info']="";
+		$redata['status']=1;
+		ajax_return($redata);
+	}
+	
 	
 	
 	//获取文件路由

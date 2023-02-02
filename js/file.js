@@ -11,7 +11,7 @@ const alertBox        = document.querySelector('#support-alert')
 const uploadList      = document.querySelector('#upload-list')
 const chunkInput      = "104857600";
 const parallelInput   = "2";
-const endpointInput   = "http://183.240.209.145:9090/files/"
+const endpointInput   = "https://upload.dayoudrive.com/files/"
 
 function reset () {
   input.value = ''
