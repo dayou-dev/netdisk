@@ -567,8 +567,8 @@ $.fn.removeSvgClass = function(className) {
 
 								$("#nav_title").attr("class","inline-block lg:max-w-[210px] max-w-[190px] transform overflow-hidden text-ellipsis whitespace-nowrap align-middle text-sm font-bold transition-all duration-200 dark:text-gray-100 -translate-x-4");
 								$("#nav_back").attr("class","mr-2 -ml-1 cursor-pointer align-middle transition-all duration-200 lg:-mt-0.5 feather feather-chevron-left -translate-x-3 opacity-0");
-
-								$("#nav_title").html("我的文件");
+                                var titleTxt = ['我的文件', '最近上传', '我的分享','回收站','文档', '照片', '视频', '音频', '其他']
+								$("#nav_title").html(titleTxt[cateId]);
 
 						}
 
@@ -1081,7 +1081,9 @@ function file_dir_sel_link(t){
     $("#but_move").addClass("is-inactive");
 
     $("#nav_back").attr("onclick","n_back(back_id)");
-    $("#nav_title").html($(this).find(".text-ellipsis").text());
+    $('#file_dir_move_list_1 .text-ellipsis').removeClass('text-theme');
+    $(t).addClass('text-theme');
+    $("#nav_title").html($(t).text());
     if(path_id==""||path_id=="0"){
         $("#nav_title").attr("class","inline-block lg:max-w-[210px] max-w-[190px] transform overflow-hidden text-ellipsis whitespace-nowrap align-middle text-sm font-bold transition-all duration-200 dark:text-gray-100 -translate-x-4");
         $("#nav_back").attr("class","mr-2 -ml-1 cursor-pointer align-middle transition-all duration-200 lg:-mt-0.5 feather feather-chevron-left -translate-x-3 opacity-0");
