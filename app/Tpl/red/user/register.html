@@ -8,32 +8,32 @@
 
     <title>会员注册</title>
 
-    
+
     <link href="/css/app.css?v=2.0.2" rel="stylesheet" type="text/css">
     <link href="/css/tailwind.css?v=2.0.2" rel="stylesheet" type="text/css">
 
-    
+
     <meta property="og:title" content="大有云盘">
     <meta property="og:description" content="bbb(desc)">
     <meta property="og:image" content="">
 
-    
+
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="white">
     <meta name="apple-mobile-web-app-title" content="aaa(title)">
 
-    
+
     <link rel="apple-touch-icon-precomposed" sizes="152x152" href="">
     <link rel="icon" href="/favicon.png?v=2.0.2">
 
-    
+
     <meta name="format-detection" content="telephone=no">
     <meta name="format-detection" content="address=no">
 
     <style>
 
-        
-        
+
+
         .router-link-active .icon-active {
             color: #00BC7E;
         }
@@ -41,10 +41,10 @@
             color: #00BC7E;
         }
 
-        
+
         .group:hover:not(.hover-disabled) .group-hover-text-theme {color: #00BC7E !important;}
 
-        
+
         .svg-color-theme {
             fill: #00BC7E;
             stroke: #00BC7E;
@@ -92,18 +92,18 @@
         .focus-border-theme:focus[type='password'] {border-color: #00BC7E}
         .focus-border-theme:focus[type='number'] {border-color: #00BC7E}
 
-        
+
         .active.active-bg-theme-100 {background: #00BC7E10 !important;}
         .active.active-border-theme {border-color: #00BC7E !important;}
         .active .active-text-theme {color: #00BC7E}
 
-        
+
         .active-menu.focus-border-theme {border-color: #00BC7E !important;}
 
-        
+
         .router-link-active.home .button-icon {background: #00BC7E10}
 
-        
+
         .router-link-active .text-theme {color: #00BC7E !important}
         .router-link-active .text-theme svg {color: #00BC7E !important}
         .router-link-active.border-bottom-theme {border-bottom-color: #00BC7E !important;}
@@ -114,10 +114,10 @@
         .menu-list-item.link:hover {color: #00BC7E}
         .menu-list-item.link:hover .text-theme svg {color: #00BC7E}
 
-        
+
         .input-area.is-active {border-color: #00BC7E !important}
 
-        
+
         .button-base.theme-solid {background: #00BC7E}
         .button-base.theme-solid polyline,
         .button-base.theme-solid path {
@@ -137,32 +137,32 @@
         .switch.active {background: #00BC7E !important;}
 
 
-        
+
         .border-theme {border-color: #00BC7E !important;}
         .folder-item.is-dragenter {border-color: #00BC7E !important;}
         .favourites.is-dragenter .menu-list {border-color: #00BC7E !important;}
 
-        
+
         .StripeElement--focus {border-color: #00BC7E !important;}
 
-        
+
         .dark .dark-text-theme {color: #00BC7E !important;}
 
         .dark .text-theme {
             color: #00BC7E
         }
 
-        
+
     </style><style>.bar-animation[data-v-404d0458]{-webkit-animation:progressbar-data-v-404d0458 6s linear both;animation:progressbar-data-v-404d0458 6s linear both}@-webkit-keyframes progressbar-data-v-404d0458{0%{width:0}to{width:100%}}@keyframes progressbar-data-v-404d0458{0%{width:0}to{width:100%}}.fade-enter-active[data-v-404d0458],.fade-leave-active[data-v-404d0458]{transition:.3s ease}.fade-enter[data-v-404d0458],.fade-leave-to[data-v-404d0458]{opacity:0;transform:translateX(100%)}</style><style>.preview-list-icon line,.preview-list-icon path{color:inherit}</style><style>.preview-list-icon line,.preview-list-icon rect{color:inherit}</style><style>.popup-leave-active[data-v-c643fc14]{animation:popup-slide-in-data-v-c643fc14 .15s ease reverse}.popup-enter-active[data-v-c643fc14]{-webkit-animation:popup-slide-in-data-v-c643fc14 .25s ease .1s both;animation:popup-slide-in-data-v-c643fc14 .25s ease .1s both}@-webkit-keyframes popup-slide-in-data-v-c643fc14{0%{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}@keyframes popup-slide-in-data-v-c643fc14{0%{opacity:0;transform:translateY(50px)}to{opacity:1;transform:translateY(0)}}</style><style>.router-link-active.home .button-icon circle[data-v-c6faedbe],.router-link-active.home .button-icon line[data-v-c6faedbe],.router-link-active.home .button-icon path[data-v-c6faedbe],.router-link-active.home .button-icon polyline[data-v-c6faedbe],.router-link-active.home .button-icon rect[data-v-c6faedbe]{color:inherit}.router-link-active.trash .button-icon[data-v-c6faedbe]{background:rgba(254,96,87,.1)}.router-link-active.trash .button-icon circle[data-v-c6faedbe],.router-link-active.trash .button-icon line[data-v-c6faedbe],.router-link-active.trash .button-icon path[data-v-c6faedbe],.router-link-active.trash .button-icon polyline[data-v-c6faedbe],.router-link-active.trash .button-icon rect[data-v-c6faedbe]{stroke:#fe6057}.router-link-active.settings .button-icon[data-v-c6faedbe]{background:rgba(157,102,254,.1)}.router-link-active.settings .button-icon circle[data-v-c6faedbe],.router-link-active.settings .button-icon line[data-v-c6faedbe],.router-link-active.settings .button-icon path[data-v-c6faedbe],.router-link-active.settings .button-icon polyline[data-v-c6faedbe],.router-link-active.settings .button-icon rect[data-v-c6faedbe]{stroke:#9d66fe}.router-link-active.user .button-icon[data-v-c6faedbe]{background:rgba(254,102,161,.1)}.router-link-active.user .button-icon circle[data-v-c6faedbe],.router-link-active.user .button-icon line[data-v-c6faedbe],.router-link-active.user .button-icon path[data-v-c6faedbe],.router-link-active.user .button-icon polyline[data-v-c6faedbe],.router-link-active.user .button-icon rect[data-v-c6faedbe]{stroke:#fe66a1}</style><style>#loading-bar-spinner.spinner[data-v-5e0c3466]{-webkit-animation:loading-bar-spinner-data-v-5e0c3466 .4s linear infinite;animation:loading-bar-spinner-data-v-5e0c3466 .4s linear infinite;left:50%;margin-left:-20px;margin-top:-20px;position:absolute;top:50%;z-index:19!important}#loading-bar-spinner.spinner .spinner-icon[data-v-5e0c3466]{border:4px solid transparent;border-radius:50%;height:40px;width:40px}@-webkit-keyframes loading-bar-spinner-data-v-5e0c3466{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}@keyframes loading-bar-spinner-data-v-5e0c3466{0%{transform:rotate(0deg)}to{transform:rotate(1turn)}}</style><style>.vignette[data-v-2818d8a1]{bottom:0;left:0;position:fixed;right:0;top:0;z-index:40}.vignette-enter-active[data-v-2818d8a1]{-webkit-animation:vignette-in-data-v-2818d8a1 .15s linear;animation:vignette-in-data-v-2818d8a1 .15s linear}.vignette-leave-active[data-v-2818d8a1]{animation:vignette-in-data-v-2818d8a1 .15s cubic-bezier(.4,0,1,1) reverse}@-webkit-keyframes vignette-in-data-v-2818d8a1{0%{opacity:0}to{opacity:1}}@keyframes vignette-in-data-v-2818d8a1{0%{opacity:0}to{opacity:1}}</style><style>.button-base[data-v-43685114]{align-items:center;border:0;border-radius:8px;cursor:pointer;display:flex;font-size:.9375em;font-weight:700;justify-content:center;padding:10px 28px;transition:all .15s ease;white-space:nowrap}.button-base .icon[data-v-43685114]{line-height:1;margin-right:10px}.button-base[data-v-43685114]:active{transform:scale(.95)}.button-base.theme-solid .content[data-v-43685114]{color:#fff}.button-base.danger[data-v-43685114]{background:rgba(253,57,122,.1)}.button-base.danger .content[data-v-43685114]{color:#fd397a}.button-base.danger path[data-v-43685114],.button-base.danger polyline[data-v-43685114]{stroke:#fd397a}.button-base.danger-solid[data-v-43685114]{background:#fd397a}.button-base.danger-solid .content[data-v-43685114]{color:#fff}.button-base.danger-solid path[data-v-43685114],.button-base.danger-solid polyline[data-v-43685114]{stroke:#fff}.button-base.secondary[data-v-43685114]{background:#f4f5f6}.button-base.secondary .content[data-v-43685114]{color:#1b2539}.button-base.secondary path[data-v-43685114],.button-base.secondary polyline[data-v-43685114]{stroke:#1b2539}.sync-alt[data-v-43685114]{-webkit-animation:spin-data-v-43685114 1s linear infinite;animation:spin-data-v-43685114 1s linear infinite}@-webkit-keyframes spin-data-v-43685114{0%{transform:rotate(0)}to{transform:rotate(1turn)}}@keyframes spin-data-v-43685114{0%{transform:rotate(0)}to{transform:rotate(1turn)}}.dark .button-base.secondary[data-v-43685114]{background:#1e2024}.dark .button-base.secondary .content[data-v-43685114]{color:#bec6cf}.dark .button-base.secondary path[data-v-43685114],.dark .button-base.secondary polyline[data-v-43685114]{color:inherit}.dark .popup-wrapper .button-base.secondary[data-v-43685114]{background:#25272c}</style><style>.popup-enter-active[data-v-7004b08d]{-webkit-animation:popup-in-data-v-7004b08d .35s ease .15s both;animation:popup-in-data-v-7004b08d .35s ease .15s both}.popup-leave-active[data-v-7004b08d]{animation:popup-in-data-v-7004b08d .15s ease reverse}@-webkit-keyframes popup-in-data-v-7004b08d{0%{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}@keyframes popup-in-data-v-7004b08d{0%{opacity:0;transform:scale(.7)}to{opacity:1;transform:scale(1)}}</style><style>@import url(https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap);</style><style>input:-webkit-autofill{transition-delay:999999999999s}[v-cloak],[v-cloak]>*{display:none}
 	*{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;-webkit-tap-highlight-color:rgba(0,0,0,0);box-sizing:border-box;font-family:Nunito,sans-serif;font-size:16px;margin:0;outline:0;padding:0;text-decoration:none}
 	.vue-feather circle,.vue-feather ellipse,.vue-feather line,.vue-feather path,.vue-feather polygon,.vue-feather polyline,.vue-feather rect{color:inherit}.dark *{color:#bec6cf}.dark body,.dark html{background:#151515;color:#bec6cf}.dark body img,.dark html img{opacity:.95}</style><style>.sync-alt[data-v-0249f6ea]{-webkit-animation:spin-data-v-0249f6ea 1s linear infinite;animation:spin-data-v-0249f6ea 1s linear infinite}@-webkit-keyframes spin-data-v-0249f6ea{0%{transform:rotate(0)}to{transform:rotate(1turn)}}@keyframes spin-data-v-0249f6ea{0%{transform:rotate(0)}to{transform:rotate(1turn)}}
-	
+
 	.w-96{width:25rem}
 	.smsbnt{ position:absolute; right:10px;font-size: 15px;line-height: 54px;color: #00BC7E;}
 	</style>
-    <link type="text/css" rel="stylesheet" charset="UTF-8" href="https://translate.googleapis.com/translate_static/css/translateelement.css">
-    
-    
+    <link type="text/css" rel="stylesheet" charset="UTF-8" href="/css/translateelement.css">
+
+
 <script>
     window.NVC_Opt = {
         appkey:'FFFF0N0000000000843D',
@@ -172,7 +172,7 @@
         elements: [
             '//img.alicdn.com/tfs/TB17cwllsLJ8KJjy0FnXXcFDpXa-50-74.png',
             '//img.alicdn.com/tfs/TB17cwllsLJ8KJjy0FnXXcFDpXa-50-74.png'
-        ], 
+        ],
         bg_back_prepared: '//img.alicdn.com/tps/TB1skE5SFXXXXb3XXXXXXXXXXXX-100-80.png',
         bg_front: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABQCAMAAADY1yDdAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAADUExURefk5w+ruswAAAAfSURBVFjD7cExAQAAAMKg9U9tCU+gAAAAAAAAAIC3AR+QAAFPlUGoAAAAAElFTkSuQmCC',
         obj_ok: '//img.alicdn.com/tfs/TB1rmyTltfJ8KJjy0FeXXXKEXXa-50-74.png',
@@ -191,8 +191,8 @@
         }
     }
   </script>
-<script src="//g.alicdn.com/sd/nvc/1.1.112/guide.js"></script>    
-    
+<script src="//g.alicdn.com/sd/nvc/1.1.112/guide.js"></script>
+
     </head>
 <body style="min-height: 100%" class="windows">
 
@@ -207,7 +207,7 @@
                 </font></font></label> <div class="w-full text-left"><input id="email" value="" placeholder="输入您的电子邮件" type="email" class="dark:placeholder:text-gray-600 focus-border-theme w-full appearance-none rounded-lg border border-transparent bg-light-background px-5 py-3.5 font-bold dark:bg-2x-dark-foreground"> <!----></div></div> <div class="mx-auto mb-5 md:flex md:max-w-lg md:items-center"><label class="mb-1.5 block font-bold md:mb-0 md:w-72 md:pr-4 md:text-right"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                     邮件验证码：
                 </font></font></label> <div class="w-full text-left" style="position:relative;"><input id="verificationcode" value="" placeholder="输入您的邮件验证码" type="text" class="dark:placeholder:text-gray-600 focus-border-theme w-full appearance-none rounded-lg border border-transparent bg-light-background px-5 py-3.5 font-bold dark:bg-2x-dark-foreground"> <button type="button" class="smsbnt" onclick="getcode()" id="sendCode">发送验证码</button><!----></div></div>
-                
+
                 <div class="mx-auto mb-5 md:flex md:max-w-lg md:items-center"><label class="mb-1.5 block font-bold md:mb-0 md:w-72 md:pr-4 md:text-right"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
                     创建密码：
                 </font></font></label> <div class="w-full text-left"><input id="password" value="" placeholder="新密码" type="password" class="dark:placeholder:text-gray-600 focus-border-theme w-full appearance-none rounded-lg border border-transparent bg-light-background px-5 py-3.5 font-bold dark:bg-2x-dark-foreground"> <!----></div></div> <div class="mx-auto mb-5 md:flex md:max-w-lg md:items-center"><label class="mb-1.5 block font-bold md:mb-0 md:w-72 md:pr-4 md:text-right"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
@@ -240,7 +240,7 @@
 </div>
 </div>
 </div>
-    
+
 <script language="javascript" src="/js/jquery-1.11.3.min.js"></script>
 <script language="javascript" src="/js/common.js"></script>
 <script language="javascript" src="/layer/layer.js"></script>
