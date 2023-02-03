@@ -40,7 +40,7 @@ function askToResumeUpload (previousUploads, currentUpload) {
 
 function  startUpload (){
 	const file = input.files[0]
-	
+
 	var file_metadata="";
 	if(file.type.indexOf("image")>-1){
 		var myimg = URL.createObjectURL(file);
@@ -52,25 +52,25 @@ function  startUpload (){
 			comPrevw()
 		}
 	}else{
-		fileCid();	
+		fileCid();
 	}
-	
-	
-	
-  
-	
+
+
+
+
+
 }
 
 
 function fileCid(){
-	
+
 	const file = input.files[0]
 	let reader = new FileReader();
 	reader.readAsArrayBuffer(file);
 	$(".upload-progress").show();
 	reader.onload = function() {
 	  const data = new Uint8Array(reader.result);
-	  Counter.gencid(data).then(function(cid){
+	  window.ipfslib.gencid(data).then(function(cid){
 		  console.log(cid);
 		  //CID检索
 		  $.ajax({
@@ -82,13 +82,13 @@ function fileCid(){
 					  //console.log(xhr.responseText);
 					  var redata=JSON.parse(xhr.responseText);
 					  layer.msg(redata['error']['message'])
-					  //xhr.responseText			
+					  //xhr.responseText
 		  // 					alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 				  },
 				  beforeSend: function() {
 				  },
 				  complete: function() {
-					  
+
 				  },
 				  success: function(data) {
 					  if(data.status==1){
@@ -103,7 +103,7 @@ function fileCid(){
 					  }
 				  }
 		  });
-		  
+
 	  })
 	};
 	reader.onerror = function() {
@@ -119,8 +119,8 @@ function fileUpload() {
   if (!file) {
     return
   }
-  
-  
+
+
   const endpoint = endpointInput;
   let chunkSize = parseInt(chunkInput, 10)
   if (Number.isNaN(chunkSize)) {
@@ -179,7 +179,7 @@ function fileUpload() {
 				  //console.log(xhr.responseText);
 				  var redata=JSON.parse(xhr.responseText);
 				  layer.msg(redata['error']['message'])
-				  //xhr.responseText			
+				  //xhr.responseText
 // 					alert(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
 			  },
 			  beforeSend: function() {
@@ -286,17 +286,17 @@ function comPrevw() {
 		var base64IMG = reader.result;
 		img = new Image();
 		img.onload = function () {
-			
-			
-			
+
+
+
 			var oWidth = 400;
 			var oHeight = 400;
-			
+
 			if(img.width>400){
 				oWidth = 400;
 				oHeight=parseInt(img.height*(400/img.width));
 			}
-			
+
 			if(oHeight>400){
 				oHeight = 400;
 				oWidth=parseInt(img.width*(400/img.height));
@@ -312,8 +312,8 @@ function comPrevw() {
       		//此时我们可以使用canvas.toBlob(function(blob){ //参数blob就已经是二进制文件了 });来把canvas转回二进制文件，但是我们使用提交表单的时候才即使转换的方式。
       		var smBase64 = canvas.toDataURL('image/jpeg', quality); //canvas转成新的base64数据，第二个参数为保存质量
       		//document.getElementById(input.name + '-v').src = smBase64; //赋值压缩后的base64图像
-			
-			
+
+
 			$.ajax({
 				url: "/ckfinder/controller.php?action=uploadimage",
 				data: {
@@ -337,10 +337,10 @@ function comPrevw() {
 					   }
 				}
 			});
-			
-			
-			
-			
+
+
+
+
 		};
 		img.src = base64IMG; //这个可以放在onload后面的
 	}
