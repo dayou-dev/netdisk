@@ -37,8 +37,10 @@ class userModule extends SiteBaseModule
             $wr .= ' and mtype = 1';
         } elseif($cate_id == 0) {
 			$wr .= ' and pid='.$path_id;
-		} else {
+		} elseif($cate_id == 2){
 			$wr = $path_id ? ' and f.pid='.$path_id : '';
+		} else{
+			$wr = $path_id ? ' and pid='.$path_id : '';
 		}
 		$cate_id == 3 && $wr .= ' and is_delete=1';
 		$cate_id == 4 && $wr .= ' and file_type in ("txt", "doc", "docx", "ppt", "TXT", "DOC", "DOCX", "PPT")';
