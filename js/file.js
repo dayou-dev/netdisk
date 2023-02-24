@@ -54,11 +54,6 @@ function  startUpload (){
 	}else{
 		fileCid();
 	}
-
-
-
-
-
 }
 
 

@@ -15,33 +15,33 @@ function get_real_path()
 	return APP_ROOT_PATH;
 }
 
-function time_tran($the_time) {  
-    $now_time = date("Y-m-d H:i:s", time());  
-    $now_time = strtotime($now_time);  
-    $show_time = intval($the_time);  
-    $dur = $now_time - $show_time;  
-    if ($dur < 0) {  
-        return $the_time;  
-    } else {  
-        if ($dur < 60) {  
-            return $dur . '秒前';  
-        } else {  
-            if ($dur < 3600) {  
-                return floor($dur / 60) . '分钟前';  
-            } else {  
-                if ($dur < 86400) {  
-                    return floor($dur / 3600) . '小时前';  
-                } else {  
-                    if ($dur < 259200) {//3天内  
-                        return floor($dur / 86400) . '天前';  
-                    } else {  
-                        return "3天前";  
-                    }  
-                }  
-            }  
-        }  
-    }  
-} 
+function time_tran($the_time) {
+    $now_time = date("Y-m-d H:i:s", time());
+    $now_time = strtotime($now_time);
+    $show_time = intval($the_time);
+    $dur = $now_time - $show_time;
+    if ($dur < 0) {
+        return $the_time;
+    } else {
+        if ($dur < 60) {
+            return $dur . '秒前';
+        } else {
+            if ($dur < 3600) {
+                return floor($dur / 60) . '分钟前';
+            } else {
+                if ($dur < 86400) {
+                    return floor($dur / 3600) . '小时前';
+                } else {
+                    if ($dur < 259200) {//3天内
+                        return floor($dur / 86400) . '天前';
+                    } else {
+                        return "3天前";
+                    }
+                }
+            }
+        }
+    }
+}
 
 /**
  * 技术两个日期差几个月
@@ -53,7 +53,7 @@ function how_much_month_i($start_time,$end_time){
 	}
 	$time1 = to_date($start_time,"Y")*12 + to_date($start_time,"m");
 	$time2 = to_date($end_time,"Y")*12 + to_date($end_time,"m");
-	
+
 	return $time2 - $time1;
 }
 
@@ -69,7 +69,7 @@ function to_date($utc_time, $format = 'Y-m-d H:i:s') {
 		return '';
 	}
 	$timezone = intval(app_conf('TIME_ZONE'));
-	$time = $utc_time + $timezone * 3600; 
+	$time = $utc_time + $timezone * 3600;
 	//return date ($format, $time );
 	return date ($format, $utc_time );
 }
@@ -77,7 +77,7 @@ function to_date($utc_time, $format = 'Y-m-d H:i:s') {
 function to_timespan($str, $format = 'Y-m-d H:i:s')
 {
 	$timezone = intval(app_conf('TIME_ZONE'));
-	//$timezone = 8; 
+	//$timezone = 8;
 	$time = intval(strtotime($str));
 	if($time!=0)
 	$time = $time - $timezone * 3600;
@@ -110,21 +110,21 @@ function filter_injection(&$request)
 				{
 						die("SQL Injection denied!");
 				}
-		
+
 				if(is_array($v))
-				{					
+				{
 					filter_injection($v);
 				}
 				else
-				{					
-					
+				{
+
 					if(preg_match($pattern,$v,$match))
 					{
 						die("SQL Injection denied!");
-					}					
+					}
 				}
 	}
-	
+
 }
 
 //过滤请求
@@ -145,7 +145,7 @@ function filter_request(&$request)
 				}
 			}
 		}
-		
+
 }
 
 function adddeepslashes(&$request)
@@ -161,7 +161,7 @@ function adddeepslashes(&$request)
 				{
 					$request[$k] = addslashes(trim($v));
 				}
-			}		
+			}
 }
 
 //request转码
@@ -201,24 +201,24 @@ function is_u8($string)
 function clear_cache()
 {
 	  //数据缓存
-	  clear_dir_file(get_real_path()."public/runtime/app/data_caches/");				
+	  clear_dir_file(get_real_path()."public/runtime/app/data_caches/");
 	  clear_dir_file(get_real_path()."public/runtime/app/db_caches/");
-	  clear_dir_file(get_real_path()."public/runtime/admin/data_caches/");				
+	  clear_dir_file(get_real_path()."public/runtime/admin/data_caches/");
 	  clear_dir_file(get_real_path()."public/runtime/admin/db_caches/");
 	  $GLOBALS['cache']->clear();
 	  clear_dir_file(get_real_path()."public/runtime/data/");
 
 	  //模板页面缓存
-	  clear_dir_file(get_real_path()."public/runtime/app/tpl_caches/");		
+	  clear_dir_file(get_real_path()."public/runtime/app/tpl_caches/");
 	  clear_dir_file(get_real_path()."public/runtime/app/tpl_compiled/");
-	  @unlink(get_real_path()."public/runtime/app/lang.js");	
-	  clear_dir_file(get_real_path()."public/runtime/admin/tpl_caches/");		
+	  @unlink(get_real_path()."public/runtime/app/lang.js");
+	  clear_dir_file(get_real_path()."public/runtime/admin/tpl_caches/");
 	  clear_dir_file(get_real_path()."public/runtime/admin/tpl_compiled/");
-	  @unlink(get_real_path()."public/runtime/admin/lang.js");	
-	  
+	  @unlink(get_real_path()."public/runtime/admin/lang.js");
+
 	  //脚本缓存
-	  clear_dir_file(get_real_path()."public/runtime/statics/");		
-			
+	  clear_dir_file(get_real_path()."public/runtime/statics/");
+
 }
 function clear_dir_file($path)
 {
@@ -229,15 +229,15 @@ function clear_dir_file($path)
                 $check = is_dir( $path. $file );
                 if ( !$check )
                 {
-                    @unlink( $path . $file );                       
+                    @unlink( $path . $file );
                 }
-                else 
+                else
                 {
                  	if($file!='.'&&$file!='..')
                  	{
-                 		clear_dir_file($path.$file."/");              			       		
-                 	} 
-                 }           
+                 		clear_dir_file($path.$file."/");
+                 	}
+                 }
             }
             closedir( $dir );
             rmdir($path);
@@ -269,9 +269,9 @@ function send_verify_sms($mobile,$code,$user_info='')
 	/*$newCode=$smschk!='WYY'?1:0;
 	if(app_conf("SMS_ON")==1)
 	{*/
-		  
-		  
-		  
+
+
+
 		  $tmpl_content = "您的验证码是：".$code."。请不要把验证码泄露给其他人。如非本人操作，可不用理会！";
 		 // if($tmpl_content){
 //			  $verify['mobile'] = $mobile;
@@ -325,7 +325,7 @@ function send_unsubscribe_mail($email)
 			$email_item = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."mail_list where mail_address = '".$email."' and code <> ''");
 			if($email_item)
 			{
-				$tmpl = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."msg_template where name = 'TPL_MAIL_UNSUBSCRIBE'");				
+				$tmpl = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."msg_template where name = 'TPL_MAIL_UNSUBSCRIBE'");
 				$tmpl_content = $tmpl['content'];
 				$mail = $email_item;
 				$mail['url'] = get_domain().url("index","subscribe#dounsubscribe", array("code"=>base64_encode($mail['code']."|".$mail['mail_address'])));
@@ -342,18 +342,18 @@ function send_unsubscribe_mail($email)
 				$msg_data['is_html'] = $tmpl['is_html'];
 				$GLOBALS['db']->autoExecute(DB_PREFIX."deal_msg_list",$msg_data); //插入
 			}
-		}		
+		}
 	}
 }
 
-	
+
 function format_price($price)
 {
 	return app_conf("CURRENCY_UNIT")."".number_format($price,2);
 }
 function format_score($score)
 {
-	return intval($score)."".app_conf("SCORE_UNIT");	
+	return intval($score)."".app_conf("SCORE_UNIT");
 }
 
 
@@ -380,7 +380,7 @@ function msubstr($str, $start=0, $length=15, $charset="utf-8", $suffix=true)
 }
 
  /**
-  * PHP获取字符串中英文混合长度 
+  * PHP获取字符串中英文混合长度
   * @param $str string 字符串
   * @param $$charset string 编码
   * @return 返回长度，1中文=1位，2英文=1位
@@ -403,7 +403,7 @@ function msubstr($str, $start=0, $length=15, $charset="utf-8", $suffix=true)
 
 //字符编码转换
 if(!function_exists("iconv"))
-{	
+{
 	function iconv($in_charset,$out_charset,$str)
 	{
 		require 'libs/iconv.php';
@@ -414,7 +414,7 @@ if(!function_exists("iconv"))
 
 //JSON兼容
 if(!function_exists("json_encode"))
-{	
+{
 	function json_encode($data)
 	{
 		require_once 'libs/json.php';
@@ -423,7 +423,7 @@ if(!function_exists("json_encode"))
 	}
 }
 if(!function_exists("json_decode"))
-{	
+{
 	function json_decode($data)
 	{
 		require_once 'libs/json.php';
@@ -458,21 +458,21 @@ function check_mobile($mobile)
 function app_redirect($url,$time=0,$msg='')
 {
     //多行URL地址支持
-    $url = str_replace(array("\n", "\r"), '', $url);    
+    $url = str_replace(array("\n", "\r"), '', $url);
     if(empty($msg))
         $msg    =   "系统将在{$time}秒之后自动跳转到{$url}！";
     if (!headers_sent()) {
         // redirect
         if(0===$time) {
         	if(substr($url,0,1)=="/")
-        	{        		
+        	{
         		header("Location:".get_domain().$url);
         	}
         	else
         	{
         		header("Location:".$url);
         	}
-            
+
         }else {
             header("refresh:{$time};url={$url}");
             echo($msg);
@@ -502,28 +502,28 @@ function check_ipop_limit($ip_str,$module,$time_span=0,$id=0)
     	{
     		$check['ip']	=	 get_client_ip();
     		$check['time']	=	get_gmtime();
-    		es_session::set($module."_".$id."_ip",$check);    		
+    		es_session::set($module."_".$id."_ip",$check);
     		return true;  //不存在session时验证通过
     	}
-    	else 
-    	{   
+    	else
+    	{
     		$check['ip']	=	 get_client_ip();
-    		$check['time']	=	get_gmtime();    
+    		$check['time']	=	get_gmtime();
     		$origin	=	es_session::get($module."_".$id."_ip");
-    		
+
     		if($check['ip']==$origin['ip'])
     		{
     			if($check['time'] - $origin['time'] < $time_span)
     			{
     				return false;
     			}
-    			else 
+    			else
     			{
     				es_session::set($module."_".$id."_ip",$check);
-    				return true;  //不存在session时验证通过    				
+    				return true;  //不存在session时验证通过
     			}
     		}
-    		else 
+    		else
     		{
     			es_session::set($module."_".$id."_ip",$check);
     			return true;  //不存在session时验证通过
@@ -556,7 +556,7 @@ function gzip_out($content)
 	{
 		if(!headers_sent()&&extension_loaded("zlib")&&preg_match("/gzip/i",$_SERVER["HTTP_ACCEPT_ENCODING"]))
 		{
-			$content = gzencode($content,9);	
+			$content = gzencode($content,9);
 			header("Content-Encoding: gzip");
 			header("Content-Length: ".strlen($content));
 			echo $content;
@@ -566,7 +566,7 @@ function gzip_out($content)
 	}else{
 		echo $content;
 	}
-	
+
 }
 
 function order_log($log_info,$order_id)
@@ -619,7 +619,7 @@ function save_image_upload($upd_file, $key='',$dir='temp', $whs=array(),$is_wate
 		require_once APP_ROOT_PATH."system/utils/es_imagecls.php";
 		$image = new es_imagecls();
 		$image->max_size = intval(app_conf("MAX_IMAGE_SIZE"));
-		
+
 		$list = array();
 
 		if(empty($key))
@@ -697,7 +697,7 @@ function save_image_upload($upd_file, $key='',$dir='temp', $whs=array(),$is_wate
 		$water_image = APP_ROOT_PATH.app_conf("WATER_MARK");
 		$alpha = app_conf("WATER_ALPHA");
 		$place = app_conf("WATER_POSITION");
-		
+
 		foreach($list as $lkey=>$item)
 		{
 				//循环生成规格图
@@ -717,12 +717,12 @@ function save_image_upload($upd_file, $key='',$dir='temp', $whs=array(),$is_wate
 								$paths = pathinfo($list[$lkey]['thumb'][$tkey]['path']);
 								$path = $paths['dirname'];
 				        		$path = $path."/origin/";
-				        		if (!is_dir($path)) { 
+				        		if (!is_dir($path)) {
 						             @mkdir($path);
 						             @chmod($path, 0777);
-					   			}   	    
+					   			}
 				        		$filename = $paths['basename'];
-								@file_put_contents($path.$filename,@file_get_contents($list[$lkey]['thumb'][$tkey]['path']));      
+								@file_put_contents($path.$filename,@file_get_contents($list[$lkey]['thumb'][$tkey]['path']));
 								$image->water($list[$lkey]['thumb'][$tkey]['path'],$water_image,$alpha, $place);
 							}
 						}
@@ -733,24 +733,24 @@ function save_image_upload($upd_file, $key='',$dir='temp', $whs=array(),$is_wate
 				$paths = pathinfo($item['path']);
 				$path = $paths['dirname'];
         		$path = $path."/origin/";
-        		if (!is_dir($path)) { 
+        		if (!is_dir($path)) {
 		             @mkdir($path);
 		             @chmod($path, 0777);
-	   			}   	    
+	   			}
         		$filename = $paths['basename'];
-				@file_put_contents($path.$filename,@file_get_contents($item['path']));        		
+				@file_put_contents($path.$filename,@file_get_contents($item['path']));
 				$image->water($item['path'],$water_image,$alpha, $place);
 			}
-		}			
+		}
 		return $list;
 }
 
 function empty_tag($string)
-{	
+{
 	$string = preg_replace(array("/\[img\]\d+\[\/img\]/","/\[[^\]]+\]/"),array("",""),$string);
 	if(trim($string)=='')
 	return $GLOBALS['lang']['ONLY_IMG'];
-	else 
+	else
 	return $string;
 	//$string = str_replace(array("[img]","[/img]"),array("",""),$string);
 }
@@ -837,17 +837,17 @@ function url($app_index,$route="index",$param=array())
 		$url = $GLOBALS[$key];
 		return $url;
 	}
-	
+
 	$url = load_dynamic_cache($key);
 	if($url!==false)
 	{
 		$GLOBALS[$key] = $url;
 		return $url;
 	}
-	
+
 	$show_city = intval($GLOBALS['city_count'])>1?true:false;  //有多个城市时显示城市名称到url
 	$route_array = explode("#",$route);
-	
+
 	if(isset($param)&&$param!=''&&!is_array($param))
 	{
 		$param['id'] = $param;
@@ -858,13 +858,13 @@ function url($app_index,$route="index",$param=array())
 
 	if(!$module||$module=='index')$module="";
 	if(!$action||$action=='index')$action="";
-	
+
 	if(app_conf("URL_MODEL")==0)
 	{
 		//过滤主要的应用url
 		if($app_index==app_conf("MAIN_APP"))
 		$app_index = "index";
-		
+
 		//原始模式
 		$url = APP_ROOT."/".$app_index.".php";
 		if($module!=''||$action!=''||count($param)>0||$show_city) //有后缀参数
@@ -876,7 +876,7 @@ function url($app_index,$route="index",$param=array())
 		{
 			$url .= "city=".$param['city']."&";
 			unset($param['city']);
-		}		
+		}
 		if($module&&$module!='')
 		$url .= "ctl=".$module."&";
 		if($action&&$action!='')
@@ -898,7 +898,7 @@ function url($app_index,$route="index",$param=array())
 	{
 		//重写的默认
 		$url = APP_ROOT;
-	
+
 		if($app_index!='index')
 		$url .= "/".$app_index;
 
@@ -906,7 +906,7 @@ function url($app_index,$route="index",$param=array())
 		$url .= "/".$module;
 		if($action&&$action!='')
 		$url .= "/".$action;
-		
+
 		if(count($param)>0)
 		{
 			$url.="/?";
@@ -916,13 +916,13 @@ function url($app_index,$route="index",$param=array())
 				$url =$url.$k."=".urlencode($v)."&";
 			}
 		}
-		
+
 		//echo $url;
 		//exit();
 		//过滤主要的应用url
 		if($app_index==app_conf("MAIN_APP"))
 		$url = str_replace("/".app_conf("MAIN_APP"),"",$url);
-		
+
 		$route = $module."#".$action;
 		switch ($route)
 		{
@@ -931,31 +931,31 @@ function url($app_index,$route="index",$param=array())
 				default:
 					break;
 		}
-				
+
 		if(substr($url,-1,1)=='/'||substr($url,-1,1)=='-') $url = substr($url,0,-1);
-		
-		
-		
+
+
+
 		if(isset($param['city']))
 		{
 			$city_uname = $param['city'];
 			if($city_uname=="all")
 			{
-				return "http://www.".app_conf("DOMAIN_ROOT").$url."/city-all";	
+				return "http://www.".app_conf("DOMAIN_ROOT").$url."/city-all";
 			}
 			else
 				{
-				$domain = "http://".$city_uname.".".app_conf("DOMAIN_ROOT");	
-				return $domain.$url;	
-			}	
+				$domain = "http://".$city_uname.".".app_conf("DOMAIN_ROOT");
+				return $domain.$url;
+			}
 		}
 		if($url=='')$url="/";
 		$GLOBALS[$key] = $url;
 		set_dynamic_cache($key,$url);
 		return $url;
 	}
-	
-	
+
+
 }
 
 
@@ -1020,7 +1020,7 @@ function set_dynamic_cache($name,$value)
 		{
 			array_shift($GLOBALS['dynamic_cache']);
 		}
-		$GLOBALS['dynamic_cache'][$name] = $value;		
+		$GLOBALS['dynamic_cache'][$name] = $value;
 	}
 }
 
@@ -1071,9 +1071,9 @@ function clear_auto_cache($key)
 /*ajax返回*/
 function ajax_return($data)
 {
-		header("Content-Type:text/html; charset=utf-8");
+		header("Content-Type:application/json; charset=utf-8");
         echo(json_encode($data));
-        exit;	
+        exit;
 }
 
 function update_sys_config()
@@ -1091,7 +1091,7 @@ function update_sys_config()
 				 $lanint=1;
 			}
 		}
-		
+
 		if(!file_exists(APP_ROOT_PATH.'public/runtime/app/db_caches/'))
 			mkdir(APP_ROOT_PATH.'public/runtime/app/db_caches/',0777);
 		$pconnect = false;
@@ -1109,17 +1109,17 @@ function update_sys_config()
 		}
 		$new_configs['lanint']=$lanint;
 		if($lanint){
-			$new_configs['TEMPLATE']="en";	
+			$new_configs['TEMPLATE']="en";
 		}
 		return $new_configs;
-		
+
 		/*$config_str = "<?php\n";
 		$config_str .= "return array(\n";
 		foreach($sys_configs as $k=>$v)
 		{
 			$config_str.="'".$v['name']."'=>'".addslashes($v['value'])."',\n";
 		}
-		$config_str.=");\n ?>";	
+		$config_str.=");\n ?>";
 		file_put_contents($filename,$config_str);
 		$url = APP_ROOT."/";
 		app_redirect($url);*/
@@ -1129,74 +1129,74 @@ function update_sys_config()
 
 function filter_ctl_act_req($str){
 	$search = array("../","\n","\r","\t","\r\n","'","<",">","\"");
-		
+
 	return str_replace($search,"",$str);
 }
 
 //身份证验证
-function validation_filter_id_card($id_card) 
-{ 
-	if(strlen($id_card) == 18) 
-	{ 
-	return idcard_checksum18($id_card); 
-	} 
-	elseif((strlen($id_card) == 15)) 
-	{ 
-	$id_card = idcard_15to18($id_card); 
-	return idcard_checksum18($id_card); 
-	} 
-	else 
-	{ 
-	return false; 
-	} 
-	} 
-	// 计算身份证校验码，根据国家标准GB 11643-1999 
-	function idcard_verify_number($idcard_base) 
-	{ 
-	if(strlen($idcard_base) != 17) 
-	{ 
-	return false; 
-	} 
-	//加权因子 
-	$factor = array(7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2); 
-	//校验码对应值 
-	$verify_number_list = array('1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2'); 
-	$checksum = 0; 
-	for ($i = 0; $i < strlen($idcard_base); $i++) 
-	{ 
-	$checksum += substr($idcard_base, $i, 1) * $factor[$i]; 
-	} 
-	$mod = $checksum % 11; 
-	$verify_number = $verify_number_list[$mod]; 
-	return $verify_number; 
-} 
+function validation_filter_id_card($id_card)
+{
+	if(strlen($id_card) == 18)
+	{
+	return idcard_checksum18($id_card);
+	}
+	elseif((strlen($id_card) == 15))
+	{
+	$id_card = idcard_15to18($id_card);
+	return idcard_checksum18($id_card);
+	}
+	else
+	{
+	return false;
+	}
+	}
+	// 计算身份证校验码，根据国家标准GB 11643-1999
+	function idcard_verify_number($idcard_base)
+	{
+	if(strlen($idcard_base) != 17)
+	{
+	return false;
+	}
+	//加权因子
+	$factor = array(7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2);
+	//校验码对应值
+	$verify_number_list = array('1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2');
+	$checksum = 0;
+	for ($i = 0; $i < strlen($idcard_base); $i++)
+	{
+	$checksum += substr($idcard_base, $i, 1) * $factor[$i];
+	}
+	$mod = $checksum % 11;
+	$verify_number = $verify_number_list[$mod];
+	return $verify_number;
+}
 
-// 将15位身份证升级到18位 
-function idcard_15to18($idcard){ 
-	if (strlen($idcard) != 15){ 
-	return false; 
-	}else{ 
-	// 如果身份证顺序码是996 997 998 999，这些是为百岁以上老人的特殊编码 
-	if (array_search(substr($idcard, 12, 3), array('996', '997', '998', '999')) !== false){ 
-	$idcard = substr($idcard, 0, 6) . '18'. substr($idcard, 6, 9); 
-	}else{ 
-	$idcard = substr($idcard, 0, 6) . '19'. substr($idcard, 6, 9); 
-	} 
-	} 
-	$idcard = $idcard . idcard_verify_number($idcard); 
-	return $idcard; 
-} 
+// 将15位身份证升级到18位
+function idcard_15to18($idcard){
+	if (strlen($idcard) != 15){
+	return false;
+	}else{
+	// 如果身份证顺序码是996 997 998 999，这些是为百岁以上老人的特殊编码
+	if (array_search(substr($idcard, 12, 3), array('996', '997', '998', '999')) !== false){
+	$idcard = substr($idcard, 0, 6) . '18'. substr($idcard, 6, 9);
+	}else{
+	$idcard = substr($idcard, 0, 6) . '19'. substr($idcard, 6, 9);
+	}
+	}
+	$idcard = $idcard . idcard_verify_number($idcard);
+	return $idcard;
+}
 
-// 18位身份证校验码有效性检查 
-function idcard_checksum18($idcard){ 
-	if (strlen($idcard) != 18){ return false; } 
-	$idcard_base = substr($idcard, 0, 17); 
-	if (idcard_verify_number($idcard_base) != strtoupper(substr($idcard, 17, 1))){ 
-	return false; 
-	}else{ 
-	return true; 
-	} 
-} 
+// 18位身份证校验码有效性检查
+function idcard_checksum18($idcard){
+	if (strlen($idcard) != 18){ return false; }
+	$idcard_base = substr($idcard, 0, 17);
+	if (idcard_verify_number($idcard_base) != strtoupper(substr($idcard, 17, 1))){
+	return false;
+	}else{
+	return true;
+	}
+}
 
 function strim($str)
 {
@@ -1231,111 +1231,111 @@ function trade_GetUrl($url)
 	$url=str_replace('\\','',$url);
 	$lines_string=file_get_contents($url);
 	//$lines_string=mb_convert_encoding($lines_string,'UTF-8', 'UTF-8,GBK,GB2312,BIG5');
-	$lines_string = iconv("gb2312", "utf-8//IGNORE",$lines_string); 
+	$lines_string = iconv("gb2312", "utf-8//IGNORE",$lines_string);
 	return $lines_string;
-}	
+}
 
 //自定义分页程序
 function thispage($sql,$init,$Page_size,$page_len,$where='')//1,2,7
 {
 	$result=$GLOBALS['db']->query(str_replace("select * from","select id from",$sql));
 	$count = $GLOBALS['db']->num_rows($result);
-	$page_count = ceil($count/$Page_size); 
-	
-	$max_p=$page_count; 
-	$pages=$page_count; 
-	
-	//判断当前页码 
-	if(empty($_GET['page'])||$_GET['page']<0){ 
-		$page=1; 
-	}else { 
-		$page=$_GET['page']; 
-	} 
+	$page_count = ceil($count/$Page_size);
+
+	$max_p=$page_count;
+	$pages=$page_count;
+
+	//判断当前页码
+	if(empty($_GET['page'])||$_GET['page']<0){
+		$page=1;
+	}else {
+		$page=$_GET['page'];
+	}
 	//echo basename($_SERVER['QUERY_STRING']);
 	//exit();
-	$offset=$Page_size*($page-1); 
-	$sql=$sql." limit $offset,$Page_size"; 
-	$result=$GLOBALS['db']->query($sql); 
+	$offset=$Page_size*($page-1);
+	$sql=$sql." limit $offset,$Page_size";
+	$result=$GLOBALS['db']->query($sql);
 	foreach ($GLOBALS['db']->fetch_array($result) as $keys=>$rows)
 	{
 		$List[$keys]= $rows;
 	}
-	
-	
-	$pageoffset = intval(($page_len-1)/2);//页码个数左右偏移量 
-	
+
+
+	$pageoffset = intval(($page_len-1)/2);//页码个数左右偏移量
+
 	$geturl=$_GET['ctl']?$_GET['ctl']:'index';
 	//$geturl=$_GET['act']?$_GET['ctl'].'/'.$_GET['act']:$geturl;
-	
+
 	$php_self=substr($_SERVER['PHP_SELF'],strrpos($_SERVER['PHP_SELF'],'/')+1);
 	if($php_self=='kj_admin.php'){
 		$geturl=$_GET['act']?$_GET['ctl'].'&act='.$_GET['act']:$geturl;
 	}else{
 		$geturl=$_GET['act']?$_GET['ctl'].'/'.$_GET['act']:$geturl;
 	}
-	
-	if($page!=1){ 
-		//$key.="<li><a href=\"/".$geturl."/?page=1".$where."\">第一页</a></li>"; //上一页 
-		$key.="<li><a href=\"?ctl=".$geturl."&page=".($page-1).$where."\"><</a></li>"; //上一页 
-	}else { 
-		//$key.='<a class="no">第一页</a>';//第一页 
-		$key.='<li class="disabled"><a href="javascript:;"><</a></li>'; //上一页 
-	} 
-	if($pages>$page_len){ 
-		//如果当前页小于等于左偏移 
-		if($page<=$pageoffset){ 
-			$init=1; 
-			$max_p = $page_len; 
-		}else{//如果当前页大于左偏移 
-			//如果当前页码右偏移超出最大分页数 
-			if($page+$pageoffset>=$pages+1){ 
-			$init = $pages-$page_len+1; 
-		}else{ 
-			//左右偏移都存在时的计算 
-			$init = $page-$pageoffset; 
-			$max_p = $page+$pageoffset; 
-		} 
-	} 
-	} 
-	
+
+	if($page!=1){
+		//$key.="<li><a href=\"/".$geturl."/?page=1".$where."\">第一页</a></li>"; //上一页
+		$key.="<li><a href=\"?ctl=".$geturl."&page=".($page-1).$where."\"><</a></li>"; //上一页
+	}else {
+		//$key.='<a class="no">第一页</a>';//第一页
+		$key.='<li class="disabled"><a href="javascript:;"><</a></li>'; //上一页
+	}
+	if($pages>$page_len){
+		//如果当前页小于等于左偏移
+		if($page<=$pageoffset){
+			$init=1;
+			$max_p = $page_len;
+		}else{//如果当前页大于左偏移
+			//如果当前页码右偏移超出最大分页数
+			if($page+$pageoffset>=$pages+1){
+			$init = $pages-$page_len+1;
+		}else{
+			//左右偏移都存在时的计算
+			$init = $page-$pageoffset;
+			$max_p = $page+$pageoffset;
+		}
+	}
+	}
+
 	if($max_p>10){
 		if($page <5){
 			$init=1;
-			$max_p = 10;	
+			$max_p = 10;
 		}else if($page >5&&$page+5<$max_p){
 			$init=$page-5;
-			$max_p = $page+5;	
+			$max_p = $page+5;
 		}else if($page >5&&$page+5>$max_p){
 			$init=$max_p-10;
-			$max_p = $max_p;	
+			$max_p = $max_p;
 		}
 	}
 
-	for($i=$init;$i<=$max_p;$i++){ 
-		if($i==$page){ 
-			$key.='<li class="active"><a class="hover">'.$i.'</a></li>'; 
-		} else { 
-			$key.="<li><a href=\"?ctl=".$geturl."&page=".($i).$where."\">".$i."</a></li>"; 
-		} 
-	} 
-	
-	if($page!=$pages&&$pages>0){ 
-		$key.="<li><a href=\"?ctl=".$geturl."&page=".($page+1).$where."\">></a></li>";//下一页 
-		//$key.="<a href=\"/".$geturl."/?page=".$page_count.$where."\">最后一页</a>";//下一页 
-	}else { 
-		$key.='<li class="disabled"><a href="javascript:;">></a></li>';//第一页 
-		//$key.='<a class="no">最后一页</a>';//第一页 
-	} 
-	$key.=$keytxt; //第几页,共几页 
+	for($i=$init;$i<=$max_p;$i++){
+		if($i==$page){
+			$key.='<li class="active"><a class="hover">'.$i.'</a></li>';
+		} else {
+			$key.="<li><a href=\"?ctl=".$geturl."&page=".($i).$where."\">".$i."</a></li>";
+		}
+	}
+
+	if($page!=$pages&&$pages>0){
+		$key.="<li><a href=\"?ctl=".$geturl."&page=".($page+1).$where."\">></a></li>";//下一页
+		//$key.="<a href=\"/".$geturl."/?page=".$page_count.$where."\">最后一页</a>";//下一页
+	}else {
+		$key.='<li class="disabled"><a href="javascript:;">></a></li>';//第一页
+		//$key.='<a class="no">最后一页</a>';//第一页
+	}
+	$key.=$keytxt; //第几页,共几页
 	if($count<1) $key="";
-	
+
 	$retunr_arr['list']=$List;
 	$retunr_arr['pagecount']=$page_count;
 	$retunr_arr['rowscount']=$count;
 	$retunr_arr['pagetxt']=$page;
 	$retunr_arr['pages']=$key;
 	return $retunr_arr;
-	
+
 }
 
 
@@ -1344,99 +1344,99 @@ function thispage1($sql,$init,$Page_size,$page_len,$where)//1,2,7
 {
 	$result=$GLOBALS['db']->query(str_replace("select * from","select id from",$sql));
 	$count = $GLOBALS['db']->num_rows($result);
-	$page_count = ceil($count/$Page_size); 
-	
-	$max_p=$page_count; 
-	$pages=$page_count; 
-	
-	//判断当前页码 
-	if(empty($_GET['page'])||$_GET['page']<0){ 
-		$page=1; 
-	}else { 
-		$page=$_GET['page']; 
-	} 
+	$page_count = ceil($count/$Page_size);
+
+	$max_p=$page_count;
+	$pages=$page_count;
+
+	//判断当前页码
+	if(empty($_GET['page'])||$_GET['page']<0){
+		$page=1;
+	}else {
+		$page=$_GET['page'];
+	}
 	//echo basename($_SERVER['QUERY_STRING']);
 	//exit();
-	$offset=$Page_size*($page-1); 
-	$sql=$sql." limit $offset,$Page_size"; 
-	$result=$GLOBALS['db']->query($sql); 
+	$offset=$Page_size*($page-1);
+	$sql=$sql." limit $offset,$Page_size";
+	$result=$GLOBALS['db']->query($sql);
 	foreach ($GLOBALS['db']->fetch_array($result) as $keys=>$rows)
 	{
 		$List[$keys]= $rows;
 	}
-	
-	
-	$pageoffset = intval(($page_len-1)/2);//页码个数左右偏移量 
-	
+
+
+	$pageoffset = intval(($page_len-1)/2);//页码个数左右偏移量
+
 	$geturl=$_GET['ctl']?$_GET['ctl']:'index';
 	$geturl=$_GET['act']?$_GET['ctl'].'&act='.$_GET['act']:$geturl;
-	
+
 	//单独UEL处理
 	if($_GET['ctl']=='notice'&&$_GET['act']=='list_notice') $geturl="newslist-".$_GET['id'];
 	if($_GET['ctl']=='news'&&$_GET['act']=='city') $geturl="city-".$_GET['m'];
-	
-	if($page!=1){ 
-		$key.="<a href=\"/".$geturl."/?page=1".$where."\"><<</a>"; //上一页 
-		$key.="<a href=\"/".$geturl."/?page=".($page-1).$where."\"><</a>"; //上一页 
-	}else { 
-		$key.='<a class="no"><<</a>';//第一页 
-		$key.='<a href="javascript:;"><</a>'; //上一页 
-	} 
-	if($pages>$page_len){ 
-		//如果当前页小于等于左偏移 
-		if($page<=$pageoffset){ 
-			$init=1; 
-			$max_p = $page_len; 
-		}else{//如果当前页大于左偏移 
-			//如果当前页码右偏移超出最大分页数 
-			if($page+$pageoffset>=$pages+1){ 
-			$init = $pages-$page_len+1; 
-		}else{ 
-			//左右偏移都存在时的计算 
-			$init = $page-$pageoffset; 
-			$max_p = $page+$pageoffset; 
-		} 
-	} 
-	} 
-	
+
+	if($page!=1){
+		$key.="<a href=\"/".$geturl."/?page=1".$where."\"><<</a>"; //上一页
+		$key.="<a href=\"/".$geturl."/?page=".($page-1).$where."\"><</a>"; //上一页
+	}else {
+		$key.='<a class="no"><<</a>';//第一页
+		$key.='<a href="javascript:;"><</a>'; //上一页
+	}
+	if($pages>$page_len){
+		//如果当前页小于等于左偏移
+		if($page<=$pageoffset){
+			$init=1;
+			$max_p = $page_len;
+		}else{//如果当前页大于左偏移
+			//如果当前页码右偏移超出最大分页数
+			if($page+$pageoffset>=$pages+1){
+			$init = $pages-$page_len+1;
+		}else{
+			//左右偏移都存在时的计算
+			$init = $page-$pageoffset;
+			$max_p = $page+$pageoffset;
+		}
+	}
+	}
+
 	if($max_p>10){
 		if($page <5){
 			$init=1;
-			$max_p = 10;	
+			$max_p = 10;
 		}else if($page >5&&$page+5<$max_p){
 			$init=$page-5;
-			$max_p = $page+5;	
+			$max_p = $page+5;
 		}else if($page >5&&$page+5>$max_p){
 			$init=$max_p-10;
-			$max_p = $max_p;	
+			$max_p = $max_p;
 		}
 	}
 
-	for($i=$init;$i<=$max_p;$i++){ 
-		if($i==$page){ 
-			$key.='<a class="pagenum">'.$i.'</a>'; 
-		} else { 
-			$key.="<a href=\"/".$geturl."/?page=".($i).$where."\">".$i."</a>"; 
-		} 
-	} 
-	
-	if($page!=$pages&&$pages>0){ 
-		$key.="<a href=\"/".$geturl."/?page=".($page+1).$where."\">></a>";//下一页 
-		$key.="<a href=\"/".$geturl."/?page=".$page_count.$where."\">>></a>";//下一页 
-	}else { 
-		$key.='<a href="javascript:;">></a>';//第一页 
-		$key.='<a class="no">>></a>';//第一页 
-	} 
-	$key.=$keytxt; //第几页,共几页 
+	for($i=$init;$i<=$max_p;$i++){
+		if($i==$page){
+			$key.='<a class="pagenum">'.$i.'</a>';
+		} else {
+			$key.="<a href=\"/".$geturl."/?page=".($i).$where."\">".$i."</a>";
+		}
+	}
+
+	if($page!=$pages&&$pages>0){
+		$key.="<a href=\"/".$geturl."/?page=".($page+1).$where."\">></a>";//下一页
+		$key.="<a href=\"/".$geturl."/?page=".$page_count.$where."\">>></a>";//下一页
+	}else {
+		$key.='<a href="javascript:;">></a>';//第一页
+		$key.='<a class="no">>></a>';//第一页
+	}
+	$key.=$keytxt; //第几页,共几页
 	if($count<1) $key="";
-	
+
 	$retunr_arr['list']=$List;
 	$retunr_arr['pagecount']=$page_count;
 	$retunr_arr['rowscount']=$count;
 	$retunr_arr['pagetxt']=$page;
 	$retunr_arr['pages']=$key;
 	return $retunr_arr;
-	
+
 }
 
 //获取远程文件信息
@@ -1472,7 +1472,7 @@ function send_user_verify_mail($user_id)
 	{
 		$verify_code = rand(111111,999999);
 		$GLOBALS['db']->query("update ".DB_PREFIX."user set verify = '".$verify_code."' where id = ".$user_id);
-		$user_info = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."user where id = ".$user_id);			
+		$user_info = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."user where id = ".$user_id);
 		if($user_info)
 		{
 			$tmpl = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."msg_template where name = 'TPL_MAIL_USER_VERIFY'");
@@ -1481,26 +1481,26 @@ function send_user_verify_mail($user_id)
 			$GLOBALS['tmpl']->assign("user",$user_info);
 			$msg1="尊敬的用户您的验证码是【$verify_code】，此验证码只能用来注册。";
 			$msg = "尊敬的".$user_info['user_name']."您好<br/>请点击下方链接完成邮件验证。<br><a href='".$user_info['verify_url']."'>'".$user_info['verify_url']."'</a>";
-			
+
 			//邮件
 			require_once APP_ROOT_PATH."system/utils/es_mail.php";
 			$mail = new mail_sender();
 			$msg_item=$GLOBALS['db']->getRow("select id from ".DB_PREFIX."mail_server where is_effect=1");
-			
+
 			if($msg_item){
-			
+
 				$mail->AddAddress($user_info['email']);
 				$mail->IsHTML(1); 				  // 设置邮件格式为 HTML
 				$mail->Subject = "【比特动力】注册邮件验证";   // 标题
-				$mail->Body = $msg;  // 内容	
+				$mail->Body = $msg;  // 内容
 				$result = $mail->Send();
-				
+
 				$msg_item['result'] = $mail->ErrorInfo;
 				$msg_item['is_success'] = intval($result);
 				$msg_item['send_time'] = get_gmtime();
-				
+
 				if($result)
-				{					
+				{
 					$msg_data['dest'] = $user_info['email'];
 					$msg_data['send_type'] = 1;
 					$msg_data['title'] = "【比特动力】注册邮件验证";
@@ -1544,12 +1544,12 @@ function send_user_password_mail($user_id)
 	{
 		$verify_code = rand(111111,999999);
 		$GLOBALS['db']->query("update ".DB_PREFIX."user set password_verify = '".$verify_code."' where id = ".$user_id);
-		$user_info = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."user where id = ".$user_id);			
+		$user_info = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."user where id = ".$user_id);
 		if($user_info)
 		{
 			$tmpl = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."msg_template where name = 'TPL_MAIL_USER_PASSWORD'");
 			$tmpl_content=  $tmpl['content'];
-			$user_info['password_url'] = get_domain().url("index","user#modify_password", array("code"=>$user_info['password_verify'],"id"=>$user_info['id']));			
+			$user_info['password_url'] = get_domain().url("index","user#modify_password", array("code"=>$user_info['password_verify'],"id"=>$user_info['id']));
 			$GLOBALS['tmpl']->assign("user",$user_info);
 			$msg = $GLOBALS['tmpl']->fetch("str:".$tmpl_content);
 			$msg_data['dest'] = $user_info['email'];
@@ -1604,7 +1604,7 @@ function submitPost($urlmodel,$data='')
 	$port = $row['port'] ? $row['port']:80;
 	$file = $row['path'];
 	$data['chkcode'] = '@343$5SSSfakc*()@';
-	while (list($k,$v) = each($data)) 
+	while (list($k,$v) = each($data))
 	{
 		$post .= rawurlencode($k)."=".rawurlencode($v)."&";	//转URL标准码
 	}
@@ -1620,7 +1620,7 @@ function submitPost($urlmodel,$data='')
 		$out .= "Content-type: application/x-www-form-urlencoded\r\n";
 		$out .= "Connection: Close\r\n";
 		$out .= "Content-Length: $len\r\n\r\n";
-		$out .= $post;		
+		$out .= $post;
 		fwrite($fp, $out);
 		while (!feof($fp)) {
 			$receive .= fgets($fp, 128);
@@ -1647,7 +1647,7 @@ function getendday($start='now', $offset=0){
 		date("Y").'-04-30',date("Y").'-05-01',date("Y").'-06-18',
 		date("Y").'-09-24',date("Y").'-10-01',date("Y").'-10-02',date("Y").'-10-03',date("Y").'-10-04',
 		date("Y").'-10-05',date("Y").'-10-06',date("Y").'-10-07',
-		
+
 	);*/
    $exception=explode(",",app_conf("TRADE_NOTDEALDATE"));
     //先计算不排除周六周日及节假日的结果
@@ -1660,7 +1660,7 @@ function getendday($start='now', $offset=0){
 		$tday = $starttime + ($i * 24 * 3600);
 		if(date('w',$tday)==6||date('w',$tday)==0||in_array(date("Y-m-d",$tday),$exception)) $appydata++;
 		$endtime = $tday;
-		
+
 		$appydata--;
 		$i++;
 	}
@@ -1717,7 +1717,7 @@ function comm_fanli($oid,$remoney,$type=0){
 	$oid=intval($oid);
 	$systemInfo = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."system where id=1");
 	if($systemInfo['shareInt']&&$systemInfo['shareday']){
-		
+
 		if($type){
 			$orderInfo=$GLOBALS['db']->getRow("select * from ".DB_PREFIX."user_card where id=$oid");
 			$str_type="开卡返佣";
@@ -1736,7 +1736,7 @@ function comm_fanli($oid,$remoney,$type=0){
 			if(!$pic_chk){
 				$re_u_chk=$GLOBALS['db']->getOne("SELECT id FROM ".DB_PREFIX."user_money where user_id=$u_pid and mtype=0 and info='$str_type'");
 				if($re_u_chk) $GLOBALS['db']->query("update ".DB_PREFIX."user set u_level_count=u_level_count+1 where id=$u_pid");
-			
+
 				$user_lv = $GLOBALS['db']->getOne("SELECT u_level_count FROM ".DB_PREFIX."user where id=$u_pid");
 				$user_lv = $user_lv?$user_lv:0;
 				$user_lv_s="";
@@ -1749,8 +1749,8 @@ function comm_fanli($oid,$remoney,$type=0){
 				}
 				$user_lv_id=$user_lv_id?$user_lv_id:intval($user_share[0]['id']);
 				$GLOBALS['db']->query("update ".DB_PREFIX."user set u_level=$user_lv_id where id=$u_pid");
-				
-				
+
+
 				foreach($user_share as $key=>$rows){
 					if($rows['id']==$user_lv_id){
 						//一级返利
@@ -1771,7 +1771,7 @@ function comm_fanli($oid,$remoney,$type=0){
 							$userdata['admin_id'] = 0;
 							$userdata['create_time'] = time();
 							$GLOBALS['db']->autoExecute(DB_PREFIX."user_money",$userdata); //插入
-						
+
 							//二级返利
 							if($commUser['pid']){
 								$lv2_uid=intval($commUser['pid']);
@@ -1796,10 +1796,10 @@ function comm_fanli($oid,$remoney,$type=0){
 								}
 							}
 						}
-						
+
 					}
 				}
-			
+
 			}
 		}
 	}
@@ -1819,14 +1819,14 @@ function income_fanli($oid,$remoney){
 		$u_pid=intval($commUserInfo['pid']);
 		$pic_chk=$GLOBALS['db']->getOne("SELECT id FROM ".DB_PREFIX."user_money where user_id=$u_pid and mtype=0 and deal_id=$oid and info='续费返佣'");
 		if($commUserInfo&&!$pic_chk){
-			
+
 			$commUser=$GLOBALS['db']->getRow("select * from ".DB_PREFIX."user where id = $u_pid" );
 			$user_lv = intval($commUser['u_level']);
 			$user_lv = $user_lv?$user_lv:0;
 			$user_share = $GLOBALS['db']->getAll("select * from ".DB_PREFIX."user_share order by sort asc ,id desc");
 			$user_lv_id = $user_lv?$user_lv:intval($user_share[0]['id']);
 			$user_lv_id=$user_lv_id?$user_lv_id:0;
-			
+
 			foreach($user_share as $key=>$rows){
 				if($rows['id']==$user_lv_id){
 					$re_money=round($remoney*($rows['c_rate']/100),2);
@@ -1861,35 +1861,35 @@ function getaccss_token(){
 		$appsecret=$system['AppSecret'];
 		$useraccess_token =  $system['access_token'];
 		$url = "https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=$appid&secret=$appsecret";
-		//判断是不是第一次获取access_token		
-		if(!$useraccess_token){			
+		//判断是不是第一次获取access_token
+		if(!$useraccess_token){
 			$ch = curl_init();
 			curl_setopt($ch, CURLOPT_URL, $url);
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); 
-			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE); 
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			$output = curl_exec($ch);
 			curl_close($ch);
 			$jsoninfo = json_decode($output, true);
 			$access_token = $jsoninfo["access_token"];
-			$GLOBALS['db']->query("update ".DB_PREFIX."system set access_token='$access_token',expires_in='".($jsoninfo['expires_in']+time()-200)."'");			
+			$GLOBALS['db']->query("update ".DB_PREFIX."system set access_token='$access_token',expires_in='".($jsoninfo['expires_in']+time()-200)."'");
 			return $access_token;
-	}else if($system['expires_time']<time()){//判断是否过期	
+	}else if($system['expires_time']<time()){//判断是否过期
 			$ch = curl_init();
 			curl_setopt($ch, CURLOPT_URL, $url);
-			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); 
-			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE); 
+			curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			$output = curl_exec($ch);
 			curl_close($ch);
 			$jsoninfo = json_decode($output, true);//转换格式
-			$access_token = $jsoninfo["access_token"];	
+			$access_token = $jsoninfo["access_token"];
 			$GLOBALS['db']->query("update ".DB_PREFIX."system set access_token='$access_token',expires_in='".($jsoninfo['expires_in']+time()-200)."'");
 			return $access_token;
-	}else{	
+	}else{
 		$access_token = $system['access_token'];
 		return $access_token;
-		
+
 	}
 }
 
@@ -1907,15 +1907,15 @@ function send_order_msg($id,$data=array()){
 		$sms_log=$GLOBALS['db']->getOne("SELECT id from ".DB_PREFIX."sms_log where msg_id=$id and user_id=$user_id and order_id=$order_id and addtime>".strtotime(date("Y-m-d 00:00:01")));
 		$sms_tmp=$GLOBALS['db']->getRow("SELECT * from ".DB_PREFIX."sms_tmp where id=$id");
 		if($sms_tmp&&!$sms_log&&$data['openid']){
-		  
+
 		  $userdata=array();
 		  $userdata['user_id'] = intval($data['user_id']);
 		  $userdata['order_id'] = intval($data['order_id']);
 		  $userdata['msg_id'] = intval($id);
 		  $userdata['addtime'] = time();
 		  $GLOBALS['db']->autoExecute(DB_PREFIX."sms_log",$userdata); //插入
-		  
-		  
+
+
 		  $tmpdata=array();
 		  $tmpdata['first']=array("value"=> send_msg_tag($sms_tmp['first']),"color"=> '#173177');
 		  if($sms_tmp['keyword1']) $tmpdata['keyword1']=array("value"=> send_msg_tag($sms_tmp['keyword1']),"color"=> '#173177');
@@ -1924,7 +1924,7 @@ function send_order_msg($id,$data=array()){
 		  if($sms_tmp['keyword4']) $tmpdata['keyword4']=array("value"=> send_msg_tag($sms_tmp['keyword4']),"color"=> '#173177');
 		  if($sms_tmp['keyword5']) $tmpdata['keyword5']=array("value"=> send_msg_tag($sms_tmp['keyword5']),"color"=> '#173177');
 		  $tmpdata['remark']=array("value"=> send_msg_tag($sms_tmp['remark']),"color"=> '#173177');
-		  
+
 		  $data=[
 			  "touser"=>$data['openid'], //对方的openid，前一步获取
 			  "template_id"=>$sms_tmp['template_id'], //模板id
@@ -1932,13 +1932,13 @@ function send_order_msg($id,$data=array()){
 			  "miniprogram"=>["appid"=>"", //跳转小程序appid
 			  "pagepath"=>"pages/index/index"],//跳转小程序页面
 			  "data"=>$tmpdata
-		  ];		
+		  ];
 		 // echo print_r($data);exit();
 		  $data=json_encode($data);
 		  $ch = curl_init();
 		  curl_setopt($ch, CURLOPT_URL, $url);
-		  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); 
-		  curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE); 
+		  curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+		  curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
 		  curl_setopt($ch, CURLOPT_POST, 1);
 		  curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 		  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -1953,7 +1953,7 @@ function send_order_msg($id,$data=array()){
 		  return $jsoninfo;
 		}
 
-}	
+}
 
 function send_msg_tag($str,$data){
 	$new_str=$str;
