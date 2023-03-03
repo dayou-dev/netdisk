@@ -304,7 +304,8 @@ class indexModule extends SiteBaseModule
 			$code = rand(11111,99999);
 			$area=$area?$area:'+86';
 			
-			$iClientProfile = DefaultProfile::getProfile("cn-hangzhou", "LTAI4Fc2nXQCortggTG5yYjp", "Croujl34DAbhty1ohBiBI9YH8HdDq2");
+			$sysinfo = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."system");
+			$iClientProfile = DefaultProfile::getProfile("cn-hangzhou", $sysinfo['ali_access_key'], $sysinfo['ali_access_secret']);
 			$client = new DefaultAcsClient($iClientProfile);
 			DefaultProfile::addEndpoint("cn-hangzhou", "cn-hangzhou", "afs", "afs.aliyuncs.com");
 			
@@ -497,8 +498,8 @@ class indexModule extends SiteBaseModule
 			{
 				showErr("邮箱验证失败.",1,"/find_password.html");
 			}
-			
-			$iClientProfile = DefaultProfile::getProfile("cn-hangzhou", "LTAI4Fc2nXQCortggTG5yYjp", "Croujl34DAbhty1ohBiBI9YH8HdDq2");
+			$sysinfo = $GLOBALS['db']->getRow("select * from ".DB_PREFIX."system");
+			$iClientProfile = DefaultProfile::getProfile("cn-hangzhou", $sysinfo['ali_access_key'], $sysinfo['ali_access_secret']);
 			$client = new DefaultAcsClient($iClientProfile);
 			DefaultProfile::addEndpoint("cn-hangzhou", "cn-hangzhou", "afs", "afs.aliyuncs.com");
 			

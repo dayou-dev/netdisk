@@ -1,34 +1,4 @@
 <?php
-// +----------------------------------------------------------------------
-
-// +----------------------------------------------------------------------
-// | Copyright (c) 2011 http://www.pz.com All rights reserved.
-// +----------------------------------------------------------------------
-// | Author: @@@@@@@
-// +----------------------------------------------------------------------
-
-/*以下为动态载入的函数库*/
-
-
-//动态加载用户提示
-function insert_load_user_tip()
-{
-	return $GLOBALS['tmpl']->fetch("inc/insert/load_user_tip.html");
-}
-
-//动态加载用户提示
-function insert_load_index_userinfo()
-{
-	$user_id=intval($GLOBALS['user_info']['id']);
-	$redata1 = $GLOBALS['db']->getOne("select count(id) as c from ".DB_PREFIX."stock_hold where buycount>0 and user_id =$user_id");
-	$redata2 = $GLOBALS['db']->getOne("select count(id) as c from ".DB_PREFIX."gpmoney where `status` in(1,2) and user_id =$user_id");	
-	$GLOBALS['tmpl']->assign("redata1",$redata1);
-	$GLOBALS['tmpl']->assign("redata2",$redata2);
-	return $GLOBALS['tmpl']->fetch("inc/insert/load_index_userinfo.html");
-}
-
-
-
 //载入文章点击数
 function insert_load_article_click($para)
 {
